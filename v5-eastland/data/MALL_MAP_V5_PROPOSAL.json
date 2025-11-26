@@ -1,0 +1,835 @@
+{
+  "version": "5.0.0-alpha",
+  "methodology": "CRD v0.1 - Measurement-based reconstruction",
+  "meta": {
+    "source": "143 classified photos + CRD workflow",
+    "photo_base": "/eastlandpics/",
+    "photo_count": 143,
+    "levels": 2,
+    "zone_count": 9,
+    "description": "Eastland Mall - Methodical reconstruction using Classification Reference Document (CRD) workflow with full photo traceability and measured geometry.",
+    "crd_documents": {
+      "photo_classification": "docs/crd/PHOTO_CLASSIFICATION_TABLE_V1_COMPLETE.md",
+      "feature_extraction": "docs/crd/FEATURE_EXTRACTION_TABLE.md",
+      "zone_graph": "docs/crd/ZONE_GRAPH_V1.md",
+      "measurements": "docs/crd/MEASUREMENT_SHEET_V1.csv",
+      "corrections": "docs/crd/MAP_CORRECTIONS_LIST_V1.md"
+    }
+  },
+  "world": {
+    "cloud": {
+      "cloud_level": 0.0,
+      "pressure_trend": "stable",
+      "mall_mood": "calm",
+      "bleed_threshold_reached": false,
+      "current_bleed_tier": 0
+    },
+    "levels": {
+      "0": {
+        "name": "Ground Floor - Main Mall",
+        "elevation_feet": 0,
+        "zones": ["Z1_CENTRAL_ATRIUM", "Z2_UPPER_RING", "Z3_LOWER_RING", "Z5_ESCALATOR_WELLS", "Z8_ANCHOR_STORES", "Z9_EXTERIOR"]
+      },
+      "-1": {
+        "name": "Sunken Level - Food Court & Theater",
+        "elevation_feet": -8,
+        "vertical_drop_method": "Escalators (12 steps × 8 inches)",
+        "zones": ["Z4_FOOD_COURT", "Z5_ESCALATOR_WELLS", "Z6_THEATER"]
+      }
+    },
+    "zones": [
+      {
+        "id": "Z1_CENTRAL_ATRIUM",
+        "name": "Central Atrium",
+        "type": "ATRIUM",
+        "level": 0,
+        "description": "Two-level open space under white tensile roof. Terraced fountain at center. Glass block wall backdrop. Radial columns.",
+        "photo_count": 32,
+        "confidence": "HIGH",
+        "geometry": {
+          "shape": "irregular_quadrilateral",
+          "estimated_diameter_feet": {
+            "value": "60-80",
+            "confidence": "LOW",
+            "note": "Estimated from feature spacing, requires site plan verification"
+          },
+          "ceiling_height_feet": {
+            "value": 35,
+            "confidence": "LOW",
+            "source": "Truss mast height estimate",
+            "note": "No ground reference visible for accurate measurement"
+          }
+        },
+        "features": {
+          "terraced_fountain": {
+            "feature_class": "FTF-001",
+            "type": "amphitheater_fountain",
+            "tier_count": 4,
+            "tier_height_inches": "18-24",
+            "total_depth_feet": 6,
+            "shape": "fan_semicircular",
+            "status": "dry",
+            "description": "Stepped terraced amphitheater fountain descending toward center. Concentric tiers.",
+            "photo_refs": ["453127566", "453126954", "453127262", "453127434"],
+            "confidence": "HIGH"
+          },
+          "glass_block_wall": {
+            "feature_class": "GBF-001",
+            "type": "curved_glass_block_wall",
+            "block_size_inches": "6x6 or 8x8",
+            "block_count_vertical": 28,
+            "block_count_horizontal_arc": 45,
+            "height_feet": {
+              "value": 14,
+              "range": "14-18.7",
+              "confidence": "MEDIUM",
+              "note": "14 feet if 6-inch blocks, 18.7 feet if 8-inch blocks"
+            },
+            "arc_length_feet": {
+              "value": 22.5,
+              "confidence": "MEDIUM",
+              "note": "Measured along curved arc, affected by perspective"
+            },
+            "shape": "concave_arc",
+            "position": "Fountain backdrop",
+            "color": "Teal/aqua translucent",
+            "photo_refs": ["453127566"],
+            "confidence": "MEDIUM"
+          },
+          "tensile_roof": {
+            "feature_class": "TMF-001, TMF-002",
+            "type": "cable_tensioned_fabric_canopy",
+            "mast_count": 4,
+            "mast_height_feet": {
+              "value": 35,
+              "confidence": "LOW",
+              "note": "Estimated, no ground reference"
+            },
+            "radial_cable_count": {
+              "value": 32,
+              "confidence": "HIGH",
+              "source": "Cable count from photos 453124750, 453125654"
+            },
+            "fabric_color": "White (with variance: aging, lighting, replacement)",
+            "mast_arrangement": "Quadrilateral pattern",
+            "cable_geometry": "32-segment radial subdivision from each mast",
+            "photo_refs": ["453124750", "453125654", "64360891", "453143417"],
+            "confidence": "HIGH (cable count), LOW (mast height)"
+          },
+          "radial_columns": {
+            "feature_class": "CFG-001",
+            "type": "structural_columns",
+            "diameter_inches": "18-24",
+            "spacing_feet": {
+              "value": 20,
+              "confidence": "LOW",
+              "note": "Typical mall grid, not measured"
+            },
+            "function": "Support upper balcony and tensile roof attachment points"
+          }
+        },
+        "adjacent_to": ["Z2_UPPER_RING", "Z3_LOWER_RING", "Z4_FOOD_COURT_via_overlook"],
+        "turbulence": 1.5,
+        "microstate": "liminal",
+        "bleed_mod": 1.8,
+        "decay_class": "liminal",
+        "crd_source": "ZONE_GRAPH_V1.md Z1, MEASUREMENT_SHEET_V1.csv (GBF-001, TMF-001, FTF-001)"
+      },
+      {
+        "id": "Z2_UPPER_RING",
+        "name": "Upper Ring Corridors & Balconies",
+        "type": "CORRIDOR_UPPER",
+        "level": 0,
+        "description": "Balcony walkways overlooking atrium and food court. Railings 42 inches high. Connects to upper level stores and anchor stores.",
+        "photo_count": 8,
+        "confidence": "MEDIUM",
+        "geometry": {
+          "shape": "ring_or_U_shape",
+          "railing_height_inches": {
+            "value": 42,
+            "confidence": "HIGH",
+            "source": "Commercial building code standard",
+            "note": "Universal requirement for balcony railings"
+          },
+          "corridor_width_feet": {
+            "value": "12-20",
+            "confidence": "LOW",
+            "note": "Standard mall corridor range, requires photogrammetry"
+          },
+          "ceiling_height_feet": {
+            "value": "10-12",
+            "confidence": "MEDIUM",
+            "note": "Based on visible door frames (80 inches) + clearance"
+          }
+        },
+        "features": {
+          "balcony_railings": {
+            "feature_class": "RBF-001, RBF-002",
+            "type": "commercial_railing",
+            "height_inches": 42,
+            "material": "Metal/painted steel",
+            "photo_refs": ["453143417", "3085979988"],
+            "confidence": "HIGH"
+          },
+          "overlook_viewpoints": {
+            "type": "balcony_overlook",
+            "description": "Views down into atrium fountain area and food court pit",
+            "photo_refs": ["453143417"],
+            "confidence": "HIGH"
+          }
+        },
+        "adjacent_to": ["Z1_CENTRAL_ATRIUM", "Z3_LOWER_RING", "Z8_ANCHOR_STORES"],
+        "turbulence": 0.9,
+        "microstate": "normal",
+        "bleed_mod": 1.0,
+        "decay_class": "declining",
+        "coverage_note": "Under-documented (8 photos, 5.6% of collection). Lower confidence than Z3.",
+        "crd_source": "ZONE_GRAPH_V1.md Z2, MEASUREMENT_SHEET_V1.csv (RBF-001, RBF-002)"
+      },
+      {
+        "id": "Z3_LOWER_RING",
+        "name": "Lower Ring Corridors",
+        "type": "CORRIDOR_LOWER",
+        "level": 0,
+        "description": "Ground level main corridors. Patterned carpet. Glass block walls. Inline stores. Kiosks. Connects to all major zones.",
+        "photo_count": 68,
+        "confidence": "HIGH",
+        "geometry": {
+          "shape": "ring_or_branching_corridors",
+          "corridor_width_feet": {
+            "value": "12-20",
+            "confidence": "MEDIUM",
+            "note": "Measurable via door frame scaling"
+          },
+          "ceiling_height_feet": {
+            "value": "10-12",
+            "confidence": "MEDIUM",
+            "note": "Based on 80-inch doors + clearance"
+          },
+          "floor_material": "Patterned carpet with tile transitions"
+        },
+        "features": {
+          "door_frames": {
+            "feature_class": "DRF-001",
+            "type": "commercial_door",
+            "height_inches": 80,
+            "standard": "6 feet 8 inches",
+            "confidence": "HIGH",
+            "note": "Universal commercial door standard, usable for scaling"
+          },
+          "tile_transitions": {
+            "type": "flooring_material_change",
+            "description": "Carpet to tile transitions marking zone boundaries",
+            "photo_refs": ["Multiple corridor photos"]
+          }
+        },
+        "stores": [
+          {
+            "id": "COCA_COLA_ENTERPRISES",
+            "name": "Coca-Cola Enterprises, Inc.",
+            "type": "specialty_retail",
+            "description": "Glass frontage with red and white Coca-Cola signage. Merchandise store.",
+            "photo_refs": ["3085977904", "3085140933"],
+            "confidence": "HIGH",
+            "status": "operational",
+            "crd_note": "NEW ADDITION - Not in v3 or v4 maps"
+          },
+          {
+            "id": "STORE_BORED",
+            "name": "BORED - Skateshop & Tee Emporium",
+            "type": "retail",
+            "description": "Graffiti on every surface. Smells like grip tape.",
+            "photo_refs": ["v4_inherited"],
+            "confidence": "HIGH",
+            "status": "operational"
+          },
+          {
+            "id": "STORE_MILO_OPTICS",
+            "name": "Milo's Discount Optics",
+            "type": "retail",
+            "description": "Harsh fluorescent light. Clinical. Eye charts.",
+            "photo_refs": ["v4_inherited"],
+            "confidence": "HIGH",
+            "status": "operational"
+          },
+          {
+            "id": "STORE_COMPHUT",
+            "name": "COMPHUT",
+            "type": "retail",
+            "description": "Blockbuster/RadioShack hybrid. VHS tapes and transistors.",
+            "photo_refs": ["v4_inherited"],
+            "confidence": "HIGH",
+            "status": "operational"
+          },
+          {
+            "id": "STORE_WIZARD_BUNKER",
+            "name": "Wizard Bunker",
+            "type": "retail",
+            "description": "Comics and cards. Archie ripoffs and cricket stats.",
+            "photo_refs": ["v4_inherited"],
+            "confidence": "HIGH",
+            "status": "operational"
+          },
+          {
+            "id": "STORE_FLAIR",
+            "name": "Flair",
+            "type": "retail",
+            "description": "Greeting cards and gift wrap. Buttons and pins.",
+            "photo_refs": ["v4_inherited"],
+            "confidence": "HIGH",
+            "status": "operational"
+          },
+          {
+            "id": "STORE_SPORTY",
+            "name": "Sporty's Athletic Gear",
+            "type": "retail",
+            "description": "Overpriced junk. Stopwatch ticks.",
+            "photo_refs": ["v4_inherited"],
+            "confidence": "HIGH",
+            "status": "operational"
+          },
+          {
+            "id": "CLINIC",
+            "name": "Mall Clinic",
+            "type": "medical",
+            "description": "Harsh lights. Nurse sits motionless.",
+            "photo_refs": ["v4_inherited"],
+            "confidence": "HIGH",
+            "status": "operational"
+          }
+        ],
+        "adjacent_to": ["Z1_CENTRAL_ATRIUM", "Z2_UPPER_RING", "Z5_ESCALATOR_WELLS", "Z8_ANCHOR_STORES", "Z9_EXTERIOR"],
+        "turbulence": 0.9,
+        "microstate": "normal",
+        "bleed_mod": 1.0,
+        "decay_class": "declining",
+        "coverage_note": "BEST DOCUMENTED - 68 photos (47.6% of collection). Highest confidence.",
+        "crd_source": "ZONE_GRAPH_V1.md Z3, PHOTO_CLASSIFICATION_TABLE (68 photos)"
+      },
+      {
+        "id": "Z4_FOOD_COURT",
+        "name": "Food Court Bowl",
+        "type": "FOOD_COURT",
+        "level": -1,
+        "description": "Sunken food court pit, 8 feet below ground level. Circular FOOD COURT neon sign overhead. Vendor booths. Striped counters.",
+        "photo_count": 17,
+        "confidence": "HIGH",
+        "geometry": {
+          "shape": "rectangular_or_irregular_bowl",
+          "depth_below_ground_feet": {
+            "value": 8,
+            "calculation": "12 escalator steps × 8 inches per step = 96 inches = 8 feet",
+            "confidence": "HIGH",
+            "source": "MEASUREMENT_SHEET_V1.csv ESF-001, ESF-002",
+            "method": "Escalator step count"
+          },
+          "floor_elevation": -8,
+          "access_method": "Escalators (bidirectional pair)"
+        },
+        "features": {
+          "food_court_neon_sign": {
+            "feature_class": "NSF-001",
+            "type": "circular_neon_sign",
+            "text": "FOOD COURT",
+            "diameter_feet": {
+              "value": "6-8",
+              "confidence": "LOW",
+              "note": "Visual estimate, not measured"
+            },
+            "color_scheme": "Blue neon arc, red text",
+            "position": "Suspended above food court entrance/overlook",
+            "photo_refs": ["64360891", "453143417"],
+            "confidence": "HIGH (existence), LOW (dimensions)",
+            "crd_note": "NEW ADDITION - Not in v3 or v4 maps"
+          },
+          "vendor_booths": {
+            "type": "food_service_vendors",
+            "layout_variance": "HISTORICAL CONTRADICTION - vendor positions vary across photos",
+            "note": "Vendor turnover 1995-2010, multiple configurations documented",
+            "confidence": "MEDIUM"
+          }
+        },
+        "vendors": [
+          {"name": "Slush Puppy Paradise", "status": "operational"},
+          {"name": "Wok This Way", "status": "closed"},
+          {"name": "Pizza Planet Express", "status": "closed"},
+          {"name": "Pretzel Hut", "status": "never_opened"},
+          {"name": "Burger Bunker", "status": "closed"},
+          {"name": "Taco Tiempo", "status": "closed"}
+        ],
+        "adjacent_to": ["Z5_ESCALATOR_WELLS", "Z6_THEATER", "Z1_CENTRAL_ATRIUM_via_overlook"],
+        "turbulence": 1.5,
+        "microstate": "normal",
+        "bleed_mod": 1.2,
+        "decay_class": "declining",
+        "crd_source": "ZONE_GRAPH_V1.md Z4, MEASUREMENT_SHEET_V1.csv (ESF-001, NSF-001), MAP_CORRECTIONS_LIST_V1.md Section 1.1"
+      },
+      {
+        "id": "Z5_ESCALATOR_WELLS",
+        "name": "Escalator Wells",
+        "type": "ESCALATOR_CIRCULATION",
+        "level": "0_to_-1_transition",
+        "description": "Bidirectional escalator pair connecting ground level (Z=0) to food court pit (Z=-1). 12-step descent.",
+        "photo_count": 3,
+        "confidence": "HIGH",
+        "geometry": {
+          "type": "vertical_circulation",
+          "step_count": {
+            "value": 12,
+            "confidence": "HIGH",
+            "source": "Photo 3085976410 step count"
+          },
+          "step_rise_inches": {
+            "value": 8,
+            "confidence": "HIGH",
+            "note": "Standard escalator code requirement"
+          },
+          "total_vertical_travel_feet": {
+            "value": 8,
+            "calculation": "12 steps × 8 inches = 96 inches = 8 feet",
+            "confidence": "HIGH"
+          },
+          "escalator_length_feet": {
+            "value": "20-25",
+            "confidence": "LOW",
+            "note": "Based on standard escalator angle (30-35 degrees)"
+          },
+          "escalator_width_feet": {
+            "value": "~3-4",
+            "confidence": "MEDIUM",
+            "note": "Standard commercial escalator width"
+          },
+          "well_footprint_feet": {
+            "value": "10-15 wide × 25 long per escalator",
+            "note": "Total well: ~20-30 feet wide (including safety clearances)"
+          }
+        },
+        "features": {
+          "escalator_steps": {
+            "feature_class": "ESF-001, ESF-002",
+            "type": "escalator",
+            "step_count": 12,
+            "direction": "bidirectional (up/down pair)",
+            "photo_refs": ["3085976410", "3085979988"],
+            "confidence": "HIGH",
+            "use_case": "PRIMARY Z-LEVEL CALIBRATION ANCHOR"
+          },
+          "landing_railings": {
+            "feature_class": "RBF-002",
+            "type": "safety_railing",
+            "height_inches": 42,
+            "photo_refs": ["3085979988"],
+            "confidence": "HIGH"
+          }
+        },
+        "adjacent_to": ["Z3_LOWER_RING", "Z4_FOOD_COURT"],
+        "turbulence": 1.1,
+        "microstate": "normal",
+        "bleed_mod": 1.3,
+        "decay_class": "liminal",
+        "crd_source": "ZONE_GRAPH_V1.md Z5, MEASUREMENT_SHEET_V1.csv (ESF-001, ESF-002), MAP_CORRECTIONS_LIST_V1.md Section 3.1"
+      },
+      {
+        "id": "Z6_THEATER",
+        "name": "Theater Complex",
+        "type": "THEATER",
+        "level": -1,
+        "description": "6-Plex theater at sunken level. Lobby with velvet ropes. Dark entrance. Operational status varies.",
+        "photo_count": 1,
+        "confidence": "LOW",
+        "geometry": {
+          "type": "theater_complex",
+          "screen_count": 6,
+          "note": "Interior geometry unverified - only 1 exterior photo"
+        },
+        "features": {
+          "theater_entrance": {
+            "type": "entrance_facade",
+            "description": "Dark entrance at food court level",
+            "photo_refs": ["Exterior only"],
+            "confidence": "MEDIUM"
+          }
+        },
+        "spaces": [
+          {
+            "id": "THEATER_LOBBY",
+            "description": "Velvet ropes. Flickering marquee. Popcorn smell without popcorn.",
+            "confidence": "LOW",
+            "note": "Inherited from v4, not visually verified in photos"
+          },
+          {
+            "id": "THEATER_SCREENS",
+            "count": 6,
+            "description": "Multiple screening rooms",
+            "confidence": "LOW",
+            "note": "Not documented in photo collection"
+          }
+        ],
+        "adjacent_to": ["Z4_FOOD_COURT"],
+        "turbulence": 1.0,
+        "microstate": "quiet",
+        "bleed_mod": 1.1,
+        "decay_class": "dead",
+        "coverage_note": "SEVERELY UNDER-DOCUMENTED - Only 1 photo (0.7%). Interior unverified.",
+        "historical_contradiction": "Operational status varies (open vs. closed across different time periods)",
+        "crd_source": "ZONE_GRAPH_V1.md Z6, PHOTO_CLASSIFICATION_TABLE (1 photo only)"
+      },
+      {
+        "id": "Z7_SUBTERRANEAN",
+        "name": "Subterranean Service Deck",
+        "type": "SERVICE_RAMP",
+        "level": "below_-1",
+        "description": "Underground service access. Rumored delivery ramps and mechanical spaces.",
+        "photo_count": 0,
+        "confidence": "UNVERIFIED",
+        "status": "UNVERIFIED",
+        "note": "NO PHOTOGRAPHIC EVIDENCE. Existence cannot be confirmed or denied. May not exist or was inaccessible to photographers.",
+        "adjacent_to": "UNKNOWN",
+        "coverage_note": "ZERO DOCUMENTATION - 0 photos (0%). Mark as UNVERIFIED in map.",
+        "crd_source": "ZONE_GRAPH_V1.md Z7, MAP_CORRECTIONS_LIST_V1.md Section 7.1"
+      },
+      {
+        "id": "Z8_ANCHOR_STORES",
+        "name": "Anchor Stores",
+        "type": "ANCHOR_STORE",
+        "level": "0_and_multi_level",
+        "description": "Large anchor department stores. Dillard's, Mervyn's, Mickey's Family Restaurant. Multi-level footprints.",
+        "photo_count": 12,
+        "confidence": "MEDIUM",
+        "stores": [
+          {
+            "id": "MICKEYS_FAMILY_RESTAURANT",
+            "name": "Mickey's Family Restaurant",
+            "type": "anchor_restaurant",
+            "description": "Distinctive concentric arch entrance. Multiple layered arches creating depth.",
+            "photo_refs": ["46099761"],
+            "confidence": "HIGH",
+            "features": {
+              "concentric_arch_entrance": {
+                "type": "architectural_feature",
+                "description": "Multiple layered arches creating concentric depth effect",
+                "photo_refs": ["46099761"],
+                "confidence": "HIGH",
+                "crd_note": "Confirmed architectural feature from v3 corrections"
+              }
+            }
+          },
+          {
+            "id": "ANCHOR_STORE_GENERIC",
+            "name": "Generic Anchor Store",
+            "type": "anchor_department",
+            "description": "Massive dead department store. Mannequins frozen. Exposed ceiling grid.",
+            "photo_refs": ["v4_inherited"],
+            "confidence": "MEDIUM"
+          }
+        ],
+        "adjacent_to": ["Z2_UPPER_RING", "Z3_LOWER_RING", "Z9_EXTERIOR"],
+        "turbulence": 1.2,
+        "microstate": "forbidden",
+        "bleed_mod": 1.5,
+        "decay_class": "dead",
+        "crd_source": "ZONE_GRAPH_V1.md Z8, MAP_CORRECTIONS_LIST_V1.md Section 4.2"
+      },
+      {
+        "id": "Z9_EXTERIOR",
+        "name": "Exterior Facade & Approaches",
+        "type": "EXTERIOR",
+        "level": 0,
+        "description": "Parking lot, mall entrances, exterior signage, building facades.",
+        "photo_count": 16,
+        "confidence": "MEDIUM",
+        "features": {
+          "entrance_west": {
+            "type": "entrance",
+            "description": "West mall entrance. Parking lot stretches into haze.",
+            "confidence": "MEDIUM"
+          },
+          "entrance_east": {
+            "type": "entrance",
+            "description": "East mall entrance. Barely any cars in the lot.",
+            "confidence": "MEDIUM"
+          },
+          "parking_lot": {
+            "type": "exterior_space",
+            "description": "Large parking area surrounding mall",
+            "photo_count": 16,
+            "confidence": "MEDIUM"
+          }
+        },
+        "adjacent_to": ["Z3_LOWER_RING", "Z8_ANCHOR_STORES"],
+        "turbulence": 0.6,
+        "microstate": "normal",
+        "bleed_mod": 0.5,
+        "decay_class": "declining",
+        "crd_source": "ZONE_GRAPH_V1.md Z9, PHOTO_CLASSIFICATION_TABLE (16 exterior photos)"
+      }
+    ],
+    "decay_classes": {
+      "pristine": {
+        "description": "Untouched. Rare.",
+        "turbulence_mod": 0.5,
+        "zones": []
+      },
+      "declining": {
+        "description": "Fading. Most of the mall.",
+        "turbulence_mod": 1.0,
+        "zones": ["Z2_UPPER_RING", "Z3_LOWER_RING", "Z4_FOOD_COURT", "Z9_EXTERIOR"]
+      },
+      "dead": {
+        "description": "Abandoned. High glitch potential.",
+        "turbulence_mod": 1.3,
+        "zones": ["Z6_THEATER", "Z8_ANCHOR_STORES"]
+      },
+      "liminal": {
+        "description": "Between spaces. Where things slip.",
+        "turbulence_mod": 1.5,
+        "zones": ["Z1_CENTRAL_ATRIUM", "Z5_ESCALATOR_WELLS"]
+      }
+    },
+    "anchors": [
+      {
+        "id": "bookwoman",
+        "name": "The Bookwoman",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "cardigan + book in arms",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "shelving", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "fixer",
+        "name": "The Fixer",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "tech polo + tool belt",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "repair_bench", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "bored",
+        "name": "BORED",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "hoodie + skate deck",
+        "contradiction_threshold": 75,
+        "state": {"stance": "neutral", "current_task": "phone_scroll", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "flair",
+        "name": "Flair Warrior",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "apron + buttons/pins",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "card_arrange", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "barista",
+        "name": "Mermaid Barista",
+        "home_zone": "Z4_FOOD_COURT",
+        "visual_anchor": "apron + beanie + portafilter",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "drink_make", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "security",
+        "name": "Mall Cop",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "security shirt + key ring",
+        "contradiction_threshold": 75,
+        "state": {"stance": "neutral", "current_task": "patrol_walk", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "nurse",
+        "name": "Clinic Nurse",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "scrubs + neon stethoscope",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "chart_check", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "sporty",
+        "name": "Sporty's Manager",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "tracksuit + stopwatch",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "inventory_count", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "arcade",
+        "name": "Arcade Guy",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "band tee + token cup",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "machine_check", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "lostandfound",
+        "name": "Lost & Found Clerk",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "mall vest + overstuffed lanyard",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "item_sort", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "janitor",
+        "name": "Mall Janitor",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "jumpsuit + mop",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "floor_mop", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "toddler",
+        "name": "The Toddler",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "overalls + balloon",
+        "contradiction_threshold": 90,
+        "state": {"stance": "neutral", "current_task": "wander_random", "flags": {"contradiction_used": false}},
+        "wander_zones": ["Z3_LOWER_RING", "Z4_FOOD_COURT", "Z5_ESCALATOR_WELLS"]
+      },
+      {
+        "id": "milo",
+        "name": "Milo",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "optician coat + thick glasses",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "frame_adjust", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "wizard",
+        "name": "Bunker Kid",
+        "home_zone": "Z3_LOWER_RING",
+        "visual_anchor": "band hoodie + dice bag",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "comic_sort", "flags": {"contradiction_used": false}}
+      }
+    ],
+    "swarm": {
+      "population": 0,
+      "density_by_zone": {},
+      "mood_distribution": {
+        "apathetic": 0.6,
+        "curious": 0.2,
+        "irritable": 0.2
+      },
+      "congregation_zones": ["Z4_FOOD_COURT", "Z3_LOWER_RING", "Z9_EXTERIOR"]
+    },
+    "bleed": {
+      "active": false,
+      "tier": 0,
+      "time_remaining": 0.0,
+      "origin_zone": null,
+      "degradation_profile": "warp"
+    },
+    "artifacts": [],
+    "ao3_logs": {
+      "session_id": "",
+      "entries": []
+    },
+    "player": {
+      "position_zone": "Z9_EXTERIOR",
+      "current_level": 0,
+      "visible_artifacts": [],
+      "weights": {
+        "positive": {
+          "artifact_discovery": 1.5,
+          "ao3_log_read": 1.0,
+          "npc_interaction": 0.8
+        },
+        "negative": {
+          "calm_zone_rest": -0.1,
+          "grounding_npc": -1.0,
+          "quick_exit_hot_zone": -0.5
+        },
+        "ambient": {
+          "session_fatigue": 0.01,
+          "drift_noise": 0.005
+        }
+      }
+    }
+  },
+  "loop": {
+    "tick_rate_fps": 60,
+    "cloud_update_interval": 10,
+    "systems_order": [
+      "input",
+      "player",
+      "npc",
+      "swarm",
+      "artifacts",
+      "cloud",
+      "bleed",
+      "persistence",
+      "render"
+    ]
+  },
+  "crd_workflow_status": {
+    "step_1_photo_classification": "COMPLETE (143 photos classified)",
+    "step_2_feature_extraction": "COMPLETE (11 feature classes defined)",
+    "step_3_zone_graph": "COMPLETE (9 zones mapped)",
+    "step_4_stereo_pairs": "PENDING (4 pairs identified, not processed)",
+    "step_5_measurements": "COMPLETE (15 measurements extracted)",
+    "step_6_corrections_list": "COMPLETE (12 corrections documented)",
+    "step_7_map_proposal": "COMPLETE (this document)"
+  },
+  "measurement_confidence_summary": {
+    "HIGH_confidence": [
+      "Food court pit depth: 8 feet (12 escalator steps)",
+      "Fountain tier count: 4 levels",
+      "Tensile roof cable count: 32 radial cables",
+      "Balcony railing height: 42 inches",
+      "Door frame height: 80 inches",
+      "Coca-Cola store existence and location"
+    ],
+    "MEDIUM_confidence": [
+      "Glass block wall height: 14-18 feet (depends on block size)",
+      "Glass block wall arc: 22.5 feet",
+      "Fountain depth: ~6 feet",
+      "Corridor widths: 12-20 feet (requires photogrammetry)"
+    ],
+    "LOW_confidence": [
+      "Truss mast height: ~35 feet (no ground reference)",
+      "Atrium diameter: 60-80 feet (inferred from features)",
+      "FOOD COURT sign diameter: 6-8 feet (visual estimate)"
+    ],
+    "UNVERIFIED": [
+      "Zone Z7 (Subterranean) - no photographic evidence",
+      "Theater interior geometry - only 1 exterior photo"
+    ]
+  },
+  "historical_contradictions": {
+    "note": "These are NOT errors, but documented timeline variance (1995-2010 photo span)",
+    "contradictions": [
+      {
+        "feature": "Food court vendor layout",
+        "variance": "Vendor booth positions and count vary between photos",
+        "interpretation": "Vendor turnover over time"
+      },
+      {
+        "feature": "Tensile roof color",
+        "variance": "White vs. beige fabric in different photos",
+        "interpretation": "Aging, replacement, or lighting conditions"
+      },
+      {
+        "feature": "Theater operational status",
+        "variance": "Dark entrance vs. activity visible",
+        "interpretation": "Business hours, closure periods, or permanent closure"
+      }
+    ]
+  },
+  "coverage_gaps": {
+    "Z7_SUBTERRANEAN": "0 photos (0%) - UNVERIFIED",
+    "Z6_THEATER": "1 photo (0.7%) - Severely under-documented",
+    "Z2_UPPER_RING": "8 photos (5.6%) - Under-documented",
+    "best_documented": "Z3_LOWER_RING: 68 photos (47.6%)"
+  },
+  "implementation_notes": {
+    "map_format": "Zone-based (v4 style) with measured geometry",
+    "geometry_source": "CRD measurements + photogrammetry",
+    "traceability": "All features linked to photo IDs and CRD documents",
+    "next_steps": [
+      "Convert zone data to tile-based coordinates if needed for v3 compatibility",
+      "Perform detailed photogrammetry on corridor photos for precise widths",
+      "Process stereo pairs for depth measurements",
+      "Ground-truth measurements against site plans if available",
+      "Mark uncertain elements with confidence metadata in implementation"
+    ]
+  }
+}

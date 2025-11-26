@@ -1,0 +1,109 @@
+{
+  "swarm_type_id": "swarm_template_01",
+  "name": "Swarm Type Name (e.g., 'Mall Walkers 1995')",
+  "role": "Ambient crowd | Background shoppers | Era-specific demographic",
+  "era": "1981_opening | 1985_expansion | 1995_peak | 2005_decline | 2011_closure",
+  "faction": "swarm",
+  "population_parameters": {
+    "count_range": {
+      "min": 3,
+      "max": 15,
+      "note": "Number of swarm NPCs spawned simultaneously"
+    },
+    "density_by_cloud_state": {
+      "low_cloud_0_33": 12,
+      "mid_cloud_34_66": 8,
+      "high_cloud_67_100": 2,
+      "bleed_state": 0
+    },
+    "spawn_zones": ["zone_code_1", "zone_code_2", "zone_code_3"],
+    "despawn_zones": ["zone_code_4 (swarm avoids)"]
+  },
+  "spine": {
+    "collective_memory": [
+      "Shared experience #1 (e.g., 'Friday night at the mall')",
+      "Shared experience #2 (e.g., 'Waiting in line for movie tickets')",
+      "Shared experience #3 (e.g., 'Food court as social hub')"
+    ],
+    "behavioral_archetype": "wanderers | shoppers | teens_loitering | families | solo_walkers",
+    "temporal_anchor": "Saturday afternoon | Weekday morning | Evening | Holiday season",
+    "echo_pattern": "Swarm behavior when cloud pressure is high (67-100)"
+  },
+  "behavior": {
+    "movement_pattern": "wander | circuit | cluster | disperse | tidal",
+    "speed": {
+      "base_speed": 1.5,
+      "variance": 0.3,
+      "note": "Speed in m/s, with random variance"
+    },
+    "flocking_parameters": {
+      "cohesion": 0.6,
+      "separation": 0.4,
+      "alignment": 0.5,
+      "note": "Standard boids parameters (0-1 range)"
+    },
+    "interaction_probability": {
+      "npc_to_npc": 0.2,
+      "npc_to_player": 0.05,
+      "npc_to_anchor": 0.1,
+      "note": "Probability per second of initiating interaction"
+    },
+    "pause_behavior": {
+      "pause_frequency": 0.15,
+      "pause_duration_range": [3, 12],
+      "pause_locations": ["storefronts", "benches", "fountains", "directory_signs"],
+      "note": "Swarm NPCs pause to look at things, rest, observe"
+    },
+    "cloud_pressure_response": {
+      "low_cloud_0_33": "Energetic, purposeful, social interactions frequent",
+      "mid_cloud_34_66": "Moderate pace, ambient presence, occasional interaction",
+      "high_cloud_67_100": "Slow drift, isolated, minimal interaction, echo behavior",
+      "bleed_tier_1": "Movement becomes recursive (loops), temporal desync",
+      "bleed_tier_2": "Geometry pathfinding breaks, NPCs phase through boundaries"
+    }
+  },
+  "visual": {
+    "appearance_variety": [
+      "Archetype 1: description (e.g., 'Teen with baggy jeans, band t-shirt')",
+      "Archetype 2: description (e.g., 'Middle-aged mall walker in tracksuit')",
+      "Archetype 3: description (e.g., 'Family with stroller')",
+      "Archetype 4: description"
+    ],
+    "era_appropriate_fashion": {
+      "1981": "Fashion details for 1981",
+      "1995": "Fashion details for 1995",
+      "2005": "Fashion details for 2005",
+      "2011": "Fashion details for 2011"
+    },
+    "visual_markers": ["Shopping bags", "Clothing style", "Age range", "Group composition"],
+    "diversity_parameters": {
+      "age_range": [15, 65],
+      "group_composition": "60% solo, 25% pairs, 15% groups of 3+",
+      "activity_mix": "40% walking, 30% browsing, 20% sitting, 10% eating"
+    }
+  },
+  "audio": {
+    "ambient_sounds": [
+      "Footsteps (varied)",
+      "Muffled conversation",
+      "Shopping bag rustle",
+      "Occasional laughter"
+    ],
+    "dialogue_snippets": [
+      "Era-appropriate phrase 1",
+      "Era-appropriate phrase 2",
+      "Generic mall chatter"
+    ],
+    "volume": 0.3,
+    "spatial_audio": true,
+    "note": "Swarm audio is ambient layer, not foreground"
+  },
+  "metadata": {
+    "version": "v6",
+    "photo_refs": ["crowd_photo_1", "era_fashion_reference"],
+    "author": "Stu | Claude | Collaborative",
+    "last_updated": "2025-11-21",
+    "canonical_status": "draft | locked | placeholder",
+    "integration_notes": "Use for background population in video generation and simulation"
+  }
+}

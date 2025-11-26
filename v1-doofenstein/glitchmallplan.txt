@@ -1,0 +1,254 @@
+PROJECT SPEC: MALL DUNGEON ENGINE (GLITCHDEX EDITION)
+0. High-Level Mission
+
+Build a tiny, dungeon-style “mall engine” that behaves like a 30kb DOS game physics system, not a modern 3D engine.
+
+The “mall” is:
+
+A grid / tilemap (2D top-down or 2.5D, text or very simple graphics)
+
+Populated with stores, corridors, escalators, kiosks, food court, service halls
+
+Featuring a small cast of canonical NPCs & artifacts from the Glitchdex / Renderist mythos:
+
+Milo (optician, new to mall, overqualified, insurance PTSD)
+
+BORED (the kid who runs BORED – Skateshop & Tee Emporium)
+
+R0-MBA (silent roaming observer, vacuum)
+
+The Necronomicon (mall paperback artifact that “hungers” but never actually does anything magical)
+
+With rules closer to Zelda / early roguelikes / tile dungeons than to physics:
+collision boxes, simple triggers, “use” flags, line-of-sight, etc.
+
+The goal is not a full game, but a playable / simulatable environment I can extend and use as a narrative sandbox.
+
+1. Repo Layout
+
+Propose and then implement a structure roughly like:
+
+README.md – clear explanation of the project & how to run the toy
+
+docs/
+
+design_overview.md – high-level design & lore anchors
+
+mall_tile_spec.md – documentation of tile & entity types
+
+narrative_hooks.md – how to plug stories into the engine
+
+data/
+
+mall_map.json – the starter mall layout
+
+entities.json – canonical NPCs, artifacts, and behaviors
+
+stores.json – definitions for BORED, Milo’s shop, food court, etc.
+
+src/
+
+language of your choice, but keep it simple (Python is fine)
+
+core engine files:
+
+mall_engine.py (or equivalent)
+
+entities.py
+
+simulation.py
+
+cli_game.py (simple text runner)
+
+examples/
+
+example_run_logs/ – sample transcripts of simulated runs
+
+story_prompts.md – example prompts for using this as a story generator
+
+2. Core Design Constraints (Very Important)
+
+When you implement, follow these vibes:
+
+Dungeon physics, not real physics.
+
+Movement = tile-to-tile (N/S/E/W).
+
+No pathfinding magic.
+
+No smooth interpolation.
+
+Think: Zelda dungeon, early roguelike, or tile-based RPG.
+
+Small, finite, legible system.
+
+Tile types: ~10–20 max.
+
+NPC types: 4–6 canonical plus a generic shopper.
+
+Artifacts: 5–10 total, including the Necronomicon.
+
+Xennial mall-core.
+
+The mall feels like late 80s–early 2000s.
+
+B. Dalton, food court, dying anchor stores, BORED, Milo, etc.
+
+No modern smartphone logic baked into the engine.
+
+No magic, only myth.
+
+The Necronomicon is just a paperback with weird “hunger” rules in the engine, not in reality:
+
+It can “move” tiles under certain triggers.
+
+It can “attach” to the player or an NPC.
+
+It can “want” to leave the mall (simulation rule).
+
+But you never implement real spirits, agency, or consciousness. It’s just state changes.
+
+Narrative-friendly, not graphics-heavy.
+
+A text-mode or minimal graphical interface is enough.
+
+Focus on state, rules, and logs, not visuals.
+
+3. Mall as Tile Dungeon – Spec
+
+Define a tile-based mall. Suggested tile types:
+
+ENTRANCE – entry / exit of the mall
+
+CORRIDOR – normal walking space
+
+STORE_GENERIC – unnamed store slot
+
+STORE_BORED – BORED – Skateshop & Tee Emporium
+
+STORE_MILO_OPTICS – Milo’s Discount Optics
+
+FOOD_COURT – multi-tile communal area
+
+ANCHOR_STORE – big dead/half-dead store
+
+ESCALATOR_UP / ESCALATOR_DOWN – stairs/level transition
+
+SERVICE_HALL – back corridors / staff-only
+
+RESTROOM – landmark room
+
+KIOSK – island tile in a corridor
+
+VOID/WALL – blocked tile
+
+For Claude to implement:
+
+Represent the mall as a 2D grid of tiles.
+
+Optionally support multiple levels (z-layer) with escalators connecting them.
+
+Create a starter layout in data/mall_map.json that includes:
+
+One entrance
+
+Food court
+
+BORED
+
+Milo’s shop
+
+At least one anchor store
+
+At least one service corridor network
+
+4. Entities & Behaviors
+4.1 NPCs (Canonical)
+
+Have these as first-class entities with simple behavior rules:
+
+Milo (Optician)
+
+Spawn location: STORE_MILO_OPTICS.
+
+Behavior:
+
+Wanders between his store and food court occasionally.
+
+Has a “commentary” function: when player enters his tile, generate a short, dry, clinically worded line about the mall.
+
+Trait: “Overqualified, disillusioned, but polite.”
+
+BORED (Store Kid)
+
+Spawn: STORE_BORED.
+
+Mostly stays in his store.
+
+Provides:
+
+“Merch text” if player interacts: a random slogan or t-shirt idea from a list.
+
+Attitude: apathetic, lightly sarcastic.
+
+R0-MBA (Roaming Observer)
+
+Spawn: service hall or random corridor.
+
+Moves autonomously:
+
+Roams the mall on a simple patrol algorithm.
+
+Behavior:
+
+Logs events it “passes by” into a simulation log (e.g., “R0-MBA rolled past FOOD_COURT while player was at tile X”).
+
+Mall Cop (Optional, generic)
+
+Simple patrol routes.
+
+May “flag” the player if they carry the Necronomicon openly.
+
+Generic Shopper NPCs
+
+Spawn in food court / corridors.
+
+Low-function behavior: randomly wander or idle.
+
+4.2 Artifacts
+
+Key artifact:
+
+The Necronomicon (Paperback)
+
+States: IN_STORE, WITH_PLAYER, WITH_NPC, LOST, OUTSIDE_MALL.
+
+Behavior rules (example):
+
+Starts in B. Dalton–style tile (generic bookstore or anchor store).
+
+Has a “hunger” counter that increments when near crowds (food court).
+
+If conditions met, it “wants to leave the mall”:
+
+Engine rule: it will preferentially move toward ENTRANCE when carried by someone.
+
+Can “attach” to:
+
+A kid NPC who “steals” it.
+
+The player character.
+
+This is all state + movement, no magic.
+
+Other artifacts (lighter weight):
+
+Sunglasses (BORED inventory)
+
+Glasses frames (Milo inventory)
+
+Sticker sheets (BORED)
+
+Food court tray (just flavor)
+
+Claude can define a simple schema like:

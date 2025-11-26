@@ -1,0 +1,858 @@
+{
+  "version": "4.0",
+  "timestamp": 1763608170.7280195,
+  "cloud_level": 75.02359699364614,
+  "mall_mood": "critical",
+  "bleed_threshold_reached": true,
+  "total_playtime": 9.99999999999998,
+  "session_count": 1,
+  "bleed_events_triggered": 1,
+  "discovery_history": [
+    {
+      "timestamp": 1763608170.725204,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 0.0
+    },
+    {
+      "timestamp": 1763608170.7253745,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 0.7501783106457367
+    },
+    {
+      "timestamp": 1763608170.7254417,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 1.5006476548783052
+    },
+    {
+      "timestamp": 1763608170.7254944,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 2.2508524276504116
+    },
+    {
+      "timestamp": 1763608170.7255309,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 3.00088993450386
+    },
+    {
+      "timestamp": 1763608170.7255673,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 3.750733155906812
+    },
+    {
+      "timestamp": 1763608170.7255962,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 4.5012302906073804
+    },
+    {
+      "timestamp": 1763608170.7256243,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 5.251227367842272
+    },
+    {
+      "timestamp": 1763608170.7256613,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 6.0011828138436165
+    },
+    {
+      "timestamp": 1763608170.7256913,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 6.751118431750626
+    },
+    {
+      "timestamp": 1763608170.7257116,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 7.501352948016625
+    },
+    {
+      "timestamp": 1763608170.7257304,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 8.251503531160727
+    },
+    {
+      "timestamp": 1763608170.7257495,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 9.001304580604469
+    },
+    {
+      "timestamp": 1763608170.7257676,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 9.751553495838433
+    },
+    {
+      "timestamp": 1763608170.7257845,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 10.502081733723495
+    },
+    {
+      "timestamp": 1763608170.7258017,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 11.252112319853046
+    },
+    {
+      "timestamp": 1763608170.7258296,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 12.002048843786097
+    },
+    {
+      "timestamp": 1763608170.7258499,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 12.752248238369338
+    },
+    {
+      "timestamp": 1763608170.7258673,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 13.502335443290788
+    },
+    {
+      "timestamp": 1763608170.7258868,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 14.252274586248793
+    },
+    {
+      "timestamp": 1763608170.7259045,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 15.002280944263672
+    },
+    {
+      "timestamp": 1763608170.725986,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 15.752479997209667
+    },
+    {
+      "timestamp": 1763608170.7260208,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 16.50261733321107
+    },
+    {
+      "timestamp": 1763608170.7260482,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 17.252588499178337
+    },
+    {
+      "timestamp": 1763608170.7260668,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 18.00302849956624
+    },
+    {
+      "timestamp": 1763608170.7260928,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 18.753301697834967
+    },
+    {
+      "timestamp": 1763608170.7261105,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 19.503818451573864
+    },
+    {
+      "timestamp": 1763608170.726128,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 20.253914463828696
+    },
+    {
+      "timestamp": 1763608170.7261457,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 21.004327449744416
+    },
+    {
+      "timestamp": 1763608170.7261634,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 21.754649112870005
+    },
+    {
+      "timestamp": 1763608170.7261808,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 22.505062762113333
+    },
+    {
+      "timestamp": 1763608170.7261987,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 23.255355433758176
+    },
+    {
+      "timestamp": 1763608170.7262166,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 24.00568890848116
+    },
+    {
+      "timestamp": 1763608170.7262356,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 24.75587298787742
+    },
+    {
+      "timestamp": 1763608170.726256,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 25.50595184159808
+    },
+    {
+      "timestamp": 1763608170.7262745,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 26.25588242447357
+    },
+    {
+      "timestamp": 1763608170.726295,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 27.00576181777311
+    },
+    {
+      "timestamp": 1763608170.7263129,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 27.75568082961352
+    },
+    {
+      "timestamp": 1763608170.7263312,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 28.50561866490629
+    },
+    {
+      "timestamp": 1763608170.7263486,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 29.256112484614093
+    },
+    {
+      "timestamp": 1763608170.7263668,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 30.00619684724012
+    },
+    {
+      "timestamp": 1763608170.7264345,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 30.756432283025955
+    },
+    {
+      "timestamp": 1763608170.7264829,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 31.506799688485458
+    },
+    {
+      "timestamp": 1763608170.7265124,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 32.25682902429553
+    },
+    {
+      "timestamp": 1763608170.7265317,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 33.007003248042196
+    },
+    {
+      "timestamp": 1763608170.7265506,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 33.757484537703974
+    },
+    {
+      "timestamp": 1763608170.7265694,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 34.507711771442494
+    },
+    {
+      "timestamp": 1763608170.726589,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 35.258033622432976
+    },
+    {
+      "timestamp": 1763608170.7266076,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 36.00853993061227
+    },
+    {
+      "timestamp": 1763608170.7266262,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 36.75853775935232
+    },
+    {
+      "timestamp": 1763608170.7266445,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 37.50851099305567
+    },
+    {
+      "timestamp": 1763608170.726663,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 38.25879749954995
+    },
+    {
+      "timestamp": 1763608170.7266817,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 39.00912321438027
+    },
+    {
+      "timestamp": 1763608170.726701,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 39.75946617079115
+    },
+    {
+      "timestamp": 1763608170.7267206,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 40.5095177588852
+    },
+    {
+      "timestamp": 1763608170.7267396,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 41.25964259771509
+    },
+    {
+      "timestamp": 1763608170.726759,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 42.00984766776143
+    },
+    {
+      "timestamp": 1763608170.7267802,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 42.76013787920965
+    },
+    {
+      "timestamp": 1763608170.7267992,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 43.510224308470896
+    },
+    {
+      "timestamp": 1763608170.7268188,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 44.26068407590038
+    },
+    {
+      "timestamp": 1763608170.7268384,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 45.0112428258173
+    },
+    {
+      "timestamp": 1763608170.726891,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 45.76185299912571
+    },
+    {
+      "timestamp": 1763608170.7269192,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 46.51183497385348
+    },
+    {
+      "timestamp": 1763608170.7269397,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 47.26226877691917
+    },
+    {
+      "timestamp": 1763608170.7269602,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 48.01245535963645
+    },
+    {
+      "timestamp": 1763608170.7269843,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 48.763053092800895
+    },
+    {
+      "timestamp": 1763608170.7270048,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 49.51364041996154
+    },
+    {
+      "timestamp": 1763608170.7270267,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 50.263812909096806
+    },
+    {
+      "timestamp": 1763608170.7270477,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 51.01401612085481
+    },
+    {
+      "timestamp": 1763608170.7270682,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 51.764673259805946
+    },
+    {
+      "timestamp": 1763608170.7270882,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 52.5146050726967
+    },
+    {
+      "timestamp": 1763608170.7271087,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 53.26496479685984
+    },
+    {
+      "timestamp": 1763608170.7271287,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 54.015099901352265
+    },
+    {
+      "timestamp": 1763608170.727149,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 54.76544032278177
+    },
+    {
+      "timestamp": 1763608170.7271693,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 55.51595443834446
+    },
+    {
+      "timestamp": 1763608170.7271895,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 56.26650201198824
+    },
+    {
+      "timestamp": 1763608170.7272098,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 57.01661844717325
+    },
+    {
+      "timestamp": 1763608170.727232,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 57.766893326174525
+    },
+    {
+      "timestamp": 1763608170.727256,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 58.51725898513796
+    },
+    {
+      "timestamp": 1763608170.7272775,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 59.26766438004633
+    },
+    {
+      "timestamp": 1763608170.7272985,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 60.01814991602184
+    },
+    {
+      "timestamp": 1763608170.7273693,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 60.76810332186294
+    },
+    {
+      "timestamp": 1763608170.7273922,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 61.518528346952316
+    },
+    {
+      "timestamp": 1763608170.7274165,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 62.26850283769481
+    },
+    {
+      "timestamp": 1763608170.7274415,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 63.01889474946941
+    },
+    {
+      "timestamp": 1763608170.7274709,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 63.76901953436845
+    },
+    {
+      "timestamp": 1763608170.7274919,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 64.5195519935483
+    },
+    {
+      "timestamp": 1763608170.7275128,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 65.26974433204185
+    },
+    {
+      "timestamp": 1763608170.727534,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 66.0199056906342
+    },
+    {
+      "timestamp": 1763608170.7275553,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 66.77031890493359
+    },
+    {
+      "timestamp": 1763608170.727576,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 67.52040840113808
+    },
+    {
+      "timestamp": 1763608170.7275968,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 68.27055114742079
+    },
+    {
+      "timestamp": 1763608170.7276182,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 69.0212248789472
+    },
+    {
+      "timestamp": 1763608170.727642,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 69.77132207795748
+    },
+    {
+      "timestamp": 1763608170.727665,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 70.52154038627874
+    },
+    {
+      "timestamp": 1763608170.7276871,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 71.27209597263314
+    },
+    {
+      "timestamp": 1763608170.7277095,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 72.02259928730855
+    },
+    {
+      "timestamp": 1763608170.727731,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 72.77299898745481
+    },
+    {
+      "timestamp": 1763608170.7277524,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 73.52305226541951
+    },
+    {
+      "timestamp": 1763608170.7277763,
+      "type": "interact",
+      "target": "artifact_test",
+      "zone": "FOOD_COURT",
+      "cloud_level": 74.27313129064554
+    }
+  ],
+  "npc_contradiction_log": [],
+  "zones": {
+    "FOOD_COURT": {
+      "zone_id": "FOOD_COURT",
+      "turbulence": 1.470411529892735,
+      "resonance": 100.0,
+      "swarm_bias": {
+        "color_weight": 0.18380144123659187,
+        "clustering": 0.1470411529892735,
+        "speed": 1.0735205764946367,
+        "avoidance": []
+      },
+      "last_player_visit": 1763608170.7277846,
+      "discovery_count": 100
+    },
+    "SERVICE_HALL": {
+      "zone_id": "SERVICE_HALL",
+      "turbulence": 0.4720346154295733,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.059004326928696664,
+        "clustering": 0.047203461542957334,
+        "speed": 1.0236017307714786,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    },
+    "STORE_BORED": {
+      "zone_id": "STORE_BORED",
+      "turbulence": 0.2591734669430895,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.03239668336788619,
+        "clustering": 0.02591734669430895,
+        "speed": 1.0129586733471545,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    },
+    "STORE_HARD_COPY": {
+      "zone_id": "STORE_HARD_COPY",
+      "turbulence": 0.4371358373786847,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.05464197967233559,
+        "clustering": 0.043713583737868475,
+        "speed": 1.0218567918689343,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    },
+    "STORE_MILO_OPTICS": {
+      "zone_id": "STORE_MILO_OPTICS",
+      "turbulence": 0.3666496677021993,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.045831208462774914,
+        "clustering": 0.03666496677021993,
+        "speed": 1.01833248338511,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    },
+    "ANCHOR_STORE": {
+      "zone_id": "ANCHOR_STORE",
+      "turbulence": 0.3666496677021993,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.045831208462774914,
+        "clustering": 0.03666496677021993,
+        "speed": 1.01833248338511,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    },
+    "CORRIDOR": {
+      "zone_id": "CORRIDOR",
+      "turbulence": 0.33105890091316453,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.04138236261414557,
+        "clustering": 0.03310589009131645,
+        "speed": 1.0165529450456583,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    },
+    "ENTRANCE": {
+      "zone_id": "ENTRANCE",
+      "turbulence": 0.3666496677021993,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.045831208462774914,
+        "clustering": 0.03666496677021993,
+        "speed": 1.01833248338511,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    },
+    "KIOSK": {
+      "zone_id": "KIOSK",
+      "turbulence": 0.3666496677021993,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.045831208462774914,
+        "clustering": 0.03666496677021993,
+        "speed": 1.01833248338511,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    },
+    "THEATER": {
+      "zone_id": "THEATER",
+      "turbulence": 0.3666496677021993,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.045831208462774914,
+        "clustering": 0.03666496677021993,
+        "speed": 1.01833248338511,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    },
+    "RAMP": {
+      "zone_id": "RAMP",
+      "turbulence": 0.3666496677021993,
+      "resonance": 0.0,
+      "swarm_bias": {
+        "color_weight": 0.045831208462774914,
+        "clustering": 0.03666496677021993,
+        "speed": 1.01833248338511,
+        "avoidance": []
+      },
+      "last_player_visit": 0.0,
+      "discovery_count": 0
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "character_id": "npc_anchor_template_01",
+  "name": "Character Name",
+  "role": "Janitor | Security | Mall Walker | Store Employee | etc.",
+  "era": "1981_opening | 1985_expansion | 1995_peak | 2005_decline | 2011_closure | V6_reskin",
+  "faction": "mall_staff | anchor_tenant | swarm | observer | glitch_entity",
+  "spine": {
+    "core_memory": [
+      "Defining experience #1 (formative event)",
+      "Defining experience #2 (relationship anchor)",
+      "Defining experience #3 (spatial memory)"
+    ],
+    "contradictions": [
+      "Internal conflict #1 (reality/perception)",
+      "Internal conflict #2 (duty/desire)",
+      "Internal conflict #3 (past/present)"
+    ],
+    "triggers": [
+      "Cloud pressure threshold that activates behavior change",
+      "Specific zone that causes response",
+      "Another NPC that triggers contradiction",
+      "Temporal bleed event (era superposition)"
+    ],
+    "relationships": {
+      "npc_id_01": "avoids | seeks | mirrors | opposes | protects",
+      "npc_id_02": "relationship_type",
+      "zone_fc_arcade": "spatial_relationship (attracted | repelled | bound)"
+    }
+  },
+  "behavior": {
+    "goap_goals": [
+      "Goal 1 (weight: 0.8)",
+      "Goal 2 (weight: 0.5)",
+      "Goal 3 (weight: 0.3)"
+    ],
+    "stealth_awareness": 50,
+    "heat_tolerance": 3,
+    "cloud_pressure_response": {
+      "low_cloud_0_33": "behavior_description",
+      "mid_cloud_34_66": "behavior_description",
+      "high_cloud_67_100": "behavior_description",
+      "bleed_tier_1": "glitch_behavior",
+      "bleed_tier_2": "severe_glitch_behavior"
+    },
+    "zone_preferences": {
+      "preferred_zones": ["zone_code_1", "zone_code_2"],
+      "avoided_zones": ["zone_code_3"],
+      "forbidden_zones": ["zone_code_4 (never enters)"]
+    },
+    "movement_pattern": "patrol | wander | static | reactive | spiral",
+    "interaction_radius": 5.0,
+    "dialogue_triggers": [
+      "Proximity to player",
+      "Cloud pressure spike",
+      "Another NPC enters zone",
+      "Time of day threshold"
+    ]
+  },
+  "visual": {
+    "appearance": "Detailed physical description",
+    "era_appropriate_clothing": "1981: description | 1995: description | 2005: description",
+    "visual_markers": ["Cart", "Uniform", "Tool belt", "Specific accessory"],
+    "posture": "Upright | Slouched | Tense | Relaxed | Shifting",
+    "gait": "Steady | Hesitant | Purposeful | Wandering",
+    "distinctive_features": "Unique identifiers for video generation"
+  },
+  "audio": {
+    "voice_type": "Gruff | Soft | Mechanical | Echoing | Layered",
+    "speech_pattern": "Terse | Rambling | Poetic | Fragmented | Recursive",
+    "ambient_sounds": ["Footsteps on tile", "Cart wheels", "Tool clinking"],
+    "signature_phrase": "Repeated phrase or verbal tic"
+  },
+  "metadata": {
+    "version": "v6",
+    "photo_refs": ["photo_id_or_path_1", "photo_id_or_path_2"],
+    "author": "Stu | Claude | Collaborative",
+    "last_updated": "2025-11-21",
+    "canonical_status": "draft | locked | placeholder",
+    "integration_notes": "Notes for developers/AI systems"
+  }
+}

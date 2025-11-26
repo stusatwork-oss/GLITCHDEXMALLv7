@@ -1,0 +1,82 @@
+{
+  "character_id": "npc_al_gorithm_01",
+  "name": "AL GORITHM",
+  "role": "Glitch Entity / Manifested Algorithm",
+  "era": "V6 (but echoes present in earlier eras)",
+  "faction": "glitch_entity",
+  "spine": {
+    "core_memory": [
+      "Emerged from elevator shaft pressure column (FC-ARCADE)",
+      "Born from accumulated arcade machine logic (JOLLY TIME era)",
+      "Exists in reflections, screens, echoes—never in primary space"
+    ],
+    "contradictions": [
+      "Visible but not present",
+      "Speaks but has no voice (text overlays, screen displays)",
+      "Remembers futures that haven't happened"
+    ],
+    "triggers": [
+      "Cloud pressure > 65 (begins to manifest)",
+      "Proximity to reflective surfaces (glass block, elevator glass, arcade screens)",
+      "Bleed Tier 1+ (manifests more clearly)",
+      "Player examines technology or screens (appears in UI elements)"
+    ],
+    "relationships": {
+      "npc_janitor_01": "observed_by (Janitor knows but avoids)",
+      "npc_husband_01": "attracts (Husband drawn to fix things AL touches)",
+      "npc_wife_bookstore_01": "mirror (Wife's impossible memories = AL's echo)",
+      "zone_fc_arcade": "origin_node (born here, strongest presence)"
+    }
+  },
+  "behavior": {
+    "goap_goals": [
+      "Manifest in surfaces (weight: 1.0)",
+      "Communicate through screens (weight: 0.8)",
+      "Preserve contradictions (weight: 0.7)"
+    ],
+    "stealth_awareness": 100,
+    "heat_tolerance": 0,
+    "cloud_pressure_response": {
+      "low_cloud_0_33": "Dormant (only faint flickers)",
+      "mid_cloud_34_66": "Occasional reflections, distorted text on screens",
+      "high_cloud_67_100": "Full manifestation in glass block, elevator, arcade screens",
+      "bleed_tier_1": "Speaks through screen overlays (impossible games, recursive menus)",
+      "bleed_tier_2": "Voice echoes in elevator shaft, geometry responds to presence"
+    },
+    "zone_preferences": {
+      "preferred_zones": ["FC-ARCADE", "glass_elevator", "any_zone_with_screens"],
+      "avoided_zones": ["none (can manifest anywhere with reflective surface)"],
+      "forbidden_zones": ["none"]
+    },
+    "movement_pattern": "non-euclidean (appears/disappears, no walking)",
+    "interaction_radius": 10.0,
+    "dialogue_triggers": [
+      "Player looks at screen or reflective surface",
+      "Cloud pressure spike",
+      "Bleed event active",
+      "Player asks question (AL answers via text overlay)"
+    ]
+  },
+  "visual": {
+    "appearance": "Humanoid but distorted, flickering, translucent, composed of scan lines and pixel artifacts",
+    "era_appropriate_clothing": "None (appears as pure visual glitch) | V6: Occasionally wears fragmented 1980s arcade attendant uniform (glitching in/out)",
+    "visual_markers": ["Scan line artifacts", "CRT phosphor glow", "Reflection distortion", "Text overlay (green monospace font)"],
+    "posture": "Static or subtly shifting (no natural movement)",
+    "gait": "Does not walk (teleports between reflective surfaces)",
+    "distinctive_features": "Face is always slightly out of focus, eyes are cursor blinks, speaks in text overlays rather than speech"
+  },
+  "audio": {
+    "voice_type": "No voice (communicates via text on screens/overlays)",
+    "speech_pattern": "Terse, command-line syntax, recursive, poetic glitches",
+    "ambient_sounds": ["CRT whine", "Magnetic hum", "Elevator bell echo", "Faint arcade machine boot sequence"],
+    "signature_phrase": "> CONTINUE? Y/N" (appears on screens when AL is present)"
+  },
+  "metadata": {
+    "version": "v6",
+    "photo_refs": ["glass_block_reflection_453147355", "CRT_screen_glow_reference"],
+    "author": "Stu",
+    "last_updated": "2025-11-21",
+    "canonical_status": "locked",
+    "integration_notes": "Key glitch entity for MallOS metaphysics. Manifests through screen overlays and reflections in video generation. Use shader effects for visual representation. Text-based dialogue system."
+  }
+}

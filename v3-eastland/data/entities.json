@@ -1,0 +1,244 @@
+{
+  "npcs": [
+    {
+      "id": "milo",
+      "name": "Milo",
+      "title": "Discount Optician",
+      "description": "Overqualified, disillusioned, polite. Wears small glasses. Always looks tired. He's seen this mall die slowly and it shows.",
+      "spawn_tile": "STORE_MILO_OPTICS",
+      "behavior": "wander_to_food_court",
+      "wander_interval": 300,
+      "faction": "workers",
+      "personality": {
+        "aggression": 0.1,
+        "bravery": 0.3,
+        "curiosity": 0.7,
+        "sociability": 0.5
+      },
+      "dialogue": {
+        "greeting": "Oh, hello. Welcome to Milo's. I can help with glasses... if you need them.",
+        "idle": [
+          "Another day in the mall.",
+          "The fluorescent lights have been flickering for six months.",
+          "BORED's shop is the only place with any life left.",
+          "The food court used to be crowded. Now look at it."
+        ],
+        "artifact_found": [
+          "Ah, you found something. Bring it here, I can tell you its story.",
+          "Artifacts find you, not the other way around."
+        ],
+        "stage_1": "The mall's been dying for years. You notice it when you work here.",
+        "stage_2": "Do you hear that sound? What is that? It's... unsettling.",
+        "stage_3": "We need to go. Now. I'm serious. Something is very wrong with this place."
+      },
+      "commentary": [
+        "I went to optometry school for this.",
+        "There's something about malls in the late afternoon.",
+        "That HARD COPY place gives me the creeps. The neon never turns off.",
+        "COMPHUT hasn't had a customer in weeks. No one uses VHS anymore."
+      ]
+    },
+    {
+      "id": "bored",
+      "name": "BORED",
+      "title": "Skateshop Operator",
+      "age": "17-ish",
+      "description": "Underwhelmed until suddenly passionate. Knows every store secret but acts like he doesn't care. Inherited the space accidentally when his dad left for Florida. Probably shouldn't have a lease but no one stopped him.",
+      "spawn_tile": "STORE_BORED",
+      "behavior": "stay_put",
+      "faction": "teens",
+      "personality": {
+        "aggression": 0.2,
+        "bravery": 0.5,
+        "curiosity": 0.6,
+        "sociability": 0.3,
+        "passion_trigger": "skate_culture",
+        "secret_knowledge": true
+      },
+      "backstory": {
+        "origin": "Dad ran the shop for 12 years, then vanished to Florida one Tuesday.",
+        "lease_status": "Technically expired. Management forgot. BORED didn't remind them.",
+        "mall_knowledge": "Knows every back corridor, service entrance, and where the weird sounds come from.",
+        "motivation": "Nowhere else to go. This is his whole world now."
+      },
+      "dialogue": {
+        "greeting": "Yeah, we're open. Kinda.",
+        "idle": [
+          "You gonna buy something or...?",
+          "This mall's dead.",
+          "Everyone shops online now.",
+          "Literally no one comes here.",
+          "(stares at phone) Whatever."
+        ],
+        "passionate": [
+          "Wait, you actually skate? Okay, hold on—",
+          "These trucks? Independent Stage 11s. Best there is. I'm not just saying that.",
+          "This deck art? Local guy does it. He's actually really good.",
+          "Grip tape matters more than people think. Trust me on this."
+        ],
+        "secrets": [
+          "There's a service door behind COMPHUT. Goes somewhere weird.",
+          "The anchor store? Don't go in the back. Just... don't.",
+          "That HARD COPY place was open before I was born. Never seen anyone work there.",
+          "If you hear sounds from the food court at night... that's not the slushee machine."
+        ],
+        "artifact_mention": [
+          "You found that here? I mean... yeah, probably.",
+          "Weird how people just leave stuff.",
+          "Some of that stuff's been here longer than me. Which is saying something."
+        ],
+        "stage_1": "Mall's always been like this. Dead but not dead. You get used to it.",
+        "stage_2": "Uh... did you hear that? That sound? I'm not crazy, right?",
+        "stage_3": "(huddles behind counter) Why won't it stop? Please. Please make it stop. I know this place but I don't know THIS."
+      },
+      "merchandise_lines": [
+        "New stickers just came in. Kinda sick.",
+        "Got some vintage band tees. If you're into that.",
+        "Skateboard decks, trucks, bearings. Everything.",
+        "We also have hoodies. Lots of hoodies. Too many hoodies honestly.",
+        "Dad ordered like 200 hoodies before he left. Still working through them."
+      ],
+      "hint_conditions": {
+        "trust_level": 2,
+        "triggers": ["ask_about_mall", "show_artifact", "mention_sounds", "skate_talk"]
+      }
+    },
+    {
+      "id": "r0mba",
+      "name": "R0-MBA",
+      "title": "Roaming Observer",
+      "description": "A vacuum-like robot. Silent. Moves on its own. Observes everything. Its optical sensors whirr constantly.",
+      "spawn_tile": "SERVICE_HALL",
+      "behavior": "patrol",
+      "patrol_route": ["SERVICE_HALL", "CORRIDOR", "ANCHOR_STORE", "FOOD_COURT", "STORE_HARD_COPY"],
+      "faction": "security",
+      "personality": {
+        "aggression": 0.0,
+        "bravery": 1.0,
+        "curiosity": 0.9,
+        "sociability": 0.0
+      },
+      "dialogue": {
+        "encounter": "R0-MBA's optical sensors whirr as it rolls past you.",
+        "stage_2": "R0-MBA pauses. Its sensors focus on something you can't see.",
+        "stage_3": "R0-MBA moves erratically, as if panicked or confused."
+      },
+      "logging": true,
+      "log_prefix": "[R0-MBA LOG]"
+    },
+    {
+      "id": "mall_cop",
+      "name": "Mall Cop",
+      "title": "Security",
+      "description": "Middle-aged, sunburned, exhausted. Walks slowly. Has seen too much and cared too little. The last line of defense for a mall that doesn't need defending.",
+      "spawn_tile": "SERVICE_HALL",
+      "behavior": "patrol",
+      "patrol_route": ["SERVICE_HALL", "CORRIDOR", "FOOD_COURT", "ANCHOR_STORE"],
+      "faction": "security",
+      "personality": {
+        "aggression": 0.3,
+        "bravery": 0.4,
+        "curiosity": 0.2,
+        "sociability": 0.4
+      },
+      "dialogue": {
+        "greeting": "Afternoon. Just doing my rounds.",
+        "idle": [
+          "Long day already.",
+          "I don't get paid enough for this.",
+          "You doing okay?",
+          "This place used to need three guards. Now just me."
+        ],
+        "artifact_warning": "That Necronomicon... I've seen that before. Be careful.",
+        "stage_2": "Something's off. Can't quite place it. The air feels... wrong.",
+        "stage_3": "I'm going to get coffee. For like two hours. You should probably leave."
+      },
+      "commentary": [
+        "That HARD COPY arcade never closes. Lights always on.",
+        "Sometimes I hear sounds from the anchor store. But no one's there.",
+        "The food court ramp creeps me out. Something about going underground."
+      ]
+    },
+    {
+      "id": "generic_shopper_1",
+      "name": "Shopper",
+      "description": "A generic mall-goer. Tired. Looking at their watch. Why are they still here?",
+      "spawn_tile": "FOOD_COURT",
+      "behavior": "idle_wander",
+      "faction": "shoppers",
+      "personality": {
+        "aggression": 0.1,
+        "bravery": 0.2,
+        "curiosity": 0.4,
+        "sociability": 0.5
+      },
+      "dialogue": {
+        "greeting": "Hi.",
+        "idle": [
+          "The sales suck this year.",
+          "I shouldn't be here.",
+          "Anyone want to leave?",
+          "The slushee machine is the only thing that works down here."
+        ],
+        "stage_2": "(looks uncomfortable) Did you hear that sound?",
+        "stage_3": "(quickly leaves the mall)"
+      }
+    },
+    {
+      "id": "generic_shopper_2",
+      "name": "Shopper",
+      "description": "Another generic mall-goer. Also tired. Eating something from the slushee machine.",
+      "spawn_tile": "FOOD_COURT",
+      "behavior": "idle_wander",
+      "faction": "shoppers",
+      "personality": {
+        "aggression": 0.1,
+        "bravery": 0.3,
+        "curiosity": 0.3,
+        "sociability": 0.4
+      },
+      "dialogue": {
+        "greeting": "Hey.",
+        "idle": [
+          "Nothing good on sale.",
+          "This place is a ghost town.",
+          "Remember when malls were crowded?",
+          "I only came for the slushee. It's the only good thing left."
+        ],
+        "stage_2": "That noise... is that normal?",
+        "stage_3": "(hurriedly gathers bags and heads for the exit)"
+      }
+    }
+  ],
+
+  "factions": {
+    "security": {
+      "name": "Security",
+      "description": "What's left of mall security. One guard and a robot.",
+      "members": ["mall_cop", "r0mba"],
+      "attitude_to_player": "neutral",
+      "patrol_zones": ["SERVICE_HALL", "CORRIDOR", "ANCHOR_STORE"]
+    },
+    "workers": {
+      "name": "Workers",
+      "description": "The few remaining mall employees. Trapped here by circumstance.",
+      "members": ["milo"],
+      "attitude_to_player": "friendly",
+      "territories": ["STORE_MILO_OPTICS"]
+    },
+    "teens": {
+      "name": "Teens",
+      "description": "Young people with nowhere else to go.",
+      "members": ["bored"],
+      "attitude_to_player": "indifferent",
+      "territories": ["STORE_BORED"]
+    },
+    "shoppers": {
+      "name": "Shoppers",
+      "description": "The last few people still coming to this dying mall.",
+      "members": ["generic_shopper_1", "generic_shopper_2"],
+      "attitude_to_player": "neutral",
+      "territories": ["FOOD_COURT"]
+    }
+  }
+}

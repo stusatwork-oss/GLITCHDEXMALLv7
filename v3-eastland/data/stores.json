@@ -1,0 +1,268 @@
+{
+  "stores": [
+    {
+      "id": "store_bored",
+      "name": "BORED - Skateshop & Tee Emporium",
+      "location": {"x": 25, "y": 40},
+      "description": "A cramped skateshop run by a kid named BORED. Walls plastered with posters, graffiti, and sticker layers from decades of mall kids. Skate decks lean against the walls. Air smells like grip tape and teenage ennui.",
+      "interior": {
+        "walls": "Band posters, mall graffiti tags, stickerbombed surfaces.",
+        "floor": "Black-painted concrete, smoothed by wear and skateboard wax.",
+        "counter": "Overflowing with tees, hoodie stacks, and unboxed skate parts.",
+        "lighting": "Functional, but moody by accident."
+      },
+      "merchandise": [
+        "Skateboard decks",
+        "Trucks and bearings",
+        "Grip tape",
+        "Hoodies in unreasonably high quantities",
+        "Ironic graphic tees",
+        "Sticker sheets"
+      ],
+      "owner": {
+        "name": "BORED",
+        "age": "17-ish",
+        "personality": "Underwhelmed until suddenly passionate. Knows every store secret but acts like he doesn't care.",
+        "notes": "Inherited the space accidentally when his dad left for Florida. Probably shouldn't have a lease but no one stopped him."
+      },
+      "vibe_flags": [
+        "youth_culture",
+        "minor_chaos",
+        "posters_everywhere",
+        "secret_hint_source",
+        "skate_energy"
+      ],
+      "npcs": ["bored"],
+      "artifacts": ["sticker_sheets", "graffiti_marker", "torn_band_poster"]
+    },
+    {
+      "id": "store_milo_optics",
+      "name": "Milo's Discount Optics",
+      "location": "x=25, y=49",
+      "description": "A small optician shop. Glass displays full of frames. Eye charts on walls. Milo behind the counter, looking overqualified and tired.",
+      "interior": {
+        "walls": "Soft blue. Motivational posters about vision.",
+        "floor": "Polished tile, clinical.",
+        "counter": "Glass, clean. Frames displayed behind.",
+        "lighting": "Harsh fluorescent. Shows every dust particle."
+      },
+      "merchandise": [
+        "Prescription glasses frames",
+        "Sunglasses",
+        "Contact lenses",
+        "Cleaning solutions"
+      ],
+      "npcs": ["milo"],
+      "artifacts": ["sunglasses", "cracked_lens", "eye_chart_fragment"]
+    },
+    {
+      "id": "store_hard_copy",
+      "name": "HARD COPY",
+      "location": "x=65-66, y=48-50",
+      "description": "A dual-space anomaly. Arcade on one side - 80s cabinets glowing neon in the darkness. Through a beaded curtain, a bookstore lit like a head shop. Both sides feel open but eerily abandoned.",
+      "interior": {
+        "arcade_side": {
+          "walls": "Black with neon trim. Cyberpunk aesthetic.",
+          "floor": "Carpet with geometric patterns. Cigarette burns.",
+          "cabinets": "Pac-Man, Galaga, Asteroids, and one working Pong machine.",
+          "lighting": "Neon glow. Pink, blue, purple. AOL dial-up era vibes.",
+          "sound": "Electronic beeps and boops. The Pong cabinet pings softly."
+        },
+        "bookstore_side": {
+          "entrance": "Beaded curtain doorway. Click-clack as you pass through.",
+          "walls": "Deep purple. Tapestries with occult symbols.",
+          "floor": "Worn carpet. Incense ash.",
+          "shelves": "Overstuffed with books. Occult, new age, conspiracy.",
+          "lighting": "Dim lamps. Head-shop aesthetic. Lava lamp in the corner."
+        }
+      },
+      "features": {
+        "playable_pong": true,
+        "beaded_curtain": true
+      },
+      "npcs": [],
+      "artifacts": ["arcade_token", "beaded_curtain_strand", "occult_bookmark", "dialup_cd", "pong_paddle_grip"]
+    },
+    {
+      "id": "store_comphut",
+      "name": "COMPHUT",
+      "location": "x=35, y=40-41",
+      "description": "A Blockbuster/RadioShack abomination. Half the store is VHS tapes in plastic cases. The other half is transistors, cables, and obsolete computer parts. Semi-filled shelves. No workers anywhere.",
+      "interior": {
+        "walls": "Yellow and blue corporate colors, faded.",
+        "floor": "Linoleum, scuffed.",
+        "shelves_left": "VHS tapes. Action, comedy, horror. Be Kind Rewind.",
+        "shelves_right": "Cables, adapters, resistors in plastic bins.",
+        "counter": "Cash register from 1987. Dusty.",
+        "lighting": "Fluorescent, some tubes dead."
+      },
+      "merchandise": [
+        "VHS tapes (semi-filled)",
+        "Audio cables",
+        "Dead batteries",
+        "Floppy disks",
+        "Coiled phone cords",
+        "Obsolete adapters"
+      ],
+      "npcs": [],
+      "artifacts": ["vhs_tape", "dead_battery", "floppy_disk", "coiled_phone_cord"]
+    },
+    {
+      "id": "store_wizard_bunker",
+      "name": "Wizard Bunker",
+      "location": "x=35, y=48-49",
+      "description": "Comics and cards shop. All the comics are generic Archie and Jughead ripoff types - same plots, different names. All the cards are for sports like cricket. Just 1-2 of each are examinable. The rest is low-res detritus.",
+      "interior": {
+        "walls": "Posters of generic superheroes you don't recognize.",
+        "floor": "Carpet, stained.",
+        "displays": "Longboxes of comics. Binders of cricket cards.",
+        "counter": "Glass case with 'rare' items. Nothing valuable.",
+        "lighting": "Dim. One bulb flickering."
+      },
+      "examinable_items": [
+        {"type": "comic", "name": "Archfield & Jugster #47", "description": "Two teens get into wacky hijinks at a malt shop."},
+        {"type": "comic", "name": "The Incredible Bulk #12", "description": "A scientist turns into a large green person."},
+        {"type": "card", "name": "Sir Donald Bradman", "description": "Cricket legend. Stats you don't understand."},
+        {"type": "card", "name": "Kumar Ranjitsinhji", "description": "Another cricket legend. More incomprehensible stats."}
+      ],
+      "npcs": [],
+      "artifacts": ["cricket_card", "generic_comic", "dice_bag"]
+    },
+    {
+      "id": "store_out_of_service",
+      "name": "Out-of-Service Merchandise",
+      "location": "x=65, y=40-41",
+      "description": "The irony is not lost on anyone. A store called Out-of-Service Merchandise, selling broken and discontinued items. The meta-humor stopped being funny years ago.",
+      "interior": {
+        "walls": "White, institutional.",
+        "floor": "Tile, cracked.",
+        "shelves": "Display models with DEMO stickers. None work.",
+        "signs": "Everything 50% off! (Still overpriced)",
+        "lighting": "Harsh overhead. No ambiance."
+      },
+      "merchandise": [
+        "Broken calculators",
+        "Expired warranties",
+        "Missing screws",
+        "Discontinued everything"
+      ],
+      "npcs": [],
+      "artifacts": ["broken_calculator", "expired_warranty", "missing_screw"]
+    },
+    {
+      "id": "store_generic_1",
+      "name": "Generic Store (Sign Unreadable)",
+      "location": "x=45, y=40",
+      "description": "A store whose sign has faded completely. Interior mostly empty. Paper covers the windows from inside.",
+      "interior": {
+        "walls": "Faded beige.",
+        "floor": "Linoleum, peeling.",
+        "counter": "Empty.",
+        "lighting": "Half the lights are out."
+      },
+      "npcs": [],
+      "artifacts": ["sunglasses", "arcade_token", "old_receipt"]
+    },
+    {
+      "id": "store_generic_2",
+      "name": "Another Store (Also Unreadable)",
+      "location": "x=45, y=49",
+      "description": "Shelves mostly empty. Whatever this was, it's been gutted. Dust outlines where merchandise used to be.",
+      "interior": {
+        "walls": "Beige.",
+        "floor": "Tile, scuffed.",
+        "counter": "Also empty.",
+        "lighting": "Fluorescent, humming."
+      },
+      "npcs": [],
+      "artifacts": ["arcade_token", "old_receipt"]
+    },
+    {
+      "id": "anchor_store",
+      "name": "The Anchor Store (Name Forgotten)",
+      "location": "x=5-7, y=40-50",
+      "description": "A massive, dead department store. Mannequins stand frozen in windows. Most lights are out. Exposed ceiling grid. A lone vending machine hums in the darkness. Echoes carry strangely here. This is where retail comes to die.",
+      "interior": {
+        "walls": "Once-white, now dingy.",
+        "floor": "Polished but scuffed. Tile transitions to carpet.",
+        "ceiling": "Exposed black grid. Infrastructure visible.",
+        "displays": "Empty. Clearance racks with nothing on them.",
+        "lighting": "Mostly dark. Scattered working lights. Vending machine glow.",
+        "atmosphere": "Eerie. Huge empty space. Cold. Your footsteps echo."
+      },
+      "special_features": [
+        "Mini-dungeon layout",
+        "Multiple entrances",
+        "Artifact-rich",
+        "High glitch potential"
+      ],
+      "npcs": [],
+      "artifacts": ["leather_wallet", "gift_card", "film_roll", "escalator_grease", "mannequin_hand", "necronomicon_bookmark"]
+    },
+    {
+      "id": "food_court",
+      "name": "Sunken Food Court",
+      "location": "x=55-65, y=60-62, z=-1",
+      "description": "Accessed by ramp. Metal framework canopies over empty counters. Striped vendor facades. Sticky tables. The slushee machine still works. Pretzel Hut never opened - COMING SOON sign has NOW CLOSED taped over it.",
+      "interior": {
+        "ceiling": "High. You can see the ground floor above.",
+        "floor": "Tile, stained with decades of fast food.",
+        "tables": "Orange plastic. Some still sticky.",
+        "lighting": "Natural from above + dying fluorescent."
+      },
+      "vendors": ["Slush Puppy Paradise", "Wok This Way", "Pizza Planet Express", "Pretzel Hut", "Burger Bunker", "Taco Tiempo"],
+      "seating": 40,
+      "occupied_seats": 2,
+      "npcs": ["generic_shopper_1", "generic_shopper_2"],
+      "artifacts": ["necronomicon_bookmark", "food_tray", "slushee_cup", "pretzel_salt"]
+    },
+    {
+      "id": "theater",
+      "name": "6-Plex Theater",
+      "location": "x=58-62, y=62-67, z=-1",
+      "description": "Underground cinema. Velvet ropes at the entrance. Flickering marquee. Only Screen 1 is fleshed out - rows of seats descending into darkness, sticky floors, faint glow from the screen. Screens 2-6 are dark, unused, waiting.",
+      "interior": {
+        "lobby": "Popcorn smell without popcorn. Movie posters for films you don't recognize.",
+        "screen_1": {
+          "seats": "Red velvet, worn. Sticky armrests.",
+          "screen": "Glows faintly. Nothing playing.",
+          "floor": "Sticky. Don't look down."
+        },
+        "screens_2_6": "Dark. Unused. Open space for future content."
+      },
+      "npcs": [],
+      "artifacts": ["ticket_stub", "popcorn_kernel", "3d_glasses", "lost_earring"]
+    },
+    {
+      "id": "service_hall",
+      "name": "Service Corridor",
+      "location": "x=75, y=40-49",
+      "description": "Back corridors. Utility fixtures. Vents. No customer should be here. But you can go here anyway. STAFF ONLY signs everywhere, but who's enforcing it?",
+      "interior": {
+        "walls": "Beige. Utility fixtures.",
+        "floor": "Concrete.",
+        "lighting": "Harsh. All lights work here (for maintenance).",
+        "sounds": "Vents hum. Pipes rattle. Echoes carry weirdly."
+      },
+      "npcs": ["r0mba", "mall_cop"],
+      "artifacts": ["escalator_grease", "utility_keychain", "work_order"],
+      "toddler_presence_multiplier": 1.5
+    },
+    {
+      "id": "restroom",
+      "name": "Restroom",
+      "location": "x=75, y=49",
+      "description": "The restroom entrance. Door is jammed. You can smell chlorine and something else you don't want to think about.",
+      "accessible": false,
+      "artifacts": []
+    },
+    {
+      "id": "kiosk",
+      "name": "Kiosk",
+      "location": "x=60, y=45",
+      "description": "A lone kiosk in the middle of the corridor. Glass display cases, empty. Used to sell phone accessories. Or sunglasses. Or both.",
+      "npcs": [],
+      "artifacts": ["phone_charm", "gift_card", "screen_protector"]
+    }
+  ]
+}

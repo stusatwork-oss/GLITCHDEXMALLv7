@@ -1,0 +1,130 @@
+{
+  "npcs": [
+    {
+      "id": "milo",
+      "name": "Milo",
+      "title": "Discount Optician",
+      "description": "Overqualified, disillusioned, polite. Wears small glasses. Always looks tired.",
+      "spawn_tile": "STORE_MILO_OPTICS",
+      "behavior": "wander_to_food_court",
+      "wander_interval": 300,
+      "dialogue": {
+        "greeting": "Oh, hello. Welcome to Milo's. I can help with glasses.",
+        "idle": "Another day in the mall.",
+        "artifact_found": [
+          "Ah, you found something. Bring it here, I can tell you its story.",
+          "Artifacts find you, not the other way around."
+        ],
+        "stage_1": "The mall's been dying for years. You notice it when you work here.",
+        "stage_2": "Do you hear that sound? What is that? It's... unsettling.",
+        "stage_3": "We need to go. Now. I'm serious. Something is very wrong with this place."
+      },
+      "commentary": [
+        "The fluorescent lights here have been flickering for six months.",
+        "BORED's shop is the only place with any life left.",
+        "The food court used to be crowded. Now look at it.",
+        "I went to optometry school for this.",
+        "There's something about malls in the late afternoon."
+      ]
+    },
+    {
+      "id": "bored",
+      "name": "BORED",
+      "title": "Skateshop Operator",
+      "description": "A kid, probably 15-16. Apathetic, sarcastic. Always on his phone (or pretending to be).",
+      "spawn_tile": "STORE_BORED",
+      "behavior": "stay_put",
+      "dialogue": {
+        "greeting": "Yeah, we're open. Kinda.",
+        "idle": [
+          "You gonna buy something or...?",
+          "This mall's dead.",
+          "Everyone shops online now.",
+          "Literally no one comes here."
+        ],
+        "artifact_mention": [
+          "You found that here? I mean... yeah, probably.",
+          "Weird how people just leave stuff."
+        ],
+        "stage_2": "Uh... did you hear that? That sound? I'm not crazy, right?",
+        "stage_3": "(huddles behind counter) Why won't it stop? Please. Please make it stop."
+      },
+      "merchandise_lines": [
+        "New stickers just came in. Kinda sick.",
+        "Got some vintage band tees. If you're into that.",
+        "Skateboard decks, trucks, bearings. Everything.",
+        "We also have hoodies. Lots of hoodies.",
+        "T-shirts with ironic graphics. That's our thing."
+      ]
+    },
+    {
+      "id": "r0mba",
+      "name": "R0-MBA",
+      "title": "Roaming Observer",
+      "description": "A vacuum-like robot. Silent. Moves on its own. Observes everything.",
+      "spawn_tile": "SERVICE_HALL",
+      "behavior": "patrol",
+      "patrol_route": ["SERVICE_HALL", "CORRIDOR", "ANCHOR_STORE", "FOOD_COURT"],
+      "dialogue": {
+        "encounter": "R0-MBA's optical sensors whirr as it rolls past you.",
+        "stage_3": "R0-MBA moves erratically, as if panicked or confused."
+      },
+      "logging": true,
+      "log_prefix": "[R0-MBA LOG]"
+    },
+    {
+      "id": "mall_cop",
+      "name": "Mall Cop",
+      "title": "Security",
+      "description": "Middle-aged, sunburned, exhausted. Walks slowly.",
+      "spawn_tile": "SERVICE_HALL",
+      "behavior": "patrol",
+      "patrol_route": ["SERVICE_HALL", "CORRIDOR", "FOOD_COURT"],
+      "dialogue": {
+        "greeting": "Afternoon. Just doing my rounds.",
+        "idle": [
+          "Long day already.",
+          "I don't get paid enough for this.",
+          "You doing okay?"
+        ],
+        "artifact_warning": "That Necronomicon... I've never seen one of those. Unusual.",
+        "stage_2": "Something's off. Can't quite place it.",
+        "stage_3": "I'm going to get coffee. For like two hours. You should probably leave."
+      }
+    },
+    {
+      "id": "generic_shopper_1",
+      "name": "Shopper",
+      "description": "A generic mall-goer. Tired. Looking at their watch.",
+      "spawn_tile": "FOOD_COURT",
+      "behavior": "idle_wander",
+      "dialogue": {
+        "greeting": "Hi.",
+        "idle": [
+          "The sales suck this year.",
+          "I shouldn't be here.",
+          "Anyone want to leave?"
+        ],
+        "stage_2": "(looks uncomfortable) Did you hear that sound?",
+        "stage_3": "(quickly leaves the mall)"
+      }
+    },
+    {
+      "id": "generic_shopper_2",
+      "name": "Shopper",
+      "description": "Another generic mall-goer. Also tired.",
+      "spawn_tile": "FOOD_COURT",
+      "behavior": "idle_wander",
+      "dialogue": {
+        "greeting": "Hey.",
+        "idle": [
+          "Nothing good on sale.",
+          "This place is a ghost town.",
+          "Remember when malls were crowded?"
+        ],
+        "stage_2": "That noise... is that normal?",
+        "stage_3": "(hurriedly gathers bags and heads for the exit)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+Feature_ID,Feature_Type,Photo_ID,Measurement_Type,Pixel_Count,Real_World_Dimension,Calculated_Ratio,Unit,Confidence,Notes,Use_Case
+GBF-001,Glass Block Wall,453127566,Vertical_Blocks,~28,14-16 feet,~56 px/foot,pixels,MEDIUM,"Glass block wall behind fountain. Assuming 6x6 inch blocks, ~28 blocks vertical = 14 feet",Wall height calibration
+GBF-001,Glass Block Wall,453127566,Horizontal_Blocks,~45,22-24 feet,~48 px/foot,pixels,MEDIUM,"Curved glass block wall arc length. Assuming 6x6 inch blocks, ~45 blocks = 22.5 feet",Wall curvature radius
+ESF-001,Escalator Steps,3085976410,Step_Count,12,8 feet,12 steps,steps,HIGH,"12 visible escalator steps descending. Standard 8 inch rise per step = 96 inches = 8 feet total descent",Z-level height (Z0 to Z-1)
+ESF-002,Escalator Steps,3085979988,Step_Count,11-12,8 feet,11-12 steps,steps,MEDIUM,"Similar escalator angle, 11-12 steps visible. Confirms 8 foot pit depth",Z-level height verification
+TMF-001,Truss Mast,453124750,Mast_Height_Visual,~420,35 feet,12 px/foot,pixels,LOW,"Truss mast from base to top. Estimated 35 feet based on typical tensile structure. Low confidence - needs triangulation",Atrium vertical scale
+TMF-001,Truss Mast,453124750,Radial_Cables,~32,N/A,32 cables,count,HIGH,"Count of radial cables emanating from mast top. 32 cables creates geometric subdivision",Roof geometry verification
+TMF-002,Truss Mast,453125654,Radial_Cables,~28-32,N/A,~30 cables,count,MEDIUM,"Cable count from different angle. Confirms ~30-32 radial pattern",Roof geometry verification
+RBF-001,Balcony Railing,453143417,Railing_Height,~45,42 inches,~1.07 px/inch,pixels,MEDIUM,"Standard commercial railing height is 42 inches. Can be used as corridor scale reference",Upper level scaling
+RBF-002,Balcony Railing,3085979988,Railing_Height,~48,42 inches,~1.14 px/inch,pixels,MEDIUM,"Balcony railing at escalator landing. Standard 42 inch height",Landing geometry
+NSF-001,Neon Sign (Food Court),64360891,Sign_Diameter,~180,~6-8 feet,~25 px/foot,pixels,LOW,"FOOD COURT circular neon sign. Estimated diameter 6-8 feet based on typical mall signage",Signage scale reference
+FTF-001,Fountain Tiers,453127566,Tier_Count,4,~6-8 feet,4 tiers,count,HIGH,"Four distinct terraced levels descending. Each tier approximately 18-24 inches",Fountain geometry
+FTF-001,Fountain Tiers,453127566,Tier_Depth,~120,6 feet,~20 px/foot,pixels,MEDIUM,"Total fountain depth from top tier to bottom. Estimated 6 feet total descent",Fountain depth
+CFG-001,Column Grid,3085976410,Column_Spacing,~240,20 feet,~12 px/foot,pixels,LOW,"Spacing between structural columns in food court. Estimated 20 foot grid based on typical mall construction",Grid calibration
+DRF-001,Door Frame,Multiple,Door_Height,Varies,80 inches,Varies,pixels,HIGH,"Standard commercial door height is 80 inches (6'8). Can be used when doors visible in photos",Corridor height scaling
+TRF-001,Tensile Roof,453125654,Roof_Span,~580,80-100 feet,~6-7 px/foot,pixels,VERY_LOW,"Estimated roof span across atrium. Very low confidence without external reference or site plans",Atrium diameter estimation
+
+# CRITICAL SCALE ANCHORS SUMMARY
+#
+# PRIMARY ANCHOR: Escalator Steps (ESF-001, ESF-002)
+# - 12 steps visible in photo 3085976410
+# - Standard rise: 8 inches per step
+# - Total Z-level descent: 96 inches = 8 feet
+# - CONFIDENCE: HIGH
+# - USE: Establishes Z0 to Z-1 vertical dimension
+#
+# SECONDARY ANCHOR: Glass Block Wall (GBF-001)
+# - ~28 blocks vertical, ~45 blocks horizontal (curved arc)
+# - Assumed block size: 6"x6" (standard glass block)
+# - Vertical: 28 blocks × 6" = 14 feet
+# - Horizontal arc: 45 blocks × 6" = 22.5 feet
+# - CONFIDENCE: MEDIUM (assumes 6" blocks, not 8")
+# - USE: Wall height and curvature radius
+#
+# TERTIARY ANCHOR: Balcony Railing (RBF-001, RBF-002)
+# - Standard commercial railing: 42 inches
+# - Visible in multiple photos
+# - CONFIDENCE: MEDIUM (standard code height)
+# - USE: Upper level corridor scaling
+#
+# QUATERNARY ANCHOR: Door Frames (DRF-001)
+# - Standard commercial door: 80 inches (6'8")
+# - CONFIDENCE: HIGH (universal standard)
+# - USE: Corridor height when doors visible
+#
+# GEOMETRIC COUNTS (Non-scalable but structurally important)
+# - Truss mast radial cables: 32 cables (TMF-001)
+# - Fountain tiers: 4 levels (FTF-001)
+# - Escalator step count: 12 steps (ESF-001)
+#
+# MEASUREMENT PRIORITY ORDER FOR MAP CONSTRUCTION:
+# 1. Count escalator steps (HIGH confidence) → Establishes Z-level delta = 8 feet
+# 2. Count glass blocks (MEDIUM confidence) → Establishes wall dimensions
+# 3. Use railing height (MEDIUM confidence) → Establishes corridor scale
+# 4. Use door height (HIGH confidence) → Verify corridor heights
+# 5. Count structural elements (cables, tiers, columns) → Verify geometry
+#
+# LIMITATIONS:
+# - No vending machine visible with measurable dimensions in photo 3085977904
+# - Coca-Cola store shows glass frontage but no clear 39"x72" vending machine reference
+# - Truss mast height is estimated (35 feet) without ground reference
+# - Roof span is very rough estimate without site plans
+# - All pixel counts are approximate due to perspective distortion
+#
+# NEXT STEPS:
+# 1. Use escalator step count (12 steps × 8" = 8 feet) as PRIMARY vertical reference
+# 2. Calculate glass block wall dimensions (28v × 45h blocks at 6" = 14' × 22.5')
+# 3. Cross-reference with standard building code dimensions (doors, railings)
+# 4. Create geometric model using counted elements (32 cables, 4 fountain tiers)
+# 5. Document uncertainty ranges for all estimates

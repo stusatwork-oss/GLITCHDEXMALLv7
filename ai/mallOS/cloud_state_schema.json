@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "description": "MallOS Cloud State Management Schema",
+  "cloud_pressure_system": {
+    "range": {
+      "min": 0,
+      "max": 100,
+      "description": "0 = perfectly normal reality, 100 = maximum entropy/glitch"
+    },
+    "mood_bands": {
+      "low_cloud": {
+        "range": [0, 33],
+        "label": "Tension",
+        "description": "Reality is stable, energetic, optimistic",
+        "visual_characteristics": "Bright lighting, clean surfaces, active NPCs",
+        "audio_characteristics": "Clear sounds, music, conversation, optimistic tone",
+        "npc_behavior": "Purposeful, social, energetic movement",
+        "bleed_probability": 0.0
+      },
+      "mid_cloud": {
+        "range": [34, 66],
+        "label": "Wander",
+        "description": "Nostalgic, ambient, liminal but not threatening",
+        "visual_characteristics": "Soft lighting, worn surfaces, mixed occupancy",
+        "audio_characteristics": "Ambient hum, muffled conversation, echoes",
+        "npc_behavior": "Wandering, pausing, observing, moderate interaction",
+        "bleed_probability": 0.1
+      },
+      "high_cloud": {
+        "range": [67, 100],
+        "label": "Surge",
+        "description": "Abandoned, liminal, entropy manifest, eerie",
+        "visual_characteristics": "Stale lighting, empty spaces, single glowing elements",
+        "audio_characteristics": "HVAC drone, fluorescent buzz, silence, auditory hallucinations",
+        "npc_behavior": "Slow drift, isolated, minimal interaction, echo behavior",
+        "bleed_probability": 0.4
+      }
+    },
+    "bleed_tiers": {
+      "tier_0": {
+        "label": "No Bleed",
+        "description": "Reality stable, no glitches",
+        "visual_effects": "None",
+        "audio_effects": "None",
+        "gameplay_effects": "Normal"
+      },
+      "tier_1": {
+        "label": "Soft Bleed",
+        "description": "Subtle reality distortion, minor glitches",
+        "visual_effects": "Screen flicker, light bloom, subtle geometry shift",
+        "audio_effects": "Audio/visual desync, faint echoes, phantom sounds",
+        "gameplay_effects": "NPCs begin contradictory behavior, navigation anomalies"
+      },
+      "tier_2": {
+        "label": "Moderate Bleed",
+        "description": "Noticeable contradictions, geometry distortion",
+        "visual_effects": "Surfaces shimmer, doors appear/disappear, temporal overlays",
+        "audio_effects": "Layered temporal audio, spatial desync, impossible sounds",
+        "gameplay_effects": "NPCs phase through boundaries, zones shift connections"
+      },
+      "tier_3": {
+        "label": "Severe Bleed",
+        "description": "Reality breakdown, major contradictions",
+        "visual_effects": "Era superposition, recursive geometry, non-euclidean space",
+        "audio_effects": "Complete audio/visual contradiction, time-reversed sounds",
+        "gameplay_effects": "Navigation breaks, NPCs become recursive, player displacement"
+      },
+      "tier_4_plus": {
+        "label": "Cascade Bleed",
+        "description": "Full reality collapse, use sparingly for climactic moments",
+        "visual_effects": "Multiple eras visible simultaneously, mall topology inverts",
+        "audio_effects": "All temporal layers audible at once, echo recursion",
+        "gameplay_effects": "Narrative scripted sequence, not normal gameplay"
+      }
+    }
+  },
+  "pressure_propagation": {
+    "description": "How cloud pressure spreads between zones",
+    "propagation_rate": 0.3,
+    "adjacency_multiplier": 1.0,
+    "vertical_multiplier": 0.5,
+    "isolation_factors": {
+      "glass_block_wall": 0.1,
+      "closed_door": 0.4,
+      "open_corridor": 1.0,
+      "vertical_shaft": 0.6,
+      "note": "Multipliers that reduce propagation rate"
+    },
+    "pressure_venting": {
+      "description": "How zones release accumulated pressure",
+      "natural_vents": ["elevator_shafts", "atriums", "exterior_doors"],
+      "vent_rate": 5.0,
+      "vent_threshold": 80,
+      "note": "When pressure > threshold, venting begins at rate per tick"
+    }
+  },
+  "cloud_prime_nodes": {
+    "description": "Special zones that generate cloud pressure",
+    "nodes": [
+      {
+        "node_id": "CLOUD_PRIME_1",
+        "zone": "FC-ARCADE",
+        "designation": "subterranean_sensory_reactor",
+        "priority": 1,
+        "canonical_term": "The Pit of First Noise",
+        "base_pressure_range": [62, 74],
+        "generation_rate": 2.0,
+        "note": "Primary cloud generator, subsurface geometry causes natural glitch pressure"
+      }
+    ],
+    "node_interactions": {
+      "resonance": "Prime nodes amplify each other when pressure aligns",
+      "cascade_trigger": "If 2+ prime nodes exceed 80 pressure, bleed cascade begins",
+      "stabilization": "Player presence at prime node reduces generation rate by 50%"
+    }
+  },
+  "temporal_modifiers": {
+    "time_of_day": {
+      "description": "Cloud pressure varies by time of day",
+      "morning_06_12": -10,
+      "midday_12_17": -5,
+      "evening_17_21": 0,
+      "night_21_06": +15,
+      "note": "Night has highest pressure (fewer people, less 'life' normalizing space)"
+    },
+    "day_of_week": {
+      "weekday": +5,
+      "saturday": -10,
+      "sunday": -5,
+      "note": "More traffic on weekends = lower pressure"
+    },
+    "seasonal": {
+      "holiday_season_nov_jan": -15,
+      "back_to_school_aug_sep": -10,
+      "summer_jun_aug": -5,
+      "spring_mar_may": 0,
+      "fall_sep_nov": +5,
+      "note": "Holiday shopping season normalizes space significantly"
+    }
+  },
+  "population_effects": {
+    "description": "NPC population density affects cloud pressure",
+    "empty_0_npcs": +20,
+    "sparse_1_5_npcs": +10,
+    "moderate_6_15_npcs": 0,
+    "crowded_16_plus_npcs": -15,
+    "note": "Life normalizes space; empty spaces accumulate pressure"
+  },
+  "contradiction_tracking": {
+    "description": "System for tracking reality contradictions that trigger bleed",
+    "contradiction_types": [
+      {
+        "type": "spatial",
+        "description": "Zone geometry doesn't match memory/photos",
+        "threshold": 3,
+        "effect": "Bleed Tier +1"
+      },
+      {
+        "type": "temporal",
+        "description": "Era-inappropriate objects/NPCs present",
+        "threshold": 2,
+        "effect": "Bleed Tier +1"
+      },
+      {
+        "type": "behavioral",
+        "description": "NPC behavior contradicts spine definition",
+        "threshold": 5,
+        "effect": "Bleed Tier +1"
+      },
+      {
+        "type": "sensory",
+        "description": "Audio/visual mismatch (sound without source)",
+        "threshold": 4,
+        "effect": "Bleed Tier +1"
+      }
+    ],
+    "contradiction_decay": {
+      "rate": 0.1,
+      "note": "Contradictions decay over time if not reinforced"
+    }
+  },
+  "integration_notes": {
+    "simulation_tick_rate": 1.0,
+    "cloud_update_frequency": "Every 5 seconds",
+    "pressure_calculation": "base_pressure + modifiers + prime_node_generation - venting - population_effect",
+    "bleed_tier_calculation": "floor(contradiction_count / threshold) + (pressure > 80 ? 1 : 0)"
+  }
+}

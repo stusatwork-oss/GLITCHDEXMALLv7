@@ -1,0 +1,84 @@
+{
+  "name": "Glitchdex Mall – Ground Floor",
+  "width": 50,
+  "height": 50,
+  "description": "A sparse, xennial shopping mall from the late 80s/early 2000s. Fluorescent lights hum overhead. Escalators creak. The food court echoes.",
+  "default_tile": "VOID",
+  "tiles": [
+    {"x": 0, "y": 24, "z": 0, "type": "ENTRANCE", "description": "The bright mall entrance. Parking lot visible beyond."},
+
+    {"x": 1, "y": 24, "z": 0, "type": "CORRIDOR", "description": "Main mall foyer. You hear distant music."},
+    {"x": 2, "y": 24, "z": 0, "type": "CORRIDOR", "description": "Main corridor heading deeper."},
+    {"x": 3, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 4, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 5, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+
+    {"x": 6, "y": 20, "z": 0, "type": "STORE_BORED", "description": "BORED – Skateshop & Tee Emporium. Posters, graffiti, skateboard decks."},
+    {"x": 6, "y": 21, "z": 0, "type": "CORRIDOR", "description": "Hallway outside BORED."},
+    {"x": 6, "y": 22, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 6, "y": 23, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 6, "y": 24, "z": 0, "type": "CORRIDOR", "description": "Main corridor intersection."},
+    {"x": 6, "y": 25, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 6, "y": 26, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 6, "y": 28, "z": 0, "type": "STORE_MILO_OPTICS", "description": "Milo's Discount Optics. Glass displays, eye charts, Milo behind the counter."},
+
+    {"x": 8, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 10, "y": 24, "z": 0, "type": "FOOD_COURT", "description": "The food court. A handful of tables, a few scattered shoppers. Smells like teriyaki and despair."},
+    {"x": 10, "y": 25, "z": 0, "type": "FOOD_COURT", "description": "More seating. Mostly empty."},
+    {"x": 10, "y": 23, "z": 0, "type": "FOOD_COURT", "description": "Food court area."},
+    {"x": 11, "y": 24, "z": 0, "type": "FOOD_COURT", "description": ""},
+    {"x": 9, "y": 24, "z": 0, "type": "CORRIDOR", "description": "Hallway to food court."},
+
+    {"x": 13, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 15, "y": 24, "z": 0, "type": "ANCHOR_STORE", "description": "The anchor store. Massive, half-empty. Mannequins stand frozen. Lights are out in back."},
+    {"x": 16, "y": 24, "z": 0, "type": "ANCHOR_STORE", "description": "Anchor store interior. Echoes loudly."},
+    {"x": 15, "y": 23, "z": 0, "type": "ANCHOR_STORE", "description": ""},
+    {"x": 15, "y": 25, "z": 0, "type": "ANCHOR_STORE", "description": ""},
+    {"x": 17, "y": 24, "z": 0, "type": "ANCHOR_STORE", "description": ""},
+
+    {"x": 20, "y": 24, "z": 0, "type": "CORRIDOR", "description": "Long corridor. Flickering light."},
+    {"x": 22, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 24, "y": 24, "z": 0, "type": "KIOSK", "description": "A lone kiosk in the middle of the corridor. Sunglasses? Phone accessories? Who knows."},
+    {"x": 26, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 28, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+
+    {"x": 30, "y": 20, "z": 0, "type": "SERVICE_HALL", "description": "Service corridor. Beige walls, utility fixtures. Vents hum here."},
+    {"x": 30, "y": 21, "z": 0, "type": "SERVICE_HALL", "description": ""},
+    {"x": 30, "y": 22, "z": 0, "type": "SERVICE_HALL", "description": ""},
+    {"x": 30, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 30, "y": 25, "z": 0, "type": "SERVICE_HALL", "description": ""},
+    {"x": 30, "y": 26, "z": 0, "type": "SERVICE_HALL", "description": ""},
+    {"x": 30, "y": 27, "z": 0, "type": "SERVICE_HALL", "description": ""},
+
+    {"x": 32, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 34, "y": 24, "z": 0, "type": "RESTROOM", "description": "Restroom entrance. The door is locked, but you can smell chlorine."},
+    {"x": 36, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 38, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 40, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+
+    {"x": 42, "y": 20, "z": 0, "type": "STORE_GENERIC", "description": "A generic store. The sign is too faded to read."},
+    {"x": 42, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 42, "y": 28, "z": 0, "type": "STORE_GENERIC", "description": "Another generic store. Mostly empty shelves."},
+
+    {"x": 44, "y": 24, "z": 0, "type": "CORRIDOR", "description": "Dead end corridor."},
+    {"x": 45, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""},
+    {"x": 46, "y": 24, "z": 0, "type": "CORRIDOR", "description": ""}
+  ],
+  "artifact_pools": {
+    "CORRIDOR": ["sunglasses", "sticker_sheets", "arcade_token", "keychain"],
+    "STORE_BORED": ["sticker_sheets", "graffiti_marker"],
+    "ANCHOR_STORE": ["leather_wallet", "gift_card", "film_roll", "escalator_grease"],
+    "FOOD_COURT": ["necronomicon_bookmark", "food_tray"],
+    "SERVICE_HALL": ["escalator_grease", "utility_keychain"],
+    "KIOSK": ["phone_charm", "gift_card"],
+    "STORE_GENERIC": ["sunglasses", "arcade_token", "old_receipt"]
+  },
+  "npc_spawns": {
+    "milo": {"x": 6, "y": 28, "z": 0, "type": "STORE_MILO_OPTICS", "behavior": "wander_to_food_court"},
+    "bored": {"x": 6, "y": 20, "z": 0, "type": "STORE_BORED", "behavior": "stay_put"},
+    "r0mba": {"x": 30, "y": 21, "z": 0, "type": "SERVICE_HALL", "behavior": "patrol"},
+    "mall_cop": {"x": 30, "y": 24, "z": 0, "type": "SERVICE_HALL", "behavior": "patrol"},
+    "generic_shopper_1": {"x": 10, "y": 25, "z": 0, "type": "FOOD_COURT", "behavior": "idle_wander"},
+    "generic_shopper_2": {"x": 11, "y": 24, "z": 0, "type": "FOOD_COURT", "behavior": "idle_wander"}
+  }
+}

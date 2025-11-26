@@ -1,0 +1,211 @@
+{
+  "zone_id": "ZONE_CODE",
+  "canonical_name": "Zone Display Name",
+  "classification": "retail | entertainment | circulation | anchor | subsurface | utility",
+  "status": "active | abandoned | demolished | transformed",
+  "designation": "standard | cloud_prime_node | glitch_tier_origin | narrative_anchor",
+  "canonical_relevance": 3,
+  "spatial": {
+    "elevation": 0,
+    "area_sqft": 0,
+    "dimensions": {
+      "length_ft": 0,
+      "width_ft": 0,
+      "height_ft": 0,
+      "note": "Reference v5 CRD measurements"
+    },
+    "adjacencies": [
+      "zone_code_1 (adjacent zone)",
+      "zone_code_2 (connected via corridor)",
+      "zone_code_3 (visible from upper level)"
+    ],
+    "sightlines": [
+      "Visible from zone_code_1",
+      "Vertical sightline to zone_code_2",
+      "Obscured from zone_code_3"
+    ],
+    "access_points": [
+      "Entrance from zone_code_1",
+      "Staircase to level Z=-1",
+      "Emergency exit to exterior"
+    ]
+  },
+  "architecture": {
+    "key_features": [
+      "Feature 1 (e.g., glass block wall)",
+      "Feature 2 (e.g., four-story elevator shaft)",
+      "Feature 3 (e.g., acoustic treatment)"
+    ],
+    "materials": [
+      "Primary: concrete, tile, glass block",
+      "Secondary: drywall, carpet, metal fixtures",
+      "Accent: wood paneling, brass railings"
+    ],
+    "signage": {
+      "primary": "Main zone signage description",
+      "wayfinding": ["Directory sign", "Exit sign", "Store marquee"],
+      "era_changes": {
+        "1981": "Original signage",
+        "1995": "Updated signage",
+        "2005": "Worn signage",
+        "2011": "Final state",
+        "V6": "Transformed/preserved"
+      }
+    },
+    "lighting": {
+      "type": "fluorescent | natural | mixed | emergency",
+      "quality": "bright | dim | stale | flickering",
+      "color_temp": "warm | neutral | cool"
+    },
+    "acoustic_properties": {
+      "reverb": "high | medium | low | dampened",
+      "sound_isolation": "open | semi-open | enclosed | sealed",
+      "ambient_noise_level": "quiet | moderate | loud",
+      "note": "Important for echo/bleed behavior"
+    }
+  },
+  "cloud_state": {
+    "base_pressure": {
+      "min": 0,
+      "max": 100,
+      "typical": 50,
+      "note": "Default pressure range for this zone"
+    },
+    "mood_band": "tension | wander | surge | bleed",
+    "bleed_tier": {
+      "baseline": 0,
+      "max": 2,
+      "triggers": [
+        "Cloud pressure > threshold",
+        "Temporal overlap event",
+        "NPC contradiction cascade"
+      ]
+    },
+    "pressure_modifiers": {
+      "time_of_day": {
+        "morning": -5,
+        "midday": 0,
+        "evening": +10,
+        "night": +20,
+        "note": "Pressure adjustments by time"
+      },
+      "population_density": {
+        "empty": +15,
+        "sparse": +5,
+        "moderate": 0,
+        "crowded": -10,
+        "note": "More people = lower pressure (life normalizes space)"
+      },
+      "era": {
+        "1981_opening": -10,
+        "1995_peak": -20,
+        "2005_decline": +10,
+        "2011_closure": +25,
+        "V6_reskin": 0
+      }
+    },
+    "cloud_behavior_rules": [
+      "Rule 1: Specific behavior (e.g., 'Cloud cannot dissipate into main concourse')",
+      "Rule 2: Venting mechanics (e.g., 'Venting occurs vertically via elevator shaft')",
+      "Rule 3: Memory persistence (e.g., 'Echo memories last 2x longer here')",
+      "Rule 4: Pressure propagation (e.g., 'Pressure bleeds into adjacent zones at 0.3x rate')"
+    ]
+  },
+  "metaphysics": {
+    "canonical_term": "The [Poetic Name]",
+    "function": "Description of metaphysical role in MallOS",
+    "contradiction_core": "Core contradiction this zone embodies",
+    "emotional_resonance": "Why this space matters emotionally/narratively",
+    "canon_emergence": "How this zone fits into larger narrative"
+  },
+  "timeline": {
+    "1981_opening": {
+      "status": "TBD",
+      "tenant": "TBD",
+      "cloud_pressure": 0,
+      "notes": ""
+    },
+    "1985_expansion": {
+      "status": "TBD",
+      "tenant": "TBD",
+      "cloud_pressure": 0,
+      "notes": ""
+    },
+    "1995_peak": {
+      "status": "TBD",
+      "tenant": "TBD",
+      "cloud_pressure": 0,
+      "notes": ""
+    },
+    "2005_decline": {
+      "status": "TBD",
+      "tenant": "TBD",
+      "cloud_pressure": 0,
+      "notes": ""
+    },
+    "2011_closure": {
+      "status": "TBD",
+      "tenant": "TBD",
+      "cloud_pressure": 0,
+      "notes": ""
+    },
+    "V6_era": {
+      "status": "TBD",
+      "tenant": "TBD (reskin/transformation)",
+      "cloud_pressure": 0,
+      "notes": ""
+    }
+  },
+  "npc_behavior": {
+    "anchor_npc_reactions": {
+      "npc_id_01": "Behavioral response to this zone",
+      "npc_id_02": "Behavioral response"
+    },
+    "swarm_spawn_weight": 0.5,
+    "prohibited_npcs": ["npc_id that never appears here"],
+    "zone_specific_triggers": [
+      "Trigger 1 (e.g., 'Janitor refuses to cross threshold')",
+      "Trigger 2 (e.g., 'AL GORITHM manifests in reflections')"
+    ]
+  },
+  "photo_evidence": {
+    "primary_source": "photo_id_or_path",
+    "additional_photos": ["photo_2", "photo_3"],
+    "semantic_tags": {
+      "layer_1_zones": ["zones/zone_name/"],
+      "layer_2_semantic": ["semantic/architectural_features/", "semantic/signage/"],
+      "layer_3_narrative": ["narrative/liminal/", "narrative/mood_high_cloud/"]
+    }
+  },
+  "integration": {
+    "sora_prompt_anchors": [
+      "Anchor phrase 1 for video generation",
+      "Anchor phrase 2",
+      "Anchor phrase 3"
+    ],
+    "spynt_references": ["npc_id_1", "npc_id_2"],
+    "crd_references": {
+      "v5_zone_graph": "path_to_zone_definition",
+      "measurement_sheet": "path_to_measurements"
+    }
+  },
+  "metadata": {
+    "version": "v6",
+    "author": "Stu | Claude | Collaborative",
+    "last_updated": "2025-11-21",
+    "canonical_status": "draft | locked | placeholder",
+    "integration_checklist": {
+      "photo_evidence_documented": false,
+      "zone_id_assigned": false,
+      "cloud_prime_node_status": false,
+      "architectural_features_documented": false,
+      "mallOS_integration_defined": false,
+      "cloud_behavior_rules_specified": false,
+      "renderist_metaphysics_explained": false,
+      "spynt_character_behaviors_defined": false,
+      "sora_prompt_templates_written": false,
+      "photo_classification_completed": false,
+      "timeline_documented": false
+    }
+  }
+}

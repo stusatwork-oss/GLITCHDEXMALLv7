@@ -1,0 +1,150 @@
+{
+  "stores": [
+    {
+      "id": "store_bored",
+      "name": "BORED – Skateshop & Tee Emporium",
+      "location": "x=6, y=20",
+      "description": "A tiny skateshop run by a kid named BORED. Posters everywhere. Graffiti art. Skateboard decks lean against walls. Smell of grip tape and teenage ennui.",
+      "interior": {
+        "walls": "Covered in band posters, graffiti, stickers.",
+        "floor": "Black paint, worn smooth. Probably skateboard wax.",
+        "counter": "Covered in merchandise. Hoodie racks. Tee piles.",
+        "lighting": "Normal. Kinda."
+      },
+      "merchandise": [
+        "Skateboard decks",
+        "Trucks and bearings",
+        "Grip tape",
+        "Hoodies (lots of them)",
+        "T-shirts with ironic graphics",
+        "Sticker sheets",
+        "Random band merchandise"
+      ],
+      "npcs": ["bored"],
+      "artifacts": ["sticker_sheets", "graffiti_marker"]
+    },
+    {
+      "id": "store_milo_optics",
+      "name": "Milo's Discount Optics",
+      "location": "x=6, y=28",
+      "description": "A small optician shop. Glass displays full of frames. Eye charts on walls. Milo behind the counter, looking overqualified and tired.",
+      "interior": {
+        "walls": "Soft blue. Motivational posters about vision.",
+        "floor": "Polished tile, clinical.",
+        "counter": "Glass, clean. Frames displayed behind.",
+        "lighting": "Harsh fluorescent. Shows every dust particle."
+      },
+      "merchandise": [
+        "Prescription glasses frames",
+        "Sunglasses",
+        "Contact lenses",
+        "Cleaning solutions",
+        "Vision correction devices"
+      ],
+      "npcs": ["milo"],
+      "artifacts": ["sunglasses"]
+    },
+    {
+      "id": "store_generic_1",
+      "name": "Generic Store (Sign Unreadable)",
+      "location": "x=42, y=20",
+      "description": "A store whose sign has faded completely. Interior is mostly empty. Whatever it sold is gone.",
+      "interior": {
+        "walls": "Faded beige.",
+        "floor": "Linoleum, peeling in corners.",
+        "counter": "Empty.",
+        "lighting": "Half the lights are out."
+      },
+      "merchandise": [
+        "Unknown (formerly unknown)"
+      ],
+      "npcs": [],
+      "artifacts": ["sunglasses", "arcade_token", "old_receipt"]
+    },
+    {
+      "id": "store_generic_2",
+      "name": "Another Store (Also Unreadable)",
+      "location": "x=42, y=28",
+      "description": "Shelves mostly empty. Whatever store this was, it's been gutted.",
+      "interior": {
+        "walls": "Beige.",
+        "floor": "Tile, scuffed.",
+        "counter": "Also empty.",
+        "lighting": "Fluorescent, humming."
+      },
+      "merchandise": [],
+      "npcs": [],
+      "artifacts": ["arcade_token"]
+    },
+    {
+      "id": "anchor_store",
+      "name": "The Anchor Store (Name Forgotten)",
+      "location": "x=15-17, y=23-25",
+      "description": "A massive, half-dead department store. Mannequins stand frozen in the windows. Most lights are out. Echoes loudly. This is where retail comes to die.",
+      "interior": {
+        "walls": "Once-white, now dingy.",
+        "floor": "Polished but scuffed. Different departments visible.",
+        "lighting": "Mostly dark. A few lights on.",
+        "atmosphere": "Eerie. Huge empty space. Echoes. Cold."
+      },
+      "merchandise": [
+        "Clothing (mostly clearance)",
+        "Home goods",
+        "Housewares",
+        "Lingerie (vintage)"
+      ],
+      "npcs": [],
+      "artifacts": ["leather_wallet", "gift_card", "film_roll", "escalator_grease", "necronomicon_bookmark"]
+    },
+    {
+      "id": "food_court",
+      "name": "Food Court",
+      "location": "x=10-11, y=23-25",
+      "description": "The communal eating area. A handful of tables. A few scattered shops (teriyaki, pizza, something unidentifiable). Usually has 1-3 shoppers. Smells like every fast food brand and none of them.",
+      "interior": {
+        "walls": "Glass windows to mall. Orange tile.",
+        "floor": "Tile, stained with food.",
+        "tables": "Orange plastic. Some are still sticky.",
+        "lighting": "Natural from windows + fluorescent."
+      },
+      "shops": [
+        "Generic teriyaki counter",
+        "Generic pizza place",
+        "Generic food stand"
+      ],
+      "seating": 20,
+      "occupied_seats": 2,
+      "npcs": ["generic_shopper_1", "generic_shopper_2"],
+      "artifacts": ["necronomicon_bookmark", "food_tray"]
+    },
+    {
+      "id": "service_hall",
+      "name": "Service Corridor",
+      "location": "x=30, y=20-27",
+      "description": "Back corridors. Utility fixtures. Vents. No customer should be here. But you can go here anyway.",
+      "interior": {
+        "walls": "Beige. Utility fixtures.",
+        "floor": "Concrete.",
+        "lighting": "Harsh. All lights work here (for maintenance).",
+        "sounds": "Vents hum. Pipes rattle. Echoes carry weirdly."
+      },
+      "npcs": ["r0mba", "mall_cop"],
+      "artifacts": ["escalator_grease", "utility_keychain"],
+      "toddler_presence_multiplier": 1.5
+    },
+    {
+      "id": "escalators",
+      "name": "Escalators (Not Implemented)",
+      "description": "Escalators would connect to upper levels. For now, they're just aesthetic.",
+      "disabled": true
+    },
+    {
+      "id": "restroom",
+      "name": "Restroom",
+      "location": "x=34, y=24",
+      "description": "The restroom entrance. Door is locked. You can smell chlorine and something else you don't want to think about.",
+      "accessible": false,
+      "artifacts": []
+    }
+  ]
+}

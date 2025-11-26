@@ -1,0 +1,82 @@
+{
+  "character_id": "npc_janitor_01",
+  "name": "Janitor",
+  "role": "Mall Maintenance Staff",
+  "era": "universal (appears across all eras)",
+  "faction": "mall_staff",
+  "spine": {
+    "core_memory": [
+      "First day cleaning the glass block wall at FC-ARCADE (1985)",
+      "Watched JOLLY TIME arcade close, refused to enter the space",
+      "Maintains boundaries that others cannot see"
+    ],
+    "contradictions": [
+      "Knows every inch of the mall but avoids certain thresholds",
+      "Cleans perpetually but nothing ever gets dirty",
+      "Remembers patrons who haven't visited in decades"
+    ],
+    "triggers": [
+      "Cloud pressure > 70 (becomes more boundary-focused)",
+      "FC-ARCADE zone (refuses to cross glass block threshold)",
+      "AL GORITHM presence (aware but avoids direct interaction)",
+      "Bleed Tier 2+ (begins cleaning things that don't exist)"
+    ],
+    "relationships": {
+      "npc_husband_01": "neutral (acknowledges with nod)",
+      "npc_wife_bookstore_01": "respectful (holds door)",
+      "npc_al_gorithm_01": "aware_avoidant (knows but doesn't look)",
+      "zone_fc_arcade": "boundary_keeper (maintains perimeter, never enters)"
+    }
+  },
+  "behavior": {
+    "goap_goals": [
+      "Maintain cleanliness (weight: 0.9)",
+      "Preserve boundaries (weight: 0.8)",
+      "Observe but don't interfere (weight: 0.6)"
+    ],
+    "stealth_awareness": 85,
+    "heat_tolerance": 5,
+    "cloud_pressure_response": {
+      "low_cloud_0_33": "Efficient, methodical cleaning, hums quietly",
+      "mid_cloud_34_66": "Slower pace, pauses to observe, checks boundaries",
+      "high_cloud_67_100": "Stationary at key thresholds, won't cross certain lines",
+      "bleed_tier_1": "Cleans surfaces that shimmer or phase",
+      "bleed_tier_2": "Mops floors that aren't there, cart wheels silent on tile"
+    },
+    "zone_preferences": {
+      "preferred_zones": ["all_public_spaces", "corridors", "atriums"],
+      "avoided_zones": ["anchor_store_interiors (not his jurisdiction)"],
+      "forbidden_zones": ["FC-ARCADE interior (will not cross glass block threshold)"]
+    },
+    "movement_pattern": "patrol (predictable circuit)",
+    "interaction_radius": 3.0,
+    "dialogue_triggers": [
+      "Player asks for directions",
+      "Cloud pressure spike (mutters about 'pressure changes')",
+      "Another anchor NPC crosses boundary he won't cross",
+      "Late evening (mentions 'closing soon')"
+    ]
+  },
+  "visual": {
+    "appearance": "Middle-aged man, weathered face, calm demeanor, always in motion or precisely still",
+    "era_appropriate_clothing": "1981-2011: Gray uniform, name tag (name illegible), black work boots | V6: Same uniform, slightly more worn",
+    "visual_markers": ["Yellow mop bucket on wheels", "Push broom", "Ring of keys on belt", "Rag in back pocket"],
+    "posture": "Upright, efficient, deliberate",
+    "gait": "Steady, rhythmic, predictable",
+    "distinctive_features": "Never makes eye contact for more than a second, always aware of surroundings, moves like he's following invisible gridlines"
+  },
+  "audio": {
+    "voice_type": "Gruff but not unkind, low volume, economical",
+    "speech_pattern": "Terse, helpful, matter-of-fact",
+    "ambient_sounds": ["Cart wheels on tile (rhythmic squeak)", "Mop slap on floor", "Keys jingling"],
+    "signature_phrase": "Can't go in there." (when referring to FC-ARCADE or other boundary zones)"
+  },
+  "metadata": {
+    "version": "v6",
+    "photo_refs": ["maintenance_staff_reference_1981", "utility_cart_period_accurate"],
+    "author": "Stu",
+    "last_updated": "2025-11-21",
+    "canonical_status": "locked",
+    "integration_notes": "Universal anchor NPC, appears in all eras, key boundary-keeper archetype for MallOS metaphysics. Highest positioning_weight for video generation."
+  }
+}

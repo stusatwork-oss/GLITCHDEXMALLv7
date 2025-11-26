@@ -1,0 +1,130 @@
+{
+  "artifacts": [
+    {
+      "id": "sunglasses",
+      "name": "Sunglasses",
+      "description": "Ray-Ban style sunglasses. Scratched lenses. Still smell faintly of Axe.",
+      "found_location": "Near BORED",
+      "weirdness_level": 1,
+      "milo_lore": "These came from BORED's dressing room, back in 1994. A kid left them there one day and never came back. His parents never reported him missing. Everyone just... moved on. The sunglasses sat on a shelf for seven years before someone swept them into a corner.",
+      "visual_effect": "Colors become slightly oversaturated when carrying"
+    },
+    {
+      "id": "sticker_sheets",
+      "name": "Sticker Sheets",
+      "description": "Holographic rave stickers, neon colors. Circa 1998.",
+      "found_location": "BORED or Corridor",
+      "weirdness_level": 2,
+      "milo_lore": "These are from an illegal rave, 1998. Summer of '98. Everyone who had a sheet like this—didn't matter if they went to the rave—everyone who *had* these stickers moved away within six months. Same month. All of them. I checked. Mailed inquiry forms to all the old addresses. No forwarding.",
+      "visual_effect": "Screen flickers with holographic artifacts"
+    },
+    {
+      "id": "necronomicon_bookmark",
+      "name": "Necronomicon Bookmark",
+      "description": "A leather bookmark, tassel still attached. Worn from use. Held a page in a book with no title.",
+      "found_location": "Anchor Store",
+      "weirdness_level": 3,
+      "milo_lore": "This bookmark came from a book in the anchor store's paperback section. Someone reported the entire book missing—no title recorded, no author recalled. Just... gone. The bookmark was found three months later, fifty feet away, bent in half. Like it had been thrown. I still don't know what book it was.",
+      "visual_effect": "Text on screen becomes occasionally unreadable"
+    },
+    {
+      "id": "arcade_token",
+      "name": "Arcade Token",
+      "description": "Gold token. Stamped with an arcade logo that doesn't exist anymore.",
+      "found_location": "Corridor or Generic Store",
+      "weirdness_level": 1,
+      "milo_lore": "This is from an arcade that hasn't been in this mall for twelve years. I've never seen one before. Not one. It's like the arcade was erased. But this token survived. How does a single token from a place that never existed remain?",
+      "visual_effect": "Screen glitches occasionally to simulated arcade graphics"
+    },
+    {
+      "id": "leather_wallet",
+      "name": "Leather Wallet",
+      "description": "Brown leather, worn smooth. No ID inside. Only receipts.",
+      "found_location": "Anchor Store",
+      "weirdness_level": 2,
+      "milo_lore": "Found this in the anchor store. No identification. Just receipts from 1996. Different stores, all in this mall. Store names I don't recognize. And the dates are all from March 1996. One month of receipts. Then nothing. No owner was ever found.",
+      "visual_effect": "Vision becomes slightly sepia-toned"
+    },
+    {
+      "id": "gift_card",
+      "name": "Gift Card (Dead Brand)",
+      "description": "A faded gift card. Store logo worn away. Says '$50 balance' but the store closed in 2003.",
+      "found_location": "Anchor Store or Kiosk",
+      "weirdness_level": 1,
+      "milo_lore": "Fifty dollars. Never redeemed. From a store that died twenty years ago. Could have been worth something. Now it's just plastic memory.",
+      "visual_effect": "Screen colors desaturate slightly"
+    },
+    {
+      "id": "film_roll",
+      "name": "Film Roll",
+      "description": "35mm film canister. Labels say 1989. The photos inside are mostly blank or overexposed.",
+      "found_location": "Anchor Store",
+      "weirdness_level": 2,
+      "milo_lore": "Developed in 1989 at the photo shop that used to be here. Thirty-six photos. Nothing on any of them. Like the film was never exposed. Or exposed to something that shouldn't be photographed.",
+      "visual_effect": "Random frames display with blown-out exposure"
+    },
+    {
+      "id": "escalator_grease",
+      "name": "Escalator Grease",
+      "description": "A vial of oily residue collected from an escalator step. Rust and synthetic smell.",
+      "found_location": "Service Hall or Anchor Store",
+      "weirdness_level": 2,
+      "milo_lore": "This is from the escalators. Been accumulating since the 80s. Grease from escalator steps collects things—hair, dust, time itself, it seems. I collected this one day. It sits in the shop.",
+      "visual_effect": "Vision becomes smudged/greasy, harder to see clearly"
+    },
+    {
+      "id": "keychain",
+      "name": "Keychain",
+      "description": "A silver keychain. The key attached fits nothing. Purpose unknown.",
+      "found_location": "Corridor",
+      "weirdness_level": 1,
+      "milo_lore": "A key without a lock. I've tried it everywhere. Store doors, old vending machines, the arcade cabinet—which doesn't exist. It fits nothing in the mall. But someone carried it here. Someone thought it was important.",
+      "visual_effect": "Occasional key-shaped visual glitches"
+    },
+    {
+      "id": "food_tray",
+      "name": "Food Court Tray",
+      "description": "A plastic cafeteria tray from the food court. Still has food residue. From 1987.",
+      "found_location": "Food Court",
+      "weirdness_level": 1,
+      "milo_lore": "This tray was found under a table in the food court. Date stamped underneath: 1987. The food has fossilized. No one knows how long it's been there. The smell is indescribable.",
+      "visual_effect": "Slight degradation filter applied to visuals"
+    },
+    {
+      "id": "phone_charm",
+      "name": "Phone Charm",
+      "description": "A tiny plush animal hanging from a phone cord. 1990s style.",
+      "found_location": "Kiosk",
+      "weirdness_level": 1,
+      "milo_lore": "Used to be on someone's Motorola Razr. Or a Nokia brick. Something from the 90s. The cord is still attached. Like it was cut from a phone, not removed.",
+      "visual_effect": "Small visual artifacts appear on screen edges"
+    },
+    {
+      "id": "graffiti_marker",
+      "name": "Graffiti Marker",
+      "description": "A thick-tipped marker, nearly dry. Color: unknown (worn off).",
+      "found_location": "BORED's shop",
+      "weirdness_level": 1,
+      "milo_lore": "From BORED's shop. He uses these to tag merchandise and posters. This one's run dry. But the tip's chewed up, like it was used to write on something harder than paper. Like it was used on walls.",
+      "visual_effect": "Screen gets occasional drawn lines and marks"
+    },
+    {
+      "id": "old_receipt",
+      "name": "Old Receipt",
+      "description": "A paper receipt, faded and crumpled. Text barely readable.",
+      "found_location": "Generic Store",
+      "weirdness_level": 0,
+      "milo_lore": "A receipt from a store that closed in 1997. Total amount: $7.43. Item names are illegible. Paid in cash, apparently. No memory of what was purchased.",
+      "visual_effect": "Text fades and becomes hard to read"
+    },
+    {
+      "id": "utility_keychain",
+      "name": "Utility Keychain",
+      "description": "Brass keychain used by maintenance staff. Opens nothing consumers would recognize.",
+      "found_location": "Service Hall",
+      "weirdness_level": 1,
+      "milo_lore": "This belonged to someone in maintenance. Left behind decades ago. I don't know what it opens. Probably utility closets. Probably things no one should see.",
+      "visual_effect": "Vision zooms in and out unpredictably"
+    }
+  ]
+}

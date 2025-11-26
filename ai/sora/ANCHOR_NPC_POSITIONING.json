@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0",
+  "description": "Canonical anchor NPC positioning rules for video generation",
+  "anchor_npc_count": 13,
+  "positioning_rules": {
+    "three_anchor_composition": {
+      "rule": "Exactly three anchor NPCs per scene (unless specified otherwise)",
+      "blocking": "Triangular formation preferred",
+      "rationale": "Maintains visual clarity, prevents overcrowding, enables character interaction"
+    },
+    "rotation_logic": {
+      "rule": "Rotate anchor NPCs across scenes to show variety",
+      "avoid": "Same three NPCs in consecutive shots",
+      "exception": "Narrative continuity requires specific characters"
+    },
+    "zone_affinity": {
+      "rule": "Certain anchor NPCs have zone preferences",
+      "examples": {
+        "Janitor": "Universal (appears in all zones)",
+        "Wife (Bookstore)": "Prefers FC-ARCADE (HARD COPY), avoids noise zones",
+        "Husband": "Drawn to FC-ARCADE (broken machines)",
+        "AL GORITHM": "Manifests in reflective surfaces (glass block, elevator, screens)"
+      }
+    }
+  },
+  "anchor_npcs": [
+    {
+      "id": "npc_janitor_01",
+      "name": "Janitor",
+      "zone_affinity": "universal",
+      "behavioral_notes": "Avoids thresholds, maintains boundaries, never crosses glass block into FC-ARCADE",
+      "visual_markers": "Cart, mop, uniform",
+      "positioning_weight": 1.0
+    },
+    {
+      "id": "npc_al_gorithm_01",
+      "name": "AL GORITHM",
+      "zone_affinity": "reflective_surfaces",
+      "behavioral_notes": "Appears as flickering reflections, manifests through screens, voice echoes in elevator shaft",
+      "visual_markers": "Distorted reflection, screen overlay, echo presence",
+      "positioning_weight": 0.8
+    },
+    {
+      "id": "npc_husband_01",
+      "name": "Husband",
+      "zone_affinity": "fc_arcade",
+      "behavioral_notes": "Compelled to fix things that aren't broken, drawn to cabinets, tools appear unexplained",
+      "visual_markers": "Toolbelt, focused demeanor, examining objects",
+      "positioning_weight": 0.9
+    },
+    {
+      "id": "npc_wife_bookstore_01",
+      "name": "Wife (Bookstore)",
+      "zone_affinity": "fc_arcade_hard_copy",
+      "behavioral_notes": "Avoids noise zones, remembers arcade layout exactly despite never visiting, knows which books replaced which machines",
+      "visual_markers": "Calm demeanor, observant, spatial memory gestures",
+      "positioning_weight": 0.9
+    },
+    {
+      "id": "npc_placeholder_05",
+      "name": "TBD Anchor #5",
+      "zone_affinity": "tbd",
+      "behavioral_notes": "Placeholder for future anchor NPC definition",
+      "visual_markers": "TBD",
+      "positioning_weight": 0.5
+    },
+    {
+      "id": "npc_placeholder_06",
+      "name": "TBD Anchor #6",
+      "zone_affinity": "tbd",
+      "behavioral_notes": "Placeholder",
+      "visual_markers": "TBD",
+      "positioning_weight": 0.5
+    },
+    {
+      "id": "npc_placeholder_07",
+      "name": "TBD Anchor #7",
+      "zone_affinity": "tbd",
+      "behavioral_notes": "Placeholder",
+      "visual_markers": "TBD",
+      "positioning_weight": 0.5
+    },
+    {
+      "id": "npc_placeholder_08",
+      "name": "TBD Anchor #8",
+      "zone_affinity": "tbd",
+      "behavioral_notes": "Placeholder",
+      "visual_markers": "TBD",
+      "positioning_weight": 0.5
+    },
+    {
+      "id": "npc_placeholder_09",
+      "name": "TBD Anchor #9",
+      "zone_affinity": "tbd",
+      "behavioral_notes": "Placeholder",
+      "visual_markers": "TBD",
+      "positioning_weight": 0.5
+    },
+    {
+      "id": "npc_placeholder_10",
+      "name": "TBD Anchor #10",
+      "zone_affinity": "tbd",
+      "behavioral_notes": "Placeholder",
+      "visual_markers": "TBD",
+      "positioning_weight": 0.5
+    },
+    {
+      "id": "npc_placeholder_11",
+      "name": "TBD Anchor #11",
+      "zone_affinity": "tbd",
+      "behavioral_notes": "Placeholder",
+      "visual_markers": "TBD",
+      "positioning_weight": 0.5
+    },
+    {
+      "id": "npc_placeholder_12",
+      "name": "TBD Anchor #12",
+      "zone_affinity": "tbd",
+      "behavioral_notes": "Placeholder",
+      "visual_markers": "TBD",
+      "positioning_weight": 0.5
+    },
+    {
+      "id": "npc_placeholder_13",
+      "name": "TBD Anchor #13",
+      "zone_affinity": "tbd",
+      "behavioral_notes": "Placeholder",
+      "visual_markers": "TBD",
+      "positioning_weight": 0.5
+    }
+  ],
+  "scene_composition_examples": [
+    {
+      "scene_type": "FC-ARCADE establishing",
+      "anchor_selection": ["npc_janitor_01", "npc_husband_01", "npc_al_gorithm_01"],
+      "blocking": "Janitor at boundary (refuses to cross threshold), Husband examining cabinet, AL flickering in glass block wall",
+      "cloud_state": 62,
+      "rationale": "Shows spatial boundaries, character relationships to space, glitch presence"
+    },
+    {
+      "scene_type": "Memory loop sequence",
+      "anchor_selection": ["npc_wife_bookstore_01", "npc_husband_01", "npc_janitor_01"],
+      "blocking": "Wife at HARD COPY vault (V6 era), overlaid with 1985 arcade memory, Husband in background examining same spot, Janitor maintaining outer perimeter",
+      "cloud_state": 68,
+      "rationale": "Temporal superposition, relationship dynamics, spatial memory"
+    },
+    {
+      "scene_type": "Vertical reveal (elevator + arcade pit)",
+      "anchor_selection": ["npc_al_gorithm_01", "npc_janitor_01", "npc_placeholder_05"],
+      "blocking": "AL manifests in elevator shaft (upper frame), Janitor on main floor (mid frame), TBD character at arcade pit floor (lower frame)",
+      "cloud_state": 74,
+      "rationale": "Emphasizes vertical geometry, three-tier spatial composition"
+    }
+  ],
+  "population_density": {
+    "empty": {
+      "anchor_npc_count": 0,
+      "swarm_npc_count": 0,
+      "use_case": "<<cold-open>>, high cloud (67-100), liminal shots"
+    },
+    "sparse": {
+      "anchor_npc_count": 1,
+      "swarm_npc_count": "0-2",
+      "use_case": "Transitional scenes, mid-high cloud (60-80)"
+    },
+    "moderate": {
+      "anchor_npc_count": 3,
+      "swarm_npc_count": "3-8",
+      "use_case": "Standard scenes, mid cloud (40-70)"
+    },
+    "crowded": {
+      "anchor_npc_count": 3,
+      "swarm_npc_count": "8-15",
+      "use_case": "Peak era (1995), low cloud (20-40), event scenes"
+    }
+  },
+  "integration_notes": {
+    "sora_prompt_compiler": "Use this JSON to auto-select anchor NPCs based on zone and cloud state",
+    "spynt_reference": "Cross-reference character IDs with ai/spynt/ spine definitions",
+    "mallOS_cloud_state": "Cloud pressure (0-100) affects population density"
+  }
+}

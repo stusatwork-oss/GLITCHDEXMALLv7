@@ -1,0 +1,113 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    GLITCHDEX MALL ENGINE                                   ║
+║                   START HERE - QUICK START GUIDE                           ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+WHAT TO DO:
+═══════════
+
+1. Make sure Python 3.8+ is installed (https://www.python.org)
+
+2. Choose your platform:
+
+   WINDOWS:
+   ────────
+   Double-click:  PLAY.bat
+
+   (That's it. It will launch the game.)
+
+
+   MAC / LINUX:
+   ────────────
+   Run in terminal:  bash PLAY.sh
+
+   (That's it. It will launch the game.)
+
+
+3. Enjoy the cursed 1990s shareware CD experience!
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+
+WHAT IS THIS?
+══════════════
+
+A gloriously broken 30KB DOS-era first-person dungeon crawler set in a
+xennial shopping mall.
+
+You came with your mom's credit card. You shouldn't have stayed this long.
+
+Wrapped in an authentic 1990s shareware collection launcher (500 fake
+programs + 1 real: GLITCHDEX MALL at #387).
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+
+REQUIREMENTS
+═════════════
+
+• Python 3.8+ (free, download from https://www.python.org)
+• Nothing else!
+
+No dependencies. No installation. No setup. Just Python and you're good.
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+
+GAME CONTROLS
+══════════════
+
+Navigate the cursed shareware CD:
+  UP/DOWN       - Select program
+  ENTER         - Launch program
+  P/N           - Page navigation
+  Q             - Quit
+
+Select program #387 (GLITCHDEX MALL ✦) to play the real game.
+
+In the game itself:
+  W/UP          - Move forward
+  S/DOWN        - Move backward
+  A/LEFT        - Turn left
+  D/RIGHT       - Turn right
+  E             - Interact (talk to NPCs, pick up items)
+  I             - View inventory
+  Q             - Quit (only at entrance)
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+
+WHAT IF PYTHON ISN'T INSTALLED?
+═════════════════════════════════
+
+Download Python 3.8+ from:  https://www.python.org
+
+Windows users: When installing, CHECK THE BOX "Add Python to PATH"
+
+Then run PLAY.bat again.
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+
+THAT'S IT!
+═══════════
+
+Download or clone this repo.
+Run PLAY.bat (Windows) or bash PLAY.sh (Mac/Linux).
+Explore the mall. Find artifacts. Listen to the crying.
+Get out before you see something you shouldn't.
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+For more information, see README.md or the docs/ folder.
+
+Enjoy. 🔥
+
+═════════════════════════════════════════════════════════════════════════════

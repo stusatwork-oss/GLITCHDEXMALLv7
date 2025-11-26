@@ -1,0 +1,4 @@
+# Eastland Mall V3 - Requirements
+# For graphical mode (pygame raycaster)
+
+pygame>=2.0.0

@@ -1,0 +1,511 @@
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                  GAMEZILLA MEGA COLLECTION VOL. 4                          ║
+║               The Ultimate Shareware & Freeware Compilation                ║
+║                                                                            ║
+║  500 Programs • Your Entertainment Solution for 1998!                       ║
+║  Complete with Games, Utilities, Demos, and MORE!                         ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+PROGRAM LISTING (Programs 1-500)
+
+  1. 3D DEMO LITE                                      
+  2. FREECELL                                          
+  3. TURBO TIMER LITE                                  
+  4. MATRIX LITE                                       
+  5. TEXTVIEW 3.2                                      
+  6. SUPER CONVERTER                                   
+  7. ULTIMATE FLYING LOGO                              
+  8. WINZIP                                            
+  9. PYRAMID LITE                                      
+ 10. CLOCK 2.0                                         
+ 11. ULTIMATE MIXER DELUXE                             
+ 12. PAINT                                             
+ 13. ULTRA TODO                                        
+ 14. CALCULATOR                                        
+ 15. BINGO 1.1                                         
+ 16. POKER                                             
+ 17. TECH DEMO                                         
+ 18. CONVERTER 5.0                                     
+ 19. SUPER SCREENSAVER                                 
+ 20. CHECKER                                           
+ 21. RICHTEXT                                          
+ 22. PAINT 4.5                                         
+ 23. TERMINAL 1.1                                      
+ 24. SOLITAIRE                                         
+ 25. SUPER FLYING TOASTER                              
+ 26. POWER BENCHMARK LITE                              
+ 27. DEMO                                              
+ 28. THUMBNAILER                                       
+ 29. FLYING LOGO                                       
+ 30. ULTIMATE BENCHMARK DELUXE                         
+ 31. 3D DEMO LITE                                      
+ 32. TEXTVIEW 3.2                                      
+ 33. WINAMP 3.2                                        
+ 34. ULTRA MONITOR 1.1                                 
+ 35. LHARC DELUXE                                      
+ 36. WORDPAD                                           
+ 37. LHARC 4.5                                         
+ 38. STARFIELD DELUXE                                  
+ 39. THUMBNAILER LITE                                  
+ 40. MEGA INTRO                                        
+ 41. STUFFIT                                           
+ 42. WAVEFORM 2.0                                      
+ 43. POKER 2.0                                         
+ 44. DIALER                                            
+ 45. RICHTEXT LITE                                     
+ 46. POWER TECH DEMO LITE                              
+ 47. IMAGEVUE 2.0                                      
+ 48. SOLITAIRE                                         
+ 49. BENCHMARK                                         
+ 50. DEFRAG                                            
+ 51. INTRO 1.0                                         
+ 52. DISK DOCTOR                                       
+ 53. MEGA TEXTVIEW                                     
+ 54. VIEWER PRO LITE                                   
+ 55. TERMINAL 3.2                                      
+ 56. UNINSTALL                                         
+ 57. TRANSFER 2.0                                      
+ 58. BENCHMARK 1.1                                     
+ 59. PING 5.0                                          
+ 60. ANALYZER                                          
+ 61. TURBO TECH DEMO                                   
+ 62. TECH DEMO                                         
+ 63. UNINSTALL                                         
+ 64. TETRIS 1.0                                        
+ 65. BINGO                                             
+ 66. ULTIMATE EDITOR PLUS LITE                         
+ 67. CHECKER 4.5                                       
+ 68. EXTREME TERMINAL 1.1                              
+ 69. FLYING TOASTER 5.0                                
+ 70. FREECELL                                          
+ 71. CLOCK                                             
+ 72. DIALER                                            
+ 73. WINZIP 3.2                                        
+ 74. PYRAMID                                           
+ 75. BINGO 1.0                                         
+ 76. SUPER MEDIA PLAYER 5.0                            
+ 77. POWER 3D DEMO 1.0                                 
+ 78. WAVEFORM 1.1                                      
+ 79. NOTEPAD PRO                                       
+ 80. ULTIMATE DISK DOCTOR 5.0                          
+ 81. DIALER 2.0                                        
+ 82. SOLITAIRE                                         
+ 83. TURBO MONITOR PRO                                 
+ 84. DEMO                                              
+ 85. CONVERTER 4.5                                     
+ 86. TURBO DEMO                                        
+ 87. 3D DEMO 5.0                                       
+ 88. FLYING LOGO 2.0                                   
+ 89. CALCULATOR DELUXE                                 
+ 90. ARJSFX                                            
+ 91. SCENE DEMO                                        
+ 92. ARJSFX                                            
+ 93. PAINT 1.0                                         
+ 94. TURBO KLONDIKE 3.2                                
+ 95. ORGANIZER PRO                                     
+ 96. CALCULATOR 1.1                                    
+ 97. TURBO BENCHMARK                                   
+ 98. MEGA CHECKERS 1.1                                 
+ 99. NOTEPAD PRO LITE                                  
+100. CHAOS SCENE DEMO                                  
+101. DEFRAG                                            
+102. DIALER                                            
+103. EXTREME WAVEFORM                                  
+104. VIEWER PRO 2.0                                    
+105. POWER CALCULATOR                                  
+106. MEGA DISK DOCTOR PRO                              
+107. CHECKERS                                          
+108. RICHTEXT                                          
+109. CHAOS PING 1.0                                    
+110. DEMO                                              
+111. MODEM                                             
+112. UNINSTALL                                         
+113. VIEWER PRO                                        
+114. EXTREME NOTEPAD PRO PRO                           
+115. STUFFIT PRO                                       
+116. SOLITAIRE                                         
+117. TRANSFER 2.0                                      
+118. VIEWER PRO                                        
+119. POWER TIMER PRO                                   
+120. ANALYZER                                          
+121. BENCHMARK 3.2                                     
+122. CLOCK 1.0                                         
+123. ULTIMATE CHESS                                    
+124. ULTIMATE TODO                                     
+125. SCENE DEMO 2.0                                    
+126. LHARC 2.0                                         
+127. PKZIP                                             
+128. LHARC                                             
+129. CHAOS DEFRAG                                      
+130. EXTREME ORGANIZER                                 
+131. TIMER                                             
+132. UNINSTALL 3.2                                     
+133. MEGA PAINT                                        
+134. ULTRA BINGO PRO                                   
+135. NOTEPAD PRO 4.5                                   
+136. MEGA FREECELL PRO                                 
+137. EDITOR PLUS 2.0                                   
+138. EXTREME MONITOR 5.0                               
+139. CHAOS CHESS PRO                                   
+140. TECH DEMO DELUXE                                  
+141. CONVERTER LITE                                    
+142. MEGA OPTIMIZER                                    
+143. SUPER CHESS                                       
+144. SUPER BENCHMARK                                   
+145. 3D DEMO 1.1                                       
+146. ULTRA VIEWER PRO                                  
+147. CLOCK LITE                                        
+148. DIALER DELUXE                                     
+149. POWER TRANSFER                                    
+150. EXTREME POKER 4.5                                 
+151. STARFIELD DELUXE                                  
+152. PYRAMID 5.0                                       
+153. THUMBNAILER PRO                                   
+154. TECH DEMO PRO                                     
+155. PKZIP 5.0                                         
+156. EXTREME OPTIMIZER                                 
+157. MONITOR 5.0                                       
+158. ULTIMATE STUFFIT PRO                              
+159. STARFIELD                                         
+160. EXTREME FLYING TOASTER 3.2                        
+161. ULTRA DEMO                                        
+162. CALCULATOR                                        
+163. DISK DOCTOR                                       
+164. EXTREME BENCHMARK                                 
+165. ARJSFX                                            
+166. FLYING TOASTER 5.0                                
+167. DEFRAG                                            
+168. MONITOR 5.0                                       
+169. MEGA DISK DOCTOR                                  
+170. CHAOS SPIDER SOLITAIRE DELUXE                     
+171. MATRIX 2.0                                        
+172. FREECELL 1.1                                      
+173. BINGO                                             
+174. EXTREME WINAMP 4.5                                
+175. INFO                                              
+176. MATRIX                                            
+177. MONITOR                                           
+178. TECH DEMO                                         
+179. EXTREME TIMER                                     
+180. ORGANIZER 2.0                                     
+181. WINZIP 1.0                                        
+182. TRANSFER 1.1                                      
+183. FLYING TOASTER LITE                               
+184. FREECELL 5.0                                      
+185. OPTIMIZER                                         
+186. EXTREME TIMER                                     
+187. DISK DOCTOR 4.5                                   
+188. DEMO                                              
+189. MEGA WAVEFORM                                     
+190. EXTREME BINGO 1.1                                 
+191. ULTRA TEXTVIEW                                    
+192. EDITOR PLUS                                       
+193. EXTREME IMAGEVUE 4.5                              
+194. STUFFIT 1.1                                       
+195. MIXER PRO                                         
+196. 3D DEMO                                           
+197. CHAOS PAINT 3.2                                   
+198. SOLITAIRE 4.5                                     
+199. CACHE CLEANER                                     
+200. SCENE DEMO LITE                                   
+201. PKZIP                                             
+202. CHECKER 3.2                                       
+203. MEDIA PLAYER 1.0                                  
+204. PING 5.0                                          
+205. CHECKER                                           
+206. VIEWER PRO LITE                                   
+207. ORGANIZER DELUXE                                  
+208. MODEM                                             
+209. EXTREME FLYING LOGO                               
+210. FREECELL                                          
+211. CHAOS PYRAMID                                     
+212. CHAOS BENCHMARK 1.0                               
+213. MEGA CACHE CLEANER 5.0                            
+214. TERMINAL                                          
+215. SOLITAIRE DELUXE                                  
+216. CALCULATOR 4.5                                    
+217. SUPER MIXER 5.0                                   
+218. ULTRA STUFFIT                                     
+219. DISK DOCTOR LITE                                  
+220. INFO 1.0                                          
+221. SUPER UNINSTALL 2.0                               
+222. STARFIELD                                         
+223. FLYING LOGO PRO                                   
+224. VIEWER PRO 1.1                                    
+225. CHAOS MATRIX                                      
+226. POKER 3.2                                         
+227. TIMER PRO                                         
+228. CHESS 5.0                                         
+229. FLYING LOGO                                       
+230. TECH DEMO                                         
+231. DEFRAG 1.1                                        
+232. CHECKERS                                          
+233. POWER LHARC                                       
+234. ULTIMATE SCENE DEMO 1.0                           
+235. ARJSFX                                            
+236. MONITOR 1.0                                       
+237. OPTIMIZER                                         
+238. TEXTVIEW                                          
+239. DEFRAG 1.1                                        
+240. INFO 3.2                                          
+241. POWER SCENE DEMO LITE                             
+242. SPIDER SOLITAIRE 4.5                              
+243. UNINSTALL                                         
+244. SOLITAIRE 3.2                                     
+245. TURBO MIXER                                       
+246. CALCULATOR DELUXE                                 
+247. CALCULATOR                                        
+248. ULTRA THUMBNAILER                                 
+249. CHECKERS                                          
+250. FLYING LOGO DELUXE                                
+251. DEFRAG 4.5                                        
+252. UNINSTALL 1.0                                     
+253. MONITOR                                           
+254. TIMER 4.5                                         
+255. FREECELL                                          
+256. DISK DOCTOR 2.0                                   
+257. DEMO                                              
+258. TURBO SCENE DEMO                                  
+259. SOLITAIRE DELUXE                                  
+260. TEXTVIEW                                          
+261. CHAOS CHECKERS PRO                                
+262. LHARC                                             
+263. VIEWER PRO                                        
+264. CONVERTER 1.0                                     
+265. ULTRA NOTEPAD PRO                                 
+266. POKER 5.0                                         
+267. ARJSFX                                            
+268. DEMO PRO                                          
+269. ULTRA INTRO DELUXE                                
+270. LHARC 1.1                                         
+271. MODEM 5.0                                         
+272. UNINSTALL                                         
+273. TRANSFER LITE                                     
+274. SCENE DEMO                                        
+275. CHAOS UNINSTALL 4.5                               
+276. DEMO 5.0                                          
+277. EDITOR PLUS                                       
+278. POKER                                             
+279. MATRIX                                            
+280. PKZIP 4.5                                         
+281. INFO DELUXE                                       
+282. EDITOR PLUS                                       
+283. SOLITAIRE                                         
+284. RICHTEXT 2.0                                      
+285. DEFRAG                                            
+286. STARFIELD 3.2                                     
+287. KLONDIKE                                          
+288. INFO                                              
+289. STUFFIT 1.1                                       
+290. STUFFIT 1.0                                       
+291. TETRIS                                            
+292. INTRO                                             
+293. MODEM 1.1                                         
+294. RICHTEXT                                          
+295. TEXTVIEW                                          
+296. EXTREME CHECKERS 2.0                              
+297. TETRIS                                            
+298. POWER TRANSFER                                    
+299. ORGANIZER                                         
+300. ULTRA PKZIP 4.5                                   
+301. CONVERTER 2.0                                     
+302. CHECKER                                           
+303. MATRIX LITE                                       
+304. WINZIP                                            
+305. UNINSTALL 3.2                                     
+306. RICHTEXT 3.2                                      
+307. MONITOR 4.5                                       
+308. MATRIX 5.0                                        
+309. MEGA MATRIX PRO                                   
+310. ORGANIZER                                         
+311. PAINT                                             
+312. MATRIX                                            
+313. LHARC LITE                                        
+314. TODO 3.2                                          
+315. MEGA MONITOR 3.2                                  
+316. MEGA CHECKERS 5.0                                 
+317. CHAOS VIEWER PRO 3.2                              
+318. TURBO PYRAMID                                     
+319. SUPER PKZIP                                       
+320. CHAOS KLONDIKE LITE                               
+321. CONVERTER 2.0                                     
+322. POWER FREECELL                                    
+323. ARJSFX                                            
+324. SOLITAIRE                                         
+325. TEXTVIEW 3.2                                      
+326. MATRIX 3.2                                        
+327. ORGANIZER LITE                                    
+328. STARFIELD                                         
+329. CALCULATOR 1.0                                    
+330. PYRAMID                                           
+331. MEDIA PLAYER                                      
+332. ORGANIZER PRO                                     
+333. TRANSFER 5.0                                      
+334. TURBO DISK DOCTOR 5.0                             
+335. EXTREME STARFIELD                                 
+336. EXTREME TERMINAL                                  
+337. VIEWER PRO DELUXE                                 
+338. ORGANIZER LITE                                    
+339. EXTREME CHESS                                     
+340. ULTRA OPTIMIZER 1.1                               
+341. EXTREME DEFRAG DELUXE                             
+342. ULTRA OPTIMIZER 1.0                               
+343. EXTREME TETRIS                                    
+344. EXTREME WORDPAD                                   
+345. POWER BINGO                                       
+346. UNINSTALL                                         
+347. TURBO BENCHMARK                                   
+348. ULTRA THUMBNAILER PRO                             
+349. PKZIP                                             
+350. CHECKER 3.2                                       
+351. CHAOS VIEWER PRO                                  
+352. TURBO INTRO PRO                                   
+353. RICHTEXT                                          
+354. 3D DEMO 1.1                                       
+355. TURBO KLONDIKE 2.0                                
+356. FREECELL 1.1                                      
+357. IMAGEVUE                                          
+358. SCENE DEMO                                        
+359. PING 4.5                                          
+360. ULTIMATE PYRAMID 1.0                              
+361. TEXTVIEW                                          
+362. MATRIX                                            
+363. PKZIP DELUXE                                      
+364. MEGA ARJSFX PRO                                   
+365. CHECKER                                           
+366. EXTREME TRANSFER                                  
+367. PYRAMID 4.5                                       
+368. PKZIP DELUXE                                      
+369. CHAOS SCENE DEMO 4.5                              
+370. CHAOS CALCULATOR                                  
+371. THUMBNAILER 5.0                                   
+372. NOTEPAD PRO                                       
+373. ULTIMATE INTRO                                    
+374. DISK DOCTOR 1.0                                   
+375. RICHTEXT 4.5                                      
+376. ANALYZER                                          
+377. WINAMP DELUXE                                     
+378. RICHTEXT 1.0                                      
+379. NOTEPAD PRO 1.1                                   
+380. TETRIS 1.0                                        
+381. STUFFIT                                           
+382. SCENE DEMO LITE                                   
+383. ARJSFX                                            
+384. EXTREME OPTIMIZER                                 
+385. EXTREME THUMBNAILER 5.0                           
+386. WINAMP                                            
+387. GLITCHDEX MALL                                     [FEATURE PROGRAM]
+388. BINGO 4.5                                         
+389. ULTRA TRANSFER PRO                                
+390. SCREENSAVER                                       
+391. POWER ANALYZER                                    
+392. BENCHMARK PRO                                     
+393. TEXTVIEW                                          
+394. KLONDIKE                                          
+395. CHESS PRO                                         
+396. EXTREME FLYING TOASTER                            
+397. ULTRA UNINSTALL 4.5                               
+398. WORDPAD                                           
+399. FLYING LOGO 5.0                                   
+400. DIALER                                            
+401. CONVERTER PRO                                     
+402. IMAGEVUE                                          
+403. TIMER                                             
+404. WORDPAD 1.1                                       
+405. TRANSFER 4.5                                      
+406. PING DELUXE                                       
+407. CHESS                                             
+408. WORDPAD                                           
+409. NOTEPAD PRO                                       
+410. TODO                                              
+411. SCENE DEMO LITE                                   
+412. DEFRAG 1.0                                        
+413. CALCULATOR                                        
+414. WINAMP 4.5                                        
+415. LHARC                                             
+416. ULTRA FLYING TOASTER 4.5                          
+417. POWER CHESS                                       
+418. 3D DEMO 1.1                                       
+419. MATRIX                                            
+420. ARJSFX 5.0                                        
+421. POWER WINAMP 5.0                                  
+422. SCREENSAVER                                       
+423. SCENE DEMO                                        
+424. EXTREME WAVEFORM DELUXE                           
+425. BINGO                                             
+426. PKZIP                                             
+427. KLONDIKE                                          
+428. IMAGEVUE                                          
+429. TURBO EDITOR PLUS                                 
+430. 3D DEMO 3.2                                       
+431. TURBO MATRIX                                      
+432. DEFRAG PRO                                        
+433. MEDIA PLAYER 3.2                                  
+434. WINZIP 4.5                                        
+435. PAINT                                             
+436. ANALYZER                                          
+437. STARFIELD 2.0                                     
+438. POWER TODO                                        
+439. ULTIMATE TEXTVIEW                                 
+440. CLOCK                                             
+441. ORGANIZER PRO                                     
+442. ULTIMATE LHARC                                    
+443. CHESS 4.5                                         
+444. TECH DEMO                                         
+445. SCENE DEMO                                        
+446. MODEM                                             
+447. WAVEFORM PRO                                      
+448. CHAOS CLOCK                                       
+449. INFO                                              
+450. RICHTEXT                                          
+451. CLOCK PRO                                         
+452. BINGO 5.0                                         
+453. ULTIMATE SPIDER SOLITAIRE                         
+454. CHAOS CALCULATOR 1.0                              
+455. ULTIMATE TEXTVIEW                                 
+456. TRANSFER LITE                                     
+457. PKZIP                                             
+458. ULTRA VIEWER PRO 4.5                              
+459. DEMO 1.0                                          
+460. MEDIA PLAYER                                      
+461. POWER PKZIP                                       
+462. TIMER DELUXE                                      
+463. MODEM                                             
+464. CONVERTER 5.0                                     
+465. EXTREME RICHTEXT                                  
+466. ULTRA 3D DEMO                                     
+467. DEMO 4.5                                          
+468. KLONDIKE 1.0                                      
+469. POWER EDITOR PLUS 3.2                             
+470. ULTRA TEXTVIEW 2.0                                
+471. DEMO                                              
+472. CLOCK 1.1                                         
+473. OPTIMIZER                                         
+474. TIMER DELUXE                                      
+475. MEGA MODEM                                        
+476. WINAMP 5.0                                        
+477. SUPER ANALYZER                                    
+478. PYRAMID 5.0                                       
+479. MATRIX PRO                                        
+480. WAVEFORM LITE                                     
+481. PKZIP                                             
+482. TRANSFER 4.5                                      
+483. ORGANIZER                                         
+484. TECH DEMO                                         
+485. FREECELL 1.1                                      
+486. TECH DEMO                                         
+487. CALCULATOR                                        
+488. OPTIMIZER PRO                                     
+489. ULTIMATE CHECKER DELUXE                           
+490. TECH DEMO                                         
+491. DIALER                                            
+492. PAINT 1.0                                         
+493. POWER TEXTVIEW PRO                                
+494. CONVERTER                                         
+495. ANALYZER                                          
+496. PAINT 2.0                                         
+497. TIMER                                             
+498. TURBO TEXTVIEW                                    
+499. CHAOS CHECKERS                                    
+500. WAVEFORM                                          

@@ -1,0 +1,301 @@
+{
+  "artifacts": [
+    {
+      "id": "arcade_token",
+      "name": "Arcade Token",
+      "description": "A brass token stamped with 'HARD COPY ARCADE - GOOD FOR ONE PLAY'. The edges are worn smooth.",
+      "lore": "These tokens were never sold. They were given as rewards for high scores. How did you find one?",
+      "location": "STORE_HARD_COPY",
+      "special": true,
+      "hard_copy_artifact": true
+    },
+    {
+      "id": "beaded_curtain_strand",
+      "name": "Beaded Curtain Strand",
+      "description": "A single strand of wooden beads from the curtain between the arcade and bookstore. They click softly when you move.",
+      "lore": "The curtain has been there since the store opened. Some beads are missing. This strand fell on its own.",
+      "location": "STORE_HARD_COPY",
+      "special": true,
+      "hard_copy_artifact": true
+    },
+    {
+      "id": "occult_bookmark",
+      "name": "Occult Bookmark",
+      "description": "A leather bookmark with a symbol you don't recognize. It was marking a page about 'liminal spaces'.",
+      "lore": "The book it was in is gone. Only this remains. The symbol seems to shift when you're not looking directly at it.",
+      "location": "STORE_HARD_COPY",
+      "special": true,
+      "hard_copy_artifact": true
+    },
+    {
+      "id": "dialup_cd",
+      "name": "AOL Trial CD",
+      "description": "An AOL free trial CD. '1000 FREE HOURS!' The plastic is cracked but the disc is pristine.",
+      "lore": "This CD is from 1997. The account it would create still exists. Something is using those free hours.",
+      "location": "STORE_HARD_COPY",
+      "special": true,
+      "hard_copy_artifact": true
+    },
+    {
+      "id": "pong_paddle_grip",
+      "name": "Pong Paddle Grip",
+      "description": "A rubber grip from the Pong cabinet's paddle controller. Worn smooth by thousands of hands.",
+      "lore": "The Pong machine still works. This grip fell off, but the paddle plays better without it. As if it wanted to be free.",
+      "location": "STORE_HARD_COPY",
+      "special": true,
+      "hard_copy_artifact": true
+    },
+    {
+      "id": "sunglasses",
+      "name": "Cheap Sunglasses",
+      "description": "Knockoff Ray-Bans with scratched lenses. One arm is loose.",
+      "lore": "Everyone had a pair like this in the 90s. This pair outlasted its owner's interest.",
+      "location": "CORRIDOR"
+    },
+    {
+      "id": "sticker_sheets",
+      "name": "Sticker Sheets",
+      "description": "Sheets of band stickers. Some are peeled, some pristine. Bands you've never heard of.",
+      "lore": "BORED says these are 'vintage'. They're from 2003.",
+      "location": "STORE_BORED"
+    },
+    {
+      "id": "graffiti_marker",
+      "name": "Graffiti Marker",
+      "description": "A fat marker with silver ink. Almost empty.",
+      "lore": "Half the tags in the mall were made with this marker. The other half with its twin, which is lost.",
+      "location": "STORE_BORED"
+    },
+    {
+      "id": "torn_band_poster",
+      "name": "Torn Band Poster",
+      "description": "Half a poster for a band called 'STATIC VOID'. Tour dates from 1999.",
+      "lore": "They never made it big. The bassist works at COMPHUT now. Or did.",
+      "location": "STORE_BORED"
+    },
+    {
+      "id": "keychain",
+      "name": "Mall Keychain",
+      "description": "A keychain with 'EASTLAND MALL' in faded letters. No keys attached.",
+      "lore": "Given out during the grand opening. That was decades ago. The mall remembers.",
+      "location": "CORRIDOR"
+    },
+    {
+      "id": "dead_watch_battery",
+      "name": "Dead Watch Battery",
+      "description": "A tiny silver disc. Completely drained.",
+      "lore": "Time stopped for someone here. The battery kept going until it couldn't.",
+      "location": "CORRIDOR"
+    },
+    {
+      "id": "cracked_lens",
+      "name": "Cracked Lens",
+      "description": "A prescription lens with a hairline crack. Someone's world is blurry now.",
+      "lore": "Milo remembers this customer. They never came back for the repair.",
+      "location": "STORE_MILO_OPTICS"
+    },
+    {
+      "id": "eye_chart_fragment",
+      "name": "Eye Chart Fragment",
+      "description": "A torn piece of an eye chart. Just the bottom lines. The letters no one can read.",
+      "lore": "E F P T O Z... the letters spell something if you arrange them right.",
+      "location": "STORE_MILO_OPTICS"
+    },
+    {
+      "id": "vhs_tape",
+      "name": "Unlabeled VHS Tape",
+      "description": "A VHS tape with no label. The case is cracked.",
+      "lore": "Someone recorded over the original content. What's on here now is... unclear.",
+      "location": "STORE_COMPHUT"
+    },
+    {
+      "id": "dead_battery",
+      "name": "Dead AA Battery",
+      "description": "A corroded battery. Leaked acid.",
+      "lore": "From a Walkman that stopped working in 1994. The music ended.",
+      "location": "STORE_COMPHUT"
+    },
+    {
+      "id": "floppy_disk",
+      "name": "Floppy Disk",
+      "description": "A 3.5\" floppy disk. Label says 'IMPORTANT - DO NOT DELETE'.",
+      "lore": "1.44 MB of something crucial. Or something someone thought was crucial. No way to know now.",
+      "location": "STORE_COMPHUT"
+    },
+    {
+      "id": "coiled_phone_cord",
+      "name": "Coiled Phone Cord",
+      "description": "A beige coiled phone cord. Stretched out and kinked.",
+      "lore": "Connected to dial-up internet once. The sounds it carried... modems screaming into the void.",
+      "location": "STORE_COMPHUT"
+    },
+    {
+      "id": "cricket_card",
+      "name": "Cricket Trading Card",
+      "description": "A card featuring a cricket player mid-swing. Stats on the back you don't understand.",
+      "lore": "Worth nothing here. Worth something somewhere. Geography is value.",
+      "location": "STORE_WIZARD_BUNKER"
+    },
+    {
+      "id": "generic_comic",
+      "name": "Generic Comic Book",
+      "description": "A comic about a hero called 'The Adequate Avenger'. Issue #1. Never a #2.",
+      "lore": "The publisher went bankrupt. Only 500 copies exist. Still not valuable.",
+      "location": "STORE_WIZARD_BUNKER"
+    },
+    {
+      "id": "dice_bag",
+      "name": "Empty Dice Bag",
+      "description": "A velvet bag that once held gaming dice. The drawstring is broken.",
+      "lore": "Someone's campaign ended here. The dice scattered. Some say they're still rolling.",
+      "location": "STORE_WIZARD_BUNKER"
+    },
+    {
+      "id": "broken_calculator",
+      "name": "Broken Calculator",
+      "description": "A calculator missing the '7' key. Display shows 'ERROR'.",
+      "lore": "From Out-of-Service Merchandise. Sold as-is. Returned anyway. Sold again.",
+      "location": "STORE_OUT_OF_SERVICE"
+    },
+    {
+      "id": "expired_warranty",
+      "name": "Expired Warranty Card",
+      "description": "A warranty card. Expired in 1998. For a product that no longer exists.",
+      "lore": "The warranty was voided the moment it was purchased. That was the business model.",
+      "location": "STORE_OUT_OF_SERVICE"
+    },
+    {
+      "id": "missing_screw",
+      "name": "Missing Screw",
+      "description": "A tiny screw. The one that was always missing from the box.",
+      "lore": "Every product was missing this screw. It was here all along.",
+      "location": "STORE_OUT_OF_SERVICE"
+    },
+    {
+      "id": "leather_wallet",
+      "name": "Leather Wallet",
+      "description": "A men's wallet. Empty except for an expired coupon.",
+      "lore": "Lost in the anchor store. Never claimed. The coupon was for 20% off. It's still expired.",
+      "location": "ANCHOR_STORE"
+    },
+    {
+      "id": "gift_card",
+      "name": "Gift Card",
+      "description": "A mall gift card. $25 balance. The magnetic strip is damaged.",
+      "lore": "A gift from someone who didn't know what to get. Now ungettable.",
+      "location": "ANCHOR_STORE"
+    },
+    {
+      "id": "film_roll",
+      "name": "Undeveloped Film Roll",
+      "description": "A roll of 35mm film. Never developed.",
+      "lore": "24 exposures of something. Or nothing. Schrodinger's memories.",
+      "location": "ANCHOR_STORE"
+    },
+    {
+      "id": "escalator_grease",
+      "name": "Escalator Grease",
+      "description": "A small container of industrial grease. For escalator maintenance.",
+      "lore": "The escalators stopped working years ago. This grease was never used. It's still fresh.",
+      "location": "SERVICE_HALL"
+    },
+    {
+      "id": "mannequin_hand",
+      "name": "Mannequin Hand",
+      "description": "A plastic hand, feminine, fingers posed elegantly. Detached from its body.",
+      "lore": "The mannequin it belonged to is still in the anchor store. It's missing this hand. It's been missing it for years.",
+      "location": "ANCHOR_STORE"
+    },
+    {
+      "id": "necronomicon_bookmark",
+      "name": "Necronomicon Bookmark",
+      "description": "A bookmark from a book that shouldn't exist. The text is in a language you don't recognize.",
+      "lore": "The book was never in the bookstore. But this was. How did it get here?",
+      "location": "FOOD_COURT"
+    },
+    {
+      "id": "food_tray",
+      "name": "Food Court Tray",
+      "description": "A plastic tray with dried ketchup. Orange. Institutional.",
+      "lore": "Thousands of meals were served on this tray. None of them memorable.",
+      "location": "FOOD_COURT"
+    },
+    {
+      "id": "slushee_cup",
+      "name": "Empty Slushee Cup",
+      "description": "A wax paper cup. Blue raspberry stains. The only thing that still works down here.",
+      "lore": "The slushee machine has outlived the mall. It will outlive us all.",
+      "location": "FOOD_COURT"
+    },
+    {
+      "id": "pretzel_salt",
+      "name": "Pretzel Salt Packet",
+      "description": "A tiny packet of pretzel salt. From a place that never opened.",
+      "lore": "Pretzel Hut was COMING SOON for three years. Then NOW CLOSED. The salt remains.",
+      "location": "FOOD_COURT"
+    },
+    {
+      "id": "utility_keychain",
+      "name": "Utility Keychain",
+      "description": "A keychain with a dozen keys. None labeled. All for doors that no longer lock.",
+      "lore": "The janitor who owned this retired. Or disappeared. No one's sure.",
+      "location": "SERVICE_HALL"
+    },
+    {
+      "id": "work_order",
+      "name": "Unfinished Work Order",
+      "description": "A work order for 'strange sounds in anchor store'. Never completed.",
+      "lore": "The maintenance guy heard the sounds. He quit that day. The sounds continue.",
+      "location": "SERVICE_HALL"
+    },
+    {
+      "id": "phone_charm",
+      "name": "Phone Charm",
+      "description": "A tiny plastic charm for a flip phone. A cat with sunglasses.",
+      "lore": "Peak 2004 fashion. The phone it adorned is in a landfill. The charm lives on.",
+      "location": "KIOSK"
+    },
+    {
+      "id": "screen_protector",
+      "name": "Screen Protector",
+      "description": "A screen protector with an air bubble that never came out.",
+      "lore": "Applied wrong. Lived with. Accepted. The human condition.",
+      "location": "KIOSK"
+    },
+    {
+      "id": "old_receipt",
+      "name": "Old Receipt",
+      "description": "A thermal paper receipt. The ink has faded. You can barely make out the total.",
+      "lore": "Someone bought something here once. It mattered at the time.",
+      "location": "STORE_GENERIC"
+    },
+    {
+      "id": "ticket_stub",
+      "name": "Movie Ticket Stub",
+      "description": "A ticket stub for Screen 1. The movie title is torn off.",
+      "lore": "Someone saw something here. They kept the stub. Then lost it.",
+      "location": "THEATER_LOBBY"
+    },
+    {
+      "id": "popcorn_kernel",
+      "name": "Unpopped Kernel",
+      "description": "A single popcorn kernel. Survived the popper. Survived the movie. Survived.",
+      "lore": "The last kernel from the last batch. The popcorn machine is empty now.",
+      "location": "THEATER_LOBBY"
+    },
+    {
+      "id": "3d_glasses",
+      "name": "3D Glasses",
+      "description": "Cheap cardboard 3D glasses. One lens is missing.",
+      "lore": "From a 3D movie that didn't need to be in 3D. None of them did.",
+      "location": "THEATER_LOBBY"
+    },
+    {
+      "id": "lost_earring",
+      "name": "Lost Earring",
+      "description": "A single earring. Cubic zirconia. The other is somewhere in Screen 1.",
+      "lore": "Lost during an emotional scene. Or a makeout session. Or both.",
+      "location": "THEATER_SCREEN_1"
+    }
+  ]
+}

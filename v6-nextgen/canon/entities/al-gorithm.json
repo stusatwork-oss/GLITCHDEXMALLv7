@@ -1,0 +1,36 @@
+{
+  "id": "al-gorithm",
+  "name": "Al Gorithm",
+  "role": "Primary",
+  "type": "npc",
+  "tags": [
+    "store_milo_optics",
+    "contradiction_source",
+    "anomaly",
+    "meta"
+  ],
+  "metrics": {
+    "resonanceScore": 42,
+    "grassrootsSupport": 150,
+    "audienceSize": 3000,
+    "deepViewCount": 180000,
+    "engagementScore": 58,
+    "referenceCount": 420,
+    "trustScore": 25,
+    "backingVolume": 80000,
+    "resourcePool": 1000,
+    "networkReach": 5
+  },
+  "computed": {
+    "power": 864,
+    "charisma": 830,
+    "overall": 1694,
+    "rarity": "Common"
+  },
+  "meta": {
+    "universe": "mallos-v6",
+    "source": "manual",
+    "notes": "Meta-aware NPC. Low trust score (uncanny). High network reach (touches multiple systems). Contradiction source. Name pun (Algorithm). Milo Optics employee who may not be fully real.",
+    "last_updated": "2025-11-22T10:00:00Z"
+  }
+}
