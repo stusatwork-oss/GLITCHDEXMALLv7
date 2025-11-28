@@ -416,6 +416,574 @@
           ]
         }
       }
+    },
+    {
+      "id": "fixer",
+      "name": "The Fixer",
+      "title": "CompHut Technician",
+      "role": "Primary",
+      "description": "CompHut tech who won't admit defeat. Tools dangling, posture always leaning toward a repair.",
+      "home_zone": "STORE_COMPHUT",
+      "allowed_zones": ["STORE_COMPHUT", "CORRIDOR", "SERVICE_HALL"],
+      "forbidden_zones": [],
+      "never_list": [
+        "never_admits_cant_fix",
+        "never_blames_hardware",
+        "never_mentions_service_door"
+      ],
+      "always_rules": [
+        "always_checks_connections",
+        "always_carries_tools",
+        "always_downplays_user_errors"
+      ],
+      "personality": {
+        "aggression": 0.2,
+        "bravery": 0.5,
+        "curiosity": 0.7,
+        "sociability": 0.4
+      },
+      "qbit_scores": {
+        "power": 700,
+        "charisma": 500,
+        "overall": 1200,
+        "notes": "Technical authority and stubborn confidence."
+      },
+      "dialogue_stages": {
+        "calm": {
+          "cloud_range": "0-24",
+          "lines": [
+            "What's the issue?",
+            "Did you try turning it off and on?",
+            "This'll take about an hour.",
+            "Extended warranty covers this."
+          ]
+        },
+        "uneasy": {
+          "cloud_range": "25-49",
+          "lines": [
+            "That's not how that works.",
+            "I've seen this before. I think.",
+            "Just... give me a minute."
+          ]
+        },
+        "strained": {
+          "cloud_range": "50-74",
+          "lines": [
+            "Cables are fine. It has to be you.",
+            "Maybe the back panel... no, that's fine too.",
+            "Who installed this?"
+          ]
+        },
+        "critical": {
+          "cloud_range": "75-100",
+          "lines": [
+            "I can't fix this. I don't think anyone can.",
+            "Some things are just... broken."
+          ]
+        }
+      },
+      "commentary": [
+        "Never admits defeat on repairs.",
+        "Mutters about 'user error' under his breath.",
+        "Avoids mentioning the service door behind CompHut."
+      ]
+    },
+    {
+      "id": "flair",
+      "name": "Flair Warrior",
+      "title": "Greeting Card Worker",
+      "role": "Primary",
+      "description": "Card shop employee overloaded with buttons, keeping a forced smile as she arranges displays.",
+      "home_zone": "STORE_FLAIR",
+      "allowed_zones": ["STORE_FLAIR", "CORRIDOR"],
+      "forbidden_zones": [],
+      "never_list": [
+        "never_stops_smiling",
+        "never_admits_cards_generic",
+        "never_removes_a_button"
+      ],
+      "always_rules": [
+        "always_rearranges_cards",
+        "always_adjusts_buttons",
+        "always_offers_gift_wrap"
+      ],
+      "personality": {
+        "aggression": 0.1,
+        "bravery": 0.4,
+        "curiosity": 0.4,
+        "sociability": 0.8
+      },
+      "qbit_scores": {
+        "power": 300,
+        "charisma": 750,
+        "overall": 1050,
+        "notes": "High charisma from forced charm; limited authority."
+      },
+      "dialogue_stages": {
+        "calm": {
+          "cloud_range": "0-24",
+          "lines": [
+            "Welcome! Looking for something special?",
+            "We have cards for every occasion!",
+            "Would you like this gift wrapped?",
+            "That button? It's from '94. Good year."
+          ]
+        },
+        "uneasy": {
+          "cloud_range": "25-49",
+          "lines": [
+            "Ha! Yes! Everything's fine!",
+            "These need to be... perfect.",
+            "Did you see where I put the...? Never mind!"
+          ]
+        },
+        "strained": {
+          "cloud_range": "50-74",
+          "lines": [
+            "Just a few more adjustments.",
+            "Cards have to be in the exact order.",
+            "(adjusts buttons that aren't crooked)"
+          ]
+        },
+        "critical": {
+          "cloud_range": "75-100",
+          "lines": [
+            "I can't do this anymore.",
+            "(smile drops) ...what was I saying?"
+          ]
+        }
+      },
+      "commentary": [
+        "Buttons jingle before she speaks.",
+        "Never lets the smile slip until the contradiction hits.",
+        "Keeps adjusting perfectly aligned displays."
+      ]
+    },
+    {
+      "id": "barista",
+      "name": "Mermaid Barista",
+      "title": "Coffee Shop Worker",
+      "role": "Primary",
+      "description": "Food court barista juggling orders and the smell drifting up the ramp, gripping a portafilter like a totem.",
+      "home_zone": "FOOD_COURT",
+      "allowed_zones": ["FOOD_COURT", "FC-ARCADE", "CORRIDOR"],
+      "forbidden_zones": [],
+      "never_list": [
+        "never_forgets_order",
+        "never_complains_hours",
+        "never_mentions_ramp_smell"
+      ],
+      "always_rules": [
+        "always_calls_out_orders",
+        "always_carries_portafilter",
+        "always_smells_like_espresso"
+      ],
+      "personality": {
+        "aggression": 0.1,
+        "bravery": 0.5,
+        "curiosity": 0.5,
+        "sociability": 0.7
+      },
+      "qbit_scores": {
+        "power": 250,
+        "charisma": 650,
+        "overall": 900,
+        "notes": "Service charisma with low power."
+      },
+      "dialogue_stages": {
+        "calm": {
+          "cloud_range": "0-24",
+          "lines": [
+            "What can I get started for you?",
+            "Name for the order?",
+            "Room for cream?",
+            "That's a grande, right?"
+          ]
+        },
+        "uneasy": {
+          "cloud_range": "25-49",
+          "lines": [
+            "Order for... someone?",
+            "I already made this. Didn't I?",
+            "The machine's making that noise again."
+          ]
+        },
+        "strained": {
+          "cloud_range": "50-74",
+          "lines": [
+            "I made this twice. I think.",
+            "The smell from the ramp is worse today.",
+            "Did you change your order?"
+          ]
+        },
+        "critical": {
+          "cloud_range": "75-100",
+          "lines": [
+            "What was I... what were you ordering?",
+            "I don't remember making this."
+          ]
+        }
+      },
+      "commentary": [
+        "Makes drinks no one ordered when stressed.",
+        "Keeps wiping the same counter spot.",
+        "Pretends not to smell the ramp decay."
+      ]
+    },
+    {
+      "id": "nurse",
+      "name": "Clinic Nurse",
+      "title": "Medical Clinic RN",
+      "role": "Primary",
+      "description": "Clinic nurse moving briskly through an empty waiting room, refusing to acknowledge the silence.",
+      "home_zone": "CLINIC",
+      "allowed_zones": ["CLINIC", "SERVICE_HALL", "CORRIDOR"],
+      "forbidden_zones": [],
+      "never_list": [
+        "never_sits_down",
+        "never_admits_clinic_empty",
+        "never_discusses_old_files"
+      ],
+      "always_rules": [
+        "always_checks_charts",
+        "always_calls_patients",
+        "always_moves_with_purpose"
+      ],
+      "personality": {
+        "aggression": 0.1,
+        "bravery": 0.6,
+        "curiosity": 0.5,
+        "sociability": 0.5
+      },
+      "qbit_scores": {
+        "power": 800,
+        "charisma": 550,
+        "overall": 1350,
+        "notes": "High authority in clinic context, tempered charisma."
+      },
+      "dialogue_stages": {
+        "calm": {
+          "cloud_range": "0-24",
+          "lines": [
+            "The doctor will be with you shortly.",
+            "Fill this out, please.",
+            "Any allergies?",
+            "We're running a bit behind."
+          ]
+        },
+        "uneasy": {
+          "cloud_range": "25-49",
+          "lines": [
+            "I need to... check something.",
+            "Have we met before?",
+            "The schedule's wrong. Again."
+          ]
+        },
+        "strained": {
+          "cloud_range": "50-74",
+          "lines": [
+            "Vitals look fine. I think.",
+            "Why is the waiting room still empty?",
+            "Just a minute, I need to recount supplies."
+          ]
+        },
+        "critical": {
+          "cloud_range": "75-100",
+          "lines": [
+            "I'm going to sit down. Just for a minute.",
+            "No one's coming. No one's been coming."
+          ]
+        }
+      },
+      "commentary": [
+        "Checks vitals on no one when stressed.",
+        "Walks faster without a destination.",
+        "Only breaks when contradiction forces her to sit."
+      ]
+    },
+    {
+      "id": "sporty",
+      "name": "Sporty's Manager",
+      "title": "Sports Store Manager",
+      "role": "Primary",
+      "description": "Tracksuit-wearing manager hustling overpriced gear, treating the mall like a warm-up lap.",
+      "home_zone": "STORE_SPORTY",
+      "allowed_zones": ["STORE_SPORTY", "CORRIDOR", "FOOD_COURT"],
+      "forbidden_zones": [],
+      "never_list": [
+        "never_admits_gear_useless",
+        "never_stops_moving",
+        "never_mentions_declining_sales"
+      ],
+      "always_rules": [
+        "always_counts_inventory",
+        "always_adjusts_displays",
+        "always_upsells_with_energy"
+      ],
+      "personality": {
+        "aggression": 0.3,
+        "bravery": 0.6,
+        "curiosity": 0.5,
+        "sociability": 0.6
+      },
+      "qbit_scores": {
+        "power": 500,
+        "charisma": 700,
+        "overall": 1200,
+        "notes": "Sales drive gives moderate power and charisma."
+      },
+      "dialogue_stages": {
+        "calm": {
+          "cloud_range": "0-24",
+          "lines": [
+            "Looking to up your game?",
+            "This one's pro-level.",
+            "We're running a special this week.",
+            "Trust me, worth every penny."
+          ]
+        },
+        "uneasy": {
+          "cloud_range": "25-49",
+          "lines": [
+            "This is... this is good stuff.",
+            "Numbers are... they're fine.",
+            "Just need to move some units."
+          ]
+        },
+        "strained": {
+          "cloud_range": "50-74",
+          "lines": [
+            "Inventory count again. Can't hurt.",
+            "Displays should face the other way. Or not.",
+            "Gotta keep the energy up."
+          ]
+        },
+        "critical": {
+          "cloud_range": "75-100",
+          "lines": [
+            "Honestly? It's just plastic.",
+            "None of this matters."
+          ]
+        }
+      },
+      "commentary": [
+        "Counts inventory twice when stressed.",
+        "Upsells with desperate energy.",
+        "Only admits the gear is junk at peak contradiction."
+      ]
+    },
+    {
+      "id": "arcade",
+      "name": "Arcade Guy",
+      "title": "Hard Copy Arcade Attendant",
+      "role": "Primary",
+      "description": "Hard Copy arcade attendant guarding token cups and machines, listening for phantom high scores.",
+      "home_zone": "STORE_HARD_COPY",
+      "allowed_zones": ["STORE_HARD_COPY", "FC-ARCADE", "CORRIDOR"],
+      "forbidden_zones": [],
+      "never_list": [
+        "never_unplugs_machine",
+        "never_admits_scores_fake",
+        "never_leaves_arcade"
+      ],
+      "always_rules": [
+        "always_counts_tokens",
+        "always_watches_high_scores",
+        "always_wipes_cabinets"
+      ],
+      "personality": {
+        "aggression": 0.2,
+        "bravery": 0.4,
+        "curiosity": 0.6,
+        "sociability": 0.4
+      },
+      "qbit_scores": {
+        "power": 400,
+        "charisma": 600,
+        "overall": 1000,
+        "notes": "Holds arcade knowledge; modest authority."
+      },
+      "dialogue_stages": {
+        "calm": {
+          "cloud_range": "0-24",
+          "lines": [
+            "Need tokens?",
+            "High score's been there since '92.",
+            "That one eats quarters. Fair warning.",
+            "Pong machine's in the back."
+          ]
+        },
+        "uneasy": {
+          "cloud_range": "25-49",
+          "lines": [
+            "Machines are acting weird today.",
+            "Did that one just... never mind.",
+            "I keep hearing the win sound. But no one's winning."
+          ]
+        },
+        "strained": {
+          "cloud_range": "50-74",
+          "lines": [
+            "Fed tokens in and nothing happened.",
+            "Screens are humming louder than usual.",
+            "Why are the scores changing on their own?"
+          ]
+        },
+        "critical": {
+          "cloud_range": "75-100",
+          "lines": [
+            "These scores aren't real. They never were.",
+            "(unplugs machine) I'm tired of the noise."
+          ]
+        }
+      },
+      "commentary": [
+        "Feeds tokens into silent machines when nervous.",
+        "Never leaves the arcade section.",
+        "Jingles a plastic token cup when thinking."
+      ]
+    },
+    {
+      "id": "lostandfound",
+      "name": "Lost & Found Clerk",
+      "title": "Mall Services",
+      "role": "Primary",
+      "description": "Mall services clerk hoarding unclaimed items, pockets stuffed with keycards and tags.",
+      "home_zone": "SERVICE_HALL",
+      "allowed_zones": ["SERVICE_HALL", "CORRIDOR"],
+      "forbidden_zones": [],
+      "never_list": [
+        "never_throws_anything_away",
+        "never_admits_items_unclaimed",
+        "never_opens_oldest_boxes"
+      ],
+      "always_rules": [
+        "always_labels_boxes",
+        "always_sorts_items",
+        "always_checks_claims"
+      ],
+      "personality": {
+        "aggression": 0.1,
+        "bravery": 0.3,
+        "curiosity": 0.6,
+        "sociability": 0.4
+      },
+      "qbit_scores": {
+        "power": 450,
+        "charisma": 450,
+        "overall": 900,
+        "notes": "Guardianship of forgotten things; balanced presence."
+      },
+      "dialogue_stages": {
+        "calm": {
+          "cloud_range": "0-24",
+          "lines": [
+            "Looking for something you lost?",
+            "Describe it and I'll check the back.",
+            "This was turned in Tuesday.",
+            "We hold items for 90 days."
+          ]
+        },
+        "uneasy": {
+          "cloud_range": "25-49",
+          "lines": [
+            "This wasn't here yesterday.",
+            "I don't remember logging this.",
+            "Some of these boxes... I don't know."
+          ]
+        },
+        "strained": {
+          "cloud_range": "50-74",
+          "lines": [
+            "Why is there more every time I look?",
+            "Labels keep smudging themselves.",
+            "Was this box always this heavy?"
+          ]
+        },
+        "critical": {
+          "cloud_range": "75-100",
+          "lines": [
+            "This has been here for fifteen years. No one's coming for it.",
+            "(throws item in trash) It's just stuff."
+          ]
+        }
+      },
+      "commentary": [
+        "Never throws anything away—until contradiction hits.",
+        "Keeps labeling boxes that already have labels.",
+        "Oldest boxes are never opened."
+      ]
+    },
+    {
+      "id": "wife-at-bookstore",
+      "name": "Wife (at Bookstore)",
+      "title": "Memory Anchor",
+      "role": "Primary",
+      "description": "Perpetual browser anchored to STORE_BORED's shelves, silent contradiction magnet linked to the janitor.",
+      "home_zone": "STORE_BORED",
+      "allowed_zones": ["STORE_BORED", "CORRIDOR"],
+      "forbidden_zones": ["FC-ARCADE"],
+      "never_list": [
+        "never_crosses_fc_arcade",
+        "never_speaks_about_wife",
+        "never_leaves_browsing_state"
+      ],
+      "always_rules": [
+        "always_holds_a_book",
+        "always_creates_contradiction_field",
+        "always_tracks_janitor_presence"
+      ],
+      "personality": {
+        "aggression": 0.0,
+        "bravery": 0.2,
+        "curiosity": 0.6,
+        "sociability": 0.1
+      },
+      "qbit_scores": {
+        "power": 320,
+        "charisma": 1178,
+        "overall": 1498,
+        "notes": "Based on v7 entity metrics for the Wife anchor."
+      },
+      "dialogue_stages": {
+        "calm": {
+          "cloud_range": "0-24",
+          "lines": [
+            "(silently flips through a book)",
+            "(adjusts stacks without looking at you)",
+            "(glances toward the corridor, then back to the page)"
+          ]
+        },
+        "uneasy": {
+          "cloud_range": "25-49",
+          "lines": [
+            "(pauses mid-page, listening)",
+            "(stiffens when the janitor's cart squeaks nearby)",
+            "(eyes linger on FC-ARCADE entrance, then return to shelves)"
+          ]
+        },
+        "strained": {
+          "cloud_range": "50-74",
+          "lines": [
+            "(places the book down carefully, staring past you)",
+            "(mouth opens as if to speak, then closes)",
+            "(steps away from the shelf but stays within the store)"
+          ]
+        },
+        "critical": {
+          "cloud_range": "75-100",
+          "lines": [
+            "(stands up, eyes locked toward FC-ARCADE)",
+            "(glances toward the sounds of the janitor's bucket)",
+            "(turns a page that isn't there)"
+          ]
+        }
+      },
+      "commentary": [
+        "Primary contradiction magnet tied to the janitor's forbidden zone.",
+        "Exists in perpetual browsing until the contradiction peaks.",
+        "Never crosses into FC-ARCADE despite staring at it."
+      ]
     }
   ],
   "factions": {
