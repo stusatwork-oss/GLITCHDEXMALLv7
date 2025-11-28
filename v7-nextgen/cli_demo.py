@@ -322,6 +322,8 @@ def demo_reset():
 
 
 def main():
+    global BASE_URL
+
     parser = argparse.ArgumentParser(description="V6 Bridge CLI Demo Client")
     parser.add_argument(
         "--url",
@@ -359,7 +361,6 @@ def main():
     args = parser.parse_args()
 
     # Update base URL
-    global BASE_URL
     BASE_URL = args.url
 
     print(f"\n{'='*60}")
