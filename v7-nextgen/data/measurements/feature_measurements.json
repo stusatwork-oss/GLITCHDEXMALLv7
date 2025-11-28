@@ -1,0 +1,214 @@
+{
+  "version": "7.0.0-alpha",
+  "source": "v5-eastland FEATURE_EXTRACTION_TABLE.md + MEASUREMENT_SHEET_V1.csv",
+  "last_updated": "2025-11-28",
+  "note": "Measurable atomic units used as 'rulers' for accurate scaling",
+
+  "glass_blocks": {
+    "id": "GBF-001",
+    "feature_class": "GLASS_BLOCK_FEATURE",
+    "dimensions_inches": {
+      "value": 6,
+      "alternate": 8,
+      "note": "Either 6×6 or 8×8 inch blocks - requires verification"
+    },
+    "wall_height_feet": {
+      "value": 14,
+      "alternate": 18.7,
+      "confidence": "MEDIUM",
+      "note": "28 blocks vertical × 6 inches = 14 feet (or 18.7 feet if 8-inch blocks)",
+      "block_count_vertical": 28,
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 1.2",
+      "photo_refs": ["453127566"]
+    },
+    "wall_arc_length_feet": {
+      "value": 22.5,
+      "confidence": "MEDIUM",
+      "note": "45 blocks horizontal along curved arc × 6 inches = 22.5 feet",
+      "block_count_horizontal": 45,
+      "shape": "Curved semicircular or fan-shaped arc",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 1.3",
+      "photo_refs": ["453127566"]
+    },
+    "color": "Teal/aqua translucent",
+    "location": "Atrium fountain backdrop",
+    "use_case": "Atrium wall radius calculation, grid alignment"
+  },
+
+  "escalator": {
+    "id": "ESF-001",
+    "feature_class": "ESCALATOR_STEP_FEATURE",
+    "step_rise_inches": {
+      "value": 8,
+      "confidence": "HIGH",
+      "note": "Universal code requirement - standard escalator step height",
+      "standard": "International building code"
+    },
+    "step_count_food_court": {
+      "value": 12,
+      "confidence": "HIGH",
+      "note": "Counted in photos - 12 visible steps descending to food court",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 1.1",
+      "photo_refs": ["3085976410", "3085979988"]
+    },
+    "total_descent_feet": {
+      "value": 8,
+      "calculation": "12 steps × 8 inches = 96 inches = 8 feet",
+      "confidence": "HIGH",
+      "note": "Z-LEVEL HEIGHT CALIBRATION anchor"
+    },
+    "escalator_length_feet": {
+      "value": 25,
+      "range_min": 20,
+      "range_max": 30,
+      "confidence": "MEDIUM",
+      "note": "Based on standard escalator angle (30-35 degrees)"
+    },
+    "configuration": "Bidirectional pair (up/down)",
+    "use_case": "Z-level height differential measurement"
+  },
+
+  "fountain": {
+    "id": "FTF-001",
+    "feature_class": "FOUNTAIN_TIER_FEATURE",
+    "tier_count": {
+      "value": 4,
+      "confidence": "HIGH",
+      "note": "Amphitheater-style terraced levels",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 1.4",
+      "photo_refs": ["453127566", "453126954", "453127262", "453127434"]
+    },
+    "tier_height_inches": {
+      "value": 20,
+      "range_min": 18,
+      "range_max": 24,
+      "confidence": "MEDIUM",
+      "note": "Each tier rise estimated from photos"
+    },
+    "total_depth_feet": {
+      "value": 6,
+      "confidence": "HIGH",
+      "note": "Top tier to bottom basin - 4 tiers × ~18-24 inches",
+      "calculation": "4 tiers × 18 inches = 72 inches = 6 feet"
+    },
+    "shape": "Fan semicircular - descending toward center",
+    "status": "Dry (in decline-period photos)",
+    "location": "Atrium center, in front of glass block wall"
+  },
+
+  "vending_machine": {
+    "id": "VMF-001",
+    "feature_class": "VENDING_MACHINE_FEATURE",
+    "type": "Coca-Cola vending machine",
+    "dimensions_inches": {
+      "width": 39,
+      "height": 72,
+      "confidence": "HIGH",
+      "note": "Standard commercial vending machine dimensions"
+    },
+    "location": "Z3 Lower Ring Corridors",
+    "use_case": "GLOBAL SCALE CALIBRATION ANCHOR - primary ruler for corridor width measurements",
+    "significance": "Most reliable scale reference when visible in corridor photos"
+  },
+
+  "exit_sign": {
+    "id": "ESG-001",
+    "feature_class": "EXIT_SIGN_FEATURE",
+    "dimensions_inches": {
+      "width": 10.5,
+      "height": 8.75,
+      "confidence": "HIGH",
+      "note": "Standard exit sign dimensions (universal code)"
+    },
+    "location": "Upper and lower corridors",
+    "use_case": "Corridor scaling when visible in photos"
+  },
+
+  "railing": {
+    "id": "RBF-001",
+    "feature_class": "RAILING_FEATURE",
+    "height_inches": {
+      "value": 42,
+      "confidence": "HIGH",
+      "note": "Commercial building code requirement - 42 inch minimum",
+      "standard": "International building code",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 2.2",
+      "photo_refs": ["453143417", "3085979988"]
+    },
+    "locations": [
+      "Upper level (Z=0) balcony overlooking atrium",
+      "Food court bowl edge",
+      "Escalator landings"
+    ],
+    "material": "Blue/green painted metal",
+    "use_case": "Scaling reference for corridor measurements in photos"
+  },
+
+  "door_frame": {
+    "id": "DRF-001",
+    "feature_class": "DOOR_FRAME_FEATURE",
+    "height_inches": {
+      "value": 80,
+      "confidence": "HIGH",
+      "note": "Standard commercial door height (6 feet 8 inches)",
+      "standard": "Universal building standard",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 2.3"
+    },
+    "locations": [
+      "Store entrances",
+      "Corridor access points"
+    ],
+    "use_case": "Reliable scaling reference when doors visible in photos - allows ceiling height estimation"
+  },
+
+  "ceiling_tile": {
+    "id": "CTF-001",
+    "feature_class": "CEILING_TILE_FEATURE",
+    "dimensions_feet": {
+      "width": 2,
+      "length": 4,
+      "confidence": "HIGH",
+      "note": "Standard 2×4 drop ceiling tile"
+    },
+    "location": "Anchor store interiors",
+    "use_case": "Interior scale measurement for large anchor stores"
+  },
+
+  "neon_sign_food_court": {
+    "id": "NSF-001",
+    "feature_class": "NEON_SIGN_FEATURE",
+    "type": "Circular FOOD COURT sign",
+    "diameter_feet": {
+      "value": 7,
+      "range_min": 6,
+      "range_max": 8,
+      "confidence": "MEDIUM",
+      "note": "Visual estimate from photos"
+    },
+    "design": "Blue neon arc surrounding red text 'FOOD COURT'",
+    "location": "Suspended above food court entrance/overlook",
+    "elevation": "Under tensile roof, visible from upper level",
+    "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 4.3",
+    "photo_refs": ["64360891", "453143417"],
+    "significance": "NEW entity to be added to v7 - landmark for navigation"
+  },
+
+  "column": {
+    "id": "COL-001",
+    "feature_class": "COLUMN_FEATURE",
+    "diameter_inches": {
+      "value": 21,
+      "range_min": 18,
+      "range_max": 24,
+      "confidence": "LOW",
+      "note": "Estimated from photos - typical structural column size"
+    },
+    "spacing_feet": {
+      "value": 20,
+      "confidence": "LOW",
+      "note": "Estimated grid spacing - requires verification"
+    },
+    "pattern": "Radial grid in atrium area",
+    "use_case": "Grid spacing estimation for voxel construction"
+  }
+}

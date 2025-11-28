@@ -1,7 +1,7 @@
 """
 GAMEZILLA MEGA COLLECTION - Shareware Program List Generator V2
 Generates 500 "programs" with hidden message support
-Updated to include V5 and V6
+Updated to include V5, V6 (CANON), and V7 (INTEGRATION)
 """
 
 import random
@@ -16,7 +16,7 @@ class SharewareGeneratorV2:
         self.programs = self._generate_programs()
 
     def _generate_programs(self):
-        """Generate 500 programs with programs #387-391 being GLITCHDEX MALL versions"""
+        """Generate 500 programs with programs #387-393 being GLITCHDEX MALL versions"""
         programs = []
 
         # Templates for realistic shareware names
@@ -99,15 +99,28 @@ class SharewareGeneratorV2:
                     "description": "Classification Reference Document methodology"
                 })
             elif i == 392:
-                # V6: Next Generation (placeholder)
+                # V6: Next Generation (CANONICAL - QBIT systems)
                 programs_list.append({
                     "number": i,
-                    "name": "GLITCHDEX MALL - Next Generation",
+                    "name": "GLITCHDEX MALL - NextGen CANON",
                     "genre": "game",
                     "version": "6.0",
                     "executable": "v6",
                     "is_real": True,
-                    "description": "Future development placeholder"
+                    "is_canon": True,
+                    "description": "CANONICAL: QBIT engine, Cloud systems, UE5 bridge"
+                })
+            elif i == 393:
+                # V7: Integration Build (v5 CRD + v6 QBIT)
+                programs_list.append({
+                    "number": i,
+                    "name": "GLITCHDEX MALL V7 - INTEGRATION",
+                    "genre": "game",
+                    "version": "7.0-alpha",
+                    "executable": "v7",
+                    "is_real": True,
+                    "is_integration": True,
+                    "description": "v5 Evidence + v6 Systems = Voxel Doom-Alike (3 credit cards)"
                 })
             else:
                 # Generate fake program

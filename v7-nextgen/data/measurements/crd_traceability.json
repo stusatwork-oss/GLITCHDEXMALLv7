@@ -1,0 +1,267 @@
+{
+  "version": "7.0.0-alpha",
+  "source": "v5-eastland CRD V1 Complete",
+  "methodology": "Classification Reference Document (CRD v0.1)",
+  "last_updated": "2025-11-28",
+  "photo_base": "/eastlandpics/",
+  "photo_count_v1": 143,
+  "crd_documents": {
+    "photo_classification": "v5-eastland/docs/crd/PHOTO_CLASSIFICATION_TABLE_V1_COMPLETE.md",
+    "feature_extraction": "v5-eastland/docs/crd/FEATURE_EXTRACTION_TABLE.md",
+    "zone_graph": "v5-eastland/docs/crd/ZONE_GRAPH_V1.md",
+    "measurements": "v5-eastland/docs/crd/MEASUREMENT_SHEET_V1.csv",
+    "corrections": "v5-eastland/docs/crd/MAP_CORRECTIONS_LIST_V1.md",
+    "architectural_context": "v5-eastland/README_ARCHITECTURAL_CONTEXT.md",
+    "batch_plan": "v5-eastland/docs/BATCH_PROCESSING_PLAN.md"
+  },
+
+  "confidence_levels": {
+    "HIGH": "Verified through countable elements, standard dimensions, or multiple photo confirmation",
+    "MEDIUM": "Single photo measurement with perspective correction or reasonable architectural assumptions",
+    "LOW": "Visual estimates without scale reference or inferred from typical construction practice"
+  },
+
+  "high_confidence_measurements": [
+    {
+      "id": "food_court_pit_depth",
+      "value": "8 feet",
+      "method": "Escalator step count",
+      "calculation": "12 steps × 8 inches = 96 inches = 8 feet",
+      "photo_refs": ["3085976410", "3085979988"],
+      "countable_element": "12 escalator steps",
+      "standard_dimension": "8 inch step rise (universal code)",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 1.1",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "fountain_tier_count",
+      "value": "4 levels",
+      "method": "Visual tier count",
+      "photo_refs": ["453127566", "453126954", "453127262", "453127434"],
+      "countable_element": "4 distinct terraced levels",
+      "multiple_confirmation": true,
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 1.4",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "tensile_roof_cables",
+      "value": "32 radial",
+      "method": "Cable count",
+      "photo_refs": ["453124750", "453125654"],
+      "countable_element": "32 radial cables from mast tops",
+      "multiple_confirmation": true,
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 2.1",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "balcony_railing_height",
+      "value": "42 inches",
+      "method": "Building code standard",
+      "standard_dimension": "Commercial building code requirement",
+      "photo_refs": ["453143417", "3085979988"],
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 2.2",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "door_frame_height",
+      "value": "80 inches",
+      "method": "Building code standard",
+      "standard_dimension": "Universal commercial door height (6'8\")",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 2.3",
+      "confidence": "HIGH"
+    }
+  ],
+
+  "medium_confidence_measurements": [
+    {
+      "id": "glass_block_wall_height",
+      "value": "14-18.7 feet",
+      "method": "Glass block count",
+      "calculation": "28 blocks vertical × 6-8 inches = 14-18.7 feet",
+      "photo_refs": ["453127566"],
+      "countable_element": "28 glass blocks vertical",
+      "uncertainty": "Block size (6\" vs 8\") requires verification",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 1.2",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "glass_block_wall_arc",
+      "value": "22.5 feet",
+      "method": "Glass block count along curve",
+      "calculation": "45 blocks horizontal × 6 inches = 22.5 feet",
+      "photo_refs": ["453127566"],
+      "countable_element": "45 glass blocks horizontal",
+      "perspective_correction": "Arc measurement affected by perspective",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 1.3",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "atrium_diameter",
+      "value": "150-200+ feet",
+      "method": "Scale correction from architectural context",
+      "note": "CRITICAL SCALE REVISION - NOT 60-80 feet",
+      "evidence": "Space station scale, cathedral volumes, 1M+ sq ft footprint",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md",
+      "previous_estimate": "60-80 feet",
+      "correction_factor": 2.5,
+      "confidence": "MEDIUM",
+      "requires_verification": "Site plan, aerial photography, or construction documents"
+    },
+    {
+      "id": "mast_height",
+      "value": "60-80+ feet",
+      "method": "Scale correction from architectural context",
+      "note": "CRITICAL SCALE REVISION - NOT 35 feet",
+      "evidence": "Pioneering tensile sail technology, experimental engineering, cathedral ceiling heights",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md",
+      "previous_estimate": "35 feet",
+      "correction_factor": 2.0,
+      "confidence": "MEDIUM",
+      "requires_verification": "Photos with ground reference visible"
+    }
+  ],
+
+  "low_confidence_measurements": [
+    {
+      "id": "corridor_widths",
+      "value": "12-20 feet (standard), 20-30 feet (main spine)",
+      "method": "Standard mall range with scale correction",
+      "note": "Train station/airport scale, NOT typical 12-15 foot mall corridors",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 5.1",
+      "confidence": "LOW",
+      "requires_verification": "Photogrammetry using door frames (80\") as scale reference"
+    },
+    {
+      "id": "column_spacing",
+      "value": "~20 feet",
+      "method": "Typical structural grid inference",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 8.3",
+      "confidence": "LOW",
+      "requires_verification": "Photos showing multiple columns with scale reference"
+    }
+  ],
+
+  "unverified_zones": [
+    {
+      "zone": "Z7_SUBTERRANEAN",
+      "status": "UNVERIFIED PLACEHOLDER",
+      "photo_count": 0,
+      "note": "Interior off-limits forever. Can document exterior access points (ramps, vents) only.",
+      "decision": "Include as placeholder per user answer 7-A",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 7.1"
+    },
+    {
+      "zone": "Z6_THEATER_INTERIOR",
+      "status": "PARTIALLY UNVERIFIED",
+      "photo_count": 1,
+      "documented": "Exterior entrance only",
+      "not_documented": "Theater interior (screens, lobby, seating)",
+      "note": "Theater entrance position is HIGH confidence - it IS the focal void at food court center",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 7.2"
+    }
+  ],
+
+  "timeline_contradictions": {
+    "note": "Contradictions are NOT errors - they are timeline variance across 1981-2010 photo span",
+    "philosophy": "All eras are canon. Contradictions reveal layers.",
+    "examples": [
+      {
+        "type": "Vendor layout variance",
+        "zone": "Z4_FOOD_COURT",
+        "evidence": "Different vendor configurations between photos",
+        "interpretation": "Vendor turnover over 25+ years",
+        "resolution": "Document multiple configurations, do not force consistency"
+      },
+      {
+        "type": "Tensile roof color variance",
+        "zone": "Z1_CENTRAL_ATRIUM",
+        "evidence": "White vs beige fabric in different photos",
+        "interpretation": "Aging, replacement, or lighting conditions",
+        "resolution": "Document as 'white tensile fabric' with note on variance"
+      },
+      {
+        "type": "Theater operational status",
+        "zone": "Z6_THEATER",
+        "evidence": "Some photos show dark entrance, others show activity",
+        "interpretation": "Business hours, closure periods, or permanent closure",
+        "resolution": "Map theater location but note variable operational status"
+      }
+    ]
+  },
+
+  "scale_anchors": {
+    "primary_global_anchor": {
+      "feature": "Coca-Cola vending machine",
+      "dimensions": "39\" × 72\"",
+      "location": "Z3_LOWER_RING",
+      "use_case": "Global scale calibration for corridor measurements",
+      "confidence": "HIGH"
+    },
+    "z_level_calibration": {
+      "feature": "Escalator steps",
+      "measurement": "12 steps × 8 inches = 8 feet",
+      "use_case": "Vertical height differential between Z=0 and Z=-1",
+      "confidence": "HIGH"
+    },
+    "vertical_scale": {
+      "feature": "Tension masts",
+      "estimated_height": "60-80+ feet",
+      "use_case": "Atrium ceiling height and overall vertical scale",
+      "confidence": "MEDIUM",
+      "requires": "Ground reference photos for precise measurement"
+    }
+  },
+
+  "photo_coverage_analysis": {
+    "total_photos_v1": 143,
+    "coverage_by_zone": {
+      "Z1_CENTRAL_ATRIUM": {"count": 32, "percent": 22.4, "quality": "Good"},
+      "Z2_UPPER_RING": {"count": 8, "percent": 5.6, "quality": "Under-documented"},
+      "Z3_LOWER_RING": {"count": 68, "percent": 47.6, "quality": "Excellent"},
+      "Z4_FOOD_COURT": {"count": 17, "percent": 11.9, "quality": "Good"},
+      "Z5_ANCHOR_STORES": {"count": 10, "percent": 7.0, "quality": "Fair"},
+      "Z6_MICKEYS_WING": {"count": 1, "percent": 0.7, "quality": "Minimal"},
+      "Z6_THEATER": {"count": 1, "percent": 0.7, "quality": "Minimal"},
+      "Z7_SUBTERRANEAN": {"count": 0, "percent": 0, "quality": "None"},
+      "Z9_EXTERIOR": {"count": 6, "percent": 4.2, "quality": "Fair"}
+    },
+    "priority_targets_for_v2": [
+      "Z7 exterior access points (ramps, vents, service doors)",
+      "Z2 upper ring corridors (more coverage needed)",
+      "Z6 theater entrance and Mickey's wing",
+      "Atrium diameter measurements (wide-angle, perimeter-to-perimeter)",
+      "Mast height with ground reference visible"
+    ]
+  },
+
+  "architectural_significance": {
+    "architect": "KKT Architects",
+    "year_built": 1981,
+    "location": "Tulsa, Oklahoma",
+    "technology": "Pioneering tensile sail architecture - early 1980s experimental",
+    "design_intent": "Civic monument architecture for proto-Silicon Valley tech culture",
+    "scale": "Space station with a parking lot - cathedral volumes, train station circulation",
+    "cultural_context": "Built for workers whose minds operated in systems, engineering, and futures",
+    "what_died": "Not just a mall - the death of architectural futurism and 1980s tech optimism",
+    "documentation_purpose": "Historical preservation of experimental architecture that may no longer exist in original form",
+    "source": "v5/README_ARCHITECTURAL_CONTEXT.md"
+  },
+
+  "future_fidelity_passes": {
+    "v2_batch_goals": [
+      "Raise atrium diameter from MEDIUM to HIGH confidence",
+      "Raise mast height from MEDIUM to HIGH confidence",
+      "Verify glass block size (6\" vs 8\")",
+      "Confirm food court pit depth (8' vs deeper 15-20')",
+      "Document Z7 exterior access points"
+    ],
+    "required_photos": [
+      "Older construction-period photos (1980-1981)",
+      "Operational peak period (1985-1995)",
+      "Additional wide-angle atrium photos",
+      "Mast photos with ground reference",
+      "Exterior service access points"
+    ],
+    "workflow": "See v5-eastland/docs/BATCH_PROCESSING_PLAN.md"
+  }
+}

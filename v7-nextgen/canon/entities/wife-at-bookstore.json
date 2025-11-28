@@ -1,0 +1,36 @@
+{
+  "id": "wife-at-bookstore",
+  "name": "Wife (at Bookstore)",
+  "role": "Primary",
+  "type": "npc",
+  "tags": [
+    "store_bored",
+    "memory_anchor",
+    "liminal",
+    "contradiction_magnet"
+  ],
+  "metrics": {
+    "resonanceScore": 78,
+    "grassrootsSupport": 800,
+    "audienceSize": 8000,
+    "deepViewCount": 450000,
+    "engagementScore": 65,
+    "referenceCount": 950,
+    "trustScore": 38,
+    "backingVolume": 25000,
+    "resourcePool": 200,
+    "networkReach": 2
+  },
+  "computed": {
+    "power": 320,
+    "charisma": 1178,
+    "overall": 1498,
+    "rarity": "Common"
+  },
+  "meta": {
+    "universe": "mallos-v6",
+    "source": "manual",
+    "notes": "Primary anchor NPC. Spatial anchor for janitor's forbidden zone. Never acknowledged directly. Exists in perpetual browsing state. Creates contradiction field.",
+    "last_updated": "2025-11-22T10:00:00Z"
+  }
+}

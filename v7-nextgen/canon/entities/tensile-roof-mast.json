@@ -1,0 +1,36 @@
+{
+  "id": "tensile-roof-mast",
+  "name": "Tensile Roof Mast",
+  "role": "Primary",
+  "type": "zone",
+  "tags": [
+    "atrium",
+    "structural",
+    "cloud_prime_node",
+    "vertical_axis"
+  ],
+  "metrics": {
+    "resonanceScore": 95,
+    "grassrootsSupport": 1200,
+    "audienceSize": 25000,
+    "deepViewCount": 1200000,
+    "engagementScore": 55,
+    "referenceCount": 1800,
+    "trustScore": 90,
+    "backingVolume": 5000000,
+    "resourcePool": 50000000,
+    "networkReach": 8
+  },
+  "computed": {
+    "power": 551,
+    "charisma": 1412,
+    "overall": 1963,
+    "rarity": "Common"
+  },
+  "meta": {
+    "universe": "mallos-v6",
+    "source": "manual",
+    "notes": "Primary structural element. 60-80ft vertical reach. Supports tensile roof. High backing volume (construction cost). Massive resource pool (physical mass). Cloud Prime Node candidate.",
+    "last_updated": "2025-11-22T10:00:00Z"
+  }
+}

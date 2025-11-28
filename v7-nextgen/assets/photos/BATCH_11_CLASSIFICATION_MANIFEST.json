@@ -1,0 +1,39 @@
+{
+  "batch_number": 11,
+  "batch_date": "2025-11-22",
+  "processed_by": "AI Classification - RAPID MODE",
+  "total_items": 3,
+  "classifications": [
+    {
+      "filename": "91562563_786e0e6efe_z.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/91562563_786e0e6efe_z.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "91562850_4450aac9fa_z.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/91562850_4450aac9fa_z.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "h8o3ufj4tuqe1.jpeg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/h8o3ufj4tuqe1.jpeg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    }
+  ],
+  "status": "PENDING_CLASSIFICATION"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "sunken-food-court",
+  "name": "Sunken Food Court",
+  "role": "Primary",
+  "type": "zone",
+  "tags": [
+    "fc-arcade",
+    "cloud_prime_node",
+    "subterranean",
+    "sensory_reactor"
+  ],
+  "metrics": {
+    "resonanceScore": 88,
+    "grassrootsSupport": 8000,
+    "audienceSize": 50000,
+    "deepViewCount": 5000000,
+    "engagementScore": 82,
+    "referenceCount": 3500,
+    "trustScore": 65,
+    "backingVolume": 8000000,
+    "resourcePool": 100000000,
+    "networkReach": 10
+  },
+  "computed": {
+    "power": 761,
+    "charisma": 1517,
+    "overall": 2278,
+    "rarity": "Common"
+  },
+  "meta": {
+    "universe": "mallos-v6",
+    "source": "manual",
+    "notes": "Cloud Prime Node #1. Subterranean geometry causes natural glitch pressure. High grassroots support (social hub). Massive resource pool (zone volume). Canonical designation: 'The Pit of First Noise'.",
+    "last_updated": "2025-11-22T10:00:00Z"
+  }
+}
