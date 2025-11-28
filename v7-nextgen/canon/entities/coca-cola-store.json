@@ -1,0 +1,78 @@
+{
+  "id": "coca-cola-store",
+  "name": "Coca-Cola Enterprises, Inc.",
+  "role": "Secondary",
+  "type": "location",
+  "subtype": "retail_store",
+  "tags": [
+    "z3_lower_ring",
+    "retail",
+    "specialty_merchandise",
+    "corporate_branded",
+    "new_in_v7"
+  ],
+  "spatial": {
+    "zone": "Z3_LOWER_RING",
+    "location": "Lower level corridor near escalator entrance",
+    "size_sqft": {
+      "value": 1200,
+      "range_min": 1000,
+      "range_max": 1500,
+      "note": "Standard mall inline store size"
+    },
+    "storefront_type": "Glass with branded signage"
+  },
+  "description": {
+    "short": "Glass storefront retail store selling Coca-Cola merchandise and branded items",
+    "long": "A specialty retail location featuring Coca-Cola Enterprises, Inc. branding. Red and white color scheme throughout. The store displays Coca-Cola merchandise, branded apparel, collectibles, and promotional items. Glass storefront with prominent corporate signage.",
+    "visual_details": [
+      "Red and white color scheme",
+      "Glass storefront",
+      "Corporate 'Coca-Cola Enterprises, Inc.' signage",
+      "Merchandise displays visible through windows",
+      "Standard commercial retail lighting"
+    ]
+  },
+  "crd_evidence": {
+    "confidence": "HIGH",
+    "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 4.1",
+    "photo_refs": ["3085977904", "3085140933"],
+    "classification": "PRIMARY: Store interior/exterior",
+    "discovery_note": "Clearly visible in photos - not present in v3/v4/v6 maps",
+    "integration_reason": "v5 CRD identified missing retail entity"
+  },
+  "metrics": {
+    "resonanceScore": 45,
+    "grassrootsSupport": 800,
+    "audienceSize": 5000,
+    "deepViewCount": 120000,
+    "engagementScore": 38,
+    "referenceCount": 200,
+    "trustScore": 55,
+    "backingVolume": 15000,
+    "resourcePool": 200,
+    "networkReach": 2
+  },
+  "computed": {
+    "power": 524,
+    "charisma": 463,
+    "overall": 987,
+    "rarity": "Common"
+  },
+  "temporal": {
+    "operational_status_by_era": {
+      "1981": "Not yet open (store type didn't exist at mall opening)",
+      "1995": "Operational (peak era - specialty corporate stores common)",
+      "2005": "Operational or recently closed (decline period)",
+      "2011": "Closed (mall closure)"
+    },
+    "timeline_note": "Specialty corporate stores like this emerged in 1990s mall culture"
+  },
+  "meta": {
+    "universe": "mallos-v7",
+    "source": "v5-crd-integration",
+    "version": "7.0.0-alpha",
+    "notes": "NEW entity discovered through v5 CRD photo classification. Adds retail diversity to Z3. Corporate branded specialty store type typical of 1990s malls.",
+    "last_updated": "2025-11-28T00:00:00Z"
+  }
+}

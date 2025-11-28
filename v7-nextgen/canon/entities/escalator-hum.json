@@ -1,0 +1,37 @@
+{
+  "id": "escalator-hum",
+  "name": "Escalator Hum",
+  "role": "Secondary",
+  "type": "anomaly",
+  "tags": [
+    "ramp",
+    "service_hall",
+    "sensory",
+    "ambient",
+    "liminal"
+  ],
+  "metrics": {
+    "resonanceScore": 75,
+    "grassrootsSupport": 3500,
+    "audienceSize": 40000,
+    "deepViewCount": 3000000,
+    "engagementScore": 45,
+    "referenceCount": 2800,
+    "trustScore": 80,
+    "backingVolume": 0,
+    "resourcePool": 0,
+    "networkReach": 6
+  },
+  "computed": {
+    "power": 60,
+    "charisma": 1288,
+    "overall": 1348,
+    "rarity": "Common"
+  },
+  "meta": {
+    "universe": "mallos-v6",
+    "source": "manual",
+    "notes": "Ambient anomaly. Non-physical (sound). High deep view count (hours of exposure). High trust score (universal familiarity). High network reach (heard across multiple zones). Liminal sound signature.",
+    "last_updated": "2025-11-22T10:00:00Z"
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "version": "7.0.0-alpha",
+  "source": "v5-eastland ZONE_GRAPH_V1.md + spatial corrections",
+  "last_updated": "2025-11-28",
+  "zone_count": 9,
+
+  "Z1_CENTRAL_ATRIUM": {
+    "name": "Central Atrium",
+    "level": 0,
+    "elevation_feet": 0,
+    "shape": "irregular_quadrilateral",
+    "diameter_feet": {
+      "value": 175,
+      "range_min": 150,
+      "range_max": 200,
+      "confidence": "MEDIUM",
+      "note": "SCALE CORRECTED - space station scale"
+    },
+    "ceiling_height_feet": {
+      "value": 70,
+      "range_min": 60,
+      "range_max": 80,
+      "confidence": "MEDIUM",
+      "note": "Determined by tensile roof mast height"
+    },
+    "area_sqft": {
+      "value": 24000,
+      "range_min": 17500,
+      "range_max": 31400,
+      "confidence": "LOW",
+      "note": "Calculated from diameter (π × r²) - needs verification"
+    },
+    "contains": [
+      "Terraced amphitheater fountain (4 tiers)",
+      "Glass block wall (curved backdrop)",
+      "4 yellow lattice tension masts (60-80' tall)",
+      "White tensile roof canopy (32 radial cables)",
+      "Radial column grid",
+      "Glass elevator tower (optional)"
+    ],
+    "adjacent_zones": ["Z2_UPPER_RING", "Z3_LOWER_RING", "Z4_FOOD_COURT"],
+    "photo_count": 32,
+    "photo_refs": ["453124750", "453127566", "64360891", "453125654"]
+  },
+
+  "Z2_UPPER_RING": {
+    "name": "Upper Ring Corridors",
+    "level": 0,
+    "elevation_feet": 0,
+    "shape": "ring_corridor",
+    "corridor_width_feet": {
+      "value": 18,
+      "range_min": 15,
+      "range_max": 20,
+      "confidence": "MEDIUM"
+    },
+    "ceiling_height_feet": {
+      "value": 12,
+      "range_min": 10,
+      "range_max": 15,
+      "confidence": "MEDIUM"
+    },
+    "contains": [
+      "Blue/green metal railings",
+      "Terracotta scalloped trim",
+      "Storefronts with security grates",
+      "T-junction intersections"
+    ],
+    "adjacent_zones": ["Z1_CENTRAL_ATRIUM", "Z3_LOWER_RING", "Z5_ANCHOR_STORES"],
+    "photo_count": 8,
+    "note": "Under-documented compared to lower level - lower confidence"
+  },
+
+  "Z3_LOWER_RING": {
+    "name": "Lower Ring Corridors",
+    "level": 0,
+    "elevation_feet": 0,
+    "shape": "ring_corridor",
+    "corridor_width_feet": {
+      "value": 25,
+      "range_min": 20,
+      "range_max": 30,
+      "confidence": "MEDIUM",
+      "note": "Main spine corridors - train station scale, NOT standard 12-15 feet"
+    },
+    "ceiling_height_feet": {
+      "value": 12,
+      "confidence": "MEDIUM"
+    },
+    "contains": [
+      "Tile → carpet transitions",
+      "Kiosk sites",
+      "Coca-Cola vending machine (SCALE ANCHOR)",
+      "Coca-Cola Enterprises, Inc. store (NEW in v7)",
+      "Service hall access points",
+      "Mickey's wing corridor (southeast)"
+    ],
+    "adjacent_zones": ["Z1_CENTRAL_ATRIUM", "Z2_UPPER_RING", "Z4_FOOD_COURT", "Z5_ANCHOR_STORES", "Z6_MICKEYS_WING", "Z9_EXTERIOR"],
+    "photo_count": 68,
+    "note": "Most documented zone in v5 photo collection"
+  },
+
+  "Z4_FOOD_COURT": {
+    "name": "Food Court Bowl",
+    "level": -1,
+    "elevation_feet": -8,
+    "shape": "amphitheater_bowl",
+    "diameter_feet": {
+      "value": 120,
+      "range_min": 100,
+      "range_max": 150,
+      "confidence": "MEDIUM",
+      "note": "Reactor containment zone - industrial theater aesthetic"
+    },
+    "pit_depth_feet": {
+      "value": 8,
+      "confidence": "HIGH",
+      "measurement_method": "12 escalator steps × 8 inches",
+      "note": "May be conservative - actual total descent could be 15-20+ feet"
+    },
+    "vertical_clearance_feet": {
+      "value": 50,
+      "range_min": 40,
+      "range_max": 60,
+      "confidence": "MEDIUM",
+      "note": "Pit floor to tensile roof above - cathedral-scale volume"
+    },
+    "area_sqft": {
+      "value": 11300,
+      "range_min": 7850,
+      "range_max": 17670,
+      "confidence": "LOW",
+      "note": "Calculated from diameter - needs verification"
+    },
+    "contains": [
+      "Circular FOOD COURT neon sign (6-8' diameter) - NEW entity in v7",
+      "Vendor bays (asymmetric arrangement)",
+      "Secondary decorative fountain pit",
+      "Staggered tile geometry",
+      "Glass block retaining walls",
+      "Multi-tier stepped basin edges"
+    ],
+    "vendors": [
+      "Slush Puppy Paradise (operational)",
+      "Wok This Way (closed)",
+      "Pizza Planet Express (closed)",
+      "Pretzel Hut (never opened)",
+      "Burger Bunker (closed)",
+      "Taco Tiempo (closed)"
+    ],
+    "adjacent_zones": ["Z1_CENTRAL_ATRIUM", "Z3_LOWER_RING", "Z5_ESCALATOR_WELLS", "Z6_THEATER"],
+    "access_method": "Escalators from Z3 (12 steps, bidirectional pair)",
+    "photo_count": 17,
+    "photo_refs": ["64360891", "453143417", "46100233"]
+  },
+
+  "Z5_ESCALATOR_WELLS": {
+    "name": "Escalator Wells (Vertical Circulation)",
+    "type": "transition_zone",
+    "connects": ["Z3_LOWER_RING", "Z4_FOOD_COURT"],
+    "level_range": "0 to -1",
+    "elevation_change_feet": -8,
+    "footprint_width_feet": {
+      "value": 25,
+      "range_min": 20,
+      "range_max": 30,
+      "confidence": "MEDIUM",
+      "note": "~10-15 feet per escalator × 2 + safety clearances"
+    },
+    "footprint_length_feet": {
+      "value": 25,
+      "confidence": "MEDIUM"
+    },
+    "configuration": "Bidirectional pair (up/down)",
+    "step_count": 12,
+    "step_rise_inches": 8,
+    "note": "Dedicated vertical circulation zone connecting levels"
+  },
+
+  "Z5_ANCHOR_STORES": {
+    "name": "Anchor Store Zones",
+    "level": 0,
+    "elevation_feet": 0,
+    "store_count": 2,
+    "stores": [
+      {
+        "name": "West Anchor",
+        "type": "Department Store (Mervyn's or similar)",
+        "area_sqft": {
+          "value": 100000,
+          "range_min": 80000,
+          "range_max": 120000,
+          "confidence": "LOW",
+          "note": "Typical large anchor store footprint"
+        }
+      },
+      {
+        "name": "East Anchor",
+        "type": "Department Store (Dillard's)",
+        "area_sqft": {
+          "value": 100000,
+          "range_min": 80000,
+          "range_max": 120000,
+          "confidence": "LOW"
+        }
+      }
+    ],
+    "contains": [
+      "Exposed ceiling grids (2' × 4' tiles)",
+      "Mannequin displays",
+      "Clearance fixtures",
+      "Service access corridors"
+    ],
+    "adjacent_zones": ["Z2_UPPER_RING", "Z3_LOWER_RING", "Z7_SUBTERRANEAN"],
+    "ceiling_height_feet": {
+      "value": 15,
+      "range_min": 12,
+      "range_max": 18,
+      "confidence": "LOW",
+      "note": "Higher ceilings than mall corridors"
+    },
+    "note": "Large rectangular masses off corridor rings - deep floor plates"
+  },
+
+  "Z6_MICKEYS_WING": {
+    "name": "Mickey's Family Restaurant Wing",
+    "level": 0,
+    "elevation_feet": 0,
+    "location": "Southeast exterior wing",
+    "contains": [
+      "Domed archway with concentric red/orange rings (NEW in v7)",
+      "Tile color transition corridor",
+      "Vestibule with glass doors",
+      "Dining area interior",
+      "Exterior parking access"
+    ],
+    "arch_feature": {
+      "type": "Concentric arch entrance",
+      "rings": "Multiple layered arches creating depth effect",
+      "photo_refs": ["46099761"]
+    },
+    "adjacent_zones": ["Z3_LOWER_RING", "Z9_EXTERIOR"],
+    "corridor_approach": "Shallow corridor with tile color transition",
+    "confidence": "HIGH",
+    "note": "Distinctive architectural feature - concentric arch clearly visible in photos"
+  },
+
+  "Z6_THEATER": {
+    "name": "Theater Zone (6-Screen Underground)",
+    "level": -1,
+    "elevation_feet": -8,
+    "type": "6-plex theater",
+    "screen_count": 6,
+    "entrance_description": "Black open mouth at food court bowl center",
+    "spatial_position": "Gravitational center of food court - focal void",
+    "composition": "Upper level → Escalator descent → Theater entrance void",
+    "contains": [
+      "Box office (protrudes into corridor)",
+      "Velvet rope queue area",
+      "Theater lobby",
+      "Screen 1 (operational in some photos)",
+      "Screens 2-6 (dark/unused in decline period)",
+      "Marquee (flickering in decline photos)"
+    ],
+    "adjacent_zones": ["Z4_FOOD_COURT", "Z3_LOWER_RING"],
+    "visibility": "Visible as 'blank black open mouth' from escalator descent",
+    "photo_count": 1,
+    "photo_refs": ["64360768"],
+    "confidence": "MEDIUM",
+    "note": "Theater interior not documented - entrance only. Critical spatial anchor for food court design intent."
+  },
+
+  "Z7_SUBTERRANEAN": {
+    "name": "Subterranean Access Deck",
+    "level": -2,
+    "elevation_feet": -16,
+    "status": "UNVERIFIED PLACEHOLDER",
+    "interior_access": "OFF-LIMITS FOREVER",
+    "documentation_strategy": "Exterior access points only",
+    "hypothetical_contains": [
+      "Vehicle ramp",
+      "Truck loading doors",
+      "Service corridors",
+      "Loading bays",
+      "Employee infrastructure",
+      "Mechanical systems"
+    ],
+    "area_sqft": {
+      "value": 200000,
+      "confidence": "SPECULATION",
+      "note": "Possibly hundreds of thousands of sq ft - part of 1M+ total footprint"
+    },
+    "adjacent_zones": ["Z5_ANCHOR_STORES", "Z9_EXTERIOR"],
+    "photo_count": 0,
+    "confidence": "UNVERIFIED",
+    "note": "No photographic evidence of interior. Can document exterior ramps/vents/access points. User decision: Include as placeholder (Answer 7-A)."
+  },
+
+  "Z9_EXTERIOR": {
+    "name": "Exterior Envelope",
+    "level": 0,
+    "elevation_feet": 0,
+    "contains": [
+      "West entrance canopy",
+      "East entrance canopy",
+      "Mickey's concentric arch (southeast)",
+      "HVAC cylinder ('nuclear reactor' appearance - north side)",
+      "Ring road",
+      "Parking lot striping"
+    ],
+    "adjacent_zones": ["Z3_LOWER_RING", "Z6_MICKEYS_WING", "Z7_SUBTERRANEAN"],
+    "parking_lot_area_sqft": {
+      "value": 500000,
+      "confidence": "SPECULATION",
+      "note": "Typical large mall parking for 1M+ sq ft structure"
+    },
+    "photo_refs": ["46099761"],
+    "note": "Building facade and parking perimeter"
+  }
+}

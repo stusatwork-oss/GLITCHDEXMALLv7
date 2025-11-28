@@ -1,0 +1,81 @@
+{
+  "zones": {
+    "ATRIUM_MAST": {
+      "frames": 12,
+      "coverage_estimate": 0.75,
+      "needs_dream_machine": [
+        "minor gap filling",
+        "detail enhancements",
+        "tensile sail connection points",
+        "full vertical sweep"
+      ],
+      "dreamweight": "structural_high",
+      "structural_documentation": "LIMITED"
+    },
+    "COMPHUT": {
+      "frames": 0,
+      "coverage_estimate": 0.13,
+      "needs_dream_machine": [
+        "entire zone passthrough sequence",
+        "establishing shots from multiple angles"
+      ],
+      "dreamweight": "nostalgic_high",
+      "structural_documentation": "LIMITED"
+    },
+    "ESCALATOR_PIT": {
+      "frames": 4,
+      "coverage_estimate": 0.24,
+      "needs_dream_machine": [
+        "entire zone passthrough sequence",
+        "establishing shots from multiple angles",
+        "upper landing detail",
+        "handrail and step closeups"
+      ],
+      "dreamweight": "liminal_high",
+      "structural_documentation": "LIMITED"
+    },
+    "EXTERIOR_DOME": {
+      "frames": 8,
+      "coverage_estimate": 0.35,
+      "needs_dream_machine": [
+        "ceiling detail shots",
+        "corner and transition areas",
+        "supplemental atmospheric passes"
+      ],
+      "dreamweight": "architectural_low",
+      "structural_documentation": "LIMITED"
+    },
+    "SUNKEN_FOOD_COURT": {
+      "frames": 4,
+      "coverage_estimate": 0.22,
+      "needs_dream_machine": [
+        "entire zone passthrough sequence",
+        "establishing shots from multiple angles",
+        "seating area coverage",
+        "storefront details"
+      ],
+      "dreamweight": "atmospheric_medium",
+      "structural_documentation": "LIMITED"
+    },
+    "SERVICE_HALL": {
+      "frames": 0,
+      "coverage_estimate": 0.12,
+      "needs_dream_machine": [
+        "entire zone passthrough sequence",
+        "establishing shots from multiple angles"
+      ],
+      "dreamweight": "surreal_high",
+      "structural_documentation": "LIMITED"
+    },
+    "CINEMA_ENTRANCE": {
+      "frames": 4,
+      "coverage_estimate": 0.2,
+      "needs_dream_machine": [
+        "entire zone passthrough sequence",
+        "establishing shots from multiple angles"
+      ],
+      "dreamweight": "liminal_medium",
+      "structural_documentation": "LIMITED"
+    }
+  }
+}
