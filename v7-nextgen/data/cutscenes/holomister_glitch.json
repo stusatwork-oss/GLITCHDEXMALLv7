@@ -1,0 +1,30 @@
+{
+  "id": "holomister_first_major_glitch",
+  "display_name": "The Mist Speaks Wrong",
+  "type": "environmental_cutscene",
+  "duration_seconds": 10,
+  "trigger": {
+    "event": "HOLOMISTER_GLITCH",
+    "zone": "ATRIUM",
+    "conditions": [
+      "holomister.glitched == True",
+      "cloud.level >= 70",
+      "toddler.distance_to_holomister <= 15",
+      "first_glitch_occurrence"
+    ]
+  },
+  "sora_prompt_id": "cutscene_holomister_glitch_v1",
+  "sora_prompt": {
+    "scene_description": "Looking up at ceiling-mounted SEG HoloMister unit. White mist begins to spray, but it moves wrong - too slow, almost gel-like. Holographic text projects: 'Thirsty? Try the new--' then glitches mid-word. Text corrupts: 'CREDIT DEFAULT SLUSHEE'. Colors invert. The mist takes on a purple tint. For a moment, the hologram shows a child's face instead of an advertisement. Then snaps back to normal. Unit powers down. One drop of mist falls, freezes mid-air. Camera holds on the frozen droplet. It doesn't fall.",
+    "style": "Mall tech-horror, holographic artifacting, purple glitch tint",
+    "sfx": ["mist_loop", "holo_glitch", "child_breath"],
+    "camera": "upward_static",
+    "rating": "pg"
+  },
+  "replay_policy": "once_per_run",
+  "blocking": true,
+  "post_actions": [
+    "holomister.flag('glitch_logged')",
+    "cloud.adjust(-2)"
+  ]
+}
