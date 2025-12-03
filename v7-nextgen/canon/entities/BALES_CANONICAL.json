@@ -1,0 +1,96 @@
+{
+  "firmware_id": "FW_BAGLES_1975",
+  "class_name": "BAGLES_FIRMWARE",
+  "meta": {
+    "type": "CONSTRAINT_SOLVER",
+    "domain": "constraint_solving",
+    "origin": "Dartmouth/Berkeley (1975)",
+    "origin_genre": "Codebreaker / Bagels-style number game",
+    "description": "Iterative elimination based on positional and value matching in a three-digit code space."
+  },
+  "core_loop": [
+    "GUESS",
+    "EVALUATE_SIGNALS",
+    "UPDATE_CONSTRAINTS",
+    "NARROW_DOMAIN",
+    "REPEAT_OR_SOLVE"
+  ],
+  "parameters": {
+    "variable_count": 3,
+    "variable_domain": "DIGITS_0_9",
+    "constraint_unique": true,
+    "max_iterations": 20
+  },
+  "signals": {
+    "SUCCESS": {
+      "code": "FERMI",
+      "logic": "MATCH_VALUE && MATCH_POSITION",
+      "weight": 1.0
+    },
+    "PARTIAL": {
+      "code": "PICO",
+      "logic": "MATCH_VALUE && !MATCH_POSITION",
+      "weight": 0.5
+    },
+    "FAILURE": {
+      "code": "BAGLES",
+      "logic": "!MATCH_VALUE && !MATCH_POSITION",
+      "weight": -1.0
+    }
+  },
+  "failure_modes": {
+    "emotional_interference": {
+      "panic_threshold": 0.7,
+      "effect": "IGNORE_LAST_CONSTRAINT",
+      "description": "Agent ignores the most recent negative feedback (Denial)."
+    },
+    "rage_interference": {
+      "rage_threshold": 0.8,
+      "effect": "FORCE_GUESS_REPEAT",
+      "description": "Agent repeats the same wrong guess out of stubbornness."
+    }
+  },
+  "wattitude_hooks": {
+    "panic_uses": "wattitude >= panic_threshold triggers emotional_interference",
+    "rage_uses": "if a separate rage scalar exists, rage >= rage_threshold triggers rage_interference"
+  }
+}
+
+
+That’s your Level 1 fossil in perfect UFEP shape.
+
+2. How the pancake machine will actually use this
+
+Once this sits in canon/firmware/:
+
+Archetype JSON just points at it:
+
+{
+  "archetype_id": "CODEBREAKER",
+  "stack": [
+    "BAGLES_FIRMWARE",
+    "SPY_FIRMWARE",
+    "QUEST_FIRMWARE"
+  ],
+  "origin": "Puzzle / Codebreaker Protagonist",
+  "class": "SYNTHACTOR_CLASS_III"
+}
+
+
+Your Level 4 generator later does:
+
+Read CODEBREAKER.archetype.json
+
+Resolve each *_FIRMWARE from canon/firmware/
+
+Auto-build:
+
+core.ufep.json stack
+
+Starter behavior.spine.json (GUESS/EVALUATE/NARROW verbs)
+
+A default WATTITUDE regression where:
+
+HOT = overfitting on wrong constraints
+
+CRITICAL = rage/denial loops from failure_modes
