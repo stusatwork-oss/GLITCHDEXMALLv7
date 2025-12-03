@@ -4,6 +4,12 @@
   "mode": "HEIGHTMAP_EXTRUDE",
   "palette": "COMICBOOK_MALL_V1",
   "voxel_scale": [1, 1, 1],
+  "qbit": {
+    "power": 20,
+    "charisma": 50,
+    "resonance": 30,
+    "note": "Consumable heat sink, low impact"
+  },
   "placement": {
     "attach": "table",
     "offset": [0, 0, 0]
