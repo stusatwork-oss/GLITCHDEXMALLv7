@@ -1,0 +1,19 @@
+{
+  "voxel_object_id": "SLURPEE_CUP",
+  "source_image": "assets/voxel_sources/slurpee_front.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "palette": "COMICBOOK_MALL_V1",
+  "voxel_scale": [1, 1, 1],
+  "placement": {
+    "attach": "floor",
+    "offset": [0, 0, 0]
+  },
+  "behavior": {
+    "type": "PICKUP",
+    "tags": ["FOODCOURT", "DRINK"],
+    "on_pickup": [
+      "cloud_pressure+5",
+      "subtitle: 'Brain freeze hits like divine revelation.'"
+    ]
+  }
+}
