@@ -134,6 +134,7 @@ class WorldObjectRegistry:
         voxel_object: Any,
         zone_id: str,
         tile: Tuple[int, int],
+        zones: Optional[Dict[str, Any]] = None,
         zone_origins: Optional[Dict[str, Tuple[float, float]]] = None,
         owner_npc_id: Optional[str] = None
     ) -> str:
@@ -145,6 +146,7 @@ class WorldObjectRegistry:
             voxel_object: VoxelObject from registry
             zone_id: Zone to spawn in
             tile: (tx, ty) tile coordinates
+            zones: Optional zones dict for QBIT charging
             zone_origins: Optional zone origin map
             owner_npc_id: Optional NPC owner for props
 
@@ -176,6 +178,10 @@ class WorldObjectRegistry:
             self.zone_objects[zone_id] = []
         self.zone_objects[zone_id].append(instance_id)
 
+        # QBIT zone charging (object adds computational load)
+        if zones:
+            charge_zone_qbit(zones, zone_id, voxel_object)
+
         return instance_id
 
     def get_object(self, instance_id: str) -> Optional[WorldObject]:
@@ -187,9 +193,13 @@ class WorldObjectRegistry:
         instance_ids = self.zone_objects.get(zone_id, [])
         return [self.objects[iid] for iid in instance_ids if iid in self.objects]
 
-    def pickup_object(self, instance_id: str) -> bool:
+    def pickup_object(self, instance_id: str, zones: Optional[Dict[str, Any]] = None) -> bool:
         """
         Mark object as picked up.
+
+        Args:
+            instance_id: Object instance ID
+            zones: Optional zones dict for QBIT discharging
 
         Returns:
             True if successful, False if already picked up or not found
@@ -197,18 +207,31 @@ class WorldObjectRegistry:
         obj = self.objects.get(instance_id)
         if obj and not obj.picked_up:
             obj.picked_up = True
+
+            # QBIT zone discharging (object removed from zone computational load)
+            if zones and obj.voxel_object:
+                discharge_zone_qbit(zones, obj.zone_id, obj.voxel_object)
+
             return True
         return False
 
-    def despawn_object(self, instance_id: str) -> bool:
+    def despawn_object(self, instance_id: str, zones: Optional[Dict[str, Any]] = None) -> bool:
         """
         Remove object from world.
+
+        Args:
+            instance_id: Object instance ID
+            zones: Optional zones dict for QBIT discharging
 
         Returns:
             True if successful, False if not found
         """
         obj = self.objects.get(instance_id)
         if obj:
+            # QBIT zone discharging (object removed from zone)
+            if zones and obj.voxel_object and not obj.picked_up:
+                discharge_zone_qbit(zones, obj.zone_id, obj.voxel_object)
+
             # Remove from zone index
             if obj.zone_id in self.zone_objects:
                 self.zone_objects[obj.zone_id].remove(instance_id)
@@ -249,6 +272,83 @@ def modify_zone_pressure(zones: Dict[str, Any], zone_id: str, delta: float) -> b
         zone.cloud_pressure += delta
         # Clamp to 0-100
         zone.cloud_pressure = max(0.0, min(100.0, zone.cloud_pressure))
+        return True
+    return False
+
+
+# ============================================================================
+# ZONE QBIT CHARGING (Circuit Component Integration)
+# ============================================================================
+
+def charge_zone_qbit(zones: Dict[str, Any], zone_id: str, voxel_object: Any) -> bool:
+    """
+    Charge zone's QBIT aggregate with object's QBIT vector.
+
+    Args:
+        zones: Dict of zone_id → ZoneMicrostate
+        zone_id: Target zone
+        voxel_object: VoxelObject with QBIT scores
+
+    Returns:
+        True if successful, False if zone not found or object has no QBIT
+    """
+    zone = zones.get(zone_id)
+    if not zone:
+        return False
+
+    # Check if object has QBIT scores
+    if not hasattr(voxel_object, 'get_qbit_aggregate'):
+        return False
+
+    qbit_aggregate = voxel_object.get_qbit_aggregate()
+    if qbit_aggregate > 0:
+        zone.qbit_aggregate += qbit_aggregate
+        # Also update component counts
+        zone.qbit_entity_count += 1
+
+        # Update individual scores if available
+        if voxel_object.qbit:
+            zone.qbit_power += voxel_object.qbit.get("power", 0)
+            zone.qbit_charisma += voxel_object.qbit.get("charisma", 0)
+        return True
+    return False
+
+
+def discharge_zone_qbit(zones: Dict[str, Any], zone_id: str, voxel_object: Any) -> bool:
+    """
+    Discharge zone's QBIT aggregate (object picked up/removed).
+
+    Args:
+        zones: Dict of zone_id → ZoneMicrostate
+        zone_id: Target zone
+        voxel_object: VoxelObject with QBIT scores
+
+    Returns:
+        True if successful, False if zone not found or object has no QBIT
+    """
+    zone = zones.get(zone_id)
+    if not zone:
+        return False
+
+    # Check if object has QBIT scores
+    if not hasattr(voxel_object, 'get_qbit_aggregate'):
+        return False
+
+    qbit_aggregate = voxel_object.get_qbit_aggregate()
+    if qbit_aggregate > 0:
+        zone.qbit_aggregate -= qbit_aggregate
+        # Clamp to 0 (can't go negative)
+        zone.qbit_aggregate = max(0.0, zone.qbit_aggregate)
+
+        # Update component counts
+        zone.qbit_entity_count = max(0, zone.qbit_entity_count - 1)
+
+        # Update individual scores if available
+        if voxel_object.qbit:
+            zone.qbit_power -= voxel_object.qbit.get("power", 0)
+            zone.qbit_power = max(0.0, zone.qbit_power)
+            zone.qbit_charisma -= voxel_object.qbit.get("charisma", 0)
+            zone.qbit_charisma = max(0.0, zone.qbit_charisma)
         return True
     return False
 

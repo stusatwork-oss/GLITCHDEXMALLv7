@@ -156,12 +156,22 @@ class VoxelObject:
     placement: Dict[str, Any]
     source_image: str
     metadata: Dict[str, Any]
+    qbit: Dict[str, Any] = None  # QBIT scores: power, charisma, resonance
 
     @property
     def id(self) -> str:
         """Alias for obj_id to match common engine expectations."""
 
         return self.obj_id
+
+    def get_qbit_aggregate(self) -> float:
+        """Calculate aggregate QBIT score for zone charging."""
+        if not self.qbit:
+            return 0.0
+        power = self.qbit.get("power", 0)
+        charisma = self.qbit.get("charisma", 0)
+        resonance = self.qbit.get("resonance", 0)
+        return float(power + charisma + resonance)
 
 
 class VoxelObjectRegistry:
@@ -220,6 +230,7 @@ class VoxelObjectRegistry:
         mode = normalize_key(raw.get("mode", "HEIGHTMAP_EXTRUDE"))
         voxel_scale = raw.get("voxel_scale", [1, 1, 1])
         zone_id = raw.get("zone_id", "VOXEL_OBJECT")
+        qbit = raw.get("qbit", None)  # Load QBIT scores
 
         if mode == "HEIGHTMAP_EXTRUDE":
             mesh = self.png_to_vox_fn(
@@ -238,6 +249,7 @@ class VoxelObjectRegistry:
             placement=placement,
             source_image=str(source_image_path),
             metadata={"mode": mode, "voxel_scale": voxel_scale, "zone_id": zone_id},
+            qbit=qbit,  # Store QBIT scores
         )
 
     def get(self, obj_id: str) -> VoxelObject:
