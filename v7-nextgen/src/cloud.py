@@ -68,6 +68,10 @@ class ZoneMicrostate:
     turbulence: float = 0.0          # 0-10 scale
     resonance: float = 0.0           # Echo accumulation from discoveries
 
+    # MALLOS INTEGRATION - Zone as compute node
+    cloud_pressure: float = 0.0      # Zone-local pressure (0-100)
+    tiles: Dict[Tuple[int, int], Dict] = field(default_factory=dict)  # Tile-based local memory
+
     # QBIT INTEGRATION - NEW
     qbit_aggregate: float = 0.0      # Total entity influence in this zone
     qbit_power: float = 0.0          # Structural leverage weight
@@ -92,6 +96,8 @@ class ZoneMicrostate:
             "zone_id": self.zone_id,
             "turbulence": self.turbulence,
             "resonance": self.resonance,
+            "cloud_pressure": self.cloud_pressure,
+            "tiles": {f"{k[0]},{k[1]}": v for k, v in self.tiles.items()},  # Serialize tuple keys
             "qbit_aggregate": self.qbit_aggregate,
             "qbit_power": self.qbit_power,
             "qbit_charisma": self.qbit_charisma,
@@ -107,6 +113,11 @@ class ZoneMicrostate:
         state = cls(zone_id=data["zone_id"])
         state.turbulence = data.get("turbulence", 0.0)
         state.resonance = data.get("resonance", 0.0)
+        state.cloud_pressure = data.get("cloud_pressure", 0.0)
+        # Deserialize tile keys from "x,y" strings back to (x,y) tuples
+        tiles_data = data.get("tiles", {})
+        if isinstance(tiles_data, dict):
+            state.tiles = {tuple(map(int, k.split(','))): v for k, v in tiles_data.items()}
         state.qbit_aggregate = data.get("qbit_aggregate", 0.0)
         state.qbit_power = data.get("qbit_power", 0.0)
         state.qbit_charisma = data.get("qbit_charisma", 0.0)

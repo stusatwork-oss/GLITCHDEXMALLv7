@@ -1,9 +1,10 @@
-"""Interaction + spawn helpers for voxel objects."""
+"""Interaction + spawn helpers for voxel objects with MallOS integration."""
 from __future__ import annotations
 
-from typing import Any, Iterable, List, Mapping, MutableMapping
+from typing import Any, Iterable, List, Mapping, MutableMapping, Optional
 
 from voxel_object_loader import VoxelObject
+from mallos_world import WorldObjectRegistry, modify_zone_pressure
 
 
 # ---------------------------------------------------------------------------
@@ -76,7 +77,43 @@ def _ensure_flags(game_state: Any) -> MutableMapping[str, Any]:
     return flags_obj
 
 
-def _adjust_cloud(game_state: Any, delta: int) -> None:
+def _adjust_cloud(
+    game_state: Any,
+    delta: int,
+    zone_id: Optional[str] = None,
+    source: str = "object_pickup"
+) -> None:
+    """
+    Adjust cloud pressure via MallOS zone unicast.
+
+    Priority:
+    1. If zone_id provided and zones dict exists → unicast to zone
+    2. Otherwise fall back to global cloud pressure (legacy)
+
+    Args:
+        game_state: Game state object
+        delta: Pressure change (+/-)
+        zone_id: Target zone for unicast (optional)
+        source: Event source for tracking ("object_pickup", "player_action", etc.)
+    """
+    # Try zone-based unicast first (MallOS pattern)
+    zones = None
+    if isinstance(game_state, MutableMapping):
+        zones = game_state.get("zones")
+    elif hasattr(game_state, "zones"):
+        zones = getattr(game_state, "zones")
+
+    if zones and zone_id:
+        # Unicast to zone
+        success = modify_zone_pressure(zones, zone_id, float(delta))
+        if success:
+            # Track source for analytics
+            if isinstance(game_state, MutableMapping):
+                events = game_state.setdefault("cloud_events", [])
+                events.append({"source": source, "zone": zone_id, "delta": delta})
+            return
+
+    # Fall back to global cloud pressure (legacy)
     if isinstance(game_state, MutableMapping):
         current = game_state.get("cloud_pressure", 0)
         game_state["cloud_pressure"] = current + delta
@@ -93,15 +130,29 @@ def _adjust_cloud(game_state: Any, delta: int) -> None:
                 updater()
 
 
-def apply_action(game_state: Any, action: str) -> None:
-    """Apply a single scripted action to the game state."""
+def apply_action(
+    game_state: Any,
+    action: str,
+    zone_id: Optional[str] = None,
+    object_id: Optional[str] = None
+) -> None:
+    """
+    Apply a single scripted action to the game state.
 
+    Args:
+        game_state: Game state object
+        action: Action string (e.g., "cloud_pressure+1")
+        zone_id: Zone where action occurred (for unicast pressure)
+        object_id: Object ID for event tracking
+    """
     if action.startswith("cloud_pressure+"):
         delta = int(action.split("+", 1)[1])
-        _adjust_cloud(game_state, delta)
+        source = f"object_pickup:{object_id}" if object_id else "object_pickup"
+        _adjust_cloud(game_state, delta, zone_id=zone_id, source=source)
     elif action.startswith("cloud_pressure-"):
         delta = int(action.split("-", 1)[1])
-        _adjust_cloud(game_state, -delta)
+        source = f"object_pickup:{object_id}" if object_id else "object_pickup"
+        _adjust_cloud(game_state, -delta, zone_id=zone_id, source=source)
     elif action.startswith("subtitle:"):
         text = action.split(":", 1)[1].strip()
         _set_subtitle(game_state, text)
@@ -112,24 +163,54 @@ def apply_action(game_state: Any, action: str) -> None:
         flags[key.strip().upper()] = val.strip()
 
 
-def _apply_actions(game_state: Any, actions: Iterable[str]) -> None:
+def _apply_actions(
+    game_state: Any,
+    actions: Iterable[str],
+    zone_id: Optional[str] = None,
+    object_id: Optional[str] = None
+) -> None:
     for action in actions:
-        apply_action(game_state, action)
+        apply_action(game_state, action, zone_id=zone_id, object_id=object_id)
 
 
-def handle_object_interaction(game_state: Any, voxel_object: VoxelObject) -> None:
-    """Handle the interaction flow for a voxel object."""
+def handle_object_interaction(
+    game_state: Any,
+    voxel_object: VoxelObject,
+    zone_id: Optional[str] = None
+) -> None:
+    """
+    Handle the interaction flow for a voxel object.
 
+    Args:
+        game_state: Game state object
+        voxel_object: Voxel object being interacted with
+        zone_id: Zone where interaction occurred (for MallOS unicast)
+    """
     behavior = voxel_object.behavior or {}
     behavior_type = str(behavior.get("type", "STATIC")).upper()
 
     if behavior_type == "PICKUP":
-        _apply_actions(game_state, behavior.get("on_pickup", []))
+        _apply_actions(
+            game_state,
+            behavior.get("on_pickup", []),
+            zone_id=zone_id,
+            object_id=voxel_object.id
+        )
         if hasattr(game_state, "remove_object") and callable(
             getattr(game_state, "remove_object")
         ):
             game_state.remove_object(voxel_object.id)
     elif behavior_type == "NPC_PROP":
-        _apply_actions(game_state, behavior.get("on_pickup", []))
+        _apply_actions(
+            game_state,
+            behavior.get("on_pickup", []),
+            zone_id=zone_id,
+            object_id=voxel_object.id
+        )
     else:
-        _apply_actions(game_state, behavior.get("on_use", []))
+        _apply_actions(
+            game_state,
+            behavior.get("on_use", []),
+            zone_id=zone_id,
+            object_id=voxel_object.id
+        )
