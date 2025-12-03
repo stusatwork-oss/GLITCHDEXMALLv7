@@ -12,6 +12,52 @@ from typing import Dict, List, Any
 
 
 # =============================================================================
+# NORMALIZATION (The Forgiveness Layer)
+# =============================================================================
+
+def normalize_key(k: Any) -> str:
+    """
+    Normalize any key to uppercase.
+    Makes JSON authoring forgiving - write however you want.
+    """
+    return str(k).strip().upper()
+
+
+def normalize_dict(d: Dict, recursive: bool = True) -> Dict:
+    """
+    Normalize all dictionary keys to uppercase.
+    Optionally recurse into nested dicts.
+    """
+    result = {}
+    for k, v in d.items():
+        normalized_key = normalize_key(k)
+
+        # Recursively normalize nested dicts
+        if recursive and isinstance(v, dict):
+            result[normalized_key] = normalize_dict(v, recursive=True)
+        elif recursive and isinstance(v, list):
+            # Handle lists of dicts
+            result[normalized_key] = [
+                normalize_dict(item, recursive=True) if isinstance(item, dict) else item
+                for item in v
+            ]
+        else:
+            result[normalized_key] = v
+
+    return result
+
+
+def normalize_value(v: Any) -> str:
+    """
+    Normalize string values (entity names, tile types, etc.) to uppercase.
+    Non-strings pass through unchanged.
+    """
+    if isinstance(v, str):
+        return v.strip().upper()
+    return v
+
+
+# =============================================================================
 # DATA LOADING
 # =============================================================================
 
@@ -19,11 +65,13 @@ def load_palette(path="data/palette_COMICBOOK_MALL_V1.json") -> Dict:
     """Load color palette and build lookup dictionaries."""
     with open(path) as f:
         data = json.load(f)
+    data = normalize_dict(data)
 
-    # Build name → hex lookup
+    # Build name → hex lookup (palette names normalized to uppercase)
     palette_map = {}
-    for entry in data["entries"]:
-        palette_map[entry["name"]] = entry["hex"]
+    for entry in data["ENTRIES"]:
+        palette_name = normalize_value(entry["NAME"])
+        palette_map[palette_name] = entry["HEX"]
 
     return palette_map
 
@@ -31,19 +79,32 @@ def load_palette(path="data/palette_COMICBOOK_MALL_V1.json") -> Dict:
 def load_tileset(path="data/mall_tileset_v1.json") -> Dict:
     """Load tile definitions."""
     with open(path) as f:
-        return json.load(f)
+        data = json.load(f)
+    return normalize_dict(data)
 
 
 def load_npc_profiles(path="data/npc_profiles_v1.json") -> Dict:
     """Load NPC color schemes."""
     with open(path) as f:
-        return json.load(f)
+        data = json.load(f)
+    return normalize_dict(data)
 
 
 def load_game_state(path="data/game_state_foodcourt_v1.json") -> Dict:
     """Load complete game state (level + entities + config)."""
     with open(path) as f:
-        return json.load(f)
+        data = json.load(f)
+    return normalize_dict(data)
+
+
+def load_world_index(path="data/mall_world_index.json") -> Dict:
+    """
+    Load world graph topology.
+    The mall structure becomes data - zones, escalators, era layers.
+    """
+    with open(path) as f:
+        data = json.load(f)
+    return normalize_dict(data)
 
 
 def hex_to_rgb(hex_color: str) -> tuple:
@@ -62,22 +123,26 @@ class GameState:
     Everything observable - no hidden complexity.
     """
 
-    def __init__(self, config_path="data/game_state_foodcourt_v1.json"):
-        # Load all data
+    def __init__(self, config_path="data/game_state_foodcourt_v1.json", world_index_path="data/mall_world_index.json"):
+        # Load all data (normalized to uppercase keys)
         self.palette = load_palette()
         self.tileset = load_tileset()
         self.npc_profiles = load_npc_profiles()
         self.config = load_game_state(config_path)
+        self.world_index = load_world_index(world_index_path)
 
-        # Extract key state
-        self.cloud_level = self.config["cloud_pressure"]["current_level"]
+        # Extract key state (using normalized keys)
+        self.cloud_level = self.config["CLOUD_PRESSURE"]["CURRENT_LEVEL"]
         self.cloud_phase = "calm"
-        self.entities = {e["id"]: e for e in self.config["entities"]}
+        self.entities = {normalize_value(e["ID"]): e for e in self.config["ENTITIES"]}
         self.player = self.entities["PLAYER"]
 
-        # Triggers
-        self.triggers = {t["id"]: t for t in self.config["triggers"]}
+        # Triggers (normalize trigger IDs)
+        self.triggers = {normalize_value(t["ID"]): t for t in self.config["TRIGGERS"]}
         self.triggered_ids = set()  # Track which triggers have fired
+
+        # World state (current zone from world index)
+        self.current_zone = normalize_value(self.world_index["STARTING_ZONE"])
 
         # Runtime state
         self.subtitle_text = None
@@ -85,17 +150,107 @@ class GameState:
         self.cycle_count = 0
 
     def get_color(self, palette_name: str) -> tuple:
-        """Look up palette name → RGB color."""
-        hex_color = self.palette.get(palette_name, "#FFFFFF")
+        """
+        Look up palette name → RGB color.
+        Forgiving - accepts any case.
+        """
+        normalized_name = normalize_value(palette_name)
+        hex_color = self.palette.get(normalized_name, "#FFFFFF")
         return hex_to_rgb(hex_color)
 
+    def get_tile(self, tile_type: str) -> Dict:
+        """
+        Get tile definition by type.
+        Forgiving - accepts any case.
+        """
+        normalized_type = normalize_value(tile_type)
+        return self.tileset["TILES"].get(normalized_type, {})
+
     def get_tile_colors(self, tile_type: str) -> Dict[str, tuple]:
-        """Get all colors for a tile type."""
-        tile_def = self.tileset["tiles"].get(tile_type, {})
+        """
+        Get all colors for a tile type.
+        Forgiving - accepts any case.
+        """
+        tile_def = self.get_tile(tile_type)
         return {
             part: self.get_color(palette_name)
             for part, palette_name in tile_def.items()
         }
+
+    def get_npc_profile(self, profile_name: str) -> Dict:
+        """
+        Get NPC profile by name.
+        Forgiving - accepts any case.
+        """
+        normalized_name = normalize_value(profile_name)
+        return self.npc_profiles["NPCS"].get(normalized_name, {})
+
+    def get_entity(self, entity_id: str) -> Dict:
+        """
+        Get entity by ID.
+        Forgiving - accepts any case.
+        """
+        normalized_id = normalize_value(entity_id)
+        return self.entities.get(normalized_id, {})
+
+    def get_zone(self, zone_name: str) -> Dict:
+        """
+        Get zone definition from world index.
+        Forgiving - accepts any case.
+        """
+        normalized_name = normalize_value(zone_name)
+        return self.world_index["ZONES"].get(normalized_name, {})
+
+    def get_available_transitions(self) -> List[Dict]:
+        """
+        Get all escalators/transitions from current zone.
+        Evaluates rules to determine which are currently accessible.
+        """
+        available = []
+        for escalator in self.world_index["ESCALATORS"]:
+            if normalize_value(escalator["FROM"]) == self.current_zone:
+                # Evaluate the rule to see if transition is available
+                rule = escalator.get("RULE", "true")
+                if evaluate_condition(rule, self):
+                    available.append(escalator)
+        return available
+
+    def can_transition_to(self, target_zone: str) -> bool:
+        """
+        Check if we can transition to a specific zone.
+        Forgiving - accepts any case.
+        """
+        normalized_target = normalize_value(target_zone)
+        for transition in self.get_available_transitions():
+            if normalize_value(transition["TO"]) == normalized_target:
+                return True
+        return False
+
+    def transition_to_zone(self, target_zone: str) -> bool:
+        """
+        Attempt to transition to a new zone.
+        Returns True if successful, False if transition not available.
+        """
+        normalized_target = normalize_value(target_zone)
+
+        if self.can_transition_to(normalized_target):
+            # Load new game state for target zone
+            zone_def = self.get_zone(normalized_target)
+            if zone_def:
+                new_state_file = f"data/{zone_def['FILE']}"
+                self.config = load_game_state(new_state_file)
+
+                # Re-extract entities and triggers from new zone
+                self.entities = {normalize_value(e["ID"]): e for e in self.config["ENTITIES"]}
+                self.triggers = {normalize_value(t["ID"]): t for t in self.config["TRIGGERS"]}
+                self.triggered_ids.clear()  # Reset triggers in new zone
+
+                # Update current zone
+                self.current_zone = normalized_target
+
+                return True
+
+        return False
 
 
 # =============================================================================
@@ -105,20 +260,20 @@ class GameState:
 def update_cloud(gs: GameState, dt: float):
     """Update cloud pressure (passive rise + events)."""
 
-    # Passive rise
-    passive_rate = gs.config["cloud_pressure"]["passive_rate"]
+    # Passive rise (using normalized keys)
+    passive_rate = gs.config["CLOUD_PRESSURE"]["PASSIVE_RATE"]
     gs.cloud_level += passive_rate * dt
 
     # Cap at max
-    max_level = gs.config["cloud_pressure"]["max_level"]
+    max_level = gs.config["CLOUD_PRESSURE"]["MAX_LEVEL"]
     gs.cloud_level = min(gs.cloud_level, max_level)
 
     # Update phase based on thresholds
-    phases = gs.config["cloud_pressure"]["phases"]
+    phases = gs.config["CLOUD_PRESSURE"]["PHASES"]
     for phase_name, phase_data in phases.items():
-        low, high = phase_data["range"]
+        low, high = phase_data["RANGE"]
         if low <= gs.cloud_level < high:
-            gs.cloud_phase = phase_name
+            gs.cloud_phase = phase_name.lower()  # Keep phase name lowercase for readability
             break
 
 
@@ -126,6 +281,7 @@ def evaluate_condition(condition: str, gs: GameState) -> bool:
     """
     Evaluate a trigger condition string.
     Simple parser - handles JSON-style booleans and Python eval.
+    Forgiving - entity names case-insensitive.
     """
 
     # Replace game state variables with actual values
@@ -133,11 +289,14 @@ def evaluate_condition(condition: str, gs: GameState) -> bool:
     context = context.replace("cloud", str(gs.cloud_level))
 
     # Handle entity property checks (e.g., "janitor.rule_broken == false")
+    # Entities are stored as uppercase, but conditions use lowercase
     for entity_id, entity in gs.entities.items():
         entity_lower = entity_id.lower()
         for key, value in entity.items():
             # Keep as Python bool (True/False not true/false)
-            context = context.replace(f"{entity_lower}.{key}", str(value))
+            # Match lowercase entity name in condition, uppercase key in entity dict
+            key_lower = key.lower()
+            context = context.replace(f"{entity_lower}.{key_lower}", str(value))
 
     # Replace logical operators (JSON-style to Python-style)
     context = context.replace(" AND ", " and ")
@@ -168,8 +327,9 @@ def check_triggers(gs: GameState):
         if trigger_id in gs.triggered_ids:
             continue
 
-        if "condition" in trigger:
-            if evaluate_condition(trigger["condition"], gs):
+        # Check if trigger has condition (using normalized key)
+        if "CONDITION" in trigger:
+            if evaluate_condition(trigger["CONDITION"], gs):
                 execute_trigger(gs, trigger)
                 gs.triggered_ids.add(trigger_id)
 
@@ -178,69 +338,73 @@ def execute_trigger(gs: GameState, trigger: Dict):
     """
     Execute trigger actions.
     Simple action interpreter - no scripting language needed.
+    Uses normalized keys (uppercase).
     """
 
-    for action_def in trigger.get("on_trigger", []):
-        action_type = action_def["action"]
+    for action_def in trigger.get("ON_TRIGGER", []):
+        # Normalize action type for case-insensitive matching
+        action_type = normalize_value(action_def["ACTION"])
 
-        if action_type == "subtitle":
-            gs.subtitle_text = action_def["text"]
-            gs.subtitle_timer = action_def.get("duration", 3.0)
+        if action_type == "SUBTITLE":
+            gs.subtitle_text = action_def["TEXT"]
+            gs.subtitle_timer = action_def.get("DURATION", 3.0)
 
-        elif action_type == "set_flag":
-            npc_id = action_def["npc"]
-            flag = action_def["flag"]
-            value = action_def["value"]
+        elif action_type == "SET_FLAG":
+            npc_id = normalize_value(action_def["NPC"])
+            flag = action_def["FLAG"]
+            value = action_def["VALUE"]
             gs.entities[npc_id][flag] = value
 
-        elif action_type == "cloud_drop":
-            target = action_def["target"]
-            duration = action_def["duration"]
+        elif action_type == "CLOUD_DROP":
+            target = action_def["TARGET"]
+            duration = action_def["DURATION"]
             # In real engine: tween cloud_level → target over duration
             gs.cloud_level = target
             gs.cycle_count += 1
             # Reset triggers so they can fire again in next cycle
             gs.triggered_ids.clear()
 
-        elif action_type == "reset_npc":
-            npc_id = action_def["npc"]
-            npc = gs.entities[npc_id]
-            npc["rule_broken"] = False
-            # Move back to spawn, etc.
+        elif action_type == "RESET_NPC":
+            npc_id = normalize_value(action_def["NPC"])
+            npc = gs.entities.get(npc_id)
+            if npc:
+                npc["RULE_BROKEN"] = False
+                # Move back to spawn, etc.
 
-        elif action_type == "toddler_fade":
-            toddler = gs.entities["TODDLER"]
-            toddler["manifestation"] = action_def["target_manifestation"]
+        elif action_type == "TODDLER_FADE":
+            toddler = gs.entities.get("TODDLER")
+            if toddler:
+                toddler["MANIFESTATION"] = action_def["TARGET_MANIFESTATION"]
 
-        elif action_type == "set_lighting":
+        elif action_type == "SET_LIGHTING":
             # In real engine: apply flicker/brightness to renderer
             # For now, just track in state
             pass
 
-        elif action_type == "stop_patrol":
-            npc_id = action_def["npc"]
+        elif action_type == "STOP_PATROL":
+            npc_id = normalize_value(action_def["NPC"])
             npc = gs.entities.get(npc_id)
             if npc:
-                npc["behavior"] = "stopped"
+                npc["BEHAVIOR"] = "stopped"
 
-        elif action_type == "resume_patrol":
-            npc_id = action_def["npc"]
+        elif action_type == "RESUME_PATROL":
+            npc_id = normalize_value(action_def["NPC"])
             npc = gs.entities.get(npc_id)
             if npc:
-                npc["behavior"] = "patrol_loop"
+                npc["BEHAVIOR"] = "patrol_loop"
 
-        elif action_type == "screen_flash":
+        elif action_type == "SCREEN_FLASH":
             # In real engine: flash screen with color
             # For now, just acknowledge
             pass
 
-        elif action_type == "move_npc":
-            npc_id = action_def["npc"]
-            target = action_def.get("target")
+        elif action_type == "MOVE_NPC":
+            npc_id = normalize_value(action_def["NPC"])
+            target = action_def.get("TARGET")
             npc = gs.entities.get(npc_id)
             if npc and target:
                 # In real engine: set movement target
-                npc["zone"] = target
+                npc["ZONE"] = target
 
         # Add more actions as needed
 
@@ -249,19 +413,26 @@ def handle_credit_card_use(gs: GameState, card_name: str):
     """
     Player uses credit card → Cloud increases.
     Toddler amplifies effect if nearby.
+    Forgiving - accepts any case for card name.
     """
 
-    card = gs.config["player"]["credit_cards"][card_name]
-    cost = card["cost"]
+    # Normalize card name for lookup
+    card_name_normalized = normalize_value(card_name)
+    card = gs.config["PLAYER"]["CREDIT_CARDS"][card_name_normalized]
+    cost = card["COST"]
 
     # Check toddler proximity
-    toddler = gs.entities["TODDLER"]
-    toddler_multiplier = toddler["on_credit_card_use"]["cloud_multiplier"]
+    toddler = gs.entities.get("TODDLER")
+    if not toddler:
+        gs.cloud_level += cost
+        return
+
+    toddler_multiplier = toddler["ON_CREDIT_CARD_USE"]["CLOUD_MULTIPLIER"]
 
     # Apply cost (with amplification if toddler visible)
-    if toddler["manifestation"] > 0.5:
+    if toddler["MANIFESTATION"] > 0.5:
         gs.cloud_level += cost * toddler_multiplier
-        toddler["manifestation"] = min(1.0, toddler["manifestation"] + 0.1)
+        toddler["MANIFESTATION"] = min(1.0, toddler["MANIFESTATION"] + 0.1)
         gs.subtitle_text = "The toddler giggles."
         gs.subtitle_timer = 2.0
     else:
@@ -323,22 +494,22 @@ def main():
     gs = GameState("data/game_state_foodcourt_v1.json")
 
     print(f"\n✅ Loaded palette: {len(gs.palette)} colors")
-    print(f"✅ Loaded tileset: {len(gs.tileset['tiles'])} tiles")
-    print(f"✅ Loaded NPCs: {len(gs.npc_profiles['npcs'])} profiles")
-    print(f"✅ Loaded level: {gs.config['level_id']}")
+    print(f"✅ Loaded tileset: {len(gs.tileset['TILES'])} tiles")
+    print(f"✅ Loaded NPCs: {len(gs.npc_profiles['NPCS'])} profiles")
+    print(f"✅ Loaded level: {gs.config['LEVEL_ID']}")
     print(f"✅ Entities: {len(gs.entities)}")
 
-    # Example: Get tile colors
-    print("\n--- FOOD_COURT Tile Colors ---")
-    fc_colors = gs.get_tile_colors("FOOD_COURT")
+    # Example: Get tile colors (case-insensitive!)
+    print("\n--- food_court Tile Colors (lowercase works!) ---")
+    fc_colors = gs.get_tile_colors("food_court")
     for part, rgb in fc_colors.items():
         print(f"  {part:12s} → RGB{rgb}")
 
-    # Example: Get NPC colors
-    print("\n--- JANITOR_UNIT7 Colors ---")
-    janitor_def = gs.npc_profiles["npcs"]["JANITOR_UNIT7"]
+    # Example: Get NPC colors (using helper method)
+    print("\n--- JANITOR_unit7 Colors (MiXeD case works!) ---")
+    janitor_def = gs.get_npc_profile("janitor_UNIT7")
     for part, palette_name in janitor_def.items():
-        if part != "description":
+        if part != "DESCRIPTION":
             rgb = gs.get_color(palette_name)
             print(f"  {part:12s} → {palette_name:25s} → RGB{rgb}")
 
@@ -360,7 +531,7 @@ def main():
             print(f"  Step {steps:3d}: Cloud = {gs.cloud_level:5.1f} ({gs.cloud_phase})")
 
     print(f"\n✅ Janitor threshold reached at Cloud {gs.cloud_level:.1f}")
-    print(f"✅ Janitor rule broken: {gs.entities['JANITOR']['rule_broken']}")
+    print(f"✅ Janitor rule broken: {gs.entities['JANITOR']['RULE_BROKEN']}")
     if gs.subtitle_text:
         print(f"✅ Subtitle: '{gs.subtitle_text}'")
 
