@@ -77,6 +77,7 @@ class GameState:
 
         # Triggers
         self.triggers = {t["id"]: t for t in self.config["triggers"]}
+        self.triggered_ids = set()  # Track which triggers have fired
 
         # Runtime state
         self.subtitle_text = None
@@ -121,24 +122,56 @@ def update_cloud(gs: GameState, dt: float):
             break
 
 
+def evaluate_condition(condition: str, gs: GameState) -> bool:
+    """
+    Evaluate a trigger condition string.
+    Simple parser - handles JSON-style booleans and Python eval.
+    """
+
+    # Replace game state variables with actual values
+    context = condition
+    context = context.replace("cloud", str(gs.cloud_level))
+
+    # Handle entity property checks (e.g., "janitor.rule_broken == false")
+    for entity_id, entity in gs.entities.items():
+        entity_lower = entity_id.lower()
+        for key, value in entity.items():
+            # Keep as Python bool (True/False not true/false)
+            context = context.replace(f"{entity_lower}.{key}", str(value))
+
+    # Replace logical operators (JSON-style to Python-style)
+    context = context.replace(" AND ", " and ")
+    context = context.replace(" OR ", " or ")
+
+    # Replace JSON-style booleans with Python-style
+    # Use word boundaries to avoid replacing parts of variable names
+    import re
+    context = re.sub(r'\bfalse\b', 'False', context)
+    context = re.sub(r'\btrue\b', 'True', context)
+
+    # Safe eval of simple comparison expressions
+    try:
+        return eval(context)
+    except:
+        return False
+
+
 def check_triggers(gs: GameState):
     """
     Check all threshold-based triggers.
-    No complex AI - just: if condition, then action.
+    Generic - evaluates conditions from JSON, no hardcoded trigger IDs.
     """
 
-    # Janitor threshold
-    janitor = gs.entities.get("JANITOR")
-    if janitor and not janitor.get("rule_broken", False):
-        if gs.cloud_level >= janitor["threshold"]:
-            trigger = gs.triggers["JANITOR_THRESHOLD"]
-            execute_trigger(gs, trigger)
+    # Iterate through all triggers and check conditions
+    for trigger_id, trigger in gs.triggers.items():
+        # Skip if already triggered (one-shot triggers)
+        if trigger_id in gs.triggered_ids:
+            continue
 
-    # Cloud release
-    release_threshold = gs.config["cloud_pressure"]["cycle"]["release_at"]
-    if gs.cloud_level >= release_threshold:
-        trigger = gs.triggers["CLOUD_RELEASE"]
-        execute_trigger(gs, trigger)
+        if "condition" in trigger:
+            if evaluate_condition(trigger["condition"], gs):
+                execute_trigger(gs, trigger)
+                gs.triggered_ids.add(trigger_id)
 
 
 def execute_trigger(gs: GameState, trigger: Dict):
@@ -166,6 +199,8 @@ def execute_trigger(gs: GameState, trigger: Dict):
             # In real engine: tween cloud_level → target over duration
             gs.cloud_level = target
             gs.cycle_count += 1
+            # Reset triggers so they can fire again in next cycle
+            gs.triggered_ids.clear()
 
         elif action_type == "reset_npc":
             npc_id = action_def["npc"]
@@ -177,7 +212,37 @@ def execute_trigger(gs: GameState, trigger: Dict):
             toddler = gs.entities["TODDLER"]
             toddler["manifestation"] = action_def["target_manifestation"]
 
-        # Add more actions as needed (screen_flash, move_npc, etc.)
+        elif action_type == "set_lighting":
+            # In real engine: apply flicker/brightness to renderer
+            # For now, just track in state
+            pass
+
+        elif action_type == "stop_patrol":
+            npc_id = action_def["npc"]
+            npc = gs.entities.get(npc_id)
+            if npc:
+                npc["behavior"] = "stopped"
+
+        elif action_type == "resume_patrol":
+            npc_id = action_def["npc"]
+            npc = gs.entities.get(npc_id)
+            if npc:
+                npc["behavior"] = "patrol_loop"
+
+        elif action_type == "screen_flash":
+            # In real engine: flash screen with color
+            # For now, just acknowledge
+            pass
+
+        elif action_type == "move_npc":
+            npc_id = action_def["npc"]
+            target = action_def.get("target")
+            npc = gs.entities.get(npc_id)
+            if npc and target:
+                # In real engine: set movement target
+                npc["zone"] = target
+
+        # Add more actions as needed
 
 
 def handle_credit_card_use(gs: GameState, card_name: str):
