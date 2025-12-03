@@ -1,0 +1,259 @@
+{
+  "batch_number": 7,
+  "batch_date": "2025-11-22",
+  "processed_by": "AI Classification - RAPID MODE",
+  "total_items": 25,
+  "classifications": [
+    {
+      "filename": "453149599_2f40f58fdb_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/453149599_2f40f58fdb_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "453149599_2f40f58fdb_z.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/453149599_2f40f58fdb_z.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "453149709_f566b7aee5_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/453149709_f566b7aee5_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "453149709_f566b7aee5_z.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/453149709_f566b7aee5_z.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "453149873_35954a1467_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/453149873_35954a1467_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "453149873_35954a1467_z.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/453149873_35954a1467_z.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "453150041_b651740729_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/453150041_b651740729_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46098898_9e9345e0b9_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46098898_9e9345e0b9_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46098898_9e9345e0b9_z.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46098898_9e9345e0b9_z.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46098941_244d2e0255_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46098941_244d2e0255_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46098972_9724bb55f7.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46098972_9724bb55f7.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46098972_9724bb55f7_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46098972_9724bb55f7_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099003_acefec2ef1_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099003_acefec2ef1_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099046_2611c477e2_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099046_2611c477e2_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099046_2611c477e2_z.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099046_2611c477e2_z.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099078_de47fc601c_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099078_de47fc601c_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099101_6ee09020bc_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099101_6ee09020bc_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099155_c52321b529_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099155_c52321b529_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099177_f436008d47_z.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099177_f436008d47_z.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099220_f185556364_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099220_f185556364_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099327_de7206a593_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099327_de7206a593_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099343_912c3087ec_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099343_912c3087ec_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099343_912c3087ec_z.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099343_912c3087ec_z.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099397_61bb9c21ec_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099397_61bb9c21ec_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    },
+    {
+      "filename": "46099419_ba569f722c_c.jpg",
+      "source_path": "v6-nextgen/assets/photos/eastland-archive/46099419_ba569f722c_c.jpg",
+      "layer_1_zone": "PENDING",
+      "layer_2_semantic": [],
+      "layer_3_narrative": [],
+      "anomalies": null,
+      "confidence": 0,
+      "status": "pending"
+    }
+  ],
+  "status": "PENDING_CLASSIFICATION"
+}

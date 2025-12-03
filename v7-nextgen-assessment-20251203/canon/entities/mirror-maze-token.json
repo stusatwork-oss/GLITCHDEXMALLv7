@@ -1,0 +1,36 @@
+{
+  "id": "mirror-maze-token",
+  "name": "Mirror Maze Token",
+  "role": "Secondary",
+  "type": "artifact",
+  "tags": [
+    "fc-arcade",
+    "liminal",
+    "recursion",
+    "memory_fragment"
+  ],
+  "metrics": {
+    "resonanceScore": 65,
+    "grassrootsSupport": 800,
+    "audienceSize": 12000,
+    "deepViewCount": 600000,
+    "engagementScore": 70,
+    "referenceCount": 450,
+    "trustScore": 50,
+    "backingVolume": 0,
+    "resourcePool": 5,
+    "networkReach": 1
+  },
+  "computed": {
+    "power": 10,
+    "charisma": 1140,
+    "overall": 1150,
+    "rarity": "Common"
+  },
+  "meta": {
+    "universe": "mallos-v6",
+    "source": "manual",
+    "notes": "Small artifact with high narrative density. Mirror imagery (recursion theme). Found near arcade. Minimal resource pool (physical object tiny). Memory fragment quality - triggers vivid recall.",
+    "last_updated": "2025-11-22T10:00:00Z"
+  }
+}

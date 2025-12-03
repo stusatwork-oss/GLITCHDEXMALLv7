@@ -1,0 +1,129 @@
+{
+  "id": "food-court-neon-sign",
+  "name": "FOOD COURT Neon Sign",
+  "role": "Tertiary",
+  "type": "artifact",
+  "subtype": "signage",
+  "tags": [
+    "z4_food_court",
+    "neon",
+    "landmark",
+    "navigation_marker",
+    "suspended",
+    "new_in_v7",
+    "liminal"
+  ],
+  "spatial": {
+    "zone": "Z4_FOOD_COURT",
+    "location": "Suspended above food court entrance/overlook",
+    "elevation": "Under tensile roof, visible from upper level (Z=0)",
+    "mounting": "Suspended from ceiling structure",
+    "visibility": "Primary landmark when descending escalators"
+  },
+  "physical": {
+    "shape": "Circular",
+    "diameter_feet": {
+      "value": 7,
+      "range_min": 6,
+      "range_max": 8,
+      "confidence": "MEDIUM"
+    },
+    "design": {
+      "outer_ring": "Blue neon arc",
+      "text": "FOOD COURT (red neon)",
+      "composition": "Blue arc surrounding red text",
+      "style": "1980s commercial neon signage"
+    },
+    "materials": [
+      "Neon tubing (blue)",
+      "Neon tubing (red)",
+      "Metal frame/armature",
+      "Electrical transformer housing"
+    ]
+  },
+  "description": {
+    "short": "Large circular neon sign marking the food court entrance",
+    "long": "A suspended circular neon sign reading 'FOOD COURT' with distinctive blue arc surrounding red text. Mounted under the tensile roof canopy, visible from the upper level. Serves as the primary visual landmark for food court navigation. The sign's glow creates a portal-like effect when viewed from the escalator descent sequence.",
+    "visual_details": [
+      "Circular frame ~6-8 feet diameter",
+      "Blue neon outer arc/ring",
+      "Red neon text 'FOOD COURT'",
+      "Suspended from ceiling - appears to float",
+      "Visible from multiple levels",
+      "Industrial aesthetic - exposed mounting hardware"
+    ],
+    "atmospheric_role": "Navigation beacon and liminal threshold marker"
+  },
+  "behavior": {
+    "state_variations": [
+      {
+        "era": "1981-1995",
+        "state": "Fully operational - bright, steady glow",
+        "description": "New neon, vivid colors, reliable operation"
+      },
+      {
+        "era": "1995-2005",
+        "state": "Operational with minor degradation",
+        "description": "Some flickering, slight color fade, still functional"
+      },
+      {
+        "era": "2005-2011",
+        "state": "Flickering, partial failure",
+        "description": "Sections dark, erratic flickering, dying transformer buzz audible",
+        "cloud_interaction": "Flicker rate increases with Cloud pressure"
+      }
+    ],
+    "cloud_sensitivity": {
+      "calm": "Steady glow",
+      "uneasy": "Occasional flicker",
+      "strained": "Frequent flickering, sections dark intermittently",
+      "critical": "Strobing, buzzing, unstable - portal-like pulsing"
+    }
+  },
+  "crd_evidence": {
+    "confidence": "HIGH",
+    "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 4.3",
+    "photo_refs": ["64360891", "453143417"],
+    "measurement_id": "NSF-001",
+    "feature_class": "NEON_SIGN_FEATURE",
+    "discovery_note": "Clearly visible in multiple photos - navigation landmark",
+    "significance": "NEW entity in v7 - primary visual marker for food court zone",
+    "integration_reason": "v5 CRD identified as measurable feature and navigation anchor"
+  },
+  "metrics": {
+    "resonanceScore": 72,
+    "grassrootsSupport": 1500,
+    "audienceSize": 12000,
+    "deepViewCount": 350000,
+    "engagementScore": 58,
+    "referenceCount": 450,
+    "trustScore": 40,
+    "backingVolume": 8000,
+    "resourcePool": 150,
+    "networkReach": 3
+  },
+  "computed": {
+    "power": 886,
+    "charisma": 784,
+    "overall": 1670,
+    "rarity": "Uncommon"
+  },
+  "narrative": {
+    "symbolism": "Threshold marker - gateway to the reactor containment zone",
+    "design_intent": "Industrial theater aesthetic - honest signage for brutal space",
+    "player_interaction": "Navigation landmark, visual anchor, atmospheric mood device",
+    "lore_hooks": [
+      "Why does it flicker in sync with escalator hum?",
+      "The sign is older than the food court vendors - original 1981 installation",
+      "Some say the blue arc is the same color as the glass blocks",
+      "When all vendors closed, the sign kept running for months"
+    ]
+  },
+  "meta": {
+    "universe": "mallos-v7",
+    "source": "v5-crd-integration",
+    "version": "7.0.0-alpha",
+    "notes": "NEW entity per user answer 6 (zones for all, sign as entity). Serves as navigation landmark, atmospheric device, and liminal threshold marker. Cloud-sensitive behavior enables dynamic era/mood toggling per user answer 8-B.",
+    "last_updated": "2025-11-28T00:00:00Z"
+  }
+}

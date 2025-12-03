@@ -1,0 +1,37 @@
+{
+  "id": "the-janitor",
+  "name": "The Janitor",
+  "role": "Primary",
+  "type": "npc",
+  "tags": [
+    "corridor",
+    "service_hall",
+    "liminal",
+    "memory_anchor",
+    "never_crosses_fc_arcade"
+  ],
+  "metrics": {
+    "resonanceScore": 85,
+    "grassrootsSupport": 2500,
+    "audienceSize": 15000,
+    "deepViewCount": 850000,
+    "engagementScore": 72,
+    "referenceCount": 1200,
+    "trustScore": 45,
+    "backingVolume": 50000,
+    "resourcePool": 500,
+    "networkReach": 4
+  },
+  "computed": {
+    "power": 1478,
+    "charisma": 1308,
+    "overall": 2786,
+    "rarity": "Common"
+  },
+  "meta": {
+    "universe": "mallos-v6",
+    "source": "manual",
+    "notes": "Primary anchor NPC. Never crosses FC-ARCADE threshold. Never speaks about wife. Always faces away from bookstore. High resonance due to repetitive behavior pattern.",
+    "last_updated": "2025-11-22T10:00:00Z"
+  }
+}
