@@ -4,6 +4,12 @@
   "mode": "HEIGHTMAP_EXTRUDE",
   "palette": "COMICBOOK_MALL_V1",
   "voxel_scale": [1, 1, 1],
+  "qbit": {
+    "power": 50,
+    "charisma": 800,
+    "resonance": 120,
+    "note": "High attention draw, low structural leverage"
+  },
   "placement": {
     "attach": "floor",
     "offset": [0, 0, 0]
