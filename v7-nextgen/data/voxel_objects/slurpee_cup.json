@@ -1,0 +1,138 @@
+{
+  "voxel_object_id": "SLURPEE_CUP",
+  "display_name": "7-Eleven Slurpee Cup (Medium)",
+  "description": "Iconic blue convenience store cup, frozen carbonated beverage, mall food court staple",
+
+  "size": [4, 4, 8],
+  "palette": "COMICBOOK_MALL_V1",
+
+  "metadata": {
+    "era": "1995",
+    "category": "consumable",
+    "pickup_sound": "slurp_pickup.wav",
+    "use_sound": "slurp_drink.wav",
+    "spawn_locations": ["FOOD_COURT", "CONVENIENCE_STORE"]
+  },
+
+  "layers": [
+    {
+      "y": 0,
+      "shape": "circle_3",
+      "color": "metal_dark",
+      "description": "Shadow ring / base contact"
+    },
+    {
+      "y": 1,
+      "shape": "circle_3",
+      "color": "mall_blue",
+      "description": "Cup bottom"
+    },
+    {
+      "y": 2,
+      "shape": "circle_3",
+      "color": "mall_blue",
+      "description": "Cup body lower"
+    },
+    {
+      "y": 3,
+      "shape": "circle_3",
+      "color": "mall_blue_light",
+      "description": "Cup body mid"
+    },
+    {
+      "y": 4,
+      "shape": "circle_3",
+      "color": "mall_blue_light",
+      "band": {
+        "height": 1,
+        "color": "foodcourt_yellow",
+        "description": "7-Eleven brand stripe"
+      },
+      "description": "Cup body upper with logo band"
+    },
+    {
+      "y": 5,
+      "shape": "circle_3",
+      "color": "ceiling_tile_light",
+      "description": "White dome lid"
+    },
+    {
+      "y": 6,
+      "shape": "circle_3",
+      "color": "milo_optics_hotpink",
+      "transparency": 0.7,
+      "description": "Frozen slush visible through lid"
+    },
+    {
+      "y": 7,
+      "shape": "straw_center",
+      "color": "alert_red",
+      "description": "Red bendy straw"
+    }
+  ],
+
+  "shape_definitions": {
+    "circle_3": {
+      "description": "3x3 circle pattern (4x4 grid with corners cut)",
+      "pattern": [
+        [0, 1, 1, 0],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [0, 1, 1, 0]
+      ]
+    },
+    "straw_center": {
+      "description": "Single voxel in center for straw",
+      "pattern": [
+        [0, 0, 0, 0],
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 0, 0, 0]
+      ]
+    }
+  },
+
+  "interactions": {
+    "pickup": {
+      "action": "add_to_inventory",
+      "cloud_cost": 5,
+      "subtitle": "The Slurpee is the perfect temperature. It will never melt."
+    },
+    "consume": {
+      "action": "heal_player",
+      "amount": 10,
+      "cloud_cost": 3,
+      "subtitle": "Brain freeze. The lights flicker.",
+      "removes_from_inventory": true
+    },
+    "drop": {
+      "action": "spawn_at_position",
+      "subtitle": "The cup lands upright. Always upright."
+    }
+  },
+
+  "physics": {
+    "is_solid": true,
+    "can_pickup": true,
+    "weight": 2,
+    "collision_box": [3, 3, 7]
+  },
+
+  "rendering_hints": {
+    "cast_shadow": true,
+    "ambient_occlusion": true,
+    "reflective_surfaces": ["lid"],
+    "emissive": false,
+    "pixel_perfect": true
+  },
+
+  "lore": {
+    "first_appeared": "1966",
+    "mall_significance": "The Slurpee is a time anchor. Every sip tastes like 1995.",
+    "contradictions": [
+      "The cup never empties",
+      "The cup is always empty",
+      "Both are true"
+    ]
+  }
+}
