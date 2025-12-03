@@ -1,0 +1,18 @@
+{
+  "voxel_object_id": "TRASH_CAN",
+  "source_image": "assets/voxel_sources/trash_can.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "palette": "COMICBOOK_MALL_V1",
+  "voxel_scale": [1, 1, 1],
+  "placement": {
+    "attach": "floor",
+    "offset": [0, 0, 0]
+  },
+  "behavior": {
+    "type": "STATIC",
+    "tags": ["FOODCOURT", "SERVICE"],
+    "on_use": [
+      "subtitle: 'The smell is a whole separate timeline.'"
+    ]
+  }
+}
