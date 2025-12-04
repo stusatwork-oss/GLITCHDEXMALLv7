@@ -1,7 +1,7 @@
 # GLITCHDEX MALL - AI-Native Reconstruction Project
 
-**Status:** 🏗️ Active Development - AI-Native Cohort (GitHub)
-**Canonical Version:** **v6-nextgen/**
+**Status:** 🧪 Active Lab: **v8-nextgen/** (working branch)
+**Canonical Version:** **v7-nextgen/**
 **Philosophy:** Reconstruction > Hallucination | Canon Emerges from Evidence
 
 ---
@@ -13,7 +13,8 @@
 **Read these first (in order):**
 1. [`.github/model-instructions.md`](.github/model-instructions.md) - AI agent guidelines
 2. [`docs/AI_INTENT.md`](docs/AI_INTENT.md) - Project philosophy
-3. [`v6-nextgen/README.md`](v6-nextgen/README.md) - **Canonical entry point**
+3. [`v7-nextgen/README.md`](v7-nextgen/README.md) - **Canonical entry point (stable)**
+4. [`v8-nextgen/README.md`](v8-nextgen/README.md) - **Lab branch (active experiments)**
 
 ### For Players
 
@@ -35,13 +36,21 @@ Playable versions are in `/archive/`:
 ```
 GLUTCHDEXMALL/
 │
-├── v6-nextgen/              ⭐ CANONICAL - Primary development target
-│   ├── README.md            # Start here for v6 work
+├── v7-nextgen/              ⭐ CANONICAL - Primary development path
+│   ├── README.md            # Start here for stable canon work
 │   ├── canon/               # Authoritative entity definitions
 │   ├── docs/                # Documentation
 │   ├── src/                 # Source code (white box skeleton)
 │   ├── data/                # Game data
 │   └── assets/              # Photos, maps, media
+│
+├── v8-nextgen/              🧪 LAB - Active experiments/working branch
+│   ├── README.md            # Start here for lab work
+│   ├── canon/               # Experimental definitions
+│   ├── docs/                # Documentation for experiments
+│   ├── src/                 # Prototype source code
+│   ├── data/                # Experimental data
+│   └── assets/              # Lab media
 │
 ├── ai/                      🤖 AI-Native Tooling
 │   ├── spynt/               # Character spine schemas
