@@ -1,0 +1,26 @@
+{
+  "voxel_object_id": "JANITOR_MOP",
+  "source_image": "assets/voxel_sources/janitor_mop.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "palette": "COMICBOOK_MALL_V1",
+  "voxel_scale": [1, 1, 1],
+  "qbit": {
+    "power": 500,
+    "charisma": 100,
+    "resonance": 80,
+    "owner_npc_id": "UNIT_7",
+    "note": "Structural tool, NPC resource dependency"
+  },
+  "placement": {
+    "attach": "floor",
+    "offset": [0, 0, 0]
+  },
+  "behavior": {
+    "type": "NPC_PROP",
+    "tags": ["SERVICE_HALL", "UNIT7"],
+    "on_pickup": [
+      "subtitle: 'You really shouldn't be holding that.'",
+      "cloud_pressure+2"
+    ]
+  }
+}

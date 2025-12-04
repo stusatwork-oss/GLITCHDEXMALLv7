@@ -1,0 +1,390 @@
+{
+  "total_segments": 16,
+  "total_frames_extracted": 48,
+  "segments": [
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00002181",
+      "duration": 1.22,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002181_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002181_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 0.61,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002181_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002181_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 0.72,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002181_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002181_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00002217",
+      "duration": 6.25,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002217_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002217_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 3.13,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002217_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002217_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 5.75,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002217_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002217_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00002404",
+      "duration": 6.72,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002404_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002404_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 3.36,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002404_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002404_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 6.22,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002404_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002404_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00002605",
+      "duration": 6.21,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002605_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002605_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 3.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002605_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002605_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 5.71,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002605_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002605_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00002791",
+      "duration": 6.14,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002791_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002791_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 3.07,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002791_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002791_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 5.64,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002791_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002791_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00002975",
+      "duration": 6.12,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002975_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002975_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 3.06,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002975_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002975_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 5.62,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00002975_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00002975_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00003158",
+      "duration": 5.44,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00003158_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00003158_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 2.72,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00003158_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00003158_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 4.94,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00003158_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00003158_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00009777",
+      "duration": 14.95,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00009777_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00009777_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 7.48,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00009777_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00009777_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 14.45,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00009777_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00009777_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00012948",
+      "duration": 0.87,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00012948_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00012948_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 0.44,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00012948_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00012948_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 0.37,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00012948_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00012948_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00013188",
+      "duration": 4.84,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013188_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013188_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 2.42,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013188_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013188_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 4.34,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013188_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013188_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00013333",
+      "duration": 5.44,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013333_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013333_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 2.72,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013333_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013333_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 4.94,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013333_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013333_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00013655",
+      "duration": 7.42,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013655_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013655_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 3.71,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013655_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013655_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 6.92,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013655_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013655_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00013877",
+      "duration": 8.66,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013877_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013877_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 4.33,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013877_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013877_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 8.16,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00013877_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00013877_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00017294",
+      "duration": 10.79,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00017294_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00017294_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 5.4,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00017294_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00017294_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 10.29,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00017294_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00017294_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00017617",
+      "duration": 5.61,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00017617_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00017617_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 2.81,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00017617_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00017617_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 5.11,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00017617_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00017617_last.jpg"
+        }
+      ]
+    },
+    {
+      "segment": "ERA_2020_WALKTHROUGH_TRIMMED00018216",
+      "duration": 5.01,
+      "frames": [
+        {
+          "position": "first",
+          "timestamp": 0.1,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00018216_first.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00018216_first.jpg"
+        },
+        {
+          "position": "middle",
+          "timestamp": 2.51,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00018216_middle.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00018216_middle.jpg"
+        },
+        {
+          "position": "last",
+          "timestamp": 4.51,
+          "filename": "ERA_2020_WALKTHROUGH_TRIMMED00018216_last.jpg",
+          "path": "C:\\Users\\stusa\\Documents\\GitHub\\glitchLFS1121origin\\v6-nextgen\\assets\\processed\\video_audit\\ERA_2020_WALKTHROUGH_TRIMMED00018216_last.jpg"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "cloud_crosses_critical_threshold",
+  "display_name": "The Cloud Goes Critical",
+  "type": "threshold_cutscene",
+  "duration_seconds": 12,
+  "trigger": {
+    "event": "CLOUD_THRESHOLD_CROSSED",
+    "threshold": 85,
+    "direction": "rising",
+    "conditions": [
+      "cloud.level >= 85",
+      "cloud.mood == 'critical'"
+    ]
+  },
+  "sora_prompt_id": "cutscene_cloud_critical_v1",
+  "sora_prompt": {
+    "scene_description": "Interior mall atrium. Fluorescent lights begin to hum and pulse in unison. The fountain's water slows, then reverses direction for a moment. Security camera feeds on nearby monitors all freeze on the same timestamp. A child's balloon floats upward, but stops mid-air, perfectly still. The muzak skips, repeats the same three notes. Everything holds for five seconds. Then resumes. Camera is fixed, wide shot, no movement. Only the wrongness moves.",
+    "style": "Surveillance footage aesthetic, slight VHS distortion, timestamp visible, institutional fluorescent lighting, uncanny valley",
+    "sfx": ["fluorescent_hum", "muzak_skip"],
+    "camera": "static_wide",
+    "rating": "pg"
+  },
+  "replay_policy": "once_per_run",
+  "blocking": true,
+  "post_actions": [
+    "cloud.set_memory('critical_seen', true)",
+    "npc.leon.deliver_line('told_you_it_was_alive')"
+  ]
+}

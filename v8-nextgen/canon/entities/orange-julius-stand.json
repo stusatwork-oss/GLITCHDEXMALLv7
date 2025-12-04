@@ -1,0 +1,36 @@
+{
+  "id": "orange-julius-stand",
+  "name": "Orange Julius Stand",
+  "role": "Secondary",
+  "type": "artifact",
+  "tags": [
+    "fc-arcade",
+    "food_court",
+    "entropy_sink",
+    "temporal_anchor"
+  ],
+  "metrics": {
+    "resonanceScore": 92,
+    "grassrootsSupport": 5000,
+    "audienceSize": 35000,
+    "deepViewCount": 2500000,
+    "engagementScore": 88,
+    "referenceCount": 2200,
+    "trustScore": 75,
+    "backingVolume": 0,
+    "resourcePool": 1500,
+    "networkReach": 3
+  },
+  "computed": {
+    "power": 30,
+    "charisma": 1500,
+    "overall": 1530,
+    "rarity": "Common"
+  },
+  "meta": {
+    "universe": "mallos-v6",
+    "source": "manual",
+    "notes": "Iconic artifact. High grassroots support (childhood memories). Strong temporal anchor (existed 1981-2011). Orange-as-liminal-color theme. Acts as entropy sink in food court.",
+    "last_updated": "2025-11-22T10:00:00Z"
+  }
+}

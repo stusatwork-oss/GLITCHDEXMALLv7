@@ -1,0 +1,57 @@
+{
+  "id": "keep_it_cool",
+  "display_name": "Keep It Cool",
+  "type": "tutorial",
+  "difficulty": "easy",
+  "description": "The Cloud is rising. Learn to manage the mall's pressure using Recyclers and Slushees before it reaches critical.",
+  "objectives": [
+    {
+      "id": "observe_cloud",
+      "type": "observation",
+      "description": "Listen to Leon explain the Cloud system",
+      "required": true,
+      "completion_trigger": "leon_dialogue_complete"
+    },
+    {
+      "id": "use_recycler",
+      "type": "interaction",
+      "description": "Use a ReCycler trash can to reduce Cloud pressure",
+      "required": true,
+      "completion_trigger": "recycler_used",
+      "cooldown_seconds": 5
+    },
+    {
+      "id": "buy_slushee",
+      "type": "purchase",
+      "description": "Buy a Slushee from a Food Court vendor",
+      "required": true,
+      "item_id": "slushee_blue_raspberry",
+      "vendor_zones": ["FOOD_COURT", "Z2_FOOD_COURT"],
+      "completion_trigger": "slushee_purchased"
+    },
+    {
+      "id": "drink_slushee",
+      "type": "interaction",
+      "description": "Drink the Slushee to gain heat relief",
+      "required": true,
+      "item_id": "slushee_blue_raspberry",
+      "completion_trigger": "slushee_consumed",
+      "duration_seconds": 60
+    }
+  ],
+  "rewards": {
+    "experience": 150,
+    "credits": 25,
+    "unlocks": ["tutorial_complete_badge", "cloud_monitor_overlay"]
+  },
+  "fail_conditions": {
+    "cloud_level_max": 95,
+    "time_limit_seconds": 420,
+    "toddler_alert": true
+  },
+  "hints": [
+    "Recyclers drop Cloud by a flat amount. Use them before the spike.",
+    "Slushees increase heat tolerance so you can stay near hot zones longer.",
+    "Keep an eye on the timer—Cloud rises faster the longer you wait."
+  ]
+}

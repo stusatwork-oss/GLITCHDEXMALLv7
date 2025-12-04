@@ -1,0 +1,36 @@
+{
+  "id": "leisurely-leon",
+  "name": "Leisurely Leon",
+  "role": "Secondary",
+  "type": "arcade_cabinet",
+  "tags": [
+    "fc-arcade",
+    "entropy_sink",
+    "liminal",
+    "memory_anchor"
+  ],
+  "metrics": {
+    "resonanceScore": 72,
+    "grassrootsSupport": 120,
+    "audienceSize": 2500,
+    "deepViewCount": 120000,
+    "engagementScore": 68,
+    "referenceCount": 430,
+    "trustScore": 55,
+    "backingVolume": 0,
+    "resourcePool": 10,
+    "networkReach": 2
+  },
+  "computed": {
+    "power": 20,
+    "charisma": 1134,
+    "overall": 1154,
+    "rarity": "Common"
+  },
+  "meta": {
+    "universe": "mallos-v6",
+    "source": "manual",
+    "notes": "Calm cabinet that acts as a soft time-sink and memory anchor in FC-ARCADE.",
+    "last_updated": "2025-11-22T00:00:00Z"
+  }
+}
