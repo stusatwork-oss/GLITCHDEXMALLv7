@@ -62,6 +62,17 @@ class PressureTrend(Enum):
 
 
 @dataclass
+class RoutingOverride:
+    """Temporary adjacency override that decays back to baseline."""
+
+    source_zone: str
+    target_zone: str
+    probability: float
+    ttl: float
+    reason: str = ""
+
+
+@dataclass
 class ZoneMicrostate:
     """Local turbulence pocket for a specific zone with QBIT modifiers."""
     zone_id: str
@@ -74,6 +85,7 @@ class ZoneMicrostate:
 
     # QBIT INTEGRATION - NEW
     qbit_aggregate: float = 0.0      # Total entity influence in this zone
+    qbit_baseline: float = 0.0       # Resting QBIT influence for recovery
     qbit_power: float = 0.0          # Structural leverage weight
     qbit_charisma: float = 0.0       # Attention/resonance weight
     qbit_entity_count: int = 0       # Number of entities in zone
@@ -90,6 +102,7 @@ class ZoneMicrostate:
 
     # QBIT-weighted adjacency probabilities
     adjacency: Dict[str, float] = field(default_factory=dict)  # zone_id → probability
+    routing_overrides: List[RoutingOverride] = field(default_factory=list)
 
     def to_dict(self) -> Dict:
         return {
@@ -99,13 +112,24 @@ class ZoneMicrostate:
             "cloud_pressure": self.cloud_pressure,
             "tiles": {f"{k[0]},{k[1]}": v for k, v in self.tiles.items()},  # Serialize tuple keys
             "qbit_aggregate": self.qbit_aggregate,
+            "qbit_baseline": self.qbit_baseline,
             "qbit_power": self.qbit_power,
             "qbit_charisma": self.qbit_charisma,
             "qbit_entity_count": self.qbit_entity_count,
             "swarm_bias": self.swarm_bias,
             "last_player_visit": self.last_player_visit,
             "discovery_count": self.discovery_count,
-            "adjacency": self.adjacency
+            "adjacency": self.adjacency,
+            "routing_overrides": [
+                {
+                    "source_zone": o.source_zone,
+                    "target_zone": o.target_zone,
+                    "probability": o.probability,
+                    "ttl": o.ttl,
+                    "reason": o.reason,
+                }
+                for o in self.routing_overrides
+            ],
         }
 
     @classmethod
@@ -119,6 +143,7 @@ class ZoneMicrostate:
         if isinstance(tiles_data, dict):
             state.tiles = {tuple(map(int, k.split(','))): v for k, v in tiles_data.items()}
         state.qbit_aggregate = data.get("qbit_aggregate", 0.0)
+        state.qbit_baseline = data.get("qbit_baseline", state.qbit_aggregate)
         state.qbit_power = data.get("qbit_power", 0.0)
         state.qbit_charisma = data.get("qbit_charisma", 0.0)
         state.qbit_entity_count = data.get("qbit_entity_count", 0)
@@ -126,6 +151,17 @@ class ZoneMicrostate:
         state.last_player_visit = data.get("last_player_visit", 0.0)
         state.discovery_count = data.get("discovery_count", 0)
         state.adjacency = data.get("adjacency", {})
+        overrides_data = data.get("routing_overrides", [])
+        state.routing_overrides = [
+            RoutingOverride(
+                source_zone=o.get("source_zone", state.zone_id),
+                target_zone=o.get("target_zone", ""),
+                probability=o.get("probability", 0.0),
+                ttl=o.get("ttl", 0.0),
+                reason=o.get("reason", ""),
+            )
+            for o in overrides_data
+        ]
         return state
 
 
@@ -213,6 +249,10 @@ class Cloud:
         # Pressure change tracking
         self._pressure_history: List[Tuple[float, float]] = []
 
+        # Routing overrides (temporary adjacency tweaks)
+        self.routing_overrides: List[RoutingOverride] = []
+        self._adjacency_overrides_dirty: bool = False
+
         # QBIT-weighted adjacency matrix
         self.adjacency_matrix: Dict[str, Dict[str, float]] = {}
         self._update_adjacency_matrix()
@@ -293,6 +333,7 @@ class Cloud:
             # Update zone microstate with QBIT data
             zone = self.zones[zone_id]
             zone.qbit_aggregate = zone_stats["total_influence"]
+            zone.qbit_baseline = zone_stats["total_influence"]
             zone.qbit_power = zone_stats["total_power"]
             zone.qbit_charisma = zone_stats["total_charisma"]
             zone.qbit_entity_count = zone_stats["entity_count"]
@@ -318,7 +359,10 @@ class Cloud:
         QBIT influence, resonance, and turbulence. High-QBIT zones become
         narrative attractors.
         """
-        self.adjacency_matrix = compute_adjacency_probabilities(self.zones)
+        base_matrix = compute_adjacency_probabilities(self.zones)
+
+        # Apply temporary routing overrides (with TTL)
+        self.adjacency_matrix = self._apply_routing_overrides(base_matrix)
 
         # Write adjacency back to each zone for easy access
         for zone_id, zone in self.zones.items():
@@ -373,13 +417,20 @@ class Cloud:
         # Update zone microstates (with QBIT)
         self._update_zones(dt, player_action)
 
+        # Decay routing overrides so adjacency drifts back to baseline
+        self._update_routing_overrides(dt)
+
         # Update QBIT-weighted adjacency matrix (every 10 updates)
         if hasattr(self, '_adjacency_update_counter'):
             self._adjacency_update_counter += 1
         else:
             self._adjacency_update_counter = 0
 
-        if self._adjacency_update_counter % 10 == 0:
+        if self._adjacency_overrides_dirty:
+            self._update_adjacency_matrix()
+            self._adjacency_overrides_dirty = False
+            self._adjacency_update_counter = 0
+        elif self._adjacency_update_counter % 10 == 0:
             self._update_adjacency_matrix()
 
         # Update mood classification
@@ -528,6 +579,9 @@ class Cloud:
             current_zone = player_action.get("zone", "")
 
         for zone_id, zone in self.zones.items():
+            self._relax_cloud(zone, dt)
+            self._heal_qbit(zone, dt)
+
             drift_rate = self.ZONE_DRIFT_RATES.get(zone_id, 1.0)
 
             # Turbulence drifts toward global cloud level
@@ -577,6 +631,68 @@ class Cloud:
             self.mall_mood = MallMood.UNEASY
         else:
             self.mall_mood = MallMood.CALM
+
+    # ========== PASSIVE RECOVERY ==========
+
+    def _relax_cloud(self, zone: ZoneMicrostate, dt: float, half_life_ticks: float = 300.0):
+        """Exponential decay of local cloud pressure toward baseline calm."""
+        decay_factor = 0.5 ** (dt / half_life_ticks)
+        zone.cloud_pressure *= decay_factor
+
+    def _heal_qbit(self, zone: ZoneMicrostate, dt: float, rate: float = 0.01):
+        """Lerp QBIT aggregate back toward its baseline to recover coherence."""
+        baseline = zone.qbit_baseline
+        zone.qbit_aggregate += (baseline - zone.qbit_aggregate) * rate * dt
+
+    def _apply_routing_overrides(self, adjacency_matrix: Dict[str, Dict[str, float]]) -> Dict[str, Dict[str, float]]:
+        """Blend active routing overrides into the adjacency matrix."""
+        effective = {
+            zone_id: probs.copy()
+            for zone_id, probs in adjacency_matrix.items()
+        }
+
+        touched_sources = set()
+        for override in self.routing_overrides:
+            if override.source_zone in effective:
+                effective.setdefault(override.source_zone, {})[override.target_zone] = override.probability
+                touched_sources.add(override.source_zone)
+
+        # Renormalize any rows we modified so probabilities remain valid
+        for source in touched_sources:
+            row = effective.get(source, {})
+            total = sum(row.values())
+            if total > 0:
+                for target in row:
+                    row[target] /= total
+
+        return effective
+
+    def _update_routing_overrides(self, dt: float):
+        """Decay routing overrides toward baseline by reducing TTL and removing expired ones."""
+        if not self.routing_overrides:
+            return
+
+        before_count = len(self.routing_overrides)
+        self.routing_overrides = [
+            override for override in self.routing_overrides
+            if (setattr(override, 'ttl', override.ttl - dt), override.ttl > 0)[1]
+        ]
+
+        if len(self.routing_overrides) != before_count:
+            self._adjacency_overrides_dirty = True
+
+    def add_routing_override(self, source_zone: str, target_zone: str, probability: float,
+                             duration_ticks: float, reason: str = ""):
+        """Register a temporary routing override with a TTL."""
+        override = RoutingOverride(
+            source_zone=source_zone,
+            target_zone=target_zone,
+            probability=probability,
+            ttl=duration_ticks,
+            reason=reason,
+        )
+        self.routing_overrides.append(override)
+        self._adjacency_overrides_dirty = True
 
     # ========== RENDER HINTS ==========
 
