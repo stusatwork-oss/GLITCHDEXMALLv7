@@ -105,7 +105,7 @@ class GUI_Launcher:
 
         # Subtitle
         self.stdscr.attron(curses.color_pair(3) | curses.A_BOLD)
-        subtitle = "500 Programs - Your Entertainment Solution!"
+        subtitle = f"{len(self.programs)} Programs - Your Entertainment Solution!"
         self.stdscr.addstr(2, (width - len(subtitle)) // 2, subtitle)
         self.stdscr.attroff(curses.color_pair(3) | curses.A_BOLD)
 
@@ -125,8 +125,9 @@ class GUI_Launcher:
         end = min(start + self.items_per_page, len(self.programs))
 
         # Page indicator
+        total_programs = len(self.programs)
         self.stdscr.attron(curses.color_pair(3))
-        page_info = f"Programs {start+1}-{end} of 500 (Page {self.page+1})"
+        page_info = f"Programs {start+1}-{end} of {total_programs} (Page {self.page+1})"
         self.stdscr.addstr(start_y, start_x, page_info)
         self.stdscr.attroff(curses.color_pair(3))
 
@@ -135,30 +136,54 @@ class GUI_Launcher:
             prog = self.programs[prog_idx]
             y = start_y + 2 + i
             is_selected = (prog_idx == self.selected_idx)
+            markers = self._get_markers(prog)
+            marker_text = f" [{' | '.join(markers)}]" if markers else ""
+
+            display_attr = None
 
             # Selection highlight
             if is_selected:
-                self.stdscr.attron(curses.color_pair(4) | curses.A_BOLD)
+                display_attr = curses.color_pair(4) | curses.A_BOLD
+                self.stdscr.attron(display_attr)
                 marker = "►"
             else:
-                if prog["is_real"]:
-                    self.stdscr.attron(curses.color_pair(7))
+                if prog.get("is_canon"):
+                    display_attr = curses.color_pair(12) | curses.A_BOLD
+                    self.stdscr.attron(display_attr)
+                    marker = "★"
+                elif prog.get("is_integration") or prog.get("is_lab"):
+                    display_attr = curses.color_pair(12)
+                    self.stdscr.attron(display_attr)
+                    marker = "◆"
+                elif prog["is_real"]:
+                    display_attr = curses.color_pair(7)
+                    self.stdscr.attron(display_attr)
                     marker = "●"
                 else:
-                    self.stdscr.attron(curses.color_pair(2))
+                    display_attr = curses.color_pair(2)
+                    self.stdscr.attron(display_attr)
                     marker = " "
 
             # Draw item
-            item_text = f"{marker} {prog['number']:3d}. {prog['name']:<45}"
+            display_name = f"{prog['name']}{marker_text}"
+            item_text = f"{marker} {prog['number']:3d}. {display_name:<45}"
             self.stdscr.addstr(y, start_x, item_text[:width - 6])
 
-            if is_selected:
-                self.stdscr.attroff(curses.color_pair(4) | curses.A_BOLD)
-            else:
-                if prog["is_real"]:
-                    self.stdscr.attroff(curses.color_pair(7))
-                else:
-                    self.stdscr.attroff(curses.color_pair(2))
+            if display_attr:
+                self.stdscr.attroff(display_attr)
+
+    def _get_markers(self, prog):
+        """Get marker labels for a program entry"""
+        markers = []
+        if prog.get("is_canon"):
+            markers.append("CANON")
+        if prog.get("is_integration"):
+            markers.append("INTEGRATION")
+        if prog.get("is_lab"):
+            markers.append("LAB")
+        if prog.get("is_real"):
+            markers.append("INSTALLED")
+        return markers
 
     def draw_buttons(self):
         """Draw control buttons"""
@@ -204,23 +229,32 @@ class GUI_Launcher:
         info_x = 3
 
         prog = self.programs[self.selected_idx]
+        markers = self._get_markers(prog)
 
         self.stdscr.attron(curses.color_pair(8))
         self.stdscr.addstr(info_y, info_x, "─" * (width - 6))
 
         self.stdscr.addstr(info_y + 1, info_x, f"Selected: {prog['name']}")
         self.stdscr.addstr(info_y + 2, info_x, f"Type: {prog['genre'].upper()}")
+        self.stdscr.addstr(info_y + 3, info_x, f"Version: {prog['version']} • Exec: {prog.get('executable', '')}")
+
+        if markers:
+            marker_line = f"Tags: {' | '.join(markers)}"
+            self.stdscr.addstr(info_y + 4, info_x, marker_line)
+            status_line_y = info_y + 5
+        else:
+            status_line_y = info_y + 4
 
         if prog["is_real"]:
             self.stdscr.attron(curses.color_pair(7) | curses.A_BOLD)
-            self.stdscr.addstr(info_y + 3, info_x, "Status: ● INSTALLED - Ready to launch!")
+            self.stdscr.addstr(status_line_y, info_x, "Status: ● INSTALLED - Ready to launch!")
             self.stdscr.attroff(curses.color_pair(7) | curses.A_BOLD)
         else:
             self.stdscr.attron(curses.color_pair(10))
-            self.stdscr.addstr(info_y + 3, info_x, "Status: Not installed (requires Disk 1 of 3)")
+            self.stdscr.addstr(status_line_y, info_x, "Status: Not installed (requires Disk 1 of 3)")
             self.stdscr.attroff(curses.color_pair(10))
 
-        self.stdscr.addstr(info_y + 4, info_x, "─" * (width - 6))
+        self.stdscr.addstr(status_line_y + 1, info_x, "─" * (width - 6))
         self.stdscr.attroff(curses.color_pair(8))
 
     def is_in_area(self, y, x, area):
@@ -345,6 +379,10 @@ class GUI_Launcher:
                 self._launch_version("v5-eastland", "src/main.py", is_docs=True)
             elif executable == "v6":
                 self._launch_version("v6-nextgen", "src/main.py")
+            elif executable == "v7":
+                self._launch_version("v7-nextgen", "src/main.py")
+            elif executable == "v8":
+                self._launch_version("v8-nextgen", "src/main.py")
             else:
                 print(f"\n[ERROR] Unknown version: {executable}")
                 input("Press ENTER...")
