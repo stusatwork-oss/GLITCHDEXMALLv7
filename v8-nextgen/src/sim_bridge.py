@@ -11,7 +11,7 @@ See docs/API.md for canonical JSON contracts.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from typing import Dict, List, Optional, Any
 from pathlib import Path
 import json
@@ -20,6 +20,8 @@ import time
 # Import real v6 systems
 from cloud import Cloud, MallMood, ZoneMicrostate, PressureTrend
 from npc_state_machine import NPCState, NPCSpine, NPCStateMachine
+from perseverance import tick_perseverance
+from rejected_consensus import ScrapPool
 
 
 # ========== DATA STRUCTURES ==========
@@ -113,6 +115,7 @@ class WorldState:
     cloud: Cloud              # Real Cloud instance from cloud.py
     zones: Dict[str, ZoneMicrostate]  # Cloud's zone dict
     npcs: Dict[str, NPCStateMachine]  # NPC state machines
+    scrap_pool: ScrapPool = field(default_factory=ScrapPool)
 
 
 # ========== CONFIG LOADING ==========
@@ -262,6 +265,9 @@ def tick_world(
 
     # Update Cloud (this updates zones internally)
     hints = world.cloud.update(dt, player_action=player_action, npc_events=None)
+
+    # Apply passive perseverance after events are processed
+    tick_perseverance(world, dt)
 
     # Extract cloud state - LOCKED structure for API consistency
     cloud_state = CloudState(
