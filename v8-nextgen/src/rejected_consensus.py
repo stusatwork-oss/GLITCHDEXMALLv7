@@ -6,6 +6,8 @@ import time
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
+import random
+
 
 @dataclass
 class RejectedConsensusRecord:
@@ -321,6 +323,35 @@ class MorphResult:
     penalties_applied: List[MorphPenalty]
 
 
+def _clamp01(value: Any, default: float = 0.0) -> float:
+    try:
+        numeric = float(value)
+    except (TypeError, ValueError):
+        numeric = float(default)
+    return max(0.0, min(1.0, numeric))
+
+
+def _blend_structured_map(
+    base: Dict[str, Any], target: Dict[str, Any], intensity: float, randomness: float
+) -> Dict[str, Any]:
+    """Lightweight blend between two structured maps with gentle randomness."""
+
+    blended: Dict[str, Any] = {}
+    keys = set(base.keys()) | set(target.keys())
+    for key in keys:
+        base_value = base.get(key)
+        target_value = target.get(key)
+        if isinstance(base_value, (int, float)) and isinstance(target_value, (int, float)):
+            jitter = (random.random() - 0.5) * randomness
+            delta = (target_value - base_value) * intensity
+            blended[key] = base_value + delta + jitter
+        elif target_value is not None:
+            blended[key] = target_value
+        elif base_value is not None:
+            blended[key] = base_value
+    return blended
+
+
 def _merge_snapshot_defaults(snapshots: Dict[str, Any]) -> Dict[str, Any]:
     """Ensure snapshot payloads include the canonical pre-morph skeleton."""
 
@@ -347,6 +378,140 @@ def _collect_numeric_constraints(constraints: List[ConstraintSpec]) -> Dict[str,
         for key, value in constraint.parameters.items():
             numeric[key] = value
     return numeric
+
+
+def _propose_morph_delta(
+    morph_job: MorphJob, snapshots: Dict[str, Any], spec: Dict[str, Any]
+) -> Dict[str, Any]:
+    """Generate creative morph deltas from the target and prior state."""
+
+    target = morph_job.morph_target or {}
+    pre_state = (snapshots or {}).get("pre_morph_state", {}) or {}
+    intensity = _clamp01(morph_job.morph_params.get("intensity"), 0.6)
+    randomness = _clamp01(morph_job.morph_params.get("randomness"), 0.2)
+
+    delta_map: Dict[str, Any] = {
+        "qbit_deltas": {},
+        "cloud_pressure_delta": float(spec.get("cloud_pressure_delta", 0.0) or 0.0),
+    }
+
+    base_tags = set(spec.get("style_tags") or pre_state.get("style_tags") or pre_state.get("tags") or [])
+    target_tags = set(target.get("style_tags") or target.get("tags") or [])
+    if target_tags:
+        tag_pool = list(target_tags - base_tags)
+        if tag_pool:
+            random.shuffle(tag_pool)
+            add_count = max(1, int(len(tag_pool) * intensity))
+            delta_map["tags_add"] = sorted(tag_pool[:add_count])
+    remove_tags = set(target.get("remove_tags") or [])
+    if remove_tags:
+        delta_map["tags_remove"] = sorted(remove_tags & base_tags)
+
+    target_pose = target.get("pose") or target.get("pose_hint") or {}
+    base_pose = pre_state.get("pose") or {}
+    if target_pose:
+        delta_map["pose"] = _blend_structured_map(base_pose, target_pose, intensity, randomness)
+
+    target_voice = target.get("voice") or target.get("voiceprint")
+    base_voice = spec.get("voice") or spec.get("voiceprint") or pre_state.get("voice")
+    if target_voice or base_voice:
+        voice_choice = target_voice if intensity >= 0.5 or not base_voice else base_voice
+        if randomness > 0.0 and voice_choice:
+            voice_choice = f"{voice_choice}-var{int(randomness * 10)}"
+        delta_map["voice"] = voice_choice
+
+    base_firmware = spec.get("firmware_stack") or pre_state.get("firmware_stack") or []
+    target_firmware = target.get("firmware_stack") or target.get("firmware") or []
+    if target_firmware:
+        additions = [fw for fw in target_firmware if fw not in base_firmware]
+        if additions:
+            add_count = max(1, int(len(additions) * intensity))
+            delta_map["firmware_stack_add"] = additions[:add_count]
+    remove_firmware = target.get("remove_firmware") or []
+    if remove_firmware:
+        delta_map["firmware_stack_remove"] = [fw for fw in remove_firmware if fw in base_firmware]
+
+    base_inventory: Dict[str, Any] = pre_state.get("inventory") or {}
+    target_inventory: Dict[str, Any] = target.get("inventory") or {}
+    inventory_changes: Dict[str, Any] = {}
+    for item, desired_value in target_inventory.items():
+        current_value = base_inventory.get(item, 0)
+        if isinstance(desired_value, (int, float)) and isinstance(current_value, (int, float)):
+            delta = (desired_value - current_value) * intensity
+            jitter = (random.random() - 0.5) * randomness
+            inventory_changes[item] = current_value + delta + jitter - current_value
+        else:
+            inventory_changes[item] = desired_value
+    if inventory_changes:
+        delta_map["inventory_changes"] = inventory_changes
+
+    target_behaviors = target.get("behavior_weights") or target.get("behaviors") or {}
+    base_behaviors = spec.get("behavior_weights") or pre_state.get("behavior_weights") or {}
+    if target_behaviors:
+        blended_behavior = _blend_structured_map(base_behaviors, target_behaviors, intensity, randomness)
+        delta_map["behavior_weights"] = blended_behavior
+
+    if spec.get("qbit_vector"):
+        delta_map["qbit_deltas"] = spec.get("qbit_vector")
+
+    return delta_map
+
+
+def _apply_proposal_to_state(
+    spec: Dict[str, Any], delta_map: Dict[str, Any], snapshots: Dict[str, Any]
+) -> Dict[str, Any]:
+    """Apply morph proposals directly to the spec and report applied details."""
+
+    applied: Dict[str, Any] = {}
+    pre_state = (snapshots or {}).get("pre_morph_state", {}) or {}
+
+    if "pose" in delta_map:
+        spec["pose"] = delta_map["pose"]
+        applied["pose"] = delta_map["pose"]
+
+    if "voice" in delta_map:
+        spec["voiceprint"] = delta_map["voice"]
+        applied["voiceprint"] = delta_map["voice"]
+
+    # Style tags
+    base_tags = set(spec.get("style_tags") or pre_state.get("style_tags") or pre_state.get("tags") or [])
+    tag_adds = set(delta_map.get("tags_add") or [])
+    tag_removals = set(delta_map.get("tags_remove") or [])
+    if tag_adds or tag_removals:
+        merged_tags = sorted((base_tags | tag_adds) - tag_removals)
+        spec["style_tags"] = merged_tags
+        applied["style_tags"] = merged_tags
+
+    # Firmware stack
+    firmware_stack = list(spec.get("firmware_stack") or pre_state.get("firmware_stack") or [])
+    for fw in delta_map.get("firmware_stack_remove", []):
+        firmware_stack = [existing for existing in firmware_stack if existing != fw]
+    for fw in delta_map.get("firmware_stack_add", []):
+        if fw not in firmware_stack:
+            firmware_stack.append(fw)
+    if firmware_stack:
+        spec["firmware_stack"] = firmware_stack
+        applied["firmware_stack"] = firmware_stack
+
+    # Inventory
+    inventory = dict(spec.get("inventory") or pre_state.get("inventory") or {})
+    for item, change in (delta_map.get("inventory_changes") or {}).items():
+        current_value = inventory.get(item, 0)
+        if isinstance(change, (int, float)):
+            inventory[item] = max(0, current_value + change)
+        else:
+            inventory[item] = change
+    if inventory:
+        spec["inventory"] = inventory
+        applied["inventory"] = inventory
+
+    # Behavior weights
+    behavior_weights = delta_map.get("behavior_weights")
+    if behavior_weights:
+        spec["behavior_weights"] = behavior_weights
+        applied["behavior_weights"] = behavior_weights
+
+    return applied
 
 
 def _translate_constraint_violation(
@@ -459,18 +624,23 @@ def _apply_permissive_constraints(
 
 
 def _build_morph_descriptor(
-    spec: Dict[str, Any], penalties: List[MorphPenalty], morph_job: MorphJob, snapshots: Dict[str, Any]
+    spec: Dict[str, Any],
+    penalties: List[MorphPenalty],
+    morph_job: MorphJob,
+    snapshots: Dict[str, Any],
+    proposal_delta: Dict[str, Any],
+    applied_details: Dict[str, Any],
 ) -> Dict[str, Any]:
     """Translate a raw morph spec into a transient descriptor for quorum review."""
 
     qbit_deltas: Dict[str, float] = {}
-    delta_map: Dict[str, Dict[str, Any]] = {}
+    penalty_delta_map: Dict[str, Dict[str, Any]] = {}
 
     for penalty in penalties:
         for field, delta in penalty.qbit_delta.items():
             qbit_deltas[field] = qbit_deltas.get(field, 0.0) + delta
 
-        delta_map[penalty.constraint] = {
+        penalty_delta_map[penalty.constraint] = {
             "qbit_delta": penalty.qbit_delta,
             "cloud_pressure_delta": penalty.cloud_pressure_delta,
             **({"note": penalty.note} if penalty.note else {}),
@@ -482,18 +652,38 @@ def _build_morph_descriptor(
     max_penalty = float(morph_job.morph_params.get("max_penalty_score", 25.0) or 1.0)
     stability_score = max(0.0, 1.0 - min(stability_penalty, max_penalty) / max_penalty)
 
+    merged_qbit = {**(proposal_delta.get("qbit_deltas") or {}), **qbit_deltas}
+    delta_map: Dict[str, Any] = {**proposal_delta}
+    delta_map["constraint_penalties"] = penalty_delta_map
+    delta_map["qbit_deltas"] = merged_qbit
+    delta_map["cloud_pressure_delta"] = proposal_delta.get("cloud_pressure_delta", cloud_delta)
+    delta_map["applied_state"] = applied_details
+
+    creative_descriptors = []
+    if proposal_delta.get("pose"):
+        creative_descriptors.append("pose adjusted")
+    if proposal_delta.get("voice"):
+        creative_descriptors.append("voice remixed")
+    if proposal_delta.get("tags_add") or proposal_delta.get("tags_remove"):
+        creative_descriptors.append("style tags tuned")
+    if proposal_delta.get("inventory_changes"):
+        creative_descriptors.append("inventory modulated")
+    if proposal_delta.get("behavior_weights"):
+        creative_descriptors.append("behavior weights blended")
+
     return {
         "prototype_id": spec.get("new_object_id"),
         "delta_map": delta_map,
         "suggested_spawn_class": spec.get("base_type"),
         "stability_score": stability_score,
-        "qbit_deltas": qbit_deltas,
+        "qbit_deltas": merged_qbit,
         "requires_confirmation": True,
         "job_type": morph_job.job_type,
         "source_entity_id": morph_job.source_entity_id,
         "morph_target": morph_job.morph_target,
         "snapshots": snapshots,
         "context": morph_job.context,
+        "creative_descriptors": creative_descriptors,
     }
 
 
@@ -529,10 +719,14 @@ def process_morph_job(
     }
 
     penalties = _apply_permissive_constraints(object_spec, morph_job)
+    proposal_delta = _propose_morph_delta(morph_job, snapshots, object_spec)
+    applied_details = _apply_proposal_to_state(object_spec, proposal_delta, snapshots)
 
     return MorphResult(
         job_id=morph_job.job_id,
-        descriptor=_build_morph_descriptor(object_spec, penalties, morph_job, snapshots),
+        descriptor=_build_morph_descriptor(
+            object_spec, penalties, morph_job, snapshots, proposal_delta, applied_details
+        ),
         base_spec=object_spec,
         consumed_inputs=[record.id for record in consumed],
         missing_inputs=missing,
