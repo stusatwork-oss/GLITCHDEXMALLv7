@@ -1,7 +1,7 @@
 """
 GAMEZILLA MEGA COLLECTION - Shareware Program List Generator V2
 Generates 500 "programs" with hidden message support
-Updated to include V5, V6 (CANON), and V7 (INTEGRATION)
+Updated to include V5, V6 (CANON), V7 (INTEGRATION CANON), and V8 (LAB)
 """
 
 import random
@@ -16,7 +16,7 @@ class SharewareGeneratorV2:
         self.programs = self._generate_programs()
 
     def _generate_programs(self):
-        """Generate 500 programs with programs #387-393 being GLITCHDEX MALL versions"""
+        """Generate 500 programs with programs #387-394 being GLITCHDEX MALL versions"""
         programs = []
 
         # Templates for realistic shareware names
@@ -120,7 +120,20 @@ class SharewareGeneratorV2:
                     "executable": "v7",
                     "is_real": True,
                     "is_integration": True,
-                    "description": "v5 Evidence + v6 Systems = Voxel Doom-Alike (3 credit cards)"
+                    "is_canon": True,
+                    "description": "canonical integration build"
+                })
+            elif i == 394:
+                # V8: Current working lab build
+                programs_list.append({
+                    "number": i,
+                    "name": "GLITCHDEX MALL V8 - CURRENT LAB",
+                    "genre": "game",
+                    "version": "8.0-lab",
+                    "executable": "v8",
+                    "is_real": True,
+                    "is_lab": True,
+                    "description": "current working lab build"
                 })
             else:
                 # Generate fake program
@@ -175,21 +188,32 @@ class SharewareGeneratorV2:
 
     def export_catalog(self):
         """Export catalog text"""
-        text = """
+        total_programs = len(self.programs)
+        text = f"""
 ╔════════════════════════════════════════════════════════════════════════════╗
 ║                  GAMEZILLA MEGA COLLECTION VOL. 4                          ║
 ║               The Ultimate Shareware & Freeware Compilation                ║
 ║                                                                            ║
-║  500 Programs • Your Entertainment Solution for 1998!                     ║
+║  {total_programs} Programs • Your Entertainment Solution for 1998!                     ║
 ║  Complete with Games, Utilities, Demos, and MORE!                         ║
 ╚════════════════════════════════════════════════════════════════════════════╝
 
-PROGRAM LISTING (Programs 1-500)
+PROGRAM LISTING (Programs 1-{total_programs})
 
 """
         for prog in self.programs:
-            marker = " [INSTALLED]" if prog["is_real"] else ""
-            text += f"{prog['number']:3d}. {prog['name']:<50}{marker}\n"
+            markers = []
+            if prog.get("is_canon"):
+                markers.append("CANON")
+            if prog.get("is_integration"):
+                markers.append("INTEGRATION")
+            if prog.get("is_lab"):
+                markers.append("LAB")
+            if prog.get("is_real"):
+                markers.append("INSTALLED")
+
+            marker_text = f" [{' | '.join(markers)}]" if markers else ""
+            text += f"{prog['number']:3d}. {prog['name']:<50}{marker_text}\n"
 
         return text
 
