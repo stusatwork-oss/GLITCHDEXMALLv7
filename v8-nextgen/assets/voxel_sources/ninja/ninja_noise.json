@@ -1,0 +1,18 @@
+{
+  "voxel_object_id": "NINJA_NOISE",
+  "source_image": "ninja_noise.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "voxel_scale": [
+    0.25,
+    0.25,
+    0.5
+  ],
+  "placement": {
+    "attach": "wall",
+    "offset": [
+      0,
+      0,
+      3
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "voxel_object_id": "NINJA_SMOKE",
+  "source_image": "ninja_smoke.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "voxel_scale": [
+    0.5,
+    0.5,
+    1.0
+  ],
+  "behavior": {
+    "type": "PASSIVE",
+    "effect": "VISIBILITY_BLOCK"
+  },
+  "placement": {
+    "attach": "floor"
+  }
+}

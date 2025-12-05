@@ -1,0 +1,30 @@
+{
+  "voxel_object_id": "JANITOR_MOP",
+  "source_image": "assets/voxel_sources/janitor_mop.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "palette": "COMICBOOK_MALL_V1",
+  "voxel_scale": [
+    1,
+    1,
+    1
+  ],
+  "placement": {
+    "attach": "floor",
+    "offset": [
+      0,
+      0,
+      0
+    ]
+  },
+  "behavior": {
+    "type": "NPC_PROP",
+    "tags": [
+      "SERVICE_HALL",
+      "UNIT7"
+    ],
+    "on_pickup": [
+      "subtitle: 'The Janitor needs this.'",
+      "cloud_pressure+2"
+    ]
+  }
+}
