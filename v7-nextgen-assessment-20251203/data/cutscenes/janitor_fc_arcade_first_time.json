@@ -1,0 +1,31 @@
+{
+  "id": "janitor_enters_fc_arcade_first_time",
+  "display_name": "The Janitor Breaks His Rule",
+  "type": "event_cutscene",
+  "duration_seconds": 15,
+  "trigger": {
+    "event": "JANITOR_RULE_BROKEN",
+    "zone": "FC-ARCADE",
+    "cloud_min": 70,
+    "conditions": [
+      "janitor.in_forbidden_zone == True",
+      "cloud.level >= 70",
+      "first_occurrence"
+    ]
+  },
+  "sora_prompt_id": "cutscene_janitor_fc_arcade_v1",
+  "sora_prompt": {
+    "scene_description": "Interior mall arcade at dusk. A weary janitor in a faded uniform pushes his cart past rows of humming arcade machines. The overhead lights flicker. He stops, stares at a cabinet displaying 'E-flat' on the screen. His hand reaches out to touch it. The machines hum louder. Camera slowly pulls back as mist begins to form from ceiling vents. The janitor doesn't move. Cinematic, unsettling, liminal space aesthetic.",
+    "style": "Analog neon arcade haze, slow dolly, haunted retail vibe",
+    "sfx": ["hum_low", "arcade_warble"],
+    "camera": "slow_pullback",
+    "lighting": "flicker_neon",
+    "rating": "pg13"
+  },
+  "replay_policy": "once_per_save",
+  "blocking": true,
+  "post_actions": [
+    "mark_janitor_seen_in_zone",
+    "cloud.apply_mood('ominous')"
+  ]
+}

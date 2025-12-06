@@ -1,0 +1,655 @@
+{
+  "firmware_summary": {
+    "firmware_id": "FW_GRID_FILL_v1.0",
+    "class_name": "GRID_SPANNING_TREE",
+    "core_loop": [
+      "SCAN_FOR_EMPTY_CELL",
+      "CHECK_NEIGHBOR_BOUNDS",
+      "RANDOM_ATTACH_NEIGHBOR",
+      "BACKTRACK_IF_BLOCKED"
+    ],
+    "state_vars": [
+      "R",
+      "S",
+      "C",
+      "H",
+      "V",
+      "STACK"
+    ],
+    "grid": "W(R,S)"
+  },
+  "logic_pseudocode": [
+    "// =========================================================",
+    "// FIRMWARE: FW_GRID_FILL_v1.0",
+    "// PURPOSE: Sequential grid-fill / spanning-tree builder",
+    "// ORIGIN: Retro BASIC routine (line 180–1051)",
+    "// =========================================================",
+    "",
+    "pub struct GridFillContext {",
+    "    pub r: usize,",
+    "    pub s: usize,",
+    "    pub c: usize,",
+    "    pub h: usize,",
+    "    pub v: usize,",
+    "    pub grid: Vec<Vec<usize>>, // W[R][S]",
+    "    pub stack: Vec<(usize, usize)>, // History Stack for Backtracking",
+    "}",
+    "",
+    "impl GridFillContext {",
+    "    pub fn new(h: usize, v: usize, start_x: usize) -> Self {",
+    "        // Initialize grid with 0s. Padding added for 1-based index safety.",
+    "        let grid = vec![vec![0; v + 2]; h + 2];",
+    "        GridFillContext {",
+    "            r: start_x,",
+    "            s: 1,",
+    "            c: 1,",
+    "            h,",
+    "            v,",
+    "            grid,",
+    "            stack: Vec::new(),",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "#[derive(Debug, Clone, Copy)]",
+    "pub enum State {",
+    "    InitSeed,          // 180–202",
+    "    ScanForEmpty,      // 210–250",
+    "    CheckNeighbors,    // 260–300",
+    "    ChooseDirection,   // 310–323",
+    "    CarveUp,           // 790",
+    "    CarveLeft,         // 820",
+    "    CarveRight,        // 860",
+    "    Backtrack,         // 530 & 902",
+    "}",
+    "",
+    "impl State {",
+    "    pub fn next(self, ctx: &mut GridFillContext) -> State {",
+    "        match self {",
+    "",
+    "            // --------------------------------------------------",
+    "            State::InitSeed => {",
+    "                ctx.c = 1;",
+    "                ctx.grid[ctx.r][1] = ctx.c;",
+    "                ctx.c += 1;",
+    "                ctx.s = 1;",
+    "                // Record initial position",
+    "                ctx.stack.push((ctx.r, 1));",
+    "                return State::CheckNeighbors;",
+    "            }",
+    "",
+    "            // --------------------------------------------------",
+    "            State::ScanForEmpty => {",
+    "                loop {",
+    "                    if ctx.r != ctx.h {",
+    "                        ctx.r += 1;",
+    "                    } else if ctx.s != ctx.v {",
+    "                        ctx.r = 1;",
+    "                        ctx.s += 1;",
+    "                    } else {",
+    "                        ctx.r = 1;",
+    "                        ctx.s = 1;",
+    "                    }",
+    "",
+    "                    if ctx.grid[ctx.r][ctx.s] == 0 {",
+    "                        break;",
+    "                    }",
+    "                }",
+    "                return State::CheckNeighbors;",
+    "            }",
+    "",
+    "            // --------------------------------------------------",
+    "            State::CheckNeighbors => {",
+    "                // ABOVE check",
+    "                if ctx.r <= 1 || ctx.grid[ctx.r - 1][ctx.s] != 0 {",
+    "                    return State::Backtrack;",
+    "                }",
+    "",
+    "                // LEFT check",
+    "                if ctx.s <= 1 || ctx.grid[ctx.r][ctx.s - 1] != 0 {",
+    "                    return State::Backtrack;",
+    "                }",
+    "",
+    "                // RIGHT check",
+    "                if ctx.r == ctx.h || ctx.grid[ctx.r + 1][ctx.s] != 0 {",
+    "                    return State::Backtrack;",
+    "                }",
+    "",
+    "                return State::ChooseDirection;",
+    "            }",
+    "",
+    "            // --------------------------------------------------",
+    "            State::ChooseDirection => {",
+    "                let x = rand_between(1, 3); // 1=UP, 2=LEFT, 3=RIGHT",
+    "                match x {",
+    "                    1 => State::CarveUp,",
+    "                    2 => State::CarveLeft,",
+    "                    3 => State::CarveRight,",
+    "                    _ => State::Backtrack,",
+    "                }",
+    "            }",
+    "",
+    "            // --------------------------------------------------",
+    "            State::CarveUp => {",
+    "                ctx.grid[ctx.r - 1][ctx.s] = ctx.c;",
+    "                ctx.c += 1;",
+    "                ctx.r -= 1;",
+    "                ctx.stack.push((ctx.r, ctx.s)); // Record history",
+    "                return State::CheckNeighbors;",
+    "            }",
+    "",
+    "            // --------------------------------------------------",
+    "            State::CarveLeft => {",
+    "                ctx.grid[ctx.r][ctx.s - 1] = ctx.c;",
+    "                ctx.c += 1;",
+    "                ctx.s -= 1;",
+    "                ctx.stack.push((ctx.r, ctx.s)); // Record history",
+    "                return State::CheckNeighbors;",
+    "            }",
+    "",
+    "            // --------------------------------------------------",
+    "            State::CarveRight => {",
+    "                ctx.grid[ctx.r + 1][ctx.s] = ctx.c;",
+    "                ctx.c += 1;",
+    "                ctx.r += 1;",
+    "                ctx.stack.push((ctx.r, ctx.s)); // Record history",
+    "                return State::Backtrack;",
+    "            }",
+    "",
+    "            // --------------------------------------------------",
+    "            State::Backtrack => {",
+    "                // Non-panicking Backtrack:",
+    "                // Pop stack until we find a cell with valid neighbors.",
+    "                while let Some((br, bs)) = ctx.stack.pop() {",
+    "                    let can_up = br > 1 && ctx.grid[br - 1][bs] == 0;",
+    "                    let can_left = bs > 1 && ctx.grid[br][bs - 1] == 0;",
+    "                    let can_right = br < ctx.h && ctx.grid[br + 1][bs] == 0;",
+    "",
+    "                    if can_up || can_left || can_right {",
+    "                        ctx.r = br;",
+    "                        ctx.s = bs;",
+    "                        // Push back current because we are resuming from here",
+    "                        ctx.stack.push((br, bs));",
+    "                        return State::CheckNeighbors;",
+    "                    }",
+    "                }",
+    "",
+    "                // If stack empty, fallback to scan",
+    "                return State::ScanForEmpty;",
+    "            }",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "nodes": [
+    {
+      "id": 180,
+      "label": "180 NEXT",
+      "kind": "NEXT",
+      "raw": "180 NEXT I"
+    },
+    {
+      "id": 190,
+      "label": "190 PRINT",
+      "kind": "PRINT",
+      "raw": "190 PRINT \":\""
+    },
+    {
+      "id": 191,
+      "label": "191 LET",
+      "kind": "LET",
+      "raw": "191 LET C=1"
+    },
+    {
+      "id": 192,
+      "label": "192 LET",
+      "kind": "LET",
+      "raw": "192 LET W(X,1)=C"
+    },
+    {
+      "id": 193,
+      "label": "193 LET",
+      "kind": "LET",
+      "raw": "193 LET C=C+1"
+    },
+    {
+      "id": 200,
+      "label": "200 LET",
+      "kind": "LET",
+      "raw": "200 LET R=X"
+    },
+    {
+      "id": 201,
+      "label": "201 LET",
+      "kind": "LET",
+      "raw": "201 LET S=1"
+    },
+    {
+      "id": 202,
+      "label": "202 GOTO",
+      "kind": "GOTO",
+      "raw": "202 GOTO 260"
+    },
+    {
+      "id": 210,
+      "label": "210 IF",
+      "kind": "IF",
+      "raw": "210 IF R<>H THEN 240"
+    },
+    {
+      "id": 211,
+      "label": "211 IF",
+      "kind": "IF",
+      "raw": "211 IF S<>V THEN 230"
+    },
+    {
+      "id": 220,
+      "label": "220 LET",
+      "kind": "LET",
+      "raw": "220 LET R=1"
+    },
+    {
+      "id": 221,
+      "label": "221 LET",
+      "kind": "LET",
+      "raw": "221 LET S=1"
+    },
+    {
+      "id": 222,
+      "label": "222 GOTO",
+      "kind": "GOTO",
+      "raw": "222 GOTO 250"
+    },
+    {
+      "id": 230,
+      "label": "230 LET",
+      "kind": "LET",
+      "raw": "230 LET R=1"
+    },
+    {
+      "id": 231,
+      "label": "231 LET",
+      "kind": "LET",
+      "raw": "231 LET S=S+1"
+    },
+    {
+      "id": 232,
+      "label": "232 GOTO",
+      "kind": "GOTO",
+      "raw": "232 GOTO 250"
+    },
+    {
+      "id": 240,
+      "label": "240 LET",
+      "kind": "LET",
+      "raw": "240 LET R=R+1"
+    },
+    {
+      "id": 250,
+      "label": "250 IF",
+      "kind": "IF",
+      "raw": "250 IF W(R,S)=0 THEN 210"
+    },
+    {
+      "id": 260,
+      "label": "260 IF",
+      "kind": "IF",
+      "raw": "260 IF R-1=0 THEN 530"
+    },
+    {
+      "id": 261,
+      "label": "261 IF",
+      "kind": "IF",
+      "raw": "261 IF W(R-1,S)<>0 THEN 530"
+    },
+    {
+      "id": 270,
+      "label": "270 IF",
+      "kind": "IF",
+      "raw": "270 IF S-1=0 THEN 390"
+    },
+    {
+      "id": 280,
+      "label": "280 IF",
+      "kind": "IF",
+      "raw": "280 IF W(R,S-1)<>0 THEN 390"
+    },
+    {
+      "id": 290,
+      "label": "290 IF",
+      "kind": "IF",
+      "raw": "290 IF R=H THEN 330"
+    },
+    {
+      "id": 300,
+      "label": "300 IF",
+      "kind": "IF",
+      "raw": "300 IF W(R+1,S)<>0 THEN 330"
+    },
+    {
+      "id": 310,
+      "label": "310 LET",
+      "kind": "LET",
+      "raw": "310 LET X=INT(RND(0)*3+1) ' Random number: 1, 2, or 3"
+    },
+    {
+      "id": 320,
+      "label": "320 IF",
+      "kind": "IF",
+      "raw": "320 IF X=1 THEN 790 ' Try UP"
+    },
+    {
+      "id": 321,
+      "label": "321 IF",
+      "kind": "IF",
+      "raw": "321 IF X=2 THEN 820 ' Try LEFT"
+    },
+    {
+      "id": 323,
+      "label": "323 IF",
+      "kind": "IF",
+      "raw": "323 IF X=3 THEN 860 ' Try RIGHT"
+    },
+    {
+      "id": 530,
+      "label": "530 IF",
+      "kind": "IF",
+      "raw": "530 IF S-1<>0 THEN 670"
+    },
+    {
+      "id": 790,
+      "label": "790 LET",
+      "kind": "LET",
+      "raw": "790 LET W(R-1,S)=C ' Fill above cell with new id"
+    },
+    {
+      "id": 800,
+      "label": "800 LET",
+      "kind": "LET",
+      "raw": "800 LET C=C+1"
+    },
+    {
+      "id": 812,
+      "label": "812 GOTO",
+      "kind": "GOTO",
+      "raw": "812 GOTO 260 ' Re-enter neighbor logic"
+    },
+    {
+      "id": 820,
+      "label": "820 LET",
+      "kind": "LET",
+      "raw": "820 LET W(R,S-1)=C ' Fill left cell"
+    },
+    {
+      "id": 851,
+      "label": "851 GOTO",
+      "kind": "GOTO",
+      "raw": "851 GOTO 260 ' Re-enter"
+    },
+    {
+      "id": 860,
+      "label": "860 LET",
+      "kind": "LET",
+      "raw": "860 LET W(R+1,S)=C ' Fill right cell"
+    },
+    {
+      "id": 902,
+      "label": "902 GOTO",
+      "kind": "GOTO",
+      "raw": "902 GOTO 530 ' Then go into backtrack logic"
+    },
+    {
+      "id": 1051,
+      "label": "1051 PRINT",
+      "kind": "PRINT",
+      "raw": "1051 PRINT : J"
+    }
+  ],
+  "edges": [
+    {
+      "from": 180,
+      "to": 190,
+      "type": "flow"
+    },
+    {
+      "from": 190,
+      "to": 191,
+      "type": "flow"
+    },
+    {
+      "from": 191,
+      "to": 192,
+      "type": "flow"
+    },
+    {
+      "from": 192,
+      "to": 193,
+      "type": "flow"
+    },
+    {
+      "from": 193,
+      "to": 200,
+      "type": "flow"
+    },
+    {
+      "from": 200,
+      "to": 201,
+      "type": "flow"
+    },
+    {
+      "from": 201,
+      "to": 202,
+      "type": "flow"
+    },
+    {
+      "from": 202,
+      "to": 260,
+      "type": "jump"
+    },
+    {
+      "from": 210,
+      "to": 240,
+      "type": "jump"
+    },
+    {
+      "from": 210,
+      "to": 211,
+      "type": "flow"
+    },
+    {
+      "from": 211,
+      "to": 230,
+      "type": "jump"
+    },
+    {
+      "from": 211,
+      "to": 220,
+      "type": "flow"
+    },
+    {
+      "from": 220,
+      "to": 221,
+      "type": "flow"
+    },
+    {
+      "from": 221,
+      "to": 222,
+      "type": "flow"
+    },
+    {
+      "from": 222,
+      "to": 250,
+      "type": "jump"
+    },
+    {
+      "from": 230,
+      "to": 231,
+      "type": "flow"
+    },
+    {
+      "from": 231,
+      "to": 232,
+      "type": "flow"
+    },
+    {
+      "from": 232,
+      "to": 250,
+      "type": "jump"
+    },
+    {
+      "from": 240,
+      "to": 250,
+      "type": "flow"
+    },
+    {
+      "from": 250,
+      "to": 210,
+      "type": "jump"
+    },
+    {
+      "from": 250,
+      "to": 260,
+      "type": "flow"
+    },
+    {
+      "from": 260,
+      "to": 530,
+      "type": "jump"
+    },
+    {
+      "from": 260,
+      "to": 261,
+      "type": "flow"
+    },
+    {
+      "from": 261,
+      "to": 530,
+      "type": "jump"
+    },
+    {
+      "from": 261,
+      "to": 270,
+      "type": "flow"
+    },
+    {
+      "from": 270,
+      "to": 390,
+      "type": "jump"
+    },
+    {
+      "from": 270,
+      "to": 280,
+      "type": "flow"
+    },
+    {
+      "from": 280,
+      "to": 390,
+      "type": "jump"
+    },
+    {
+      "from": 280,
+      "to": 290,
+      "type": "flow"
+    },
+    {
+      "from": 290,
+      "to": 330,
+      "type": "jump"
+    },
+    {
+      "from": 290,
+      "to": 300,
+      "type": "flow"
+    },
+    {
+      "from": 300,
+      "to": 330,
+      "type": "jump"
+    },
+    {
+      "from": 300,
+      "to": 310,
+      "type": "flow"
+    },
+    {
+      "from": 310,
+      "to": 320,
+      "type": "flow"
+    },
+    {
+      "from": 320,
+      "to": 790,
+      "type": "jump"
+    },
+    {
+      "from": 320,
+      "to": 321,
+      "type": "flow"
+    },
+    {
+      "from": 321,
+      "to": 820,
+      "type": "jump"
+    },
+    {
+      "from": 321,
+      "to": 323,
+      "type": "flow"
+    },
+    {
+      "from": 323,
+      "to": 860,
+      "type": "jump"
+    },
+    {
+      "from": 323,
+      "to": 530,
+      "type": "flow"
+    },
+    {
+      "from": 530,
+      "to": 670,
+      "type": "jump"
+    },
+    {
+      "from": 530,
+      "to": 790,
+      "type": "flow"
+    },
+    {
+      "from": 790,
+      "to": 800,
+      "type": "flow"
+    },
+    {
+      "from": 800,
+      "to": 812,
+      "type": "flow"
+    },
+    {
+      "from": 812,
+      "to": 260,
+      "type": "jump"
+    },
+    {
+      "from": 820,
+      "to": 851,
+      "type": "flow"
+    },
+    {
+      "from": 851,
+      "to": 260,
+      "type": "jump"
+    },
+    {
+      "from": 860,
+      "to": 902,
+      "type": "flow"
+    },
+    {
+      "from": 902,
+      "to": 530,
+      "type": "jump"
+    }
+  ]
+}

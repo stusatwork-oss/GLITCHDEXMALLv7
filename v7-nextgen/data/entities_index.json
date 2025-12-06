@@ -1,0 +1,261 @@
+{
+  "index_version": "1.0.0",
+  "last_updated": "2025-12-03",
+  "description": "Entity wiring status for V7 engine integration",
+
+  "summary": {
+    "total_defined": 31,
+    "wired": 5,
+    "unwired": 26,
+    "completion_percent": 16
+  },
+
+  "wired": [
+    {
+      "id": "PLAYER",
+      "status": "COMPLETE",
+      "has_profile": true,
+      "has_game_state": true,
+      "has_behavior": true,
+      "notes": "Fully functional in collapsed JSON engine"
+    },
+    {
+      "id": "TODDLER",
+      "status": "COMPLETE",
+      "has_profile": true,
+      "has_game_state": true,
+      "has_behavior": true,
+      "notes": "Reality catalyst, credit card amplification working"
+    },
+    {
+      "id": "JANITOR_UNIT7",
+      "status": "COMPLETE",
+      "has_profile": true,
+      "has_game_state": true,
+      "has_behavior": true,
+      "notes": "Threshold trigger at Cloud 70, LLM hooks ready"
+    },
+    {
+      "id": "MILO_OPTICIAN",
+      "status": "PARTIAL",
+      "has_profile": true,
+      "has_game_state": true,
+      "has_behavior": false,
+      "notes": "Visual profile complete, no behavior triggers yet"
+    },
+    {
+      "id": "BORED_CLERK",
+      "status": "PARTIAL",
+      "has_profile": true,
+      "has_game_state": true,
+      "has_behavior": false,
+      "notes": "Visual profile complete, no behavior triggers yet"
+    }
+  ],
+
+  "unwired": [
+    {
+      "id": "R0MBA",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 300,
+      "priority": "LOW",
+      "notes": "Robot vacuum, low priority for vertical slice"
+    },
+    {
+      "id": "MALL_COP",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 900,
+      "priority": "MEDIUM",
+      "notes": "Security guard, has full dialogue spine"
+    },
+    {
+      "id": "WIFE_AT_BOOKSTORE",
+      "canonical_file": "v7-nextgen/canon/entities/wife-at-bookstore.json",
+      "qbit_overall": 1498,
+      "priority": "HIGH",
+      "notes": "Contradiction magnet, tied to Janitor, needs wiring"
+    },
+    {
+      "id": "LEISURELY_LEON",
+      "canonical_file": "v7-nextgen/canon/entities/leisurely-leon.json",
+      "qbit_overall": null,
+      "priority": "MEDIUM",
+      "notes": "Referenced in adjacency system, no behavior yet"
+    },
+    {
+      "id": "AL_GORITHM",
+      "canonical_file": "v7-nextgen/canon/entities/al-gorithm.json",
+      "qbit_overall": null,
+      "priority": "MEDIUM",
+      "notes": "LLM stub exists (algoritmo_llm.py), not integrated"
+    },
+    {
+      "id": "GENERIC_SHOPPER_1",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 150,
+      "priority": "LOW",
+      "notes": "Background NPC, low priority"
+    },
+    {
+      "id": "GENERIC_SHOPPER_2",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 170,
+      "priority": "LOW",
+      "notes": "Background NPC, low priority"
+    },
+    {
+      "id": "FIXER",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 1200,
+      "priority": "MEDIUM",
+      "notes": "CompHut technician, full dialogue spine"
+    },
+    {
+      "id": "FLAIR_WARRIOR",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 1050,
+      "priority": "LOW",
+      "notes": "Card shop worker, full dialogue spine"
+    },
+    {
+      "id": "BARISTA",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 900,
+      "priority": "MEDIUM",
+      "notes": "Food court coffee stand, full dialogue spine"
+    },
+    {
+      "id": "NURSE",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 1350,
+      "priority": "LOW",
+      "notes": "Medical clinic, full dialogue spine"
+    },
+    {
+      "id": "SPORTY_MANAGER",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 1200,
+      "priority": "LOW",
+      "notes": "Sports store, full dialogue spine"
+    },
+    {
+      "id": "ARCADE_GUY",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 1000,
+      "priority": "MEDIUM",
+      "notes": "Hard Copy arcade, Jolly Time connection"
+    },
+    {
+      "id": "LOSTANDFOUND_CLERK",
+      "canonical_file": "v7-nextgen/canon/npc_spines_v3_port.json",
+      "qbit_overall": 900,
+      "priority": "LOW",
+      "notes": "Mall services, full dialogue spine"
+    },
+    {
+      "id": "COCA_COLA_STORE",
+      "canonical_file": "v7-nextgen/canon/entities/coca-cola-store.json",
+      "qbit_overall": null,
+      "priority": "LOW",
+      "notes": "Store entity, tile palette exists, not placed"
+    },
+    {
+      "id": "ORANGE_JULIUS_STAND",
+      "canonical_file": "v7-nextgen/canon/entities/orange-julius-stand.json",
+      "qbit_overall": null,
+      "priority": "LOW",
+      "notes": "Store entity, tile palette exists, not placed"
+    },
+    {
+      "id": "ESCALATOR_HUM",
+      "canonical_file": "v7-nextgen/canon/entities/escalator-hum.json",
+      "qbit_overall": null,
+      "priority": "HIGH",
+      "notes": "Environmental entity, E-flat audio critical"
+    },
+    {
+      "id": "FOOD_COURT_NEON_SIGN",
+      "canonical_file": "v7-nextgen/canon/entities/food-court-neon-sign.json",
+      "qbit_overall": null,
+      "priority": "MEDIUM",
+      "notes": "Environmental entity, documented in canon"
+    },
+    {
+      "id": "SUNKEN_FOOD_COURT",
+      "canonical_file": "v7-nextgen/canon/entities/sunken-food-court.json",
+      "qbit_overall": null,
+      "priority": "HIGH",
+      "notes": "Zone entity, vertical slice focus"
+    },
+    {
+      "id": "TENSILE_ROOF_MAST",
+      "canonical_file": "v7-nextgen/canon/entities/tensile-roof-mast.json",
+      "qbit_overall": null,
+      "priority": "MEDIUM",
+      "notes": "Architectural entity, in spatial measurements"
+    },
+    {
+      "id": "MIRROR_MAZE_TOKEN",
+      "canonical_file": "v7-nextgen/canon/entities/mirror-maze-token.json",
+      "qbit_overall": null,
+      "priority": "LOW",
+      "notes": "Object entity, not in object system yet"
+    },
+    {
+      "id": "KENNY_BITS",
+      "canonical_file": "v7-nextgen/canon/entities/kenny_bits.json",
+      "qbit_overall": null,
+      "priority": "LOW",
+      "notes": "Undefined role, low priority"
+    },
+    {
+      "id": "BALES_CANONICAL",
+      "canonical_file": "v7-nextgen/canon/entities/BALES_CANONICAL.json",
+      "qbit_overall": null,
+      "priority": "LOW",
+      "notes": "Unknown entity type"
+    },
+    {
+      "id": "BULL_MOVEMENT_AGENT",
+      "canonical_file": "v7-nextgen/canon/entities/BULL_MOVEMENT_AGENT_MUSIC_WEIGHTED.json",
+      "qbit_overall": null,
+      "priority": "LOW",
+      "notes": "System entity, music-weighted, not in engine"
+    },
+    {
+      "id": "RUST_LOGIC_GRAPH",
+      "canonical_file": "v7-nextgen/canon/entities/RUST_LOGIC_GRAPH.json",
+      "qbit_overall": null,
+      "priority": "LOW",
+      "notes": "System entity, graph data, not in engine"
+    },
+    {
+      "id": "WORLD_SPINE_BASE",
+      "canonical_file": "v7-nextgen/canon/entities/world_spine_base.json",
+      "qbit_overall": null,
+      "priority": "LOW",
+      "notes": "Base template, not instantiated"
+    }
+  ],
+
+  "next_to_wire": [
+    {
+      "id": "WIFE_AT_BOOKSTORE",
+      "reason": "Completes Janitor contradiction cascade",
+      "estimated_effort": "2-3 hours",
+      "dependencies": ["Janitor threshold working"]
+    },
+    {
+      "id": "ESCALATOR_HUM",
+      "reason": "Critical for food court atmosphere",
+      "estimated_effort": "1 hour",
+      "dependencies": ["Audio system"]
+    },
+    {
+      "id": "AL_GORITHM",
+      "reason": "LLM stub exists, just needs triggers",
+      "estimated_effort": "2 hours",
+      "dependencies": ["Cloud system"]
+    }
+  ]
+}

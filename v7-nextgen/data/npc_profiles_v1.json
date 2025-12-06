@@ -1,0 +1,66 @@
+{
+  "profile_set": "npc_profiles_v1",
+  "description": "NPC color schemes for voxel sprite generation",
+  "palette": "COMICBOOK_MALL_V1",
+
+  "npcs": {
+    "MALL_WALKER": {
+      "description": "Generic shopper NPC",
+      "head": "ceiling_tile_grey",
+      "shirt": "mall_blue_light",
+      "pants": "wood_dark",
+      "shoes": "metal_dark",
+      "accent": "aqua_trim"
+    },
+
+    "SECURITY_GUARD": {
+      "description": "Mall security personnel",
+      "head": "ceiling_tile_light",
+      "shirt": "security_blue",
+      "pants": "metal_dark",
+      "shoes": "metal_dark",
+      "accent": "security_blue_dark",
+      "badge": "warning_yellow_dark"
+    },
+
+    "JANITOR_UNIT7": {
+      "description": "The Janitor - primary anchor NPC",
+      "head": "ceiling_tile_grey",
+      "jumpsuit": "wall_soft_green",
+      "boots": "metal_dark",
+      "tools": "warning_yellow_dark",
+      "accent": "accent_trim_dark"
+    },
+
+    "MILO_OPTICIAN": {
+      "description": "Milo from optometry shop",
+      "head": "ceiling_tile_light",
+      "shirt": "milo_optics_pink_dark",
+      "pants": "wood_dark",
+      "shoes": "metal_dark",
+      "glasses": "aqua_trim"
+    },
+
+    "BORED_CLERK": {
+      "description": "BORED skateshop operator",
+      "head": "wood_mid",
+      "shirt": "bored_magenta",
+      "pants": "wood_dark",
+      "shoes": "metal_dark",
+      "accent": "bored_magenta_dark"
+    },
+
+    "TODDLER": {
+      "description": "Reality catalyst entity",
+      "head": "ceiling_tile_light",
+      "body": "alert_red",
+      "limbs": "alert_red_dark",
+      "eyes": "foodcourt_yellow",
+      "manifestation_stages": {
+        "0.0": "invisible",
+        "0.5": "translucent",
+        "1.0": "solid"
+      }
+    }
+  }
+}

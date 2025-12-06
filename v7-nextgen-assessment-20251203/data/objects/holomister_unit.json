@@ -1,0 +1,50 @@
+{
+  "id": "holomister_unit",
+  "display_name": "SEG HoloMister™ Environmental System",
+  "manufacturer": "Seguhhhhhh Corporation",
+  "role": "env_fx_node",
+  "description": "Climate comfort through revolutionary mist projection technology. Now with integrated holographic advertising!",
+  "zone_affinity": [
+    "ATRIUM",
+    "FOOD_COURT",
+    "Z1_CENTRAL_ATRIUM",
+    "Z2_FOOD_COURT",
+    "FOUNTAIN_COURT"
+  ],
+  "triggers": {
+    "cloud_min": 40,
+    "cloud_max": 85,
+    "activation_delay_seconds": 5.0,
+    "deactivation_delay_seconds": 3.0,
+    "glitch_cloud_threshold": 90,
+    "toddler_strain_glitch": 0.6
+  },
+  "effects": {
+    "mist_rate_ml_per_min": 240,
+    "cloud_relief": 1.5,
+    "comfort_delta": 3,
+    "heat_relief": 2,
+    "hologram_messages": [
+      "Stay chill. Stay spending.",
+      "SEG Comfort Cloud™: Authorized Atmosphere",
+      "Mist calibrated to your purchasing aura"
+    ],
+    "glitch_messages": [
+      "CREDIT DEFAULT SLUSHEE",
+      "SERVICE CORRIDOR // ENTRY DENIED",
+      "MIST // MISTAKE // MIS[T]"
+    ],
+    "glitch_haze_strength": 0.4,
+    "glitch_color": "#7b2cff"
+  },
+  "maintenance": {
+    "service_interval_hours": 72,
+    "self_clean_minutes": 5,
+    "drain_valve_location": "rear_panel",
+    "malfunction_flags": [
+      "ghost_advertising",
+      "reverse_mist",
+      "audio_desync"
+    ]
+  }
+}

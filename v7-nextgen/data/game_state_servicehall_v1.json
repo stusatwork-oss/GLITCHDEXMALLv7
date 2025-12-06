@@ -1,4 +1,196 @@
 {
+  "level_id": "SERVICEHALL_VERTICAL_SLICE_V1",
+  "description": "Service hall - Janitor patrol loop proof-of-concept",
+  "version": "0.1.0",
+
+  "references": {
+    "tileset": "mall_tileset_v1",
+    "palette": "COMICBOOK_MALL_V1",
+    "npc_profiles": "npc_profiles_v1"
+  },
+
+  "geometry": {
+    "type": "corridor_loop",
+    "length_feet": 60,
+    "width_feet": 12,
+    "height_feet": 10,
+    "grid_size": [20, 12],
+    "voxel_size": 1.0
+  },
+
+  "player": {
+    "spawn_position": [10, 6, 0],
+    "spawn_zone": "SERVICE_HALL",
+    "facing": 90,
+    "speed": 10.0,
+    "credit_cards": {
+      "VISA": {
+        "cost": 50,
+        "ability": "slow_time",
+        "color": "mall_blue",
+        "equipped": true
+      }
+    }
+  },
+
+  "cloud_pressure": {
+    "current_level": 0,
+    "max_level": 100,
+    "passive_rate": 0.8,
+    "phases": {
+      "calm": { "range": [0, 30], "ambient_tint": "ceiling_tile_light" },
+      "agitated": { "range": [30, 60], "ambient_tint": "ceiling_tile_grey" },
+      "destructive": { "range": [60, 85], "ambient_tint": "warning_yellow_dark" },
+      "release": { "range": [85, 100], "ambient_tint": "alert_red" }
+    },
+    "cycle": {
+      "release_at": 85,
+      "drop_to": 0,
+      "duration": 1.5
+    }
+  },
+
+  "entities": [
+    {
+      "id": "PLAYER",
+      "type": "PLAYER",
+      "position": [10, 6, 0],
+      "state": "IDLE"
+    },
+    {
+      "id": "JANITOR",
+      "type": "NPC",
+      "profile": "JANITOR_UNIT7",
+      "position": [5, 6, 0],
+      "zone": "SERVICE_HALL",
+      "behavior": "patrol_loop",
+      "patrol_waypoints": [
+        [5, 6, 0],
+        [15, 6, 0],
+        [15, 8, 0],
+        [5, 8, 0]
+      ],
+      "patrol_speed": 2.0,
+      "current_waypoint": 0,
+      "spine": {
+        "never": ["cross_fc_arcade", "speak_about_wife"],
+        "always": ["patrol_service_hall", "check_pipes"]
+      },
+      "qbit": {
+        "power": 1478,
+        "charisma": 1308
+      },
+      "threshold": 70,
+      "rule_broken": false
+    },
+    {
+      "id": "R0MBA",
+      "type": "NPC",
+      "profile": "MALL_WALKER",
+      "position": [8, 4, 0],
+      "zone": "SERVICE_HALL",
+      "behavior": "stationary_observe",
+      "state": "observing",
+      "description": "Robot vacuum, silently watching"
+    }
+  ],
+
+  "triggers": [
+    {
+      "id": "LIGHT_FLICKER_AGITATED",
+      "type": "cloud_threshold",
+      "condition": "cloud >= 30",
+      "on_trigger": [
+        { "action": "set_lighting", "flicker": 0.15, "brightness": 0.95 },
+        { "action": "subtitle", "text": "The fluorescent lights buzz louder.", "duration": 3.0 }
+      ]
+    },
+    {
+      "id": "LIGHT_FLICKER_DESTRUCTIVE",
+      "type": "cloud_threshold",
+      "condition": "cloud >= 60",
+      "on_trigger": [
+        { "action": "set_lighting", "flicker": 0.4, "brightness": 0.8 },
+        { "action": "subtitle", "text": "The lights strobe. Something hums in the walls.", "duration": 4.0 }
+      ]
+    },
+    {
+      "id": "JANITOR_STOPS_PATROLLING",
+      "type": "cloud_threshold",
+      "condition": "cloud >= 70 AND janitor.rule_broken == false",
+      "on_trigger": [
+        { "action": "stop_patrol", "npc": "JANITOR" },
+        { "action": "set_flag", "npc": "JANITOR", "flag": "rule_broken", "value": true },
+        { "action": "subtitle", "text": "The janitor stops. Turns. Stares at the vent.", "duration": 5.0 }
+      ]
+    },
+    {
+      "id": "CLOUD_RELEASE",
+      "type": "cloud_threshold",
+      "condition": "cloud >= 85",
+      "on_trigger": [
+        { "action": "screen_flash", "color": "ceiling_tile_light", "duration": 0.3 },
+        { "action": "cloud_drop", "target": 0, "duration": 1.5 },
+        { "action": "reset_npc", "npc": "JANITOR" },
+        { "action": "resume_patrol", "npc": "JANITOR" },
+        { "action": "set_lighting", "flicker": 0.0, "brightness": 1.0 },
+        { "action": "subtitle", "text": "The pressure releases. He resumes mopping.", "duration": 3.0 }
+      ]
+    }
+  ],
+
+  "environment": {
+    "textures": {
+      "source": "procedural",
+      "tile_type": "SERVICE_HALL",
+      "fallback_tile": "SERVICE_HALL"
+    },
+    "audio": {
+      "vent_hum": {
+        "frequency": 120,
+        "volume": 0.2
+      },
+      "fluorescent_buzz": {
+        "frequency": 60,
+        "volume_by_cloud": {
+          "calm": 0.1,
+          "agitated": 0.2,
+          "destructive": 0.4,
+          "release": 0.6
+        }
+      }
+    },
+    "lighting": {
+      "base_brightness": 1.0,
+      "flicker_by_cloud": {
+        "calm": 0.0,
+        "agitated": 0.15,
+        "destructive": 0.4,
+        "release": 0.6
+      }
+    }
+  },
+
+  "ui": {
+    "hud": false,
+    "subtitle_style": {
+      "position": "bottom_center",
+      "font": "monospace",
+      "color": "ceiling_tile_light",
+      "background": "security_blue_dark",
+      "fade_in": 0.3,
+      "fade_out": 0.5
+    }
+  },
+
+  "demo": {
+    "duration_seconds": 120,
+    "loop_on_complete": true,
+    "objectives": [
+      "Watch Janitor patrol loop",
+      "Observe lights flicker at Cloud >= 30",
+      "See Janitor stop at Cloud >= 70",
+      "Trigger Cloud release at 85"
   "state_id": "servicehall_v1",
   "level_id": "SERVICEHALL_V1",
   "tileset": "mall_tileset_v1",

@@ -1,0 +1,30 @@
+{
+  "id": "toddler_manifests_service_corridor",
+  "display_name": "The Toddler Becomes Real",
+  "type": "entity_cutscene",
+  "duration_seconds": 18,
+  "trigger": {
+    "event": "TODDLER_MANIFESTING",
+    "zone": "SERVICE_CORRIDOR",
+    "conditions": [
+      "toddler.visible >= 0.9",
+      "toddler.behavior == 'MANIFESTING'",
+      "cloud.level >= 75",
+      "player.distance_to_toddler <= 30"
+    ]
+  },
+  "sora_prompt_id": "cutscene_toddler_manifest_v1",
+  "sora_prompt": {
+    "scene_description": "Dark service corridor with emergency exit signs casting red light. At the far end, barely visible, a small figure in 1990s overalls stands perfectly still, back to camera. Flickering overhead fluorescent. The figure's edges seem to shimmer, slightly out of focus even when the rest of the frame is sharp. Camera slow push forward. As we get closer, the lights pulse brighter. The figure doesn't move. Just before we reach it, everything goes white for one frame, then cuts to black. Sound: distant muzak, mechanical hum, child's laughter echoing backwards.",
+    "style": "Liminal horror, analog horror, shallow depth with chromatic aberration",
+    "sfx": ["muzak_distant", "laughter_reverse", "fluorescent_pop"],
+    "camera": "slow_push",
+    "rating": "pg13"
+  },
+  "replay_policy": "once_per_profile",
+  "blocking": true,
+  "post_actions": [
+    "toddler.mark_seen('service_corridor')",
+    "player.apply_status('shaken', 120)"
+  ]
+}

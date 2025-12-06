@@ -1,4 +1,211 @@
 {
+  "level_id": "FOODCOURT_VERTICAL_SLICE_V1",
+  "description": "Food court reactor pit - collapsed JSON demo",
+  "version": "0.1.0",
+
+  "references": {
+    "tileset": "mall_tileset_v1",
+    "palette": "COMICBOOK_MALL_V1",
+    "npc_profiles": "npc_profiles_v1"
+  },
+
+  "geometry": {
+    "type": "circular_pit",
+    "diameter_feet": 120,
+    "depth_feet": 8,
+    "grid_size": [32, 32],
+    "voxel_size": 1.0
+  },
+
+  "player": {
+    "spawn_position": [16, 28, -8],
+    "spawn_zone": "FOOD_COURT_PIT",
+    "facing": 0,
+    "speed": 10.0,
+    "credit_cards": {
+      "VISA": {
+        "cost": 50,
+        "ability": "slow_time",
+        "color": "mall_blue",
+        "equipped": true
+      },
+      "MASTERCARD": {
+        "cost": 100,
+        "ability": "damage_burst",
+        "color": "alert_red",
+        "equipped": false
+      },
+      "AMEX": {
+        "cost": 200,
+        "ability": "shield",
+        "color": "warning_yellow_dark",
+        "equipped": false
+      }
+    }
+  },
+
+  "cloud_pressure": {
+    "current_level": 0,
+    "max_level": 100,
+    "passive_rate": 0.5,
+    "phases": {
+      "calm": { "range": [0, 30], "ambient_tint": "mall_blue_light" },
+      "agitated": { "range": [30, 60], "ambient_tint": "ceiling_tile_grey" },
+      "destructive": { "range": [60, 85], "ambient_tint": "warning_yellow_dark" },
+      "release": { "range": [85, 100], "ambient_tint": "alert_red" }
+    },
+    "cycle": {
+      "release_at": 85,
+      "drop_to": 0,
+      "duration": 1.5
+    }
+  },
+
+  "entities": [
+    {
+      "id": "PLAYER",
+      "type": "PLAYER",
+      "position": [16, 28, -8],
+      "state": "IDLE"
+    },
+    {
+      "id": "TODDLER",
+      "type": "NPC",
+      "profile": "TODDLER",
+      "position": [100, 0, -8],
+      "manifestation": 0.0,
+      "behavior": "reality_catalyst",
+      "on_credit_card_use": {
+        "action": "giggle_and_amplify",
+        "cloud_multiplier": 2.0,
+        "manifestation_increase": 0.1
+      }
+    },
+    {
+      "id": "JANITOR",
+      "type": "NPC",
+      "profile": "JANITOR_UNIT7",
+      "position": [50, 0, 0],
+      "zone": "SERVICE_HALL",
+      "spine": {
+        "never": ["cross_fc_arcade", "speak_about_wife"],
+        "always": ["face_away_from_bookstore"]
+      },
+      "qbit": {
+        "power": 1478,
+        "charisma": 1308
+      },
+      "threshold": 70,
+      "rule_broken": false
+    },
+    {
+      "id": "MILO",
+      "type": "NPC",
+      "profile": "MILO_OPTICIAN",
+      "position": [8, 20, -8],
+      "zone": "FOOD_COURT_PIT",
+      "behavior": "shop_idle",
+      "state": "browsing"
+    },
+    {
+      "id": "BORED_CLERK",
+      "type": "NPC",
+      "profile": "BORED_CLERK",
+      "position": [24, 20, -8],
+      "zone": "FOOD_COURT_PIT",
+      "behavior": "bored_idle",
+      "state": "phone_staring"
+    }
+  ],
+
+  "triggers": [
+    {
+      "id": "CREDIT_CARD_SWIPE",
+      "type": "player_action",
+      "on_activate": [
+        { "action": "increase_cloud", "amount": "card.cost" },
+        { "action": "toddler_react", "multiplier": 2.0 },
+        { "action": "subtitle", "text": "That's probably fine." }
+      ]
+    },
+    {
+      "id": "JANITOR_THRESHOLD",
+      "type": "cloud_threshold",
+      "condition": "cloud >= 70 AND janitor.rule_broken == false",
+      "on_trigger": [
+        { "action": "move_npc", "npc": "JANITOR", "target": "FC_ARCADE_ZONE" },
+        { "action": "set_flag", "npc": "JANITOR", "flag": "rule_broken", "value": true },
+        { "action": "subtitle", "text": "The arcade machines... they're humming in E-flat.", "duration": 5.0 }
+      ]
+    },
+    {
+      "id": "CLOUD_RELEASE",
+      "type": "cloud_threshold",
+      "condition": "cloud >= 85",
+      "on_trigger": [
+        { "action": "screen_flash", "color": "ceiling_tile_light", "duration": 0.3 },
+        { "action": "cloud_drop", "target": 0, "duration": 1.5 },
+        { "action": "reset_npc", "npc": "JANITOR" },
+        { "action": "toddler_fade", "target_manifestation": 0.0 },
+        { "action": "subtitle", "text": "Something in the vents howls.", "duration": 3.0 }
+      ]
+    }
+  ],
+
+  "environment": {
+    "textures": {
+      "source": "assets/frames/foodcourt-2010/",
+      "count": 40,
+      "mapping": "radial",
+      "fallback_tile": "FOOD_COURT"
+    },
+    "audio": {
+      "escalator_hum": {
+        "frequency": 311,
+        "note": "E-flat",
+        "volume": 0.3
+      },
+      "ambient_muzak": {
+        "enabled": true,
+        "volume_by_cloud": {
+          "calm": 0.2,
+          "agitated": 0.15,
+          "destructive": 0.05,
+          "release": 0.0
+        }
+      }
+    },
+    "lighting": {
+      "flicker_by_cloud": {
+        "calm": 0.0,
+        "agitated": 0.1,
+        "destructive": 0.3,
+        "release": 0.6
+      }
+    }
+  },
+
+  "ui": {
+    "hud": false,
+    "subtitle_style": {
+      "position": "bottom_center",
+      "font": "monospace",
+      "color": "ceiling_tile_light",
+      "background": "security_blue_dark",
+      "fade_in": 0.3,
+      "fade_out": 0.5
+    }
+  },
+
+  "demo": {
+    "duration_seconds": 180,
+    "loop_on_complete": true,
+    "objectives": [
+      "Explore food court pit",
+      "Use credit cards to raise Cloud",
+      "Observe Toddler manifestation",
+      "Trigger Janitor contradiction at Cloud 70",
+      "Experience Cloud release at 85"
   "state_id": "foodcourt_v1",
   "level_id": "FOODCOURT_V1",
   "tileset": "mall_tileset_v1",

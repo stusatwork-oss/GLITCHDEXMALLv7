@@ -1,4 +1,44 @@
 {
+  "palette_name": "COMICBOOK_MALL_V1",
+  "description": "30-color retro mall palette for voxel doom-alike aesthetic",
+  "entries": [
+    { "id": 0,  "name": "floor_light",            "hex": "#E5F0EA" },
+    { "id": 1,  "name": "floor_mall_tile",        "hex": "#C8E1D4" },
+    { "id": 2,  "name": "wall_soft_green",        "hex": "#AAC7BB" },
+    { "id": 3,  "name": "wall_darker_green",      "hex": "#7DAAA0" },
+    { "id": 4,  "name": "ceiling_concrete",       "hex": "#4E827B" },
+    { "id": 5,  "name": "accent_trim_dark",       "hex": "#326B63" },
+
+    { "id": 6,  "name": "wood_light",             "hex": "#D5B68A" },
+    { "id": 7,  "name": "wood_mid",               "hex": "#C49A6C" },
+    { "id": 8,  "name": "wood_dark",              "hex": "#AA7A53" },
+    { "id": 9,  "name": "wood_trim",              "hex": "#8F5B3C" },
+
+    { "id": 10, "name": "neon_orange",            "hex": "#EB8D53" },
+    { "id": 11, "name": "signage_orange_dark",    "hex": "#CD6E3B" },
+    { "id": 12, "name": "foodcourt_yellow",       "hex": "#F4C04D" },
+    { "id": 13, "name": "warning_yellow_dark",    "hex": "#E49E2B" },
+
+    { "id": 14, "name": "mall_blue_light",        "hex": "#5A8BD4" },
+    { "id": 15, "name": "mall_blue",              "hex": "#3A6BC1" },
+    { "id": 16, "name": "security_blue",          "hex": "#1F4E9D" },
+    { "id": 17, "name": "security_blue_dark",     "hex": "#103D7A" },
+
+    { "id": 18, "name": "bored_magenta",          "hex": "#A35CD2" },
+    { "id": 19, "name": "bored_magenta_dark",     "hex": "#843EB8" },
+    { "id": 20, "name": "milo_optics_hotpink",    "hex": "#D94C93" },
+    { "id": 21, "name": "milo_optics_pink_dark",  "hex": "#B23175" },
+
+    { "id": 22, "name": "alert_red",              "hex": "#F14444" },
+    { "id": 23, "name": "alert_red_dark",         "hex": "#CC2E2E" },
+    { "id": 24, "name": "aqua_trim",              "hex": "#62C9C3" },
+    { "id": 25, "name": "aqua_trim_dark",         "hex": "#2FA8A1" },
+
+    { "id": 26, "name": "ceiling_tile_light",     "hex": "#DDE0E6" },
+    { "id": 27, "name": "ceiling_tile_grey",      "hex": "#B4B8C0" },
+    { "id": 28, "name": "metal_grey",             "hex": "#878B93" },
+    { "id": 29, "name": "metal_dark",             "hex": "#555860" }
+  ]
   "#ed1f6d": "slurpee_pink",
   "#6ad1ff": "slurpee_ice",
   "#f7d35c": "pizza_cheese",

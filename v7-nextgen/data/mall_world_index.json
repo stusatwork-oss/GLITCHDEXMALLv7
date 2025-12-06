@@ -1,0 +1,162 @@
+{
+  "world_id": "GLITCHMALL_V7",
+  "description": "The mall topology as pure data - even the graph structure is JSON",
+  "version": "1.0.0",
+
+  "zones": {
+    "FOOD_COURT": {
+      "file": "game_state_foodcourt_v1.json",
+      "display_name": "Food Court / Reactor Pit",
+      "neighbors": ["SERVICE_HALL", "FC_ARCADE"],
+      "era_layers": ["1995", "2005", "2011"],
+      "atmosphere": "Sunken pit, escalator hum at E-flat, neon reflections",
+      "key_entities": ["TODDLER", "JANITOR", "MILO", "BORED_CLERK"],
+      "unlock_condition": null
+    },
+
+    "SERVICE_HALL": {
+      "file": "game_state_servicehall_v1.json",
+      "display_name": "Service Hall / Backrooms",
+      "neighbors": ["FOOD_COURT", "ANCHOR_STORE_BOOKSHELF"],
+      "era_layers": ["Backrooms", "Security", "Maintenance"],
+      "atmosphere": "Fluorescent buzz, vent hum, institutional beige",
+      "key_entities": ["JANITOR", "R0MBA"],
+      "unlock_condition": null
+    },
+
+    "FC_ARCADE": {
+      "file": "game_state_fc_arcade_v1.json",
+      "display_name": "Hard Copy Arcade",
+      "neighbors": ["FOOD_COURT"],
+      "era_layers": ["1981", "1995"],
+      "atmosphere": "E-flat harmonics, CRT flicker, cigarette ghosts",
+      "key_entities": ["ARCADE_GUY", "JANITOR"],
+      "unlock_condition": "janitor.rule_broken == true"
+    },
+
+    "ANCHOR_STORE_BOOKSHELF": {
+      "file": "game_state_bookstore_v1.json",
+      "display_name": "Anchor Store Bookshelf",
+      "neighbors": ["SERVICE_HALL", "MAIN_CORRIDOR"],
+      "era_layers": ["1995", "2005"],
+      "atmosphere": "Dust motes, fluorescent hum, forgotten spines",
+      "key_entities": ["WIFE_AT_BOOKSTORE", "JANITOR"],
+      "unlock_condition": null
+    },
+
+    "MAIN_CORRIDOR": {
+      "file": "game_state_corridor_v1.json",
+      "display_name": "Main Corridor",
+      "neighbors": ["FOOD_COURT", "ANCHOR_STORE_BOOKSHELF", "MILO_OPTICS"],
+      "era_layers": ["1995", "2005", "2011"],
+      "atmosphere": "Mall muzak, footsteps echo, time dilates",
+      "key_entities": ["MALL_COP", "GENERIC_SHOPPER_1", "GENERIC_SHOPPER_2"],
+      "unlock_condition": null
+    },
+
+    "MILO_OPTICS": {
+      "file": "game_state_milo_optics_v1.json",
+      "display_name": "Milo Optics & Frames",
+      "neighbors": ["MAIN_CORRIDOR"],
+      "era_layers": ["1995", "2005"],
+      "atmosphere": "Pink neon, lens glare, vision tests",
+      "key_entities": ["MILO_OPTICIAN"],
+      "unlock_condition": null
+    }
+  },
+
+  "escalators": [
+    {
+      "id": "FOODCOURT_TO_SERVICEHALL",
+      "from": "FOOD_COURT",
+      "to": "SERVICE_HALL",
+      "rule": "cloud >= 70",
+      "description": "Escalator down to service level when Cloud pressure builds",
+      "transition_type": "descent"
+    },
+    {
+      "id": "SERVICEHALL_TO_FOODCOURT",
+      "from": "SERVICE_HALL",
+      "to": "FOOD_COURT",
+      "rule": "cloud <= 10",
+      "description": "Service elevator back up after Cloud releases",
+      "transition_type": "ascent"
+    },
+    {
+      "id": "FOODCOURT_TO_ARCADE",
+      "from": "FOOD_COURT",
+      "to": "FC_ARCADE",
+      "rule": "janitor.rule_broken == true AND cloud >= 70",
+      "description": "Janitor's forbidden path to arcade when threshold broken",
+      "transition_type": "doorway"
+    },
+    {
+      "id": "CORRIDOR_TO_BOOKSTORE",
+      "from": "MAIN_CORRIDOR",
+      "to": "ANCHOR_STORE_BOOKSHELF",
+      "rule": "true",
+      "description": "Always accessible",
+      "transition_type": "doorway"
+    }
+  ],
+
+  "era_bleed": {
+    "description": "Multiple timelines exist simultaneously",
+    "rules": [
+      "All eras are real",
+      "All eras are not real",
+      "Contradictions amplify Cloud pressure",
+      "Visual flicker between eras at Cloud >= 60"
+    ],
+    "layers": {
+      "1981": {
+        "brightness": 1.1,
+        "saturation": 0.9,
+        "grain": 0.3,
+        "description": "Opening day, peak optimism, Reaganomics haze"
+      },
+      "1995": {
+        "brightness": 1.0,
+        "saturation": 1.0,
+        "grain": 0.1,
+        "description": "Baseline reality, grunge echoes, end of history"
+      },
+      "2005": {
+        "brightness": 0.95,
+        "saturation": 0.85,
+        "grain": 0.15,
+        "description": "Early decline, stores closing, muzak warping"
+      },
+      "2011": {
+        "brightness": 0.8,
+        "saturation": 0.7,
+        "grain": 0.25,
+        "description": "Post-2008, vacancy, time suspended"
+      },
+      "Backrooms": {
+        "brightness": 0.6,
+        "saturation": 0.5,
+        "grain": 0.4,
+        "description": "Liminal maintenance zones, outside normal time"
+      }
+    }
+  },
+
+  "starting_zone": "FOOD_COURT",
+  "starting_era": "1995",
+
+  "world_rules": {
+    "zone_transitions": "Evaluated by engine using 'rule' field on escalators",
+    "era_visibility": "All eras visible simultaneously at high Cloud levels",
+    "entity_spawning": "Entities defined per-zone in game_state files",
+    "trigger_scope": "Triggers can affect entities in connected zones"
+  },
+
+  "notes": [
+    "The mall is a Borges library where zones are books",
+    "Escalators are narrative transitions, not just spatial",
+    "Era layers bleed through like palimpsest",
+    "Graph structure is data - engine just traverses",
+    "World = Catalog, Zones = Entries, Engine = Librarian"
+  ]
+}

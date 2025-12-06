@@ -1,0 +1,36 @@
+{
+  "id": "slushee_blue_raspberry",
+  "display_name": "Blue Ice Slushee",
+  "role": "coolant_consumable",
+  "description": "Brain freeze now, heat relief later.",
+  "purchase": {
+    "vendor_zones": ["FOOD_COURT", "Z2_FOOD_COURT"],
+    "cost_credits": 3.99,
+    "stock_per_vendor": 999
+  },
+  "effects": {
+    "player_heat_relief": 5.0,
+    "local_cloud_relief": 1.0,
+    "duration_seconds": 60,
+    "modifiers": {
+      "heat_tolerance": 5,
+      "toddler_vision_resistance": 0.1
+    },
+    "status_flags": [
+      "refreshing",
+      "brain_freeze",
+      "blue_tongue"
+    ],
+    "flavor_text": [
+      "Syrup crystalizes against the heat shimmer.",
+      "The straw whistles—like the mall itself sighing.",
+      "Cold runs down your spine. The Cloud recoils." 
+    ]
+  },
+  "usage": {
+    "cooldown_seconds": 10,
+    "stacking": "refresh_duration",
+    "max_active": 1,
+    "audio_cue": "sfx/slurp_cup.wav"
+  }
+}

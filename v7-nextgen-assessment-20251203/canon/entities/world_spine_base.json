@@ -1,0 +1,503 @@
+{
+  "version": "4.0.2",
+  "meta": {
+    "source": "Eastland Mall - V3 Inheritance",
+    "photo_references": 42,
+    "levels": 2,
+    "description": "A dying mall from the late 80s. Fluorescent lights flicker. Dead plants line empty atriums. The food court sits sunken below, accessible by ramps descending into darkness."
+  },
+  "world": {
+    "cloud": {
+      "cloud_level": 0.0,
+      "pressure_trend": "stable",
+      "mall_mood": "calm",
+      "bleed_threshold_reached": false,
+      "current_bleed_tier": 0
+    },
+    "levels": {
+      "0": {
+        "name": "Ground Floor - Main Mall",
+        "zones": ["ENTRANCE_WEST", "ENTRANCE_EAST", "CORRIDOR", "ANCHOR_STORE", "STORE_BORED", "STORE_MILO_OPTICS", "STORE_COMPHUT", "STORE_WIZARD_BUNKER", "STORE_OUT_OF_SERVICE", "STORE_HARD_COPY", "SERVICE_HALL", "KIOSK", "STORE_FLAIR", "STORE_SPORTY", "CLINIC", "RAMP_DOWN"]
+      },
+      "-1": {
+        "name": "Sunken Level - Food Court & Theater",
+        "zones": ["FOOD_COURT", "THEATER_LOBBY", "THEATER_SCREEN_1"]
+      }
+    },
+    "zones": [
+      {
+        "id": "ENTRANCE_WEST",
+        "type": "ENTRANCE",
+        "level": 0,
+        "turbulence": 0.6,
+        "adjacent_to": ["CORRIDOR"],
+        "microstate": "normal",
+        "bleed_mod": 0.5,
+        "decay_class": "declining",
+        "description": "West mall entrance. Parking lot stretches into haze beyond the glass doors.",
+        "photo_refs": [1, 2],
+        "artifact_pool": ["sunglasses", "old_receipt", "lost_keys"]
+      },
+      {
+        "id": "ENTRANCE_EAST",
+        "type": "ENTRANCE",
+        "level": 0,
+        "turbulence": 0.6,
+        "adjacent_to": ["CORRIDOR"],
+        "microstate": "normal",
+        "bleed_mod": 0.5,
+        "decay_class": "declining",
+        "description": "East mall entrance. Barely any cars in the lot.",
+        "photo_refs": [3],
+        "artifact_pool": ["sunglasses", "arcade_token", "dead_watch_battery"]
+      },
+      {
+        "id": "CORRIDOR",
+        "type": "CORRIDOR",
+        "level": 0,
+        "turbulence": 0.9,
+        "adjacent_to": ["ENTRANCE_WEST", "ENTRANCE_EAST", "ANCHOR_STORE", "STORE_BORED", "STORE_MILO_OPTICS", "STORE_COMPHUT", "STORE_WIZARD_BUNKER", "STORE_OUT_OF_SERVICE", "STORE_HARD_COPY", "SERVICE_HALL", "KIOSK", "STORE_FLAIR", "STORE_SPORTY", "CLINIC", "RAMP_DOWN"],
+        "microstate": "normal",
+        "bleed_mod": 1.0,
+        "decay_class": "declining",
+        "description": "Main corridor. Patterned carpet muffles your steps. Glass block walls filter teal light.",
+        "photo_refs": [4, 5, 6, 7, 8, 9, 10],
+        "artifact_pool": ["sunglasses", "sticker_sheets", "arcade_token", "keychain", "dead_watch_battery"]
+      },
+      {
+        "id": "ANCHOR_STORE",
+        "type": "ANCHOR",
+        "level": 0,
+        "turbulence": 1.2,
+        "adjacent_to": ["CORRIDOR", "SERVICE_HALL"],
+        "microstate": "forbidden",
+        "bleed_mod": 1.5,
+        "decay_class": "dead",
+        "description": "Massive dead department store. Mannequins frozen in windows. Exposed ceiling grid. Echoes carry strangely.",
+        "photo_refs": [11, 12, 13, 14],
+        "artifact_pool": ["leather_wallet", "gift_card", "film_roll", "escalator_grease", "mannequin_hand"]
+      },
+      {
+        "id": "STORE_BORED",
+        "type": "STORE",
+        "level": 0,
+        "turbulence": 0.7,
+        "adjacent_to": ["CORRIDOR", "SERVICE_HALL"],
+        "microstate": "stable",
+        "bleed_mod": 0.8,
+        "decay_class": "declining",
+        "description": "BORED - Skateshop & Tee Emporium. Graffiti on every surface. Air smells like grip tape.",
+        "photo_refs": [15, 16],
+        "artifact_pool": ["sticker_sheets", "graffiti_marker", "torn_band_poster"]
+      },
+      {
+        "id": "STORE_MILO_OPTICS",
+        "type": "STORE",
+        "level": 0,
+        "turbulence": 1.0,
+        "adjacent_to": ["CORRIDOR", "FOOD_COURT"],
+        "microstate": "normal",
+        "bleed_mod": 1.0,
+        "decay_class": "declining",
+        "description": "Milo's Discount Optics. Harsh fluorescent light. Clinical. Eye charts on walls.",
+        "photo_refs": [17],
+        "artifact_pool": ["sunglasses", "cracked_lens", "eye_chart_fragment"]
+      },
+      {
+        "id": "STORE_COMPHUT",
+        "type": "STORE",
+        "level": 0,
+        "turbulence": 1.0,
+        "adjacent_to": ["CORRIDOR", "SERVICE_HALL", "STORE_WIZARD_BUNKER"],
+        "microstate": "normal",
+        "bleed_mod": 1.0,
+        "decay_class": "declining",
+        "description": "COMPHUT. A Blockbuster/RadioShack hybrid nightmare. VHS tapes and transistors.",
+        "photo_refs": [18, 19],
+        "artifact_pool": ["vhs_tape", "dead_battery", "floppy_disk", "coiled_phone_cord"]
+      },
+      {
+        "id": "STORE_WIZARD_BUNKER",
+        "type": "STORE",
+        "level": 0,
+        "turbulence": 0.8,
+        "adjacent_to": ["CORRIDOR", "STORE_COMPHUT"],
+        "microstate": "normal",
+        "bleed_mod": 0.9,
+        "decay_class": "declining",
+        "description": "Wizard Bunker. Comics and cards. Archie ripoffs and cricket stats. Longboxes of generic heroes.",
+        "photo_refs": [20],
+        "artifact_pool": ["cricket_card", "generic_comic", "dice_bag"]
+      },
+      {
+        "id": "STORE_OUT_OF_SERVICE",
+        "type": "STORE",
+        "level": 0,
+        "turbulence": 1.1,
+        "adjacent_to": ["CORRIDOR", "STORE_HARD_COPY"],
+        "microstate": "unstable",
+        "bleed_mod": 1.2,
+        "decay_class": "dead",
+        "description": "Out-of-Service Merchandise. The irony is not lost. Broken and discontinued items.",
+        "photo_refs": [21, 22],
+        "artifact_pool": ["broken_calculator", "expired_warranty", "missing_screw"]
+      },
+      {
+        "id": "STORE_HARD_COPY",
+        "type": "STORE",
+        "level": 0,
+        "turbulence": 1.2,
+        "adjacent_to": ["CORRIDOR", "STORE_OUT_OF_SERVICE"],
+        "microstate": "normal",
+        "bleed_mod": 1.1,
+        "decay_class": "liminal",
+        "description": "HARD COPY. Arcade on one side - 80s cabinets glowing neon. Through a beaded curtain, a bookstore lit like a head shop.",
+        "photo_refs": [23, 24, 25, 26],
+        "artifact_pool": ["arcade_token", "beaded_curtain_strand", "occult_bookmark", "dialup_cd", "pong_paddle_grip"]
+      },
+      {
+        "id": "STORE_FLAIR",
+        "type": "STORE",
+        "level": 0,
+        "turbulence": 1.0,
+        "adjacent_to": ["CORRIDOR"],
+        "microstate": "normal",
+        "bleed_mod": 1.0,
+        "decay_class": "declining",
+        "description": "Flair - Greeting cards and gift wrap. Buttons and pins cover every surface.",
+        "photo_refs": [27],
+        "artifact_pool": ["greeting_card", "ribbon_scrap", "button_pin"]
+      },
+      {
+        "id": "STORE_SPORTY",
+        "type": "STORE",
+        "level": 0,
+        "turbulence": 1.0,
+        "adjacent_to": ["CORRIDOR", "ANCHOR_STORE"],
+        "microstate": "normal",
+        "bleed_mod": 1.0,
+        "decay_class": "declining",
+        "description": "Sporty's Athletic Gear. Overpriced junk. Stopwatch ticks on the counter.",
+        "photo_refs": [28],
+        "artifact_pool": ["whistle", "sweatband", "shoelace"]
+      },
+      {
+        "id": "CLINIC",
+        "type": "STORE",
+        "level": 0,
+        "turbulence": 0.9,
+        "adjacent_to": ["CORRIDOR"],
+        "microstate": "quiet",
+        "bleed_mod": 0.9,
+        "decay_class": "declining",
+        "description": "Mall clinic. Harsh lights. The nurse sits motionless behind the counter.",
+        "photo_refs": [29],
+        "artifact_pool": ["bandage_wrapper", "cotton_ball", "clipboard"]
+      },
+      {
+        "id": "KIOSK",
+        "type": "KIOSK",
+        "level": 0,
+        "turbulence": 0.8,
+        "adjacent_to": ["CORRIDOR"],
+        "microstate": "normal",
+        "bleed_mod": 0.8,
+        "decay_class": "declining",
+        "description": "A lone kiosk in the middle of the corridor. Glass display cases, empty. Used to sell phone accessories.",
+        "photo_refs": [30],
+        "artifact_pool": ["phone_charm", "gift_card", "screen_protector"]
+      },
+      {
+        "id": "SERVICE_HALL",
+        "type": "SERVICE_HALL",
+        "level": 0,
+        "turbulence": 1.3,
+        "adjacent_to": ["CORRIDOR", "ANCHOR_STORE", "STORE_BORED", "STORE_COMPHUT", "FOOD_COURT"],
+        "microstate": "normal",
+        "bleed_mod": 1.4,
+        "decay_class": "liminal",
+        "description": "Service corridor. STAFF ONLY sign, but no one's enforcing it. Beige walls. Vents hum.",
+        "photo_refs": [31, 32, 33],
+        "artifact_pool": ["escalator_grease", "utility_keychain", "work_order"],
+        "toddler_presence_multiplier": 1.5
+      },
+      {
+        "id": "RAMP_DOWN",
+        "type": "RAMP",
+        "level": 0,
+        "turbulence": 1.1,
+        "adjacent_to": ["CORRIDOR", "FOOD_COURT"],
+        "microstate": "normal",
+        "bleed_mod": 1.3,
+        "decay_class": "liminal",
+        "description": "Ramp descends into darkness. Metal railings. The food court awaits below.",
+        "photo_refs": [34, 35],
+        "artifact_pool": ["arcade_token", "pretzel_salt"]
+      },
+      {
+        "id": "FOOD_COURT",
+        "type": "FOOD_COURT",
+        "level": -1,
+        "turbulence": 1.5,
+        "adjacent_to": ["RAMP_DOWN", "SERVICE_HALL", "THEATER_LOBBY", "STORE_MILO_OPTICS"],
+        "microstate": "normal",
+        "bleed_mod": 1.2,
+        "decay_class": "declining",
+        "description": "Sunken food court. Metal framework canopies overhead. Striped counters. The slushee machine still works.",
+        "photo_refs": [36, 37, 38, 39, 40],
+        "artifact_pool": ["food_tray", "slushee_cup", "pretzel_salt", "necronomicon_bookmark"],
+        "vendors": [
+          {"name": "Slush Puppy Paradise", "status": "operational"},
+          {"name": "Wok This Way", "status": "closed"},
+          {"name": "Pizza Planet Express", "status": "closed"},
+          {"name": "Pretzel Hut", "status": "never_opened"},
+          {"name": "Burger Bunker", "status": "closed"},
+          {"name": "Taco Tiempo", "status": "closed"}
+        ]
+      },
+      {
+        "id": "THEATER_LOBBY",
+        "type": "THEATER",
+        "level": -1,
+        "turbulence": 1.0,
+        "adjacent_to": ["FOOD_COURT", "THEATER_SCREEN_1"],
+        "microstate": "quiet",
+        "bleed_mod": 1.1,
+        "decay_class": "dead",
+        "description": "6-Plex Theater lobby. Velvet ropes. Flickering marquee. Popcorn smell without popcorn.",
+        "photo_refs": [41],
+        "artifact_pool": ["ticket_stub", "popcorn_kernel", "3d_glasses"]
+      },
+      {
+        "id": "THEATER_SCREEN_1",
+        "type": "THEATER",
+        "level": -1,
+        "turbulence": 1.2,
+        "adjacent_to": ["THEATER_LOBBY"],
+        "microstate": "forbidden",
+        "bleed_mod": 1.4,
+        "decay_class": "dead",
+        "description": "Screen 1. Rows of seats descending into darkness. The screen glows faintly. Nothing playing.",
+        "photo_refs": [42],
+        "artifact_pool": ["ticket_stub", "lost_earring"]
+      }
+    ],
+    "decay_classes": {
+      "pristine": {
+        "description": "Untouched. Rare.",
+        "turbulence_mod": 0.5,
+        "zones": []
+      },
+      "declining": {
+        "description": "Fading. Most of the mall.",
+        "turbulence_mod": 1.0,
+        "zones": ["ENTRANCE_WEST", "ENTRANCE_EAST", "CORRIDOR", "STORE_BORED", "STORE_MILO_OPTICS", "STORE_COMPHUT", "STORE_WIZARD_BUNKER", "STORE_FLAIR", "STORE_SPORTY", "CLINIC", "KIOSK", "FOOD_COURT"]
+      },
+      "dead": {
+        "description": "Abandoned. High glitch potential.",
+        "turbulence_mod": 1.3,
+        "zones": ["ANCHOR_STORE", "STORE_OUT_OF_SERVICE", "THEATER_LOBBY", "THEATER_SCREEN_1"]
+      },
+      "liminal": {
+        "description": "Between spaces. Where things slip.",
+        "turbulence_mod": 1.5,
+        "zones": ["SERVICE_HALL", "RAMP_DOWN", "STORE_HARD_COPY"]
+      }
+    },
+    "anchors": [
+      {
+        "id": "bookwoman",
+        "name": "The Bookwoman",
+        "home_zone": "STORE_HARD_COPY",
+        "visual_anchor": "cardigan + book in arms",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "shelving", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "fixer",
+        "name": "The Fixer",
+        "home_zone": "STORE_COMPHUT",
+        "visual_anchor": "tech polo + tool belt",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "repair_bench", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "bored",
+        "name": "BORED",
+        "home_zone": "STORE_BORED",
+        "visual_anchor": "hoodie + skate deck",
+        "contradiction_threshold": 75,
+        "state": {"stance": "neutral", "current_task": "phone_scroll", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "flair",
+        "name": "Flair Warrior",
+        "home_zone": "STORE_FLAIR",
+        "visual_anchor": "apron + buttons/pins",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "card_arrange", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "barista",
+        "name": "Mermaid Barista",
+        "home_zone": "FOOD_COURT",
+        "visual_anchor": "apron + beanie + portafilter",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "drink_make", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "security",
+        "name": "Mall Cop",
+        "home_zone": "SERVICE_HALL",
+        "visual_anchor": "security shirt + key ring",
+        "contradiction_threshold": 75,
+        "state": {"stance": "neutral", "current_task": "patrol_walk", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "nurse",
+        "name": "Clinic Nurse",
+        "home_zone": "CLINIC",
+        "visual_anchor": "scrubs + neon stethoscope",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "chart_check", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "sporty",
+        "name": "Sporty's Manager",
+        "home_zone": "STORE_SPORTY",
+        "visual_anchor": "tracksuit + stopwatch",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "inventory_count", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "arcade",
+        "name": "Arcade Guy",
+        "home_zone": "STORE_HARD_COPY",
+        "visual_anchor": "band tee + token cup",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "machine_check", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "lostandfound",
+        "name": "Lost & Found Clerk",
+        "home_zone": "SERVICE_HALL",
+        "visual_anchor": "mall vest + overstuffed lanyard",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "item_sort", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "janitor",
+        "name": "Mall Janitor",
+        "home_zone": "SERVICE_HALL",
+        "visual_anchor": "jumpsuit + mop",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "floor_mop", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "toddler",
+        "name": "The Toddler",
+        "home_zone": "CORRIDOR",
+        "visual_anchor": "overalls + balloon",
+        "contradiction_threshold": 90,
+        "state": {"stance": "neutral", "current_task": "wander_random", "flags": {"contradiction_used": false}},
+        "wander_zones": ["CORRIDOR", "FOOD_COURT", "KIOSK", "RAMP_DOWN"]
+      },
+      {
+        "id": "milo",
+        "name": "Milo",
+        "home_zone": "STORE_MILO_OPTICS",
+        "visual_anchor": "optician coat + thick glasses",
+        "contradiction_threshold": 80,
+        "state": {"stance": "neutral", "current_task": "frame_adjust", "flags": {"contradiction_used": false}}
+      },
+      {
+        "id": "wizard",
+        "name": "Bunker Kid",
+        "home_zone": "STORE_WIZARD_BUNKER",
+        "visual_anchor": "band hoodie + dice bag",
+        "contradiction_threshold": 85,
+        "state": {"stance": "neutral", "current_task": "comic_sort", "flags": {"contradiction_used": false}}
+      }
+    ],
+    "swarm": {
+      "population": 0,
+      "density_by_zone": {},
+      "mood_distribution": {
+        "apathetic": 0.6,
+        "curious": 0.2,
+        "irritable": 0.2
+      },
+      "congregation_zones": ["FOOD_COURT", "CORRIDOR", "ENTRANCE_WEST", "ENTRANCE_EAST"]
+    },
+    "bleed": {
+      "active": false,
+      "tier": 0,
+      "time_remaining": 0.0,
+      "origin_zone": null,
+      "degradation_profile": "warp"
+    },
+    "special_features": {
+      "glass_elevator": {
+        "zone": "CORRIDOR",
+        "description": "Blue glass elevator tower. Not operational.",
+        "bleed_focus": true
+      },
+      "dead_fountain": {
+        "zone": "CORRIDOR",
+        "description": "Tiered fountain. Dry. Brown leaves collected in the basin.",
+        "artifact_spawn": true
+      },
+      "working_pong": {
+        "zone": "STORE_HARD_COPY",
+        "description": "One Pong cabinet still works. Pings softly.",
+        "interactive": true
+      },
+      "slushee_machine": {
+        "zone": "FOOD_COURT",
+        "description": "The slushee machine hums. Still working.",
+        "interactive": true
+      }
+    },
+    "artifacts": [],
+    "ao3_logs": {
+      "session_id": "",
+      "entries": []
+    },
+    "player": {
+      "position_zone": "ENTRANCE_WEST",
+      "current_level": 0,
+      "visible_artifacts": [],
+      "weights": {
+        "positive": {
+          "artifact_discovery": 1.5,
+          "ao3_log_read": 1.0,
+          "npc_interaction": 0.8
+        },
+        "negative": {
+          "calm_zone_rest": -0.1,
+          "grounding_npc": -1.0,
+          "quick_exit_hot_zone": -0.5
+        },
+        "ambient": {
+          "session_fatigue": 0.01,
+          "drift_noise": 0.005
+        }
+      }
+    }
+  },
+  "loop": {
+    "tick_rate_fps": 60,
+    "cloud_update_interval": 10,
+    "systems_order": [
+      "input",
+      "player",
+      "npc",
+      "swarm",
+      "artifacts",
+      "cloud",
+      "bleed",
+      "persistence",
+      "render"
+    ]
+  }
+}

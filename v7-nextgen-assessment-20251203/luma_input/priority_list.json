@@ -1,0 +1,67 @@
+{
+  "zone_priorities": [
+    {
+      "rank": 1,
+      "zone": "ATRIUM_MAST",
+      "priority_score": 0.555,
+      "reason": "Good coverage for NeRF",
+      "frame_count": 12,
+      "coverage_estimate": 0.75,
+      "recommended_action": "NeRF FIRST"
+    },
+    {
+      "rank": 2,
+      "zone": "ESCALATOR_PIT",
+      "priority_score": 0.458,
+      "reason": "Critical narrative importance, High QBIT influence, LIMITED DATA - may need Dream Machine support",
+      "frame_count": 4,
+      "coverage_estimate": 0.24,
+      "recommended_action": "Dream Machine PRIMARY"
+    },
+    {
+      "rank": 3,
+      "zone": "SUNKEN_FOOD_COURT",
+      "priority_score": 0.428,
+      "reason": "Critical narrative importance, High QBIT influence, LIMITED DATA - may need Dream Machine support",
+      "frame_count": 4,
+      "coverage_estimate": 0.22,
+      "recommended_action": "Dream Machine PRIMARY"
+    },
+    {
+      "rank": 4,
+      "zone": "EXTERIOR_DOME",
+      "priority_score": 0.395,
+      "reason": "Standard processing",
+      "frame_count": 8,
+      "coverage_estimate": 0.35,
+      "recommended_action": "Dream Machine PRIMARY"
+    },
+    {
+      "rank": 5,
+      "zone": "CINEMA_ENTRANCE",
+      "priority_score": 0.368,
+      "reason": "LIMITED DATA - may need Dream Machine support",
+      "frame_count": 4,
+      "coverage_estimate": 0.2,
+      "recommended_action": "Dream Machine PRIMARY"
+    },
+    {
+      "rank": 6,
+      "zone": "COMPHUT",
+      "priority_score": 0.325,
+      "reason": "LIMITED DATA - may need Dream Machine support",
+      "frame_count": 0,
+      "coverage_estimate": 0.13,
+      "recommended_action": "Dream Machine PRIMARY"
+    },
+    {
+      "rank": 7,
+      "zone": "SERVICE_HALL",
+      "priority_score": 0.3,
+      "reason": "LIMITED DATA - may need Dream Machine support",
+      "frame_count": 0,
+      "coverage_estimate": 0.12,
+      "recommended_action": "Dream Machine PRIMARY"
+    }
+  ]
+}

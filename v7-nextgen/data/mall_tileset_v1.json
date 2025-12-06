@@ -1,0 +1,90 @@
+{
+  "tileset_name": "mall_tileset_v1",
+  "description": "Tile definitions for V7 voxel mall (references palette names)",
+  "palette": "COMICBOOK_MALL_V1",
+
+  "tiles": {
+    "CORRIDOR": {
+      "floor": "floor_mall_tile",
+      "wall_lower": "wall_soft_green",
+      "wall_upper": "wall_darker_green",
+      "ceiling": "ceiling_tile_light",
+      "trim": "accent_trim_dark",
+      "lighting": "mall_blue_light"
+    },
+
+    "FOOD_COURT": {
+      "floor": "floor_light",
+      "railing": "metal_grey",
+      "wall": "wall_soft_green",
+      "ceiling": "ceiling_tile_grey",
+      "accent": "foodcourt_yellow",
+      "seating": "wood_mid"
+    },
+
+    "ESCALATOR_WELL": {
+      "steps": "metal_grey",
+      "handrails": "metal_dark",
+      "wall": "wall_darker_green",
+      "ceiling": "ceiling_concrete",
+      "trim": "security_blue",
+      "lighting": "mall_blue_light"
+    },
+
+    "CINEMA_ENTRANCE": {
+      "floor": "ceiling_tile_grey",
+      "wall": "security_blue_dark",
+      "carpet": "security_blue",
+      "trim": "metal_dark",
+      "posters": "alert_red",
+      "void": "alert_red_dark"
+    },
+
+    "STORE_MILO_OPTICS": {
+      "floor": "floor_light",
+      "wall": "milo_optics_pink_dark",
+      "accent": "milo_optics_hotpink",
+      "glass": "aqua_trim"
+    },
+
+    "STORE_BORED": {
+      "floor": "wood_dark",
+      "wall": "bored_magenta",
+      "accent": "bored_magenta_dark",
+      "signage": "bored_magenta"
+    },
+
+    "STORE_COMPHUT": {
+      "floor": "floor_mall_tile",
+      "wall": "mall_blue",
+      "accent": "aqua_trim",
+      "signage": "aqua_trim_dark",
+      "displays": "mall_blue_light"
+    },
+
+    "SERVICE_HALL": {
+      "floor": "ceiling_tile_grey",
+      "wall": "ceiling_concrete",
+      "pipes": "metal_grey",
+      "doors": "metal_dark",
+      "warning_signs": "warning_yellow_dark",
+      "lighting": "foodcourt_yellow"
+    },
+
+    "ATRIUM_FOUNTAIN": {
+      "floor": "floor_light",
+      "wall": "wall_soft_green",
+      "water": "aqua_trim",
+      "accent": "aqua_trim_dark",
+      "ceiling": "ceiling_tile_light",
+      "masts": "foodcourt_yellow"
+    },
+
+    "ANCHOR_STORE": {
+      "floor": "floor_mall_tile",
+      "wall": "metal_dark",
+      "ceiling": "ceiling_concrete",
+      "void": "alert_red_dark"
+    }
+  }
+}

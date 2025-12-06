@@ -1,0 +1,237 @@
+{
+  "version": "1.0.0",
+  "palette": "COMICBOOK_MALL_V1",
+  "description": "Tile-based visual mappings for V7 voxel doom-alike construction",
+  "last_updated": "2025-12-03",
+
+  "tiles": {
+    "CORRIDOR": {
+      "floor": "floor_mall_tile",
+      "wall_lower": "wall_soft_green",
+      "wall_upper": "wall_darker_green",
+      "ceiling": "ceiling_tile_light",
+      "trim": "accent_trim_dark",
+      "lighting": "mall_blue_light"
+    },
+
+    "STORE_BORED": {
+      "floor": "wood_dark",
+      "wall": "bored_magenta",
+      "accent": "bored_magenta_dark",
+      "signage": "bored_magenta"
+    },
+
+    "ATRIUM_FOUNTAIN": {
+      "floor": "floor_light",
+      "wall": "wall_soft_green",
+      "water": "aqua_trim",
+      "accent": "aqua_trim_dark",
+      "ceiling": "ceiling_tile_light",
+      "masts": "foodcourt_yellow"
+    },
+
+    "FOOD_COURT_MAIN": {
+      "floor": "floor_mall_tile",
+      "wall": "wall_soft_green",
+      "ceiling": "ceiling_concrete",
+      "neon_primary": "neon_orange",
+      "neon_secondary": "foodcourt_yellow",
+      "seating": "wood_mid",
+      "trim": "signage_orange_dark"
+    },
+
+    "ESCALATOR_WELL": {
+      "steps": "metal_grey",
+      "handrails": "metal_dark",
+      "wall": "wall_darker_green",
+      "ceiling": "ceiling_concrete",
+      "trim": "mall_blue",
+      "lighting": "mall_blue_light"
+    },
+
+    "CINEMA_ENTRANCE": {
+      "floor": "ceiling_tile_grey",
+      "wall": "security_blue_dark",
+      "carpet": "security_blue",
+      "trim": "metal_dark",
+      "posters": "alert_red",
+      "lighting_low": "security_blue_dark"
+    },
+
+    "COMPHUT": {
+      "floor": "floor_mall_tile",
+      "wall": "mall_blue",
+      "accent": "aqua_trim",
+      "signage": "aqua_trim_dark",
+      "displays": "mall_blue_light",
+      "trim": "metal_grey"
+    },
+
+    "SERVICE_HALL": {
+      "floor": "ceiling_tile_grey",
+      "wall": "ceiling_concrete",
+      "pipes": "metal_grey",
+      "doors": "metal_dark",
+      "warning_signs": "warning_yellow_dark",
+      "lighting": "foodcourt_yellow"
+    },
+
+    "EXTERIOR_PARKING": {
+      "asphalt": "metal_dark",
+      "lines": "foodcourt_yellow",
+      "building": "ceiling_concrete",
+      "tower_pink": "milo_optics_hotpink",
+      "tower_yellow": "foodcourt_yellow",
+      "sky": "mall_blue_light"
+    },
+
+    "STORE_COCA_COLA": {
+      "floor": "wood_light",
+      "wall": "alert_red",
+      "accent": "alert_red_dark",
+      "signage": "alert_red",
+      "trim": "wood_trim"
+    },
+
+    "STORE_ORANGE_JULIUS": {
+      "floor": "floor_mall_tile",
+      "counter": "neon_orange",
+      "wall": "signage_orange_dark",
+      "signage": "neon_orange",
+      "accent": "foodcourt_yellow"
+    },
+
+    "STORE_MILO_OPTICS": {
+      "floor": "floor_light",
+      "wall": "milo_optics_pink_dark",
+      "accent": "milo_optics_hotpink",
+      "glass": "aqua_trim"
+    },
+
+    "SECURITY": {
+      "floor": "metal_grey",
+      "wall": "security_blue",
+      "accent": "security_blue_dark",
+      "props": "metal_dark"
+    },
+
+    "ARCADE_JOLLY_TIME": {
+      "floor": "ceiling_tile_grey",
+      "wall": "security_blue_dark",
+      "cabinets": "neon_orange",
+      "screens": "aqua_trim",
+      "carpet": "alert_red",
+      "signage": "foodcourt_yellow"
+    }
+  },
+
+  "npcs": {
+    "MALL_WALKER": {
+      "head": "ceiling_tile_grey",
+      "shirt": "mall_blue_light",
+      "pants": "wood_dark",
+      "accent": "aqua_trim"
+    },
+
+    "SECURITY_GUARD": {
+      "head": "ceiling_tile_light",
+      "shirt": "security_blue",
+      "pants": "metal_dark",
+      "accent": "security_blue_dark"
+    },
+
+    "JANITOR_UNIT7": {
+      "head": "ceiling_tile_grey",
+      "jumpsuit": "wall_soft_green",
+      "boots": "metal_dark",
+      "tools": "warning_yellow_dark"
+    }
+  },
+
+  "cloud_state_overlays": {
+    "calm": {
+      "ambient_tint": "mall_blue_light",
+      "saturation": 1.0,
+      "brightness": 1.0
+    },
+    "uneasy": {
+      "ambient_tint": "ceiling_tile_grey",
+      "saturation": 0.9,
+      "brightness": 0.95
+    },
+    "strained": {
+      "ambient_tint": "warning_yellow_dark",
+      "saturation": 0.8,
+      "brightness": 0.85,
+      "flicker_chance": 0.1
+    },
+    "critical": {
+      "ambient_tint": "alert_red",
+      "saturation": 0.6,
+      "brightness": 0.7,
+      "flicker_chance": 0.3,
+      "glitch_colors": ["bored_magenta", "milo_optics_hotpink", "alert_red"]
+    }
+  },
+
+  "era_variations": {
+    "1981_opening": {
+      "brightness_modifier": 1.15,
+      "saturation_modifier": 1.1,
+      "wear": 0.0,
+      "note": "Pristine, optimistic, bright"
+    },
+    "1995_peak": {
+      "brightness_modifier": 1.0,
+      "saturation_modifier": 1.0,
+      "wear": 0.1,
+      "note": "Bustling, thriving - STARTING ERA"
+    },
+    "2005_decline": {
+      "brightness_modifier": 0.85,
+      "saturation_modifier": 0.8,
+      "wear": 0.4,
+      "flicker_lights": true,
+      "note": "Vacant, flickering, fading"
+    },
+    "2011_closure": {
+      "brightness_modifier": 0.6,
+      "saturation_modifier": 0.5,
+      "wear": 0.8,
+      "flicker_lights": true,
+      "darkness_zones": true,
+      "note": "Abandoned, temporal horror"
+    }
+  },
+
+  "zone_to_tile_mapping": {
+    "Z1_CENTRAL_ATRIUM": "ATRIUM_FOUNTAIN",
+    "Z2_UPPER_RING": "CORRIDOR",
+    "Z3_LOWER_RING": "CORRIDOR",
+    "Z4_FOOD_COURT": "FOOD_COURT_MAIN",
+    "Z5_ANCHOR_STORES": "CORRIDOR",
+    "Z6_ESCALATOR_WELLS": "ESCALATOR_WELL",
+    "Z7_SUBTERRANEAN": "SERVICE_HALL",
+    "Z8_THEATER": "CINEMA_ENTRANCE",
+    "Z9_EXTERIOR": "EXTERIOR_PARKING"
+  },
+
+  "special_entities": {
+    "coca_cola_store": "STORE_COCA_COLA",
+    "orange_julius": "STORE_ORANGE_JULIUS",
+    "milo_optics": "STORE_MILO_OPTICS",
+    "bored_games": "STORE_BORED",
+    "comphut": "COMPHUT",
+    "jolly_time_arcade": "ARCADE_JOLLY_TIME",
+    "security_office": "SECURITY"
+  },
+
+  "notes": {
+    "palette_source": "COMICBOOK_MALL_V1 (30 colors)",
+    "visual_style": "Voxel doom-alike with comic book color palette",
+    "npc_count_anchor": 13,
+    "cloud_driven": true,
+    "multi_era_support": "4 eras (1981, 1995, 2005, 2011)",
+    "render_effects": "Chromatic aberration, vignette, glitch, color shifts based on game_state.renderer"
+  }
+}

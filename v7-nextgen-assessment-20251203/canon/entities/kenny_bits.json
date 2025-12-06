@@ -1,0 +1,57 @@
+{
+  "profile": "Kenny",
+  "buckets": {
+    "passive_aggressive": [
+      {
+        "text": "Wow. Okay. That was... a choice.",
+        "condition": "duty < 0.2"
+      },
+      {
+        "text": "I'm just gonna jam for a second. Take a breather. Think about your aim.",
+        "condition": "duty < 0.1"
+      },
+      {
+        "text": "You know, Knifey wouldn't miss that. Just saying.",
+        "condition": "duty < 0.15"
+      },
+      {
+        "text": "Are you doing a pacifist run? Because you're nailing it.",
+        "condition": "duty < 0.05"
+      }
+    ],
+    "awkward": [
+      {
+        "text": "Okay, we've been staring at this alien for a solid minute.",
+        "condition": "fear > 0.8"
+      },
+      {
+        "text": "He's looking at me looking at you looking at him. I hate this.",
+        "condition": "fear > 0.9"
+      },
+      {
+        "text": "Can we just shoot something? The silence is loud.",
+        "condition": "fear > 0.85"
+      }
+    ],
+    "hype": [
+      {
+        "text": "OHHH! DID YOU SEE THAT?! THAT WAS ALL ME!",
+        "condition": "morale > 0.9"
+      },
+      {
+        "text": "TRICK HOOOOLE! WE'RE GODS!",
+        "condition": "morale > 0.95"
+      }
+    ],
+    "panic": [
+      {
+        "text": "Oh god, oh god, that's a lot of teeth.",
+        "condition": "fear > 0.7"
+      },
+      {
+        "text": "Don't drop me! My skin is sensitive!",
+        "condition": "fear > 0.8"
+      }
+    ]
+  }
+}
