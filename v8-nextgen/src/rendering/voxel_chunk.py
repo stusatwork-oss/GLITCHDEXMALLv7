@@ -225,6 +225,158 @@ class VoxelChunk:
         return self.iter_voxels()
 
     # =========================================================================
+    # STAGE 2: CHUNK OPERATIONS
+    # =========================================================================
+
+    def fill_region(
+        self,
+        x_min: int, x_max: int,
+        y_min: int, y_max: int,
+        z_min: int, z_max: int,
+        material: int
+    ) -> int:
+        """
+        Fill a box region with a material.
+
+        Args:
+            x_min, x_max: X range (inclusive)
+            y_min, y_max: Y range (inclusive)
+            z_min, z_max: Z range (inclusive)
+            material: Material ID to fill with
+
+        Returns:
+            Number of voxels set
+
+        Example:
+            >>> chunk = VoxelChunk((0, 0, 0))
+            >>> chunk.fill_region(10, 15, 10, 15, 10, 15, material=1)
+            216  # 6x6x6 = 216 voxels
+        """
+        count = 0
+        for x in range(x_min, x_max + 1):
+            for y in range(y_min, y_max + 1):
+                for z in range(z_min, z_max + 1):
+                    if 0 <= x < CHUNK_SIZE and 0 <= y < CHUNK_SIZE and 0 <= z < CHUNK_SIZE:
+                        self.set_voxel(x, y, z, material)
+                        count += 1
+        return count
+
+    def clear(self) -> None:
+        """
+        Clear entire chunk (set all to air).
+
+        Example:
+            >>> chunk = VoxelChunk((0, 0, 0))
+            >>> chunk.fill_region(0, 10, 0, 10, 0, 10, material=1)
+            1331
+            >>> chunk.clear()
+            >>> chunk.is_empty()
+            True
+        """
+        self.data.clear()
+
+    def get_bounds(self) -> Optional[Tuple[Tuple[int, int, int], Tuple[int, int, int]]]:
+        """
+        Get axis-aligned bounding box of non-air voxels.
+
+        Returns:
+            ((x_min, y_min, z_min), (x_max, y_max, z_max)) or None if empty
+
+        Example:
+            >>> chunk = VoxelChunk((0, 0, 0))
+            >>> chunk.set_voxel(5, 10, 15, 1)
+            >>> chunk.set_voxel(20, 25, 30, 2)
+            >>> chunk.get_bounds()
+            ((5, 10, 15), (20, 25, 30))
+        """
+        if self.is_empty():
+            return None
+
+        x_vals, y_vals, z_vals = [], [], []
+        for x, y, z, _ in self.iter_voxels():
+            x_vals.append(x)
+            y_vals.append(y)
+            z_vals.append(z)
+
+        return (
+            (min(x_vals), min(y_vals), min(z_vals)),
+            (max(x_vals), max(y_vals), max(z_vals))
+        )
+
+    def count_material(self, material: int) -> int:
+        """
+        Count voxels of a specific material.
+
+        Args:
+            material: Material ID to count
+
+        Returns:
+            Number of voxels with that material
+
+        Example:
+            >>> chunk = VoxelChunk((0, 0, 0))
+            >>> chunk.set_voxel(0, 0, 0, 1)
+            >>> chunk.set_voxel(1, 1, 1, 1)
+            >>> chunk.set_voxel(2, 2, 2, 2)
+            >>> chunk.count_material(1)
+            2
+        """
+        return sum(1 for mat in self.data.values() if mat == material)
+
+    def clone(self) -> 'VoxelChunk':
+        """
+        Create a deep copy of this chunk.
+
+        Returns:
+            New VoxelChunk with same data
+
+        Example:
+            >>> chunk = VoxelChunk((0, 0, 0))
+            >>> chunk.set_voxel(5, 5, 5, 1)
+            >>> copy = chunk.clone()
+            >>> copy.get_voxel(5, 5, 5)
+            1
+            >>> copy.set_voxel(10, 10, 10, 2)
+            >>> chunk.get_voxel(10, 10, 10)  # Original unchanged
+            0
+        """
+        return VoxelChunk(
+            position=self.position,
+            data=self.data.copy()
+        )
+
+    def replace_material(self, old_material: int, new_material: int) -> int:
+        """
+        Replace all voxels of one material with another.
+
+        Args:
+            old_material: Material to replace
+            new_material: New material
+
+        Returns:
+            Number of voxels replaced
+
+        Example:
+            >>> chunk = VoxelChunk((0, 0, 0))
+            >>> chunk.fill_region(0, 5, 0, 5, 0, 5, material=1)
+            216
+            >>> chunk.replace_material(1, 2)
+            216
+            >>> chunk.count_material(2)
+            216
+        """
+        count = 0
+        for encoded_pos, material in list(self.data.items()):
+            if material == old_material:
+                if new_material == 0:
+                    # Replacing with air - remove
+                    del self.data[encoded_pos]
+                else:
+                    self.data[encoded_pos] = new_material
+                count += 1
+        return count
+
+    # =========================================================================
     # REPR
     # =========================================================================
 
@@ -238,11 +390,11 @@ class VoxelChunk:
 
 
 # =============================================================================
-# STAGE 1 TESTS
+# TESTS
 # =============================================================================
 
 def test_basic_chunk():
-    """Test basic chunk operations."""
+    """Test basic chunk operations (Stage 1)."""
     print("Testing VoxelChunk (Stage 1: Basic Storage)...")
 
     # Create chunk
@@ -282,20 +434,64 @@ def test_basic_chunk():
     print(f"  ✓ Stage 1 complete: {chunk}")
 
 
+def test_chunk_operations():
+    """Test chunk operations (Stage 2)."""
+    print("\nTesting VoxelChunk (Stage 2: Chunk Operations)...")
+
+    # Fill region
+    chunk = VoxelChunk(position=(0, 0, 0))
+    count = chunk.fill_region(10, 15, 10, 15, 10, 15, material=1)
+    assert count == 216  # 6x6x6
+    print(f"  ✓ Fill region: {count} voxels ({chunk})")
+
+    # Get bounds
+    bounds = chunk.get_bounds()
+    assert bounds == ((10, 10, 10), (15, 15, 15))
+    print(f"  ✓ Get bounds: {bounds}")
+
+    # Count material
+    assert chunk.count_material(1) == 216
+    assert chunk.count_material(2) == 0
+    print(f"  ✓ Count material: 216 voxels of material 1")
+
+    # Replace material
+    replaced = chunk.replace_material(1, 2)
+    assert replaced == 216
+    assert chunk.count_material(1) == 0
+    assert chunk.count_material(2) == 216
+    print(f"  ✓ Replace material: {replaced} voxels (1 → 2)")
+
+    # Clone
+    copy = chunk.clone()
+    copy.set_voxel(20, 20, 20, material=3)
+    assert chunk.get_voxel(20, 20, 20) == 0  # Original unchanged
+    assert copy.get_voxel(20, 20, 20) == 3
+    print(f"  ✓ Clone: independent copy works")
+
+    # Clear
+    chunk.clear()
+    assert chunk.is_empty()
+    assert copy.voxel_count() == 217  # Original had 216, plus 1 new
+    print(f"  ✓ Clear: chunk empty, copy unaffected")
+
+    print(f"  ✓ Stage 2 complete!")
+
+
 # =============================================================================
 # MAIN
 # =============================================================================
 
 if __name__ == "__main__":
     print("=" * 80)
-    print("VOXEL CHUNK - Stage 1: Basic Storage")
+    print("VOXEL CHUNK - Stages 1 & 2")
     print("=" * 80)
     print()
 
     test_basic_chunk()
+    test_chunk_operations()
 
     print()
     print("=" * 80)
-    print("✓ Stage 1 tests passed!")
-    print("Next: Stage 2 - Chunk operations (fill, clear, neighbors)")
+    print("✓ Stages 1 & 2 complete!")
+    print("Next: Stage 3 - ChunkedVoxelWorld manager")
     print("=" * 80)
