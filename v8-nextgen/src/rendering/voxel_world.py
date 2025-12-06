@@ -40,6 +40,7 @@ class ChunkedVoxelWorld:
 
     Attributes:
         chunks: Dict of {(cx, cy, cz): VoxelChunk}
+        dirty_chunks: Set of chunk coords that need re-meshing
 
     Example:
         >>> world = ChunkedVoxelWorld()
@@ -48,11 +49,14 @@ class ChunkedVoxelWorld:
         1
         >>> world.chunk_count()
         1
+        >>> world.get_dirty_chunks()  # Returns [(3, 6, 1)]
+        [(3, 6, 1)]
     """
 
     def __init__(self):
         """Initialize empty world."""
         self.chunks: Dict[Tuple[int, int, int], VoxelChunk] = {}
+        self.dirty_chunks: set = set()  # Chunks needing re-mesh
 
     # =========================================================================
     # CORE VOXEL ACCESS (World Space)
@@ -61,6 +65,8 @@ class ChunkedVoxelWorld:
     def set_voxel(self, world_x: int, world_y: int, world_z: int, material: int) -> None:
         """
         Set voxel material at world coordinates.
+
+        Automatically marks chunk as dirty for re-meshing.
 
         Args:
             world_x, world_y, world_z: World coordinates (any integer)
@@ -71,6 +77,8 @@ class ChunkedVoxelWorld:
             >>> world.set_voxel(100, 200, 50, material_id=1)
             >>> world.get_voxel(100, 200, 50)
             1
+            >>> world.is_chunk_dirty(3, 6, 1)
+            True
         """
         # Convert world → chunk + local
         chunk_pos = world_to_chunk(world_x, world_y, world_z)
@@ -86,9 +94,13 @@ class ChunkedVoxelWorld:
         chunk = self.chunks[chunk_pos]
         chunk.set_voxel(local_x, local_y, local_z, material)
 
+        # Mark chunk dirty (needs re-mesh)
+        self.dirty_chunks.add(chunk_pos)
+
         # Remove empty chunks to save memory
         if chunk.is_empty():
             del self.chunks[chunk_pos]
+            self.dirty_chunks.discard(chunk_pos)  # No longer dirty if deleted
 
     def get_voxel(self, world_x: int, world_y: int, world_z: int) -> int:
         """
@@ -183,6 +195,7 @@ class ChunkedVoxelWorld:
         chunk_pos = (cx, cy, cz)
         if chunk_pos in self.chunks:
             del self.chunks[chunk_pos]
+            self.dirty_chunks.discard(chunk_pos)  # Clean up dirty tracking
             return True
         return False
 
@@ -203,6 +216,182 @@ class ChunkedVoxelWorld:
             2
         """
         return len(self.chunks)
+
+    # =========================================================================
+    # DIRTY REGION TRACKING (Responsibility #5)
+    # =========================================================================
+
+    def get_dirty_chunks(self) -> List[Tuple[int, int, int]]:
+        """
+        Get list of chunks that need re-meshing.
+
+        Returns:
+            List of dirty chunk coordinates
+
+        Example:
+            >>> world = ChunkedVoxelWorld()
+            >>> world.set_voxel(100, 200, 50, 1)
+            >>> world.get_dirty_chunks()
+            [(3, 6, 1)]
+        """
+        return list(self.dirty_chunks)
+
+    def clear_dirty_chunks(self) -> int:
+        """
+        Clear dirty chunk tracking (call after re-meshing).
+
+        Returns:
+            Number of chunks that were dirty
+
+        Example:
+            >>> world = ChunkedVoxelWorld()
+            >>> world.set_voxel(0, 0, 0, 1)
+            >>> world.set_voxel(100, 100, 100, 2)
+            >>> dirty_count = world.clear_dirty_chunks()
+            >>> dirty_count
+            2
+            >>> world.get_dirty_chunks()
+            []
+        """
+        count = len(self.dirty_chunks)
+        self.dirty_chunks.clear()
+        return count
+
+    def is_chunk_dirty(self, cx: int, cy: int, cz: int) -> bool:
+        """
+        Check if chunk needs re-meshing.
+
+        Args:
+            cx, cy, cz: Chunk coordinates
+
+        Returns:
+            True if chunk is dirty
+
+        Example:
+            >>> world = ChunkedVoxelWorld()
+            >>> world.set_voxel(0, 0, 0, 1)
+            >>> world.is_chunk_dirty(0, 0, 0)
+            True
+        """
+        return (cx, cy, cz) in self.dirty_chunks
+
+    def mark_chunk_dirty(self, cx: int, cy: int, cz: int) -> None:
+        """
+        Manually mark chunk as dirty (for external modifications).
+
+        Args:
+            cx, cy, cz: Chunk coordinates
+
+        Example:
+            >>> world = ChunkedVoxelWorld()
+            >>> world.load_chunk(0, 0, 0)
+            >>> world.mark_chunk_dirty(0, 0, 0)
+            >>> world.is_chunk_dirty(0, 0, 0)
+            True
+        """
+        if (cx, cy, cz) in self.chunks:
+            self.dirty_chunks.add((cx, cy, cz))
+
+    # =========================================================================
+    # CHUNK LIFETIME MANAGEMENT (Responsibility #4)
+    # =========================================================================
+
+    def unload_far_chunks(self, center_x: int, center_y: int, center_z: int, max_distance: int) -> int:
+        """
+        Unload chunks beyond max distance from center (in chunk units).
+
+        Args:
+            center_x, center_y, center_z: Center world coordinates
+            max_distance: Max chunk distance to keep loaded
+
+        Returns:
+            Number of chunks unloaded
+
+        Example:
+            >>> world = ChunkedVoxelWorld()
+            >>> # Load chunks at various distances
+            >>> world.set_voxel(0, 0, 0, 1)      # Chunk (0,0,0)
+            >>> world.set_voxel(1000, 1000, 1000, 1)  # Chunk (31,31,31) - far away
+            >>> # Unload chunks >5 chunks from origin
+            >>> unloaded = world.unload_far_chunks(0, 0, 0, max_distance=5)
+            >>> unloaded
+            1
+        """
+        center_chunk = world_to_chunk(center_x, center_y, center_z)
+        cx_center, cy_center, cz_center = center_chunk
+
+        to_unload = []
+        for chunk_pos in list(self.chunks.keys()):
+            cx, cy, cz = chunk_pos
+            # Chebyshev distance (max of absolute differences)
+            distance = max(abs(cx - cx_center), abs(cy - cy_center), abs(cz - cz_center))
+            if distance > max_distance:
+                to_unload.append(chunk_pos)
+
+        for chunk_pos in to_unload:
+            del self.chunks[chunk_pos]
+            self.dirty_chunks.discard(chunk_pos)
+
+        return len(to_unload)
+
+    # =========================================================================
+    # DELTABUS INTEGRATION (Responsibility #6)
+    # =========================================================================
+
+    def apply_voxel_delta(self, delta_dict: Dict[Tuple[int, int, int], int]) -> int:
+        """
+        Apply voxel changes from DeltaBus event.
+
+        Args:
+            delta_dict: {(world_x, world_y, world_z): material_id}
+
+        Returns:
+            Number of voxels changed
+
+        Example:
+            >>> world = ChunkedVoxelWorld()
+            >>> delta = {(0, 0, 0): 1, (10, 20, 30): 2, (100, 200, 50): 3}
+            >>> world.apply_voxel_delta(delta)
+            3
+            >>> world.voxel_count()
+            3
+        """
+        count = 0
+        for (x, y, z), material in delta_dict.items():
+            self.set_voxel(x, y, z, material)
+            count += 1
+        return count
+
+    def apply_region_change(
+        self,
+        x_min: int, x_max: int,
+        y_min: int, y_max: int,
+        z_min: int, z_max: int,
+        material: int
+    ) -> int:
+        """
+        Apply material change to region (for event-driven updates).
+
+        Use cases:
+        - Sand settling (physics event)
+        - NPC footprint (behavior event)
+        - Cloak ripple effect (WATTITUDE event)
+        - Destructible props (collision event)
+
+        Args:
+            x_min, x_max, y_min, y_max, z_min, z_max: Region bounds (world coords)
+            material: Material ID to apply
+
+        Returns:
+            Number of voxels changed
+
+        Example:
+            >>> world = ChunkedVoxelWorld()
+            >>> # Footprint event: 3x3 area
+            >>> world.apply_region_change(10, 12, 5, 7, 0, 0, material=5)
+            9
+        """
+        return self.fill_box(x_min, x_max, y_min, y_max, z_min, z_max, material)
 
     # =========================================================================
     # WORLD OPERATIONS
@@ -349,6 +538,44 @@ class ChunkedVoxelWorld:
                 world_z = chunk_base_z + local_z
                 yield (world_x, world_y, world_z, material)
 
+    def iter_region(
+        self,
+        x_min: int, x_max: int,
+        y_min: int, y_max: int,
+        z_min: int, z_max: int
+    ) -> Iterator[Tuple[int, int, int, int]]:
+        """
+        Iterate over voxels in a specific region (Responsibility #7).
+
+        Use cases:
+        - Crowd density analysis (Rust Bram)
+        - Cloak ripple detection
+        - Minion pathfinding
+        - NPC footprint tracking
+        - Spatial queries for Mall_OS
+
+        Args:
+            x_min, x_max: X range (inclusive, world coords)
+            y_min, y_max: Y range (inclusive, world coords)
+            z_min, z_max: Z range (inclusive, world coords)
+
+        Yields:
+            Tuples of (world_x, world_y, world_z, material_id)
+
+        Example:
+            >>> world = ChunkedVoxelWorld()
+            >>> world.set_voxel(5, 10, 15, 1)
+            >>> world.set_voxel(100, 200, 50, 2)
+            >>> # Query region around origin
+            >>> list(world.iter_region(0, 10, 0, 15, 0, 20))
+            [(5, 10, 15, 1)]
+        """
+        for world_x, world_y, world_z, material in self.iter_voxels():
+            if (x_min <= world_x <= x_max and
+                y_min <= world_y <= y_max and
+                z_min <= world_z <= z_max):
+                yield (world_x, world_y, world_z, material)
+
     # =========================================================================
     # REPR
     # =========================================================================
@@ -433,21 +660,138 @@ def test_world_operations():
     print(f"  ✓ Stage 3 operations complete!")
 
 
+def test_dirty_tracking():
+    """Test dirty chunk tracking (Responsibility #5)."""
+    print("\nTesting Dirty Chunk Tracking...")
+
+    world = ChunkedVoxelWorld()
+
+    # Set voxel marks chunk dirty
+    world.set_voxel(0, 0, 0, 1)
+    assert world.is_chunk_dirty(0, 0, 0)
+    assert len(world.get_dirty_chunks()) == 1
+    print(f"  ✓ set_voxel marks chunk dirty")
+
+    # Multiple changes to same chunk
+    world.set_voxel(10, 10, 10, 2)
+    assert len(world.get_dirty_chunks()) == 1  # Still only 1 chunk
+    print(f"  ✓ Multiple changes to same chunk tracked")
+
+    # Clear dirty chunks
+    dirty_count = world.clear_dirty_chunks()
+    assert dirty_count == 1
+    assert len(world.get_dirty_chunks()) == 0
+    assert not world.is_chunk_dirty(0, 0, 0)
+    print(f"  ✓ clear_dirty_chunks works")
+
+    # Manual marking
+    world.mark_chunk_dirty(0, 0, 0)
+    assert world.is_chunk_dirty(0, 0, 0)
+    print(f"  ✓ mark_chunk_dirty works")
+
+    print(f"  ✓ Dirty tracking complete!")
+
+
+def test_distance_unloading():
+    """Test distance-based chunk unloading (Responsibility #4)."""
+    print("\nTesting Distance-Based Chunk Unloading...")
+
+    world = ChunkedVoxelWorld()
+
+    # Load chunks at various distances
+    world.set_voxel(0, 0, 0, 1)          # Chunk (0, 0, 0) - distance 0
+    world.set_voxel(64, 64, 64, 2)       # Chunk (2, 2, 2) - distance 2
+    world.set_voxel(320, 320, 320, 3)    # Chunk (10, 10, 10) - distance 10
+    assert world.chunk_count() == 3
+    print(f"  ✓ Loaded 3 chunks at distances 0, 2, 10")
+
+    # Unload chunks beyond distance 5
+    unloaded = world.unload_far_chunks(0, 0, 0, max_distance=5)
+    assert unloaded == 1  # Only (10,10,10) unloaded
+    assert world.chunk_count() == 2
+    assert world.get_voxel(320, 320, 320) == 0  # Far chunk now air
+    assert world.get_voxel(0, 0, 0) == 1  # Near chunk still loaded
+    print(f"  ✓ unload_far_chunks: {unloaded} chunk unloaded")
+
+    print(f"  ✓ Distance unloading complete!")
+
+
+def test_deltabus_integration():
+    """Test DeltaBus integration (Responsibility #6)."""
+    print("\nTesting DeltaBus Integration...")
+
+    world = ChunkedVoxelWorld()
+
+    # Apply voxel delta
+    delta = {
+        (0, 0, 0): 1,
+        (10, 20, 30): 2,
+        (100, 200, 50): 3,
+    }
+    changed = world.apply_voxel_delta(delta)
+    assert changed == 3
+    assert world.voxel_count() == 3
+    print(f"  ✓ apply_voxel_delta: {changed} voxels changed")
+
+    # Apply region change (footprint event)
+    changed = world.apply_region_change(5, 7, 5, 7, 0, 0, material=5)
+    assert changed == 9  # 3x3 area
+    print(f"  ✓ apply_region_change: {changed} voxels (footprint)")
+
+    print(f"  ✓ DeltaBus integration complete!")
+
+
+def test_region_queries():
+    """Test region iteration (Responsibility #7)."""
+    print("\nTesting Region Queries...")
+
+    world = ChunkedVoxelWorld()
+
+    # Set voxels in different regions
+    world.set_voxel(5, 10, 15, 1)      # Inside region
+    world.set_voxel(100, 200, 50, 2)   # Outside region
+    world.set_voxel(8, 12, 18, 3)      # Inside region
+
+    # Query region
+    region_voxels = list(world.iter_region(0, 10, 0, 15, 0, 20))
+    assert len(region_voxels) == 2  # Only (5,10,15) and (8,12,18)
+    print(f"  ✓ iter_region: {len(region_voxels)} voxels in region")
+
+    # Full iteration still sees all
+    all_voxels = list(world.iter_voxels())
+    assert len(all_voxels) == 3
+    print(f"  ✓ iter_voxels: {len(all_voxels)} total voxels")
+
+    print(f"  ✓ Region queries complete!")
+
+
 # =============================================================================
 # MAIN
 # =============================================================================
 
 if __name__ == "__main__":
     print("=" * 80)
-    print("CHUNKED VOXEL WORLD - Stage 3")
+    print("CHUNKED VOXEL WORLD - 7 Responsibilities")
     print("=" * 80)
     print()
 
     test_world_basic()
     test_world_operations()
+    test_dirty_tracking()
+    test_distance_unloading()
+    test_deltabus_integration()
+    test_region_queries()
 
     print()
     print("=" * 80)
-    print("✓ Stage 3 complete!")
+    print("✓ All 7 Responsibilities Implemented!")
+    print("  #1 ✓ Chunk lookup & lazy creation")
+    print("  #2 ✓ World → Chunk → Local mapping")
+    print("  #3 ✓ World-level set/get voxel")
+    print("  #4 ✓ Chunk lifetime management")
+    print("  #5 ✓ Dirty region tracking")
+    print("  #6 ✓ DeltaBus integration")
+    print("  #7 ✓ Region queries")
+    print()
     print("Next: Integration with voxel_builder.py for mall construction")
     print("=" * 80)
