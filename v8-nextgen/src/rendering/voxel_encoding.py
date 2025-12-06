@@ -296,6 +296,237 @@ def encoding_memory_usage(num_voxels: int) -> dict:
 
 
 # =============================================================================
+# DELTA ENCODING (For Massive Crowds & Dynamic Environments)
+# =============================================================================
+
+def compute_state_delta(old_state: dict, new_state: dict) -> dict:
+    """
+    Compute delta between two voxel/entity states.
+
+    Only returns changed, added, or removed entries.
+    Perfect for:
+    - Network sync (send only changes)
+    - Save files (store only diffs)
+    - Massive NPC crowds (most stationary)
+    - Sand settling (most voxels stable after initial change)
+
+    Args:
+        old_state: Dict[id, encoded_pos] - Previous frame state
+        new_state: Dict[id, encoded_pos] - Current frame state
+
+    Returns:
+        Delta dict with:
+        - Added entities: {id: new_encoded_pos}
+        - Changed entities: {id: new_encoded_pos - old_encoded_pos}
+        - Removed entities: {id: None}
+
+    Example:
+        >>> old = {1: 100, 2: 200, 3: 300}
+        >>> new = {1: 100, 2: 250, 4: 400}  # 1 unchanged, 2 moved, 3 removed, 4 added
+        >>> compute_state_delta(old, new)
+        {2: 50, 3: None, 4: 400}  # Only 3 entries instead of 4!
+    """
+    delta = {}
+
+    # Check for changes and additions
+    for entity_id, new_pos in new_state.items():
+        if entity_id not in old_state:
+            # NEW entity
+            delta[entity_id] = new_pos
+        elif old_state[entity_id] != new_pos:
+            # MOVED entity (store as delta for compression)
+            delta[entity_id] = new_pos - old_state[entity_id]
+
+    # Check for removals
+    for entity_id in old_state:
+        if entity_id not in new_state:
+            # REMOVED entity
+            delta[entity_id] = None
+
+    return delta
+
+
+def apply_state_delta(old_state: dict, delta: dict) -> dict:
+    """
+    Apply delta to reconstruct new state.
+
+    Reverses compute_state_delta().
+
+    Args:
+        old_state: Previous state
+        delta: Changes from compute_state_delta()
+
+    Returns:
+        New reconstructed state
+
+    Example:
+        >>> old = {1: 100, 2: 200, 3: 300}
+        >>> delta = {2: 50, 3: None, 4: 400}
+        >>> apply_state_delta(old, delta)
+        {1: 100, 2: 250, 4: 400}
+    """
+    new_state = old_state.copy()
+
+    for entity_id, change in delta.items():
+        if change is None:
+            # REMOVED
+            new_state.pop(entity_id, None)
+        elif entity_id not in old_state:
+            # ADDED (delta is absolute position)
+            new_state[entity_id] = change
+        else:
+            # MOVED (delta is relative change)
+            new_state[entity_id] = old_state[entity_id] + change
+
+    return new_state
+
+
+def compute_voxel_delta_xor(old_voxels: dict, new_voxels: dict) -> dict:
+    """
+    Compute XOR-based delta for voxel material changes.
+
+    XOR is perfect for bit-level changes in material IDs.
+    If materials are similar, XOR result is small.
+
+    Args:
+        old_voxels: Dict[encoded_pos, material_id]
+        new_voxels: Dict[encoded_pos, material_id]
+
+    Returns:
+        Delta dict with XOR changes
+
+    Example:
+        >>> old = {100: 0b0001, 200: 0b0010}  # Material IDs
+        >>> new = {100: 0b0011, 200: 0b0010}  # Slight change to first
+        >>> compute_voxel_delta_xor(old, new)
+        {100: 0b0010}  # XOR = 0b0001 ^ 0b0011 = 0b0010
+    """
+    delta = {}
+
+    # Check all positions in new state
+    all_positions = set(old_voxels.keys()) | set(new_voxels.keys())
+
+    for pos in all_positions:
+        old_material = old_voxels.get(pos, 0)  # 0 = air
+        new_material = new_voxels.get(pos, 0)
+
+        if old_material != new_material:
+            # Store XOR (detects bit-level changes)
+            delta[pos] = old_material ^ new_material
+
+    return delta
+
+
+def delta_compression_ratio(old_state: dict, delta: dict) -> float:
+    """
+    Calculate compression ratio from delta encoding.
+
+    Args:
+        old_state: Full previous state
+        delta: Delta changes
+
+    Returns:
+        Compression ratio (higher = better)
+        E.g., 10.0 = delta is 10x smaller than full state
+
+    Example:
+        >>> old = {i: i*100 for i in range(1000)}  # 1000 entities
+        >>> delta = {5: 50, 10: 100}  # Only 2 changed
+        >>> delta_compression_ratio(old, delta)
+        500.0  # 1000/2 = 500x compression!
+    """
+    if not delta:
+        return float('inf')  # Perfect compression (nothing changed)
+
+    return len(old_state) / len(delta)
+
+
+# =============================================================================
+# MALL_OS INTEGRATION EXAMPLES
+# =============================================================================
+
+def example_massive_crowd_delta():
+    """
+    Example: 1000 NPCs in food court, only 50 moving per frame.
+
+    Demonstrates delta encoding for Synthactor crowds.
+    """
+    # Frame N: 1000 NPCs
+    old_positions = {
+        npc_id: encode_tensor_pos(
+            10 + (npc_id % 15),      # X: 10-24
+            5,                        # Y: 5 (same level)
+            10 + ((npc_id // 15) % 15)  # Z: 10-24 (wrap to stay in bounds)
+        )
+        for npc_id in range(1000)
+    }
+
+    # Frame N+1: Only 50 NPCs moved (Cloud < 50, most stationary)
+    new_positions = old_positions.copy()
+    for moving_npc in range(0, 50):
+        x, y, z = decode_tensor_pos(old_positions[moving_npc])
+        new_positions[moving_npc] = encode_tensor_pos(x + 1, y, z)  # Step forward
+
+    # Compute delta
+    delta = compute_state_delta(old_positions, new_positions)
+
+    # Analysis
+    full_size = len(old_positions) * 4  # 4 bytes per encoded position
+    delta_size = len(delta) * 4
+    compression = delta_compression_ratio(old_positions, delta)
+
+    print(f"Massive Crowd Delta Example:")
+    print(f"  NPCs total: {len(old_positions)}")
+    print(f"  NPCs moved: {len(delta)}")
+    print(f"  Full state: {full_size} bytes")
+    print(f"  Delta state: {delta_size} bytes")
+    print(f"  Compression: {compression:.1f}x")
+    print(f"  Bandwidth saved: {(1 - delta_size/full_size)*100:.1f}%")
+
+    return delta
+
+
+def example_sand_settling_delta():
+    """
+    Example: Sand voxels settling after player footstep.
+
+    Demonstrates delta encoding for dynamic environment effects.
+    """
+    print("\nSand Settling Delta Example:")
+
+    # Initial: 100 sand voxels displaced by footstep
+    frame_0 = {i: encode_tensor_pos((10 + i) % 30, 20, 15) for i in range(100)}
+
+    # Frame 1: All 100 voxels fall
+    frame_1 = {i: encode_tensor_pos((10 + i) % 30, 19, 15) for i in range(100)}
+    delta_1 = compute_state_delta(frame_0, frame_1)
+    print(f"  Frame 1: {len(delta_1)} voxels changed (all falling)")
+
+    # Frame 2: Only 20 still falling (rest settled)
+    frame_2 = frame_1.copy()
+    for i in range(20):
+        x, y, z = decode_tensor_pos(frame_1[i])
+        frame_2[i] = encode_tensor_pos(x, y - 1, z)
+    delta_2 = compute_state_delta(frame_1, frame_2)
+    print(f"  Frame 2: {len(delta_2)} voxels changed")
+
+    # Frame 3: Only 5 still falling
+    frame_3 = frame_2.copy()
+    for i in range(5):
+        x, y, z = decode_tensor_pos(frame_2[i])
+        frame_3[i] = encode_tensor_pos(x, y - 1, z)
+    delta_3 = compute_state_delta(frame_2, frame_3)
+    print(f"  Frame 3: {len(delta_3)} voxels changed")
+
+    # Frame 4: All settled
+    delta_4 = compute_state_delta(frame_3, frame_3)
+    print(f"  Frame 4: {len(delta_4)} voxels changed (stable)")
+
+    total_updates = len(delta_1) + len(delta_2) + len(delta_3) + len(delta_4)
+    print(f"  Total updates: {total_updates} (vs 400 if sending full state each frame)")
+
+
+# =============================================================================
 # VALIDATION & TESTING
 # =============================================================================
 
@@ -406,5 +637,13 @@ if __name__ == "__main__":
 
     print()
     print("=" * 80)
+    print("DELTA ENCODING DEMOS (Massive Crowds & Dynamic Environments)")
+    print("=" * 80)
+    example_massive_crowd_delta()
+    example_sand_settling_delta()
+
+    print()
+    print("=" * 80)
     print("✓ All tests passed!")
+    print("✓ Delta encoding ready for Mall_OS integration!")
     print("=" * 80)
