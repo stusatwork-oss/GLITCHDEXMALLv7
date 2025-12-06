@@ -206,6 +206,50 @@
       "Observe Toddler manifestation",
       "Trigger Janitor contradiction at Cloud 70",
       "Experience Cloud release at 85"
+  "state_id": "foodcourt_v1",
+  "level_id": "FOODCOURT_V1",
+  "tileset": "mall_tileset_v1",
+  "palette": "COMICBOOK_MALL_V1",
+  "zone": "Z2_FOOD_COURT",
+  "era": "1995",
+  "cloud_pressure": 11,
+  "flags": {
+    "FOUND_TOKEN": false,
+    "FOODCOURT_NEON_ON": true
+  },
+  "object_spawns": [
+    {
+      "object_id": "SLURPEE_CUP",
+      "pos": [15, 23],
+      "zone": "FOOD_COURT"
+    },
+    {
+      "object_id": "PIZZA_SLICE",
+      "pos": [17, 23],
+      "zone": "FOOD_COURT"
+    },
+    {
+      "object_id": "TRASH_CAN",
+      "pos": [14, 21],
+      "zone": "FOOD_COURT"
+    },
+    {
+      "object_id": "ARCADE_TOKEN",
+      "pos": [18, 20],
+      "zone": "FC_ARCADE_ZONE"
+    },
+    {
+      "object_id": "JANITOR_MOP",
+      "pos": [4, 1],
+      "zone": "SERVICE_HALL"
+    }
+  ],
+  "ambient": {
+    "music": "mallwave_foodcourt_v1",
+    "lighting": "fluorescent_mid",
+    "notes": [
+      "Smell of pizza grease is everywhere",
+      "Customers argue about coupons"
     ]
   }
 }

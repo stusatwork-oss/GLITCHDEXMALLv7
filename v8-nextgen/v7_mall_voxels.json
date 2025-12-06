@@ -1,0 +1,160 @@
+{
+  "version": "7.0.0-alpha",
+  "voxel_size": 1.0,
+  "boxes": [
+    {
+      "zone_id": "Z3_LOWER_RING",
+      "bounds": [
+        -200,
+        200,
+        -12.5,
+        12.5,
+        0,
+        12
+      ],
+      "dimensions_feet": [
+        400,
+        25.0,
+        12
+      ],
+      "volume_voxels": 120000,
+      "material": "corridor_floor"
+    },
+    {
+      "zone_id": "Z3_LOWER_RING",
+      "bounds": [
+        -9.0,
+        9.0,
+        -200,
+        200,
+        0,
+        12
+      ],
+      "dimensions_feet": [
+        18.0,
+        400,
+        12
+      ],
+      "volume_voxels": 86400,
+      "material": "corridor_floor"
+    },
+    {
+      "zone_id": "Z5_WEST_ANCHOR",
+      "bounds": [
+        -300,
+        -150,
+        -200,
+        200,
+        0,
+        18
+      ],
+      "dimensions_feet": [
+        150,
+        400,
+        18
+      ],
+      "volume_voxels": 1080000,
+      "material": "anchor_store_interior"
+    },
+    {
+      "zone_id": "Z5_EAST_ANCHOR",
+      "bounds": [
+        150,
+        300,
+        -200,
+        200,
+        0,
+        18
+      ],
+      "dimensions_feet": [
+        150,
+        400,
+        18
+      ],
+      "volume_voxels": 1080000,
+      "material": "anchor_store_interior"
+    },
+    {
+      "zone_id": "Z6_MICKEYS_WING",
+      "bounds": [
+        80,
+        150,
+        120,
+        180,
+        0,
+        15
+      ],
+      "dimensions_feet": [
+        70,
+        60,
+        15
+      ],
+      "volume_voxels": 63000,
+      "material": "restaurant_interior"
+    },
+    {
+      "zone_id": "Z5_ESCALATOR_WELLS",
+      "bounds": [
+        50,
+        75,
+        -15,
+        15,
+        -8,
+        0
+      ],
+      "dimensions_feet": [
+        25,
+        30,
+        8
+      ],
+      "volume_voxels": 6000,
+      "material": "escalator_shaft"
+    }
+  ],
+  "cylinders": [
+    {
+      "zone_id": "Z1_CENTRAL_ATRIUM",
+      "center": [
+        0,
+        0
+      ],
+      "radius_feet": 87.5,
+      "z_range": [
+        0,
+        70
+      ],
+      "material": "atrium_space"
+    },
+    {
+      "zone_id": "Z1_FOUNTAIN",
+      "center": [
+        -20,
+        0
+      ],
+      "radius_feet": 15,
+      "z_range": [
+        0,
+        6
+      ],
+      "material": "fountain_tiers"
+    },
+    {
+      "zone_id": "Z4_FOOD_COURT",
+      "center": [
+        100,
+        0
+      ],
+      "radius_feet": 60.0,
+      "z_range": [
+        -8,
+        42
+      ],
+      "material": "food_court_bowl"
+    }
+  ],
+  "metadata": {
+    "source": "v7 CRD measurements + v6 QBIT systems",
+    "scale": "Space station - 1M+ sq ft megastructure",
+    "voxel_size_feet": 1.0
+  }
+}

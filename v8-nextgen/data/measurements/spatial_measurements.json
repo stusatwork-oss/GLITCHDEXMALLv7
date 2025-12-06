@@ -1,0 +1,151 @@
+{
+  "version": "7.0.0-alpha",
+  "source": "v5-eastland CRD V1 + scale corrections",
+  "methodology": "Evidence-based reconstruction from 143 classified photos",
+  "last_updated": "2025-11-28",
+  "confidence_scale": "HIGH (verified), MEDIUM (estimated), LOW (inference)",
+
+  "global": {
+    "total_footprint_sqft": {
+      "value": 1000000,
+      "confidence": "MEDIUM",
+      "note": "Above-ground only. Does not include subterranean level.",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md - space station scale"
+    },
+    "design_philosophy": {
+      "summary": "Space station with a parking lot - cathedral-scale volumes",
+      "architect": "KKT Architects",
+      "year_built": 1981,
+      "technology": "Pioneering tensile sail architecture",
+      "cultural_context": "Proto-Silicon Valley tech culture in Tulsa, OK"
+    }
+  },
+
+  "atrium": {
+    "diameter_feet": {
+      "value": 175,
+      "range_min": 150,
+      "range_max": 200,
+      "confidence": "MEDIUM",
+      "note": "SCALE CORRECTION from v5. NOT 60-80 feet. This is airport terminal scale.",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md",
+      "previous_estimate": 70,
+      "correction_factor": 2.5
+    },
+    "shape": "irregular_quadrilateral",
+    "ceiling_height_feet": {
+      "value": 70,
+      "range_min": 60,
+      "range_max": 80,
+      "confidence": "MEDIUM",
+      "note": "SCALE CORRECTION from v5. Mast height determines ceiling.",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md - cathedral volumes",
+      "previous_estimate": 35,
+      "correction_factor": 2.0
+    }
+  },
+
+  "food_court": {
+    "pit_depth_feet": {
+      "value": 8,
+      "confidence": "HIGH",
+      "note": "Verified via escalator step count. May be conservative - actual total descent could be 15-20+ feet.",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 1.1",
+      "photo_refs": ["3085976410", "3085979988"],
+      "measurement_method": "12 escalator steps × 8 inches per step = 96 inches = 8 feet"
+    },
+    "bowl_diameter_feet": {
+      "value": 120,
+      "range_min": 100,
+      "range_max": 150,
+      "confidence": "MEDIUM",
+      "note": "Reactor containment zone - industrial theater aesthetic",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md"
+    },
+    "theater_entrance_position": {
+      "description": "The theater entrance IS the gravitational center of the food court bowl",
+      "visibility": "Black open mouth visible at bottom of escalator descent",
+      "composition": "Upper level → Descent → Theater void",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md - The Theater as Focal Void"
+    }
+  },
+
+  "tensile_roof": {
+    "mast_height_feet": {
+      "value": 70,
+      "range_min": 60,
+      "range_max": 80,
+      "confidence": "MEDIUM",
+      "note": "SCALE CORRECTION from v5. NOT 35 feet. These are specialized tension masts for experimental engineering.",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md - The Yellow Lattice Structures",
+      "previous_estimate": 35,
+      "correction_factor": 2.0
+    },
+    "mast_count": 4,
+    "mast_material": "Yellow lattice steel - custom-designed for radial cable loading",
+    "cable_count": {
+      "value": 32,
+      "confidence": "HIGH",
+      "note": "Counted in photos. 32-segment radial geometric subdivision.",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 2.1",
+      "photo_refs": ["453124750", "453125654"]
+    },
+    "cable_span_feet": {
+      "value": 175,
+      "range_min": 150,
+      "range_max": 200,
+      "confidence": "MEDIUM",
+      "note": "SCALE CORRECTION. Matches atrium diameter - spans center to perimeter.",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md",
+      "previous_estimate": 90,
+      "correction_factor": 2.0
+    },
+    "fabric_material": "White tensile fabric (Teflon-coated fiberglass or PVC-coated polyester)",
+    "technology_significance": "One of earliest tensile roof implementations in American retail/civic architecture"
+  },
+
+  "vertical_levels": {
+    "z_0": {
+      "name": "Ground Floor - Main Mall",
+      "elevation_feet": 0,
+      "zones": ["Z1_CENTRAL_ATRIUM", "Z2_UPPER_RING", "Z3_LOWER_RING", "Z5_ANCHOR_STORES", "Z9_EXTERIOR"]
+    },
+    "z_minus_1": {
+      "name": "Sunken Level - Food Court & Theater",
+      "elevation_feet": -8,
+      "drop_method": "Escalators (12 steps × 8 inches)",
+      "zones": ["Z4_FOOD_COURT", "Z6_THEATER", "Z5_ESCALATOR_WELLS"]
+    },
+    "z_minus_2": {
+      "name": "Subterranean Access Deck (UNVERIFIED)",
+      "elevation_feet": -16,
+      "status": "PLACEHOLDER - exterior access points documented, interior off-limits",
+      "zones": ["Z7_SUBTERRANEAN"]
+    }
+  },
+
+  "corridors": {
+    "main_spine_width_feet": {
+      "value": 25,
+      "range_min": 20,
+      "range_max": 30,
+      "confidence": "MEDIUM",
+      "note": "NOT standard 12-15 foot mall corridors. These are train station/airport scale.",
+      "source": "v5/README_ARCHITECTURAL_CONTEXT.md - Monumental circulation"
+    },
+    "standard_corridor_width_feet": {
+      "value": 18,
+      "range_min": 15,
+      "range_max": 20,
+      "confidence": "MEDIUM",
+      "source": "v5/MAP_CORRECTIONS_LIST_V1.md Section 5.1"
+    },
+    "ceiling_height_feet": {
+      "value": 12,
+      "range_min": 10,
+      "range_max": 15,
+      "confidence": "MEDIUM",
+      "note": "Standard commercial mall ceiling height"
+    }
+  }
+}

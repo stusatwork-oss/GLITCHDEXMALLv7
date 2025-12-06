@@ -1,0 +1,21 @@
+{
+  "registry_version": 1,
+  "palette": "COMICBOOK_MALL_V1",
+  "objects": {
+    "SLURPEE_CUP": {
+      "file": "SLURPEE_CUP.json"
+    },
+    "PIZZA_SLICE": {
+      "file": "PIZZA_SLICE.json"
+    },
+    "TRASH_CAN": {
+      "file": "TRASH_CAN.json"
+    },
+    "ARCADE_TOKEN": {
+      "file": "ARCADE_TOKEN.json"
+    },
+    "JANITOR_MOP": {
+      "file": "JANITOR_MOP.json"
+    }
+  }
+}

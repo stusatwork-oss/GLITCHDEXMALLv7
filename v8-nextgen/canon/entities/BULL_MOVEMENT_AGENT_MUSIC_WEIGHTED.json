@@ -1,0 +1,265 @@
+{
+  "entity_id": "BULL_MOVEMENT_AGENT_MUSIC_WEIGHTED",
+  "current_state": "S_MOVEMENT_SCAN",
+  "flags": [
+    {
+      "name": "F_Grid_Complete",
+      "description": "True if the maze is fully mapped.",
+      "type": "boolean",
+      "initial": false
+    },
+    {
+      "name": "MODE_MUSIC",
+      "description": "Determines movement weighting: TONIC (center preference) or DOMINANT (edge preference).",
+      "type": "string",
+      "initial": "TONIC"
+    },
+    {
+      "name": "RND_VALUE",
+      "description": "The instantaneous output of the RND function used for probability checks (0.0 < RND_VALUE < 1.0).",
+      "type": "decimal",
+      "initial": 0.0,
+      "_notes": "Extracted from BASIC expressions like RND(0) and used for weighted decision making in S_MOVE_DECISION."
+    }
+  ],
+  "states": [
+    {
+      "name": "S_MOVEMENT_SCAN",
+      "on_enter": [
+        "Evaluate neighbors of current cell W(R, S) within grid bounds H,V."
+      ],
+      "transitions": [
+        {
+          "trigger": "Neighbor R-1, S is open.",
+          "condition": "W(R-1, S) == 0",
+          "target": "S_MOVE_DECISION",
+          "_notes": "Path West is open, initiates weighted random choice."
+        },
+        {
+          "trigger": "All paths blocked or checked.",
+          "condition": "All local movement checks fail.",
+          "target": "S_NEXT_CELL_ITERATION",
+          "_notes": "Continues cell iteration (Lines 210–250 in original BASIC)."
+        }
+      ]
+    },
+    {
+      "name": "S_MOVE_DECISION",
+      "on_enter": [
+        "Set RND_VALUE = RND(0).",
+        "Use MODE_MUSIC to interpret RND_VALUE as a weighted direction choice."
+      ],
+      "transitions": [
+        {
+          "trigger": "TONIC: Prefer Gentle Move (e.g., center-seeking direction)",
+          "condition": "MODE_MUSIC == 'TONIC' AND RND_VALUE < 0.50",
+          "target": "S_MOVE_GENTLE_DIRECTION",
+          "effects": [
+            {
+              "action": "PRINT",
+              "message": "TONIC: Gentle Step (50% chance)"
+            }
+          ],
+          "_notes": "In tonic mode, gentle/center movement is most likely."
+        },
+        {
+          "trigger": "TONIC: Secondary Move 1 (25% chance)",
+          "condition": "MODE_MUSIC == 'TONIC' AND RND_VALUE >= 0.50 AND RND_VALUE < 0.75",
+          "target": "S_MOVE_RISK_DIRECTION_1",
+          "effects": [
+            {
+              "action": "PRINT",
+              "message": "TONIC: Secondary Step (25% chance)"
+            }
+          ]
+        },
+        {
+          "trigger": "TONIC: Secondary Move 2 (25% chance)",
+          "condition": "MODE_MUSIC == 'TONIC' AND RND_VALUE >= 0.75",
+          "target": "S_MOVE_RISK_DIRECTION_2",
+          "effects": [
+            {
+              "action": "PRINT",
+              "message": "TONIC: Tertiary Step (25% chance)"
+            }
+          ]
+        },
+        {
+          "trigger": "DOMINANT: Prefer Risk Move (e.g., edge-seeking direction)",
+          "condition": "MODE_MUSIC == 'DOMINANT' AND RND_VALUE < 0.50",
+          "target": "S_MOVE_RISK_DIRECTION_2",
+          "effects": [
+            {
+              "action": "PRINT",
+              "message": "DOMINANT: Edge Push (50% chance)"
+            }
+          ],
+          "_notes": "In dominant mode, movement is biased toward boundary-chasing directions."
+        },
+        {
+          "trigger": "DOMINANT: Secondary Move 1 (25% chance)",
+          "condition": "MODE_MUSIC == 'DOMINANT' AND RND_VALUE >= 0.50 AND RND_VALUE < 0.75",
+          "target": "S_MOVE_RISK_DIRECTION_1",
+          "effects": [
+            {
+              "action": "PRINT",
+              "message": "DOMINANT: Secondary Step (25% chance)"
+            }
+          ]
+        },
+        {
+          "trigger": "DOMINANT: Secondary Move 2 (25% chance)",
+          "condition": "MODE_MUSIC == 'DOMINANT' AND RND_VALUE >= 0.75",
+          "target": "S_MOVE_GENTLE_DIRECTION",
+          "effects": [
+            {
+              "action": "PRINT",
+              "message": "DOMINANT: Gentle Step (25% chance)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "S_MOVE_GENTLE_DIRECTION",
+      "on_enter": [
+        "Execute movement assignment for the gentle direction, e.g., LET W(R, S-1)=C; C=C+1; S=S-1.",
+        "Apply any associated visual or debug output for a gentle step."
+      ],
+      "transitions": [
+        {
+          "trigger": "Move complete.",
+          "condition": "C < H * V + 1",
+          "target": "S_MOVEMENT_SCAN",
+          "_notes": "Continue scanning from new cell."
+        },
+        {
+          "trigger": "Grid fully mapped.",
+          "condition": "C == H * V + 1",
+          "target": "S_FINAL_STATE",
+          "effects": [
+            {
+              "action": "SET_FLAG",
+              "flag": "F_Grid_Complete",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "S_MOVE_RISK_DIRECTION_1",
+      "on_enter": [
+        "Execute movement assignment for risk direction 1, e.g., LET W(R-1, S)=C; C=C+1; R=R-1."
+      ],
+      "transitions": [
+        {
+          "trigger": "Move complete.",
+          "condition": "C < H * V + 1",
+          "target": "S_MOVEMENT_SCAN"
+        },
+        {
+          "trigger": "Grid fully mapped.",
+          "condition": "C == H * V + 1",
+          "target": "S_FINAL_STATE",
+          "effects": [
+            {
+              "action": "SET_FLAG",
+              "flag": "F_Grid_Complete",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "S_MOVE_RISK_DIRECTION_2",
+      "on_enter": [
+        "Execute movement assignment for risk direction 2, e.g., LET W(R+1, S)=C; C=C+1; R=R+1."
+      ],
+      "transitions": [
+        {
+          "trigger": "Move complete.",
+          "condition": "C < H * V + 1",
+          "target": "S_MOVEMENT_SCAN"
+        },
+        {
+          "trigger": "Grid fully mapped.",
+          "condition": "C == H * V + 1",
+          "target": "S_FINAL_STATE",
+          "effects": [
+            {
+              "action": "SET_FLAG",
+              "flag": "F_Grid_Complete",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "S_NEXT_CELL_ITERATION",
+      "on_enter": [
+        "Check if current R has exceeded horizontal boundary H.",
+        "If R > H, check if S has exceeded vertical boundary V.",
+        "If both R and S are complete, reset R=1, S=1 and proceed.",
+        "If R complete but S not, increment S=S+1 and reset R=1.",
+        "If R not complete, increment R=R+1.",
+        "Check if the new cell W(R, S) has already been visited."
+      ],
+      "transitions": [
+        {
+          "trigger": "Cell W(R, S) is unvisited.",
+          "condition": "W(R, S) == 0 AND C < H * V + 1",
+          "target": "S_MOVEMENT_SCAN",
+          "_notes": "If the newly iterated cell is unvisited, restart the movement scan from there."
+        },
+        {
+          "trigger": "Cell W(R, S) is already visited.",
+          "condition": "W(R, S) != 0 AND C < H * V + 1",
+          "target": "S_NEXT_CELL_ITERATION",
+          "_notes": "If visited, continue iteration to the next cell."
+        },
+        {
+          "trigger": "Grid fully mapped.",
+          "condition": "C == H * V + 1",
+          "target": "S_FINAL_STATE",
+          "effects": [
+            {
+              "action": "SET_FLAG",
+              "flag": "F_Grid_Complete",
+              "value": true
+            }
+          ],
+          "_notes": "Terminal condition when cell counter reaches total cells + 1."
+        }
+      ],
+      "_notes": "Manages traversal of grid array W(R,S) to find an unvisited starting cell, translating the BASIC GOTO 210/220/230/240/250 loop into a single dispatcher state."
+    },
+    {
+      "name": "S_FINAL_STATE",
+      "on_enter": [
+        "F_Grid_Complete is true; the maze is fully mapped.",
+        "Stop movement and hand control to summary or scoring logic."
+      ],
+      "transitions": []
+    }
+  ],
+  "cross_talk_mechanisms": [
+    {
+      "source_layer_id": "ENVIRONMENT_SENSOR",
+      "target_layer_id": "BULL_MOVEMENT_AGENT_MUSIC_WEIGHTED",
+      "signal": "Boundary Proximity (R near H or S near V)",
+      "effect": "IF (H - R) <= 1 OR (V - S) <= 1 THEN SET MODE_MUSIC = 'DOMINANT'",
+      "_notes": "Near the grid's edge, switch to DOMINANT mode to encourage riskier, edge-seeking steps."
+    },
+    {
+      "source_layer_id": "ENVIRONMENT_SENSOR",
+      "target_layer_id": "BULL_MOVEMENT_AGENT_MUSIC_WEIGHTED",
+      "signal": "Center Proximity (R, S near H/2, V/2)",
+      "effect": "IF ABS(R - H/2) <= 1 AND ABS(S - V/2) <= 1 THEN SET MODE_MUSIC = 'TONIC'",
+      "_notes": "Near the center of the grid, revert to TONIC mode, preferring gentle, center-keeping movement."
+    }
+  ],
+  "_notes": "BULL_MOVEMENT_AGENT_MUSIC_WEIGHTED is a non-deterministic grid-walking agent whose random movement policy is modulated by a musical mode flag (MODE_MUSIC). TONIC mode biases motion toward gentle, center-seeking steps; DOMINANT mode biases toward boundary-chasing, riskier directions. The original BASIC GOTO structure (scanning W(R,S), choosing directions via INT(RND(0)*N+1), and terminating when C == H*V+1) is refactored into explicit states and transitions in this unified schema."
+}

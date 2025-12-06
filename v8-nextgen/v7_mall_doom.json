@@ -1,0 +1,156 @@
+{
+  "version": "7.0.0-doom-alpha",
+  "voxel_size": 1.0,
+  "zones": [
+    {
+      "zone_id": "Z3_LOWER_RING",
+      "boxes": [
+        {
+          "bounds": [
+            -200,
+            200,
+            -12.5,
+            12.5,
+            0,
+            12
+          ],
+          "material": "corridor_floor"
+        },
+        {
+          "bounds": [
+            -9.0,
+            9.0,
+            -200,
+            200,
+            0,
+            12
+          ],
+          "material": "corridor_floor"
+        }
+      ],
+      "cylinders": []
+    },
+    {
+      "zone_id": "Z5_WEST_ANCHOR",
+      "boxes": [
+        {
+          "bounds": [
+            -300,
+            -150,
+            -200,
+            200,
+            0,
+            18
+          ],
+          "material": "anchor_store_interior"
+        }
+      ],
+      "cylinders": []
+    },
+    {
+      "zone_id": "Z5_EAST_ANCHOR",
+      "boxes": [
+        {
+          "bounds": [
+            150,
+            300,
+            -200,
+            200,
+            0,
+            18
+          ],
+          "material": "anchor_store_interior"
+        }
+      ],
+      "cylinders": []
+    },
+    {
+      "zone_id": "Z6_MICKEYS_WING",
+      "boxes": [
+        {
+          "bounds": [
+            80,
+            150,
+            120,
+            180,
+            0,
+            15
+          ],
+          "material": "restaurant_interior"
+        }
+      ],
+      "cylinders": []
+    },
+    {
+      "zone_id": "Z5_ESCALATOR_WELLS",
+      "boxes": [
+        {
+          "bounds": [
+            50,
+            75,
+            -15,
+            15,
+            -8,
+            0
+          ],
+          "material": "escalator_shaft"
+        }
+      ],
+      "cylinders": []
+    },
+    {
+      "zone_id": "Z1_CENTRAL_ATRIUM",
+      "boxes": [],
+      "cylinders": [
+        {
+          "center": [
+            0,
+            0
+          ],
+          "radius": 87.5,
+          "z_range": [
+            0,
+            70
+          ],
+          "material": "atrium_space"
+        }
+      ]
+    },
+    {
+      "zone_id": "Z1_FOUNTAIN",
+      "boxes": [],
+      "cylinders": [
+        {
+          "center": [
+            -20,
+            0
+          ],
+          "radius": 15,
+          "z_range": [
+            0,
+            6
+          ],
+          "material": "fountain_tiers"
+        }
+      ]
+    },
+    {
+      "zone_id": "Z4_FOOD_COURT",
+      "boxes": [],
+      "cylinders": [
+        {
+          "center": [
+            100,
+            0
+          ],
+          "radius": 60.0,
+          "z_range": [
+            -8,
+            42
+          ],
+          "material": "food_court_bowl"
+        }
+      ]
+    }
+  ]
+}

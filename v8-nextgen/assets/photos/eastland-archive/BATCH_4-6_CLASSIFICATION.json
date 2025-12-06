@@ -1,0 +1,435 @@
+{
+  "batch_info": {
+    "batch_numbers": "4-6",
+    "photo_range": "31-60",
+    "total_classified": 30,
+    "date": "2025-11-21",
+    "classification_criteria": "Conservative - obvious zone identification only"
+  },
+  "zone_breakdown": {
+    "exterior": 5,
+    "atrium": 7,
+    "food_court": 1,
+    "escalators": 2,
+    "corridors": 5,
+    "storefronts": 2,
+    "anchor_stores": 2,
+    "movie_mouth": 3,
+    "maintenance": 1,
+    "WRONG_MALL_DELETE": 7
+  },
+  "classifications": [
+    {
+      "filename": "3085136693_19bf641613_z.jpg",
+      "zone": "exterior",
+      "descriptive_name": "parking_lot_wide_view",
+      "features": "Parking lot view of mall exterior, low-rise beige building",
+      "reconstruction_value": "Building envelope reference, exterior shape",
+      "level": "exterior",
+      "signatures_present": ["beige exterior", "parking lot"]
+    },
+    {
+      "filename": "3085138267_086d8e2877_z.jpg",
+      "zone": "atrium",
+      "descriptive_name": "yellow_tower_fountain_atrium",
+      "features": "Yellow lattice tower, blue fountain below, upper level balconies visible, two-level structure",
+      "reconstruction_value": "KEY REFERENCE - vertical relationship between levels, central landmark",
+      "level": "0",
+      "signatures_present": ["yellow tower", "blue fountain", "two-level view"]
+    },
+    {
+      "filename": "3085138797_741cfd4142_z.jpg",
+      "zone": "anchor_stores",
+      "descriptive_name": "anchor_store_office_cubicles",
+      "features": "Empty anchor store interior with office cubicles, white columns, drop ceiling",
+      "reconstruction_value": "Large empty volume, column spacing",
+      "level": "0",
+      "signatures_present": ["white columns", "vacant anchor store"]
+    },
+    {
+      "filename": "3085140503_ba39f865fb_z.jpg",
+      "zone": "atrium",
+      "descriptive_name": "fountain_waterfall_steps_closeup",
+      "features": "Fountain waterfall feature, brown tile steps, blue water detail",
+      "reconstruction_value": "Fountain geometry detail, tile work",
+      "level": "0",
+      "signatures_present": ["blue fountain", "brown tile steps"]
+    },
+    {
+      "filename": "3085140933_1c5fc588ed_z.jpg",
+      "zone": "movie_mouth",
+      "descriptive_name": "theater_entrance_movie_posters",
+      "features": "Theater entrance visible through mall entrance doors, movie posters: Deck the Halls, Flushed Away, Let's Go to Prison",
+      "reconstruction_value": "Entrance vestibule depth, theater location",
+      "level": "0",
+      "signatures_present": ["movie posters", "December 2006 dating"]
+    },
+    {
+      "filename": "3085141099_d27f0e5bd2_z.jpg",
+      "zone": "food_court",
+      "descriptive_name": "food_court_vendors_darkness",
+      "features": "Dark food court with illuminated 'Coming Soon' signs, striped vendor facades",
+      "reconstruction_value": "Food court vendor layout",
+      "level": "-1",
+      "signatures_present": ["vendor stalls", "Coming Soon signs"]
+    },
+    {
+      "filename": "3085143471_d3b0125999_z.jpg",
+      "zone": "corridors",
+      "descriptive_name": "empty_corridor_papered_stores",
+      "features": "Empty corridor, papered-over storefronts, exposed black ceiling",
+      "reconstruction_value": "Corridor width, store spacing",
+      "level": "0",
+      "signatures_present": ["yellow/beige walls", "beige carpet", "black ceiling"]
+    },
+    {
+      "filename": "3085146573_ac27428fdf_c.jpg",
+      "zone": "corridors",
+      "descriptive_name": "glass_elevator_area_green",
+      "features": "Glass elevator area with green lighting, yellow walls, circular light fixtures",
+      "reconstruction_value": "Elevator position relative to corridors",
+      "level": "0",
+      "signatures_present": ["yellow walls", "glass elevator"]
+    },
+    {
+      "filename": "3085146851_5cb895e77e_z.jpg",
+      "zone": "corridors",
+      "descriptive_name": "everything_for_everybody_sign",
+      "features": "Wall signage 'EVERYTHING FOR EVERYBODY', black tile border, white tile wall",
+      "reconstruction_value": "Wall treatment detail, signage location",
+      "level": "0",
+      "signatures_present": ["motivational signage", "black tile border"]
+    },
+    {
+      "filename": "3085148143_9deb4473c8_z.jpg",
+      "zone": "anchor_stores",
+      "descriptive_name": "anchor_store_empty_deep",
+      "features": "Empty anchor store deep interior, white columns, dim lighting",
+      "reconstruction_value": "Anchor store depth, column grid",
+      "level": "0",
+      "signatures_present": ["white columns", "vacant space"]
+    },
+    {
+      "filename": "3085148605_3ce11bbdc7_z.jpg",
+      "zone": "maintenance",
+      "descriptive_name": "ceiling_light_fixture_damaged",
+      "features": "Large circular ceiling fixture (cracked/damaged), black exposed grid ceiling",
+      "reconstruction_value": "Ceiling height reference",
+      "level": "0",
+      "signatures_present": ["black ceiling grid", "circular fixture"]
+    },
+    {
+      "filename": "3085975402_5b88ab0f48_c.jpg",
+      "zone": "exterior",
+      "descriptive_name": "underground_service_entrance_ramp",
+      "features": "Ramp descending to underground service/loading area, concrete with railings",
+      "reconstruction_value": "Exterior service access geometry",
+      "level": "exterior",
+      "signatures_present": ["service ramp", "underground access"]
+    },
+    {
+      "filename": "3085975702_02a12845df_z.jpg",
+      "zone": "exterior",
+      "descriptive_name": "yellow_tower_exterior_view",
+      "features": "White lattice tower structure visible from parking lot, yellow architectural element, main entrance",
+      "reconstruction_value": "Exterior shape, tower position from outside",
+      "level": "exterior",
+      "signatures_present": ["white lattice tower", "yellow exterior accent"]
+    },
+    {
+      "filename": "3085976036_6f43ca0c19_z.jpg",
+      "zone": "atrium",
+      "descriptive_name": "kafe_bona_upper_level_view",
+      "features": "Yellow tower, second floor balcony with 'Kafe Bona' signage, view from ground floor",
+      "reconstruction_value": "KEY REFERENCE - vertical spatial relationship, food court signage",
+      "level": "0",
+      "signatures_present": ["yellow tower", "Kafe Bona sign", "upper level railing"]
+    },
+    {
+      "filename": "3085976410_db5c83e77c_z.jpg",
+      "zone": "escalators",
+      "descriptive_name": "escalators_food_court_view_down",
+      "features": "View down to food court from ground level, chrome escalators, yellow tower, seating below",
+      "reconstruction_value": "KEY REFERENCE - level transition, escalator angles",
+      "level": "0",
+      "signatures_present": ["escalators", "yellow tower", "food court below"]
+    },
+    {
+      "filename": "3085977114_d3e14ed167_z.jpg",
+      "zone": "corridors",
+      "descriptive_name": "long_yellow_corridor_perspective",
+      "features": "Long empty corridor with yellow/beige walls, carpet, EXIT signs, end doors",
+      "reconstruction_value": "Corridor length reference, perspective",
+      "level": "0",
+      "signatures_present": ["yellow walls", "beige carpet", "long perspective"]
+    },
+    {
+      "filename": "3085977656_64a276b31a_z.jpg",
+      "zone": "storefronts",
+      "descriptive_name": "coca_cola_enterprises_storefront",
+      "features": "Coca-Cola Enterprises storefront with display cases, yellow tower visible through glass",
+      "reconstruction_value": "Storefront position, tower visibility through store",
+      "level": "0",
+      "signatures_present": ["Coca-Cola Enterprises", "yellow tower", "red displays"]
+    },
+    {
+      "filename": "3085977904_0a0f748b00_z.jpg",
+      "zone": "storefronts",
+      "descriptive_name": "coca_cola_enterprises_signage_closeup",
+      "features": "Close-up of Coca-Cola Enterprises Inc. cursive signage and glass doors",
+      "reconstruction_value": "Storefront detail, signage style",
+      "level": "0",
+      "signatures_present": ["Coca-Cola Enterprises signage", "glass storefront"]
+    },
+    {
+      "filename": "3085978290_f93fec0fc5_c.jpg",
+      "zone": "corridors",
+      "descriptive_name": "tiled_corridor_vending_machine",
+      "features": "Lower level connector corridor with white/blue tile floor, red Coca-Cola vending machine",
+      "reconstruction_value": "Level connector tile pattern",
+      "level": "-1",
+      "signatures_present": ["tile floor", "Coca-Cola vending"]
+    },
+    {
+      "filename": "3085978548_af61499702_z.jpg",
+      "zone": "atrium",
+      "descriptive_name": "fountain_steps_from_below",
+      "features": "Fountain steps viewed from food court level, brown tile, blue pool, plants, upper level visible",
+      "reconstruction_value": "KEY REFERENCE - fountain from below, level relationship",
+      "level": "-1",
+      "signatures_present": ["fountain steps", "blue water", "view upward"]
+    },
+    {
+      "filename": "3085979988_4b30e121d7_z.jpg",
+      "zone": "escalators",
+      "descriptive_name": "escalators_from_food_court_up",
+      "features": "Chrome escalators viewed from food court floor, yellow tower, upper level shops visible",
+      "reconstruction_value": "KEY REFERENCE - escalator angles from below",
+      "level": "-1",
+      "signatures_present": ["escalators", "yellow tower", "view upward"]
+    },
+    {
+      "filename": "3085980388_cd97b62331_z.jpg",
+      "zone": "atrium",
+      "descriptive_name": "fountain_arch_food_court_level",
+      "features": "Circular fountain with decorative arch feature, blue water, red flowers, food court perspective",
+      "reconstruction_value": "Fountain geometry from food court level",
+      "level": "-1",
+      "signatures_present": ["circular fountain", "decorative arch", "blue water"]
+    },
+    {
+      "filename": "3085981534_e151de2d83_z.jpg",
+      "zone": "atrium",
+      "descriptive_name": "fountain_arch_feature_closeup",
+      "features": "Water fountain with arch feature, decorative element, yellow tower and upper level visible",
+      "reconstruction_value": "Fountain arch geometry detail",
+      "level": "0",
+      "signatures_present": ["fountain arch", "yellow tower", "upper level"]
+    },
+    {
+      "filename": "3085983600_d423587958_z.jpg",
+      "zone": "corridors",
+      "descriptive_name": "eastside_automotive_corridor",
+      "features": "Corridor with 'Eastside Automotive' store signage visible, empty stores opposite",
+      "reconstruction_value": "Store name visible, corridor perspective",
+      "level": "0",
+      "signatures_present": ["Eastside Automotive", "beige carpet", "yellow walls"]
+    },
+    {
+      "filename": "3085983894_93f5da464f_z.jpg",
+      "zone": "atrium",
+      "descriptive_name": "upper_level_walkway_railing",
+      "features": "Upper level corridor with yellow walls, railing overlooking lower level",
+      "reconstruction_value": "Upper walkway width, railing detail",
+      "level": "0",
+      "signatures_present": ["yellow walls", "railing", "upper walkway"]
+    },
+    {
+      "filename": "3085986352_ff5af9937f_c.jpg",
+      "zone": "corridors",
+      "descriptive_name": "corridor_kiosks_visible",
+      "features": "Central corridor with metal/glass kiosk structures, yellow/tan walls",
+      "reconstruction_value": "Kiosk positions, corridor width",
+      "level": "0",
+      "signatures_present": ["kiosks", "yellow walls", "beige carpet"]
+    },
+    {
+      "filename": "3085986996_ee30d04830_z.jpg",
+      "zone": "corridors",
+      "descriptive_name": "long_yellow_corridor_person_scale",
+      "features": "Long corridor with bright yellow walls, fluorescent lighting, person walking (scale reference)",
+      "reconstruction_value": "KEY REFERENCE - human scale, corridor length",
+      "level": "0",
+      "signatures_present": ["yellow walls", "human scale", "long perspective"]
+    },
+    {
+      "filename": "453122026_e1077c4547_z.jpg",
+      "zone": "movie_mouth",
+      "descriptive_name": "now_playing_escape_clause_deck_halls",
+      "features": "Theater Now Playing posters: The Santa Clause 3: Escape Clause, Deck the Halls",
+      "reconstruction_value": "Theater entrance signage, December 2006 dating",
+      "level": "0",
+      "signatures_present": ["movie posters", "Now Playing", "December 2006"]
+    },
+    {
+      "filename": "453122150_472444a129_z.jpg",
+      "zone": "movie_mouth",
+      "descriptive_name": "theater_dark_exit_view",
+      "features": "Dark theater exit/entrance area with dim lighting, green accent lights visible",
+      "reconstruction_value": "Theater exit configuration",
+      "level": "0",
+      "signatures_present": ["dark interior", "theater area"]
+    },
+    {
+      "filename": "453122392_df87481036_z.jpg",
+      "zone": "exterior",
+      "descriptive_name": "dillards_parking_lot_view",
+      "features": "Exterior view from parking lot showing Dillard's anchor store and white lattice structures",
+      "reconstruction_value": "Building exterior, Dillard's position, architectural features",
+      "level": "exterior",
+      "signatures_present": ["Dillard's signage", "white lattice", "parking lot view"]
+    },
+    {
+      "filename": "453122548_b0eb177978_z.jpg",
+      "zone": "movie_mouth",
+      "descriptive_name": "now_playing_flushed_away_flicka",
+      "features": "Theater Now Playing posters: Flushed Away, Flicka - confirms December 2006 timeframe",
+      "reconstruction_value": "Theater entrance, dating confirmation",
+      "level": "0",
+      "signatures_present": ["movie posters", "Now Playing", "December 2006"]
+    },
+    {
+      "filename": "453123084_7ea30126d2_c.jpg",
+      "zone": "WRONG_MALL_DELETE",
+      "descriptive_name": "WRONG_LOCATION_water_tower",
+      "features": "Pink/brick water tower - NOT part of Eastland Mall, external landmark only",
+      "reconstruction_value": "NONE - Not mall structure",
+      "level": "N/A",
+      "signatures_present": ["WRONG - external water tower"],
+      "flag": "DELETE - Not mall architecture, external landmark"
+    },
+    {
+      "filename": "453123378_4618a133cf_c.jpg",
+      "zone": "exterior",
+      "descriptive_name": "dillards_eastland_arch_exterior",
+      "features": "Exterior showing Dillard's entrance with EASTLAND metal arch structure",
+      "reconstruction_value": "Exterior entrance, EASTLAND arch detail",
+      "level": "exterior",
+      "signatures_present": ["EASTLAND arch", "Dillard's entrance"]
+    },
+    {
+      "filename": "453124228_a52a28fd52_c.jpg",
+      "zone": "WRONG_MALL_DELETE",
+      "descriptive_name": "WRONG_MALL_white_tile_interior",
+      "features": "Modern mall interior with WHITE TILE FLOOR and white storefronts - NOT Eastland's yellow walls/beige carpet",
+      "reconstruction_value": "NONE - Different mall",
+      "level": "N/A",
+      "signatures_present": ["WRONG - white tile", "WRONG - modern aesthetic"],
+      "flag": "DELETE - Different mall, lacks Eastland signatures"
+    },
+    {
+      "filename": "453124408_d855ddc248_c.jpg",
+      "zone": "WRONG_MALL_DELETE",
+      "descriptive_name": "WRONG_MALL_white_modern_storefronts",
+      "features": "Modern white interior with black storefront gates - NOT Eastland style",
+      "reconstruction_value": "NONE - Different mall",
+      "level": "N/A",
+      "signatures_present": ["WRONG - white tile", "WRONG - modern storefronts"],
+      "flag": "DELETE - Different mall"
+    },
+    {
+      "filename": "453124482_ee1c413ccd_c.jpg",
+      "zone": "WRONG_MALL_DELETE",
+      "descriptive_name": "WRONG_MALL_dillards_white_tile",
+      "features": "Dillard's entrance in modern mall with WHITE TILE FLOOR - NOT Eastland Mall's Dillard's",
+      "reconstruction_value": "NONE - Different mall",
+      "level": "N/A",
+      "signatures_present": ["WRONG - white tile", "WRONG - different Dillard's location"],
+      "flag": "DELETE - Different mall's Dillard's"
+    },
+    {
+      "filename": "453124750_117d0e4e30_c.jpg",
+      "zone": "WRONG_MALL_DELETE",
+      "descriptive_name": "WRONG_MALL_white_tensile_roof",
+      "features": "White tensile fabric roof structure - appears to be different mall interior",
+      "reconstruction_value": "NONE - Different mall",
+      "level": "N/A",
+      "signatures_present": ["WRONG - white tile floor", "WRONG - different architecture"],
+      "flag": "DELETE - Different mall"
+    },
+    {
+      "filename": "453125154_142982f725_c.jpg",
+      "zone": "WRONG_MALL_DELETE",
+      "descriptive_name": "WRONG_MALL_court_clock_white_interior",
+      "features": "'Court' clock sign visible but in WHITE MODERN INTERIOR - NOT Eastland's food court style",
+      "reconstruction_value": "NONE - Different mall",
+      "level": "N/A",
+      "signatures_present": ["WRONG - white tile", "WRONG - modern aesthetic"],
+      "flag": "DELETE - Different mall's food court"
+    },
+    {
+      "filename": "453125654_cd86d63917_c.jpg",
+      "zone": "WRONG_MALL_DELETE",
+      "descriptive_name": "WRONG_MALL_white_tensile_ceiling",
+      "features": "White tensile fabric ceiling detail in modern white interior - NOT Eastland",
+      "reconstruction_value": "NONE - Different mall",
+      "level": "N/A",
+      "signatures_present": ["WRONG - white aesthetic", "WRONG - modern tensile structure"],
+      "flag": "DELETE - Different mall"
+    },
+    {
+      "filename": "453127262_63fd3f4f84_c.jpg",
+      "zone": "WRONG_MALL_DELETE",
+      "descriptive_name": "WRONG_MALL_white_tower_interior",
+      "features": "White tensile fabric tower looking upward - modern white interior, NOT Eastland's yellow style",
+      "reconstruction_value": "NONE - Different mall",
+      "level": "N/A",
+      "signatures_present": ["WRONG - white interior", "WRONG - different architectural style"],
+      "flag": "DELETE - Different mall"
+    }
+  ],
+  "reconstruction_notes": {
+    "key_reference_photos": [
+      "3085138267 - Full atrium view with vertical relationship",
+      "3085976410 - Escalator view down to food court",
+      "3085979988 - Escalator view up from food court",
+      "3085978548 - Fountain from below",
+      "3085986996 - Human scale reference in corridor"
+    ],
+    "spatial_landmarks": [
+      "Yellow lattice tower - central vertical landmark",
+      "Blue circular fountain - ground floor atrium center",
+      "Chrome escalators - connecting Level 0 to Level -1",
+      "Coca-Cola Enterprises storefront - notable tenant",
+      "Kafe Bona signage - food court marker"
+    ],
+    "signature_features_confirmed": [
+      "Yellow/beige corridor walls (consistent)",
+      "Beige abstract-pattern carpet (consistent)",
+      "Blue fountain with brown tile steps",
+      "White lattice tower structure (exterior/interior)",
+      "Black exposed ceiling grid",
+      "Two-level structure (Level 0 and Level -1)"
+    ],
+    "wrong_mall_criteria": [
+      "White tile flooring (Eastland has beige carpet)",
+      "Modern white/gray aesthetic (Eastland has yellow/beige)",
+      "Different architectural style (tensile white vs. yellow traditional)"
+    ]
+  },
+  "dating_evidence": {
+    "movie_posters_december_2006": [
+      "Deck the Halls (2006)",
+      "The Santa Clause 3: The Escape Clause (2006)",
+      "Flushed Away (2006)",
+      "Flicka (2006)",
+      "Let's Go to Prison (2006)"
+    ],
+    "confidence": "HIGH - Multiple December 2006 releases confirm Late 2006 timeframe"
+  },
+  "flags": {
+    "skating_rink_found": false,
+    "wrong_mall_count": 7,
+    "action_required": "DELETE 7 photos flagged as WRONG_MALL_DELETE from archive"
+  }
+}

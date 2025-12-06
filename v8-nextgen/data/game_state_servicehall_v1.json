@@ -1,0 +1,33 @@
+{
+  "state_id": "servicehall_v1",
+  "level_id": "SERVICEHALL_V1",
+  "tileset": "mall_tileset_v1",
+  "palette": "COMICBOOK_MALL_V1",
+  "zone": "SERVICE_HALL",
+  "era": "2005",
+  "cloud_pressure": 8,
+  "flags": {
+    "FOUND_TOKEN": false,
+    "JANITOR_ON_BREAK": true
+  },
+  "object_spawns": [
+    {
+      "object_id": "TRASH_CAN",
+      "pos": [3, 9],
+      "zone": "SERVICE_HALL"
+    },
+    {
+      "object_id": "JANITOR_MOP",
+      "pos": [5, 10],
+      "zone": "SERVICE_HALL"
+    }
+  ],
+  "ambient": {
+    "music": "low_hum",
+    "lighting": "maintenance_dim",
+    "notes": [
+      "The vents rattle louder than they should",
+      "Security cameras track in jerky arcs"
+    ]
+  }
+}

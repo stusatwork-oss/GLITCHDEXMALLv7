@@ -1,0 +1,62 @@
+{
+  "id": "the_mist_is_wrong",
+  "display_name": "The Mist Is Wrong",
+  "type": "investigation",
+  "difficulty": "medium",
+  "description": "The HOLOmister in the Atrium is projecting the wrong advertisements. Investigate why the mist activates when nobody paid to run it.",
+  "objectives": [
+    {
+      "id": "observe_glitch",
+      "type": "observation",
+      "description": "Stand near the malfunctioning HOLOmister and observe the glitched advertisements",
+      "required": true,
+      "target_zone": "Z1_CENTRAL_ATRIUM",
+      "completion_trigger": "holomister_glitch_observed",
+      "duration_seconds": 10
+    },
+    {
+      "id": "check_cloud_level",
+      "type": "metric_check",
+      "description": "Confirm the Cloud level is above 70 while the unit is still spraying",
+      "required": true,
+      "metric": "cloud.level",
+      "comparison": ">=",
+      "value": 70,
+      "completion_trigger": "cloud_metric_logged"
+    },
+    {
+      "id": "scan_unit",
+      "type": "interaction",
+      "description": "Scan the HOLOmister for maintenance faults",
+      "required": true,
+      "target_object": "holomister_unit",
+      "completion_trigger": "holomister_scanned",
+      "toddler_risk": "medium"
+    },
+    {
+      "id": "override_unit",
+      "type": "interaction",
+      "description": "Trigger a manual override to pause the unit",
+      "required": false,
+      "target_object": "holomister_unit",
+      "completion_trigger": "holomister_overridden",
+      "cooldown_seconds": 8
+    }
+  ],
+  "rewards": {
+    "experience": 250,
+    "credits": 45,
+    "items": ["slushee_blue_raspberry"],
+    "unlocks": ["holomister_monitor_overlay"]
+  },
+  "fail_conditions": {
+    "cloud_level_max": 98,
+    "time_limit_seconds": 480,
+    "toddler_alert": true
+  },
+  "hints": [
+    "The mist shouldn't go purple. If it does, back away and log it.",
+    "Glitched ads often sync with Toddler activity—check strain levels.",
+    "Manual override takes a few seconds; expect a late spray before shutdown."
+  ]
+}

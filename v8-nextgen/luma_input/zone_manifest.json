@@ -1,0 +1,116 @@
+{
+  "ATRIUM_MAST": {
+    "frames": [
+      "escalator_wide_view_453126172.jpg",
+      "fountain_arch_3085981534.jpg",
+      "fountain_arch_waterfall_453127566.jpg",
+      "fountain_dead_plants_453126354.jpg",
+      "fountain_dry_escalator_453124908.jpg",
+      "fountain_dry_pool_453126954.jpg",
+      "fountain_steps_3085140503.jpg",
+      "fountain_steps_closeup_453127434.jpg",
+      "fountain_steps_view_3085978548.jpg",
+      "fountain_water_feature_3085980388.jpg",
+      "wide_escalator_view_453126662.jpg",
+      "yellow_tower_fountain_3085138267.jpg"
+    ],
+    "frame_count": 12,
+    "priority_score": 0.555,
+    "coverage_estimate": 0.75,
+    "qbit_weight": 0.75,
+    "narrative_importance": "civic_anchor",
+    "dreamweight": "structural_high",
+    "structural_frames": 0,
+    "source_zone": "atrium"
+  },
+  "COMPHUT": {
+    "frames": [],
+    "frame_count": 0,
+    "priority_score": 0.325,
+    "coverage_estimate": 0.13,
+    "qbit_weight": 0.65,
+    "narrative_importance": "tech_artifact",
+    "dreamweight": "nostalgic_high",
+    "structural_frames": 0,
+    "source_zone": "comphut"
+  },
+  "ESCALATOR_PIT": {
+    "frames": [
+      "escalator_atrium_view_453124606.jpg",
+      "escalator_down_view_453125336.jpg",
+      "escalator_foodcourt_view_3085976410.jpg",
+      "escalator_pair_3085979988.jpg"
+    ],
+    "frame_count": 4,
+    "priority_score": 0.458,
+    "coverage_estimate": 0.24,
+    "qbit_weight": 0.88,
+    "narrative_importance": "critical_vertical_transition",
+    "dreamweight": "liminal_high",
+    "structural_frames": 0,
+    "source_zone": "escalators"
+  },
+  "EXTERIOR_DOME": {
+    "frames": [
+      "dillards_eastland_arch_453123378.jpg",
+      "dillards_exterior_453122392.jpg",
+      "eastland_arch_64360047.jpg",
+      "mickeys_entrance_46099761.jpg",
+      "parking_lot_3085136693.jpg",
+      "pink_tower_453123084.jpg",
+      "underground_entrance_3085975402.jpg",
+      "yellow_tower_exterior_3085975702.jpg"
+    ],
+    "frame_count": 8,
+    "priority_score": 0.395,
+    "coverage_estimate": 0.35,
+    "qbit_weight": 0.55,
+    "narrative_importance": "context_reference",
+    "dreamweight": "architectural_low",
+    "structural_frames": 0,
+    "source_zone": "exterior"
+  },
+  "SUNKEN_FOOD_COURT": {
+    "frames": [
+      "jolly_time_marquee_453147355.jpg",
+      "kafe_bona_3085976036.jpg",
+      "kiss_vendor_453144985.jpg",
+      "vendor_darkness_3085141099.jpg"
+    ],
+    "frame_count": 4,
+    "priority_score": 0.428,
+    "coverage_estimate": 0.22,
+    "qbit_weight": 0.82,
+    "narrative_importance": "cloud_prime_node",
+    "dreamweight": "atmospheric_medium",
+    "structural_frames": 0,
+    "source_zone": "food_court"
+  },
+  "SERVICE_HALL": {
+    "frames": [],
+    "frame_count": 0,
+    "priority_score": 0.3,
+    "coverage_estimate": 0.12,
+    "qbit_weight": 0.6,
+    "narrative_importance": "backrooms_access",
+    "dreamweight": "surreal_high",
+    "structural_frames": 0,
+    "source_zone": "maintenance"
+  },
+  "CINEMA_ENTRANCE": {
+    "frames": [
+      "dark_exit_453122150.jpg",
+      "now_playing_flicka_453122548.jpg",
+      "now_playing_posters_453122026.jpg",
+      "theater_entrance_3085140933.jpg"
+    ],
+    "frame_count": 4,
+    "priority_score": 0.368,
+    "coverage_estimate": 0.2,
+    "qbit_weight": 0.7,
+    "narrative_importance": "threshold_space",
+    "dreamweight": "liminal_medium",
+    "structural_frames": 0,
+    "source_zone": "movie_mouth"
+  }
+}

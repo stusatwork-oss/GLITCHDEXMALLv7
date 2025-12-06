@@ -1,0 +1,26 @@
+{
+  "voxel_object_id": "ARCADE_TOKEN",
+  "source_image": "assets/voxel_sources/arcade_token.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "palette": "COMICBOOK_MALL_V1",
+  "voxel_scale": [1, 1, 1],
+  "qbit": {
+    "power": 50,
+    "charisma": 800,
+    "resonance": 120,
+    "note": "High attention draw, low structural leverage"
+  },
+  "placement": {
+    "attach": "floor",
+    "offset": [0, 0, 0]
+  },
+  "behavior": {
+    "type": "PICKUP",
+    "tags": ["ARCADE", "CURRENCY"],
+    "on_pickup": [
+      "cloud_pressure+1",
+      "subtitle: 'Something in the arcade wakes up.'",
+      "flag:FOUND_TOKEN=true"
+    ]
+  }
+}
