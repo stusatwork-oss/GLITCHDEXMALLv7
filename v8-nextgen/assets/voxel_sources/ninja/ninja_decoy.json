@@ -1,0 +1,13 @@
+{
+  "voxel_object_id": "NINJA_DECOY",
+  "source_image": "ninja_decoy.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "voxel_scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "placement": {
+    "attach": "floor"
+  }
+}

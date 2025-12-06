@@ -116,6 +116,12 @@ class VisualRuntime:
         # HUD
         pygame.draw.rect(self.screen, (0,0,0), (0, SCREEN_H-100, SCREEN_W, 100))
         pygame.draw.line(self.screen, COLORS["TEXT"], (0, SCREEN_H-100), (SCREEN_W, SCREEN_H-100), 2)
+
+        # FPS Debug Overlay (top-right)
+        fps = self.clock.get_fps()
+        fps_text = self.font.render(f"FPS: {fps:.1f}", True, COLORS["TEXT"])
+        self.screen.blit(fps_text, (SCREEN_W - 100, 10))
+
         hud = [
             f"SYS: ONLINE | LEVEL: {state.get('level_id','N/A')}",
             f"FOCUS: {state['focus']:.1f}V | CLOUD: {state['cloud']:.1f}",

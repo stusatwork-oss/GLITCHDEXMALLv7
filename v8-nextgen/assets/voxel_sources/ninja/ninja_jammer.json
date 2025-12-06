@@ -1,0 +1,13 @@
+{
+  "voxel_object_id": "NINJA_JAMMER",
+  "source_image": "ninja_jammer.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "voxel_scale": [
+    0.5,
+    0.5,
+    0.2
+  ],
+  "placement": {
+    "attach": "floor"
+  }
+}

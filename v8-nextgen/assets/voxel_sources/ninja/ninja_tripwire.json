@@ -1,0 +1,13 @@
+{
+  "voxel_object_id": "NINJA_TRIPWIRE",
+  "source_image": "ninja_tripwire.png",
+  "mode": "HEIGHTMAP_EXTRUDE",
+  "voxel_scale": [
+    1.0,
+    0.1,
+    0.1
+  ],
+  "placement": {
+    "attach": "floor"
+  }
+}
