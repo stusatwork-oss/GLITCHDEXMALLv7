@@ -1,0 +1,295 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "version": "v8-renpy-geojson-1.0",
+    "source": "python_to_renpy.py",
+    "coordinate_system": "Mall Cartesian (feet)",
+    "origin": "Central Atrium center"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": 70,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          0
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83c\udfaa",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83c\udfaa",
+        "entity_id": 70,
+        "zone_id": "Z1_CENTRAL_ATRIUM",
+        "name": "Central Atrium",
+        "level": 0,
+        "elevation_feet": 0,
+        "diameter_feet": 175
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 65080,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          0
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83c\udfdb\ufe0f",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83c\udfdb\ufe0f",
+        "entity_id": 65080,
+        "zone_id": "Z2_UPPER_RING",
+        "name": "Upper Ring Corridors",
+        "level": 0,
+        "elevation_feet": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 64263,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          0
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83d\udee4\ufe0f",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83d\udee4\ufe0f",
+        "entity_id": 64263,
+        "zone_id": "Z3_LOWER_RING",
+        "name": "Lower Ring Corridors",
+        "level": 0,
+        "elevation_feet": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 65182,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          -8
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83c\udf7d\ufe0f",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83c\udf7d\ufe0f",
+        "entity_id": 65182,
+        "zone_id": "Z4_FOOD_COURT",
+        "name": "Food Court Bowl",
+        "level": -1,
+        "elevation_feet": -8,
+        "pit_depth_feet": 8,
+        "diameter_feet": 120
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 75493,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          0
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\u2b06\ufe0f",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\u2b06\ufe0f",
+        "entity_id": 75493,
+        "zone_id": "Z5_ESCALATOR_WELLS",
+        "name": "Escalator Wells (Vertical Circulation)",
+        "level": 0,
+        "elevation_feet": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          0
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83c\udfec",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83c\udfec",
+        "entity_id": 0,
+        "zone_id": "Z5_ANCHOR_STORES",
+        "name": "Anchor Store Zones",
+        "level": 0,
+        "elevation_feet": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 184,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          0
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83c\udf54",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83c\udf54",
+        "entity_id": 184,
+        "zone_id": "Z6_MICKEYS_WING",
+        "name": "Mickey's Family Restaurant Wing",
+        "level": 0,
+        "elevation_feet": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 64,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          -8
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83c\udfac",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83c\udfac",
+        "entity_id": 64,
+        "zone_id": "Z6_THEATER",
+        "name": "Theater Zone (6-Screen Underground)",
+        "level": -1,
+        "elevation_feet": -8
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1751,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          -16
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83d\udd3b",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83d\udd3b",
+        "entity_id": 1751,
+        "zone_id": "Z7_SUBTERRANEAN",
+        "name": "Subterranean Access Deck",
+        "level": -2,
+        "elevation_feet": -16
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 252,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0,
+          0
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83c\udf10",
+        "symbol_level": 1,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83c\udf10",
+        "entity_id": 252,
+        "zone_id": "Z9_EXTERIOR",
+        "name": "Exterior Envelope",
+        "level": 0,
+        "elevation_feet": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 122712,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          -100,
+          -8
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83c\udf7d\ufe0f\u2b06\ufe0f\ud83d\udccf",
+        "symbol_level": 3,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83d\udccf",
+        "entity_id": 122712,
+        "measurement": "drop_feet",
+        "value": 8.0,
+        "confidence": "HIGH",
+        "source": "Escalator step count",
+        "anchor": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 127369,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          -100,
+          -8
+        ]
+      },
+      "properties": {
+        "symbol_stack": "\ud83c\udfec\ud83d\udeaa\ud83d\udccf",
+        "symbol_level": 2,
+        "symbol_root": "\ud83c\udfec",
+        "symbol_leaf": "\ud83d\udccf",
+        "entity_id": 127369,
+        "measurement": "dimensions_feet",
+        "value": [
+          3.5,
+          6.75
+        ],
+        "confidence": "HIGH",
+        "source": "Commercial standard",
+        "anchor": true
+      }
+    }
+  ]
+}
