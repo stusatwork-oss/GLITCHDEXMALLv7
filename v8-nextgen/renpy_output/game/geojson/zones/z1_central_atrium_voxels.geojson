@@ -1,0 +1,2711 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "zone_id": "Z1_CENTRAL_ATRIUM",
+    "voxel_count": 60,
+    "encoding": "emoji_layers",
+    "measurement_source": "CRD v7 + user-verified escalator dimensions"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0000",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20,
+          20,
+          0.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0000",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          20,
+          20,
+          0.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20,
+          -20,
+          0.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0001",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          20,
+          -20,
+          0.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -20,
+          20,
+          0.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0002",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -20,
+          20,
+          0.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -20,
+          -20,
+          0.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0003",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -20,
+          -20,
+          0.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20,
+          20,
+          0.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0004",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          20,
+          20,
+          0.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20,
+          -20,
+          0.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0005",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          20,
+          -20,
+          0.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -20,
+          20,
+          0.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0006",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -20,
+          20,
+          0.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -20,
+          -20,
+          0.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0007",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -20,
+          -20,
+          0.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17,
+          17,
+          3.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0008",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          17,
+          17,
+          3.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17,
+          -17,
+          3.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0009",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          17,
+          -17,
+          3.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17,
+          17,
+          3.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0010",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -17,
+          17,
+          3.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17,
+          -17,
+          3.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0011",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -17,
+          -17,
+          3.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17,
+          17,
+          3.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0012",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          17,
+          17,
+          3.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17,
+          -17,
+          3.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0013",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          17,
+          -17,
+          3.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17,
+          17,
+          3.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0014",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -17,
+          17,
+          3.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17,
+          -17,
+          3.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0015",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -17,
+          -17,
+          3.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14,
+          14,
+          7.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0016",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          14,
+          14,
+          7.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14,
+          -14,
+          7.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0017",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          14,
+          -14,
+          7.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14,
+          14,
+          7.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0018",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -14,
+          14,
+          7.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14,
+          -14,
+          7.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0019",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -14,
+          -14,
+          7.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14,
+          14,
+          7.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0020",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          14,
+          14,
+          7.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14,
+          -14,
+          7.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0021",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          14,
+          -14,
+          7.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14,
+          14,
+          7.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0022",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -14,
+          14,
+          7.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14,
+          -14,
+          7.0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0023",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -14,
+          -14,
+          7.0
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11,
+          11,
+          10.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0024",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          11,
+          11,
+          10.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11,
+          -11,
+          10.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0025",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          11,
+          -11,
+          10.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11,
+          11,
+          10.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0026",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -11,
+          11,
+          10.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11,
+          -11,
+          10.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0027",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -11,
+          -11,
+          10.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11,
+          11,
+          10.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0028",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          11,
+          11,
+          10.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11,
+          -11,
+          10.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0029",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          11,
+          -11,
+          10.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11,
+          11,
+          10.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0030",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -11,
+          11,
+          10.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11,
+          -11,
+          10.5
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0031",
+        "emoji_compact": "\ud83d\udca7\ud83c\udf0a\ud83c\udf2c\ufe0f\ud83c\udf0a\ud83c\udf0a\u2b07\ufe0f",
+        "position": [
+          -11,
+          -11,
+          10.5
+        ],
+        "material": {
+          "emoji": "\ud83d\udca7",
+          "name": "WATER"
+        },
+        "state": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOODED"
+        },
+        "behavior": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "PASSABLE"
+        },
+        "surface": {
+          "emoji": "\ud83c\udf0a",
+          "name": "RIPPLES"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf0a",
+          "name": "FLOWING_WATER"
+        },
+        "physics": {
+          "emoji": "\u2b07\ufe0f",
+          "name": "SINKS"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          50,
+          0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0032",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          50,
+          0
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          50,
+          10
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0033",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          50,
+          10
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          50,
+          20
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0034",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          50,
+          20
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          50,
+          30
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0035",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          50,
+          30
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0036",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          50,
+          40
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0036",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          50,
+          40
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0037",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          50,
+          50
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0037",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          50,
+          50
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0038",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          50,
+          60
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0038",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          50,
+          60
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0039",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          50,
+          0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0039",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          50,
+          0
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0040",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          50,
+          10
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0040",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          50,
+          10
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0041",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          50,
+          20
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0041",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          50,
+          20
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0042",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          50,
+          30
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0042",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          50,
+          30
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0043",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          50,
+          40
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0043",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          50,
+          40
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0044",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          50,
+          50
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0044",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          50,
+          50
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0045",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          50,
+          60
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0045",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          50,
+          60
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0046",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          -50,
+          0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0046",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          -50,
+          0
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0047",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          -50,
+          10
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0047",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          -50,
+          10
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0048",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          -50,
+          20
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0048",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          -50,
+          20
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0049",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          -50,
+          30
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0049",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          -50,
+          30
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0050",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          -50,
+          40
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0050",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          -50,
+          40
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0051",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          -50,
+          50
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0051",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          -50,
+          50
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0052",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50,
+          -50,
+          60
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0052",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          -50,
+          -50,
+          60
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0053",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          -50,
+          0
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0053",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          -50,
+          0
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0054",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          -50,
+          10
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0054",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          -50,
+          10
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0055",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          -50,
+          20
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0055",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          -50,
+          20
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0056",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          -50,
+          30
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0056",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          -50,
+          30
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0057",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          -50,
+          40
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0057",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          -50,
+          40
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0058",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          -50,
+          50
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0058",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          -50,
+          50
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Z1_CENTRAL_ATRIUM_VOXEL_0059",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50,
+          -50,
+          60
+        ]
+      },
+      "properties": {
+        "voxel_id": "Z1_CENTRAL_ATRIUM_VOXEL_0059",
+        "emoji_compact": "\ud83d\udfe8\u2728\ud83d\udd12\ud83c\udfa8\ud83c\udf2c\ufe0f\ud83e\udea8",
+        "position": [
+          50,
+          -50,
+          60
+        ],
+        "material": {
+          "emoji": "\ud83d\udfe8",
+          "name": "METAL_STEEL"
+        },
+        "state": {
+          "emoji": "\u2728",
+          "name": "PRISTINE"
+        },
+        "behavior": {
+          "emoji": "\ud83d\udd12",
+          "name": "SOLID"
+        },
+        "surface": {
+          "emoji": "\ud83c\udfa8",
+          "name": "PAINTED"
+        },
+        "audio": {
+          "emoji": "\ud83c\udf2c\ufe0f",
+          "name": "WIND"
+        },
+        "physics": {
+          "emoji": "\ud83e\udea8",
+          "name": "HEAVY"
+        }
+      }
+    }
+  ]
+}
