@@ -6,9 +6,10 @@ Minimal game engine that loads everything from JSON files.
 Philosophy: The game IS the JSON. The code just executes it.
 """
 
+import ast
 import json
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Any, Dict, List
 
 
 # =============================================================================
@@ -277,6 +278,55 @@ def update_cloud(gs: GameState, dt: float):
             break
 
 
+def _safe_eval_simple_expression(expr: str) -> bool:
+    """
+    Evaluate a simple boolean/comparison expression safely, e.g.:
+        "1 < 2"
+        "3 == 3"
+        "5 >= 2 and 1 < 4"
+
+    No function calls, no attribute access, no names.
+    Only literals, comparisons, and and/or/not.
+    """
+    def _eval_node(node: ast.AST) -> Any:
+        if isinstance(node, ast.Expression):
+            return _eval_node(node.body)
+        if isinstance(node, ast.BoolOp):
+            vals = [_eval_node(v) for v in node.values]
+            if isinstance(node.op, ast.And):
+                return all(vals)
+            if isinstance(node.op, ast.Or):
+                return any(vals)
+            raise ValueError("Unsupported boolean operator")
+        if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.Not):
+            return not _eval_node(node.operand)
+        if isinstance(node, ast.Compare):
+            left = _eval_node(node.left)
+            for op, comp in zip(node.ops, node.comparators):
+                right = _eval_node(comp)
+                if isinstance(op, ast.Eq) and not (left == right):
+                    return False
+                elif isinstance(op, ast.NotEq) and not (left != right):
+                    return False
+                elif isinstance(op, ast.Lt) and not (left < right):
+                    return False
+                elif isinstance(op, ast.LtE) and not (left <= right):
+                    return False
+                elif isinstance(op, ast.Gt) and not (left > right):
+                    return False
+                elif isinstance(op, ast.GtE) and not (left >= right):
+                    return False
+                left = right
+            return True
+        if isinstance(node, ast.Constant):
+            return node.value
+        # Disallow everything else: no names, no calls, no attributes
+        raise ValueError(f"Unsupported expression node: {type(node).__name__}")
+
+    tree = ast.parse(expr, mode="eval")
+    return bool(_eval_node(tree))
+
+
 def evaluate_condition(condition: str, gs: GameState) -> bool:
     """
     Evaluate a trigger condition string.
@@ -310,8 +360,8 @@ def evaluate_condition(condition: str, gs: GameState) -> bool:
 
     # Safe eval of simple comparison expressions
     try:
-        return eval(context)
-    except:
+        return _safe_eval_simple_expression(context)
+    except Exception:
         return False
 
 

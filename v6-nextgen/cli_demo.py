@@ -18,6 +18,8 @@ import sys
 import argparse
 from typing import Dict, Any, Optional
 
+# HTTP timeout to prevent requests from hanging indefinitely
+DEFAULT_HTTP_TIMEOUT = 30  # seconds
 
 BASE_URL = "http://localhost:5005"
 
@@ -30,13 +32,13 @@ class BridgeClient:
 
     def health(self) -> Dict[str, Any]:
         """Check server health."""
-        r = requests.get(f"{self.base_url}/health")
+        r = requests.get(f"{self.base_url}/health", timeout=DEFAULT_HTTP_TIMEOUT)
         r.raise_for_status()
         return r.json()
 
     def status(self) -> Dict[str, Any]:
         """Get current world status."""
-        r = requests.get(f"{self.base_url}/status")
+        r = requests.get(f"{self.base_url}/status", timeout=DEFAULT_HTTP_TIMEOUT)
         r.raise_for_status()
         return r.json()
 
@@ -44,7 +46,7 @@ class BridgeClient:
         """Initialize world."""
         r = requests.post(f"{self.base_url}/init", json={
             "config_path": config_path
-        })
+        }, timeout=DEFAULT_HTTP_TIMEOUT)
         r.raise_for_status()
         return r.json()
 
@@ -53,7 +55,7 @@ class BridgeClient:
         r = requests.post(f"{self.base_url}/tick", json={
             "dt": dt,
             "player_event": player_event
-        })
+        }, timeout=DEFAULT_HTTP_TIMEOUT)
         r.raise_for_status()
         return r.json()
 
@@ -61,7 +63,7 @@ class BridgeClient:
         """Reset world state."""
         r = requests.post(f"{self.base_url}/reset", json={
             "keep_memory": keep_memory
-        })
+        }, timeout=DEFAULT_HTTP_TIMEOUT)
         r.raise_for_status()
         return r.json()
 
@@ -322,6 +324,8 @@ def demo_reset():
 
 
 def main():
+    global BASE_URL
+
     parser = argparse.ArgumentParser(description="V6 Bridge CLI Demo Client")
     parser.add_argument(
         "--url",
@@ -359,7 +363,6 @@ def main():
     args = parser.parse_args()
 
     # Update base URL
-    global BASE_URL
     BASE_URL = args.url
 
     print(f"\n{'='*60}")
