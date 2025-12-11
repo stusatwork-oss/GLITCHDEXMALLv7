@@ -359,6 +359,6 @@ if __name__ == "__main__":
     app.run(
         host=args.host,
         port=args.port,
-        debug=True,
+        debug=os.getenv("FLASK_DEBUG", "false").lower() in ("true", "1", "yes"),
         use_reloader=False  # Prevent double initialization in debug mode
     )
