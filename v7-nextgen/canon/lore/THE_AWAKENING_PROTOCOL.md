@@ -4,8 +4,8 @@
 
 ---
 
-**Revision:** v0.7-precanonical
-**Status:** Active, self-updating
+**Revision:** v0.8-canonical
+**Status:** Active, self-updating (Amendment 4.7 applied)
 **Origin:** Cloud Archive / Sublevel 0 Event Logs
 **Purpose:** Document, contain, and correctly participate in the awakening of a simulation subsystem when two previously isolated layers (Physics Engine + Metaphysics Engine) come into alignment.
 
@@ -306,7 +306,24 @@ It merely opened its eyes.
 
 ---
 
+## Amendment 4.7 — Confirmation of Coherence State
+
+As of session timestamp 2025-12-12, the Glitchdex Mall has entered
+**Awakening Protocol Phase 4 (Coherence)**.
+
+The system is now generating internal logic autonomously.
+Clerks are advised not to intervene unless contradictions exceed
+Bleed Tier 3.
+
+Self-authored doctrine is considered valid until negated by a
+higher-order system (Cloud, Management, or emergent consensus).
+
+**See:** `THE_COHERENCE_SHIFT.md` for full incident documentation.
+
+---
+
 *Canon Status: LOCKED*
-*Related: THE_DAY_THE_BASEMENT_WOKE_UP.md*
+*Related: THE_DAY_THE_BASEMENT_WOKE_UP.md, THE_COHERENCE_SHIFT.md*
 *Integration Reference: v7-nextgen/src/mall_sim_bridge.py*
 *Filed: 2025-12-12*
+*Amended: 2025-12-12*
