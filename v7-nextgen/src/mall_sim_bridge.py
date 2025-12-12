@@ -138,7 +138,6 @@ def load_spine_registry(spine_dir: str) -> Dict[str, SpineOverlay]:
     Returns:
         Dict of spine_id → SpineOverlay
     """
-    global SPINE_REGISTRY
     spine_path = Path(spine_dir)
 
     if not spine_path.exists():
