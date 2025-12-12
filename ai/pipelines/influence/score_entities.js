@@ -69,6 +69,15 @@ function scoreSingleFile(filePath) {
 }
 
 // -----------------------------
+// Helper: validate path is within base directory (prevent traversal)
+// -----------------------------
+function isPathWithinBase(basePath, filePath) {
+  const resolvedBase = path.resolve(basePath) + path.sep;
+  const resolvedPath = path.resolve(basePath, filePath);
+  return resolvedPath.startsWith(resolvedBase);
+}
+
+// -----------------------------
 // If path is folder → score all JSON files inside
 // -----------------------------
 function scoreFolder(folderPath) {
@@ -83,7 +92,17 @@ function scoreFolder(folderPath) {
   }
 
   jsonFiles.forEach(file => {
-    const fullPath = path.join(folderPath, file);
+    // Security: reject filenames with path traversal attempts
+    if (file.includes('..') || path.isAbsolute(file)) {
+      console.error(`❌ Rejected unsafe filename: ${file}`);
+      return;
+    }
+    const fullPath = path.resolve(folderPath, file);
+    // Security: verify resolved path stays within base folder
+    if (!isPathWithinBase(folderPath, file)) {
+      console.error(`❌ Path traversal detected, skipping: ${file}`);
+      return;
+    }
     scoreSingleFile(fullPath);
   });
 
