@@ -7,6 +7,7 @@ Proper Wolf3D-style raycasting with texture support and era-bleed effects.
 import pygame
 import math
 import os
+import random
 from typing import Dict, List, Tuple, Optional
 
 # Initialize Pygame

@@ -148,8 +148,6 @@ def tick():
         "events": [ ... ]
     }
     """
-    global WORLD
-
     try:
         data = request.get_json(force=True) or {}
         dt = float(data.get("dt", 0.25))
@@ -192,8 +190,6 @@ def reset():
         "cloud_level": 0.0
     }
     """
-    global WORLD
-
     try:
         data = request.get_json(force=True) or {}
         keep_memory = data.get("keep_memory", False)
@@ -245,8 +241,6 @@ def status():
         }
     }
     """
-    global WORLD
-
     try:
         # Use canonical cloud representation (same as /tick)
         cloud_dict = get_cloud_dict(WORLD.cloud)
