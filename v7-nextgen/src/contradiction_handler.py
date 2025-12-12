@@ -19,6 +19,7 @@ Effects cascade through:
 5. Bleed event probability increase
 """
 
+import random
 import time
 from typing import Dict, List, Optional, TYPE_CHECKING
 

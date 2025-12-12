@@ -10,6 +10,7 @@ Contradictions between eras are CANON, not errors.
 """
 
 import json
+import random
 from enum import Enum
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, field

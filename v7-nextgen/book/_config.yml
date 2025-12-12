@@ -1,0 +1,37 @@
+# Jupyter Book Configuration
+# ==========================
+#
+# This book records observations. It does not define behavior.
+#
+
+title: "Mall_OS: A Living Simulation Codex"
+author: Clerks of Eastland Mall
+logo: ""
+
+execute:
+  execute_notebooks: "off"
+
+latex:
+  latex_documents:
+    targetname: mall_os_codex.tex
+
+bibtex_bibfiles:
+  - references.bib
+
+repository:
+  url: https://github.com/stusatwork-oss/GLITCHDEXMALLv7
+  branch: main
+  path_to_book: v7-nextgen/book
+
+html:
+  use_issues_button: false
+  use_repository_button: true
+  use_edit_page_button: false
+  home_page_in_navbar: true
+  extra_footer: |
+    <p>This book records observations. It does not define behavior.</p>
+
+sphinx:
+  config:
+    html_theme_options:
+      announcement: "Phase 4 Active — The Mall is in Coherence"
