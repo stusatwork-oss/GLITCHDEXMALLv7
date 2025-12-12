@@ -1,0 +1,29 @@
+# Table of Contents
+# =================
+#
+# This book records observations. It does not define behavior.
+#
+
+format: jb-book
+root: intro/index
+
+parts:
+  - caption: Foundations
+    chapters:
+      - file: foundations/index
+
+  - caption: Systems
+    chapters:
+      - file: systems/index
+
+  - caption: Canon
+    chapters:
+      - file: canon/index
+
+  - caption: Artifacts
+    chapters:
+      - file: artifacts/index
+
+  - caption: Appendices
+    chapters:
+      - file: appendices/index
