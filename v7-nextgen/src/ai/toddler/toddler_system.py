@@ -25,6 +25,7 @@ Usage:
 
 from typing import Dict, Tuple, Optional, Any
 import math
+import random
 import time
 
 from .toddler_behaviors import ToddlerBehavior, BehaviorController
