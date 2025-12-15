@@ -29,9 +29,11 @@ const {
 } = require('./engine.js');
 
 // -----------------------------
-// Helper: validate file path for security
+// Helper: normalize file path (basic checks only)
+// NOTE: This does NOT enforce a base directory or prevent path traversal.
+// Callers must implement additional security checks as needed.
 // -----------------------------
-function validateFilePath(filePath) {
+function normalizeFilePath(filePath) {
   // Reject null bytes (injection technique)
   if (filePath.includes('\0')) {
     throw new Error(`Invalid path (null byte detected): ${filePath}`);
@@ -44,7 +46,11 @@ function validateFilePath(filePath) {
 // Helper: read JSON file safely
 // -----------------------------
 function loadJSON(filePath) {
-  const safePath = validateFilePath(filePath);
+  const safePath = normalizeFilePath(filePath);
+  // Only allow reading .json files
+  if (!safePath.endsWith('.json')) {
+    throw new Error(`Refusing to read non-JSON file: ${safePath}`);
+  }
   try {
     const raw = fs.readFileSync(safePath, 'utf-8');
     return JSON.parse(raw);
@@ -58,7 +64,7 @@ function loadJSON(filePath) {
 // Helper: write JSON pretty
 // -----------------------------
 function saveJSON(filePath, data) {
-  const safePath = validateFilePath(filePath);
+  const safePath = normalizeFilePath(filePath);
   // Only allow writing to .json files
   if (!safePath.endsWith('.json')) {
     throw new Error(`Refusing to write to non-JSON file: ${safePath}`);
@@ -99,7 +105,7 @@ function isPathWithinBase(basePath, filePath) {
 // If path is folder → score all JSON files inside
 // -----------------------------
 function scoreFolder(folderPath) {
-  const safeFolderPath = validateFilePath(folderPath);
+  const safeFolderPath = normalizeFilePath(folderPath);
   console.log(`📁 Scoring all entity JSONs in folder: ${safeFolderPath}`);
 
   const files = fs.readdirSync(safeFolderPath);
