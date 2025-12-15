@@ -29,14 +29,27 @@ const {
 } = require('./engine.js');
 
 // -----------------------------
+// Helper: validate file path for security
+// -----------------------------
+function validateFilePath(filePath) {
+  // Reject null bytes (injection technique)
+  if (filePath.includes('\0')) {
+    throw new Error(`Invalid path (null byte detected): ${filePath}`);
+  }
+  // Resolve to absolute path
+  return path.resolve(filePath);
+}
+
+// -----------------------------
 // Helper: read JSON file safely
 // -----------------------------
 function loadJSON(filePath) {
+  const safePath = validateFilePath(filePath);
   try {
-    const raw = fs.readFileSync(filePath, 'utf-8');
+    const raw = fs.readFileSync(safePath, 'utf-8');
     return JSON.parse(raw);
   } catch (err) {
-    console.error(`❌ Error reading JSON file: ${filePath}`);
+    console.error(`❌ Error reading JSON file: ${safePath}`);
     throw err;
   }
 }
@@ -45,11 +58,16 @@ function loadJSON(filePath) {
 // Helper: write JSON pretty
 // -----------------------------
 function saveJSON(filePath, data) {
+  const safePath = validateFilePath(filePath);
+  // Only allow writing to .json files
+  if (!safePath.endsWith('.json')) {
+    throw new Error(`Refusing to write to non-JSON file: ${safePath}`);
+  }
   try {
     const formatted = JSON.stringify(data, null, 2);
-    fs.writeFileSync(filePath, formatted, 'utf-8');
+    fs.writeFileSync(safePath, formatted, 'utf-8');
   } catch (err) {
-    console.error(`❌ Error writing JSON file: ${filePath}`);
+    console.error(`❌ Error writing JSON file: ${safePath}`);
     throw err;
   }
 }
@@ -81,13 +99,14 @@ function isPathWithinBase(basePath, filePath) {
 // If path is folder → score all JSON files inside
 // -----------------------------
 function scoreFolder(folderPath) {
-  console.log(`📁 Scoring all entity JSONs in folder: ${folderPath}`);
+  const safeFolderPath = validateFilePath(folderPath);
+  console.log(`📁 Scoring all entity JSONs in folder: ${safeFolderPath}`);
 
-  const files = fs.readdirSync(folderPath);
+  const files = fs.readdirSync(safeFolderPath);
 
   const jsonFiles = files.filter(f => f.endsWith('.json'));
   if (jsonFiles.length === 0) {
-    console.log(`⚠️ No JSON files found in: ${folderPath}`);
+    console.log(`⚠️ No JSON files found in: ${safeFolderPath}`);
     return;
   }
 
@@ -97,9 +116,9 @@ function scoreFolder(folderPath) {
       console.error(`❌ Rejected unsafe filename: ${file}`);
       return;
     }
-    const fullPath = path.resolve(folderPath, file);
+    const fullPath = path.resolve(safeFolderPath, file);
     // Security: verify resolved path stays within base folder
-    if (!isPathWithinBase(folderPath, file)) {
+    if (!isPathWithinBase(safeFolderPath, file)) {
       console.error(`❌ Path traversal detected, skipping: ${file}`);
       return;
     }
