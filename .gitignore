@@ -18,3 +18,8 @@ session_log.txt
 .env
 *.jpg
 *.zip
+# Marble outputs - too large for git
+*.ply
+*.spz
+*.splat
+
