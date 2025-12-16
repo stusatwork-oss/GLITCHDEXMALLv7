@@ -37,8 +37,14 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Remove cached Python files
       run: |
-        find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
-        find . -type f -name "*.pyc" -delete 2>/dev/null || true
+        # Clean pycache from source directories only (avoids .git, node_modules, venv)
+        # Using -depth ensures children are processed before parents, avoiding "No such file" errors
+        for dir in v1-doofenstein v2-immersive-sim v3-eastland v6-nextgen v7-nextgen v7-nextgen-assessment-20251203 v8-nextgen ai; do
+          if [ -d "$dir" ]; then
+            find "$dir" -depth -type d -name "__pycache__" -exec rm -rf {} \;
+            find "$dir" -type f -name "*.pyc" -delete
+          fi
+        done
     - name: Test with pytest
       run: |
         pytest --import-mode=importlib -v
