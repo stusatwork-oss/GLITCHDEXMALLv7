@@ -1,0 +1,91 @@
+================================================================================
+EASTLAND MALL - MARBLE PROMPT GENERATION
+================================================================================
+
+Generated from escalator-calibrated spatial measurements.
+Source: v8-nextgen/data/measurements/
+
+================================================================================
+
+# Z1_CENTRAL_ATRIUM: Central Atrium
+
+**Main Prompt:**
+A central atrium space, 175 feet in diameter, with 70-foot-tall ceilings, featuring Terraced amphitheater fountain (4 tiers), Glass block wall (curved backdrop), 4 yellow lattice tension masts (60-80' tall).
+
+**Enhanced Description:**
+A cathedral-scale central atrium with a dramatic tensile fabric roof suspended from four yellow lattice steel tension masts 70 feet tall. The space features a four-tiered terraced amphitheater fountain with a curved glass block wall backdrop. Radial cables span 175 feet from center to perimeter in a 32-segment geometric pattern. The architecture combines proto-Silicon Valley tech aesthetics with 1980s mall grandeur. Natural light filters through white tensile fabric creating a soft, diffused glow. The space has an airport terminal or train station scale - monumentally oversized for a retail environment.
+
+**Technical Specs:**
+- Area: ~24,000 sq ft
+- Ceiling Height: 70 ft
+- Diameter: 175 ft
+- Level: 0 (elevation: 0 ft)
+
+---
+
+# Z4_FOOD_COURT: Food Court Bowl
+
+**Main Prompt:**
+A food court bowl space, 120 feet in diameter, with 50 feet of vertical clearance, sunken 8 feet below ground level, featuring Circular FOOD COURT neon sign (6-8' diameter) - NEW entity in v7, Vendor bays (asymmetric arrangement), Secondary decorative fountain pit.
+
+**Enhanced Description:**
+A sunken amphitheater bowl 120 feet in diameter, descended to via chrome escalators with 12 measured steps (8 feet total drop). The space has a 'reactor containment zone' aesthetic with industrial theater vibes. Asymmetric vendor bays line the perimeter with striped metal and glass construction. A large circular neon sign reading 'FOOD COURT' (6-8 feet in diameter) hovers at the center. Beige carpet with abstract patterns covers the floor. At the gravitational center sits the theater entrance - a black void visible from the escalator descent. The pit has 50 feet of vertical clearance to the tensile roof above, creating a cathedral-like volume. Staggered tile geometry and glass block retaining walls add geometric complexity. The lighting is warm but dim, with vendor signs providing colorful accents. 1980s mall decline aesthetic - some vendors dark, 'Coming Soon' signs flickering.
+
+**Technical Specs:**
+- Area: ~11,300 sq ft
+- Diameter: 120 ft
+- Level: -1 (elevation: -8 ft)
+
+---
+
+# Z3_LOWER_RING: Lower Ring Corridors
+
+**Main Prompt:**
+A lower ring corridors corridor, 25 feet wide, with 12-foot-tall ceilings, featuring Tile → carpet transitions, Kiosk sites, Coca-Cola vending machine (SCALE ANCHOR).
+
+**Enhanced Description:**
+Wide circulation corridors 25 feet across - train station scale, not typical 12-foot mall corridors. Yellow/beige painted walls with 12-foot ceilings. Beige carpet with abstract patterns throughout. Kiosk sites with metal and glass structures dot the corridor. Transitions from tile to carpet mark zone boundaries. The Coca-Cola Enterprises store provides a colorful anchor with red display cases and cursive signage. Service hall access points branch off. Exposed black ceiling grids visible in some areas. The scale feels monumental - more civic architecture than retail. Fluorescent lighting creates even, slightly harsh illumination. Empty storefronts with security grates add to the liminal space quality.
+
+**Technical Specs:**
+- Ceiling Height: 12 ft
+- Level: 0 (elevation: 0 ft)
+
+---
+
+# Z5_ESCALATOR_WELLS: Escalator Wells (Vertical Circulation)
+
+**Main Prompt:**
+A escalator wells (vertical circulation) space.
+
+**Enhanced Description:**
+A dedicated vertical circulation zone with bidirectional chrome escalators. Two parallel escalators (up and down) connect ground level (Level 0) to the sunken food court (Level -1). Each escalator has exactly 12 steps with 8-inch rise, totaling 8 feet of elevation change. The escalator bay is approximately 25 feet wide and 25 feet long. Chrome and stainless steel finishes catch light. Views open up as you descend - the yellow lattice tower visible above, the food court bowl spreading out below. Glass and metal railings provide safety. The perspective shift during descent is dramatic - transitioning from the grand atrium to the intimate theater bowl. The escalators themselves are sculptural elements - their angles and chrome surfaces defining the space.
+
+**Technical Specs:**
+
+---
+
+# Z6_THEATER: Theater Zone (6-Screen Underground)
+
+**Main Prompt:**
+A theater zone (6-screen underground) space, sunken 8 feet below ground level, featuring Box office (protrudes into corridor), Velvet rope queue area, Theater lobby.
+
+**Enhanced Description:**
+A 6-screen underground cinema positioned at the gravitational center of the food court bowl. The entrance appears as a 'black open mouth' - a dark void that draws the eye from the escalator descent. The composition creates a three-stage spatial sequence: upper level → escalator descent → theater void. The box office protrudes into the corridor with velvet rope queue areas. A flickering marquee displays movie titles from 2006-2007. The theater lobby has standard 1980s multiplex finishes - patterned carpet, wood-grain paneling, backlit movie posters. Most screens (2-6) are dark and unused during the mall's decline period. Screen 1 shows occasional signs of operation. The spatial position is critical - it's the focal point that the entire food court bowl architecture directs attention toward.
+
+**Technical Specs:**
+- Level: -1 (elevation: -8 ft)
+
+---
+
+# Z6_MICKEYS_WING: Mickey's Family Restaurant Wing
+
+**Main Prompt:**
+A mickey's family restaurant wing space, featuring Domed archway with concentric red/orange rings (NEW in v7), Tile color transition corridor, Vestibule with glass doors.
+
+**Enhanced Description:**
+A distinctive southeast wing featuring a dramatic concentric arch entrance. Multiple layered arches create a depth effect with concentric red and orange rings. The approach is a shallow corridor with tile color transitions - moving from mall standard beige to the restaurant's distinct palette. Glass doors at the vestibule provide separation. The arch feature is monumental - clearly visible and photogenic. Beyond lies the dining area interior and exterior parking access. The architecture makes a bold statement - breaking from the mall's restrained modernism with expressive, almost postmodern geometry. The concentric arches create a forced-perspective tunnel effect.
+
+**Technical Specs:**
+- Level: 0 (elevation: 0 ft)
+
+---
