@@ -10,9 +10,9 @@ import math
 from pathlib import Path
 
 # Ensure imports work from src root
-sys.path.append(str(Path(__file__).parents[2]))
+sys.path.append(str(Path(__file__).parent))
 
-from ninja.ninja_loop import NinjaGameMode
+from game_loop import NinjaGameMode
 
 TILE_SIZE = 24
 SCREEN_W, SCREEN_H = 1280, 800
