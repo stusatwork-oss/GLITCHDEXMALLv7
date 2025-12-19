@@ -20,7 +20,9 @@ AI working in this repo should:
    - v3-eastland is intentionally corrupted / wrong-scale.
    - v4-renderist introduces the Cloud + Renderist worldview.
    - v5-eastland contains CRD reconstruction, zoning, and measurements.
-   - v6-nextgen is the future canonical implementation.
+   - v6-nextgen was a transitional system integration phase.
+   - v7-nextgen is the **current canonical** implementation (Integration Build).
+   - v8-nextgen is the **active lab** build for experimental features (Visual Runtime, Ninja Loop).
 
    Do **not** “fix” v3; treat it as a historical failure and reference point.
 

@@ -1,53 +1,34 @@
 #!/usr/bin/env python3
 """
-GLITCHDEX MALL V6 - NEXT GENERATION
-Entry point (placeholder)
+NINJA SABOTEUR: MAIN LAUNCHER (V8)
+Wrapper to launch the visual runtime.
 """
 
 import sys
-import time
+from pathlib import Path
 
+# Add src to path
+sys.path.append(str(Path(__file__).parent))
+
+try:
+    from visual_runtime import VisualRuntime
+except ImportError as e:
+    print(f"CRITICAL ERROR: Failed to import VisualRuntime: {e}")
+    print("Ensure all dependencies are installed: pip install -r requirements.txt")
+    sys.exit(1)
 
 def main():
-    """Main entry point for V6 (placeholder)"""
+    print("==========================================")
+    print(" NINJA SABOTEUR - V8 LAB BUILD")
+    print("==========================================")
 
-    print("\033[2J\033[H")  # Clear screen
-
-    banner = """
-╔════════════════════════════════════════════════════════════════╗
-║                                                                ║
-║              GLITCHDEX MALL V6 - NEXT GENERATION              ║
-║                                                                ║
-║                    [UNDER DEVELOPMENT]                         ║
-║                                                                ║
-╚════════════════════════════════════════════════════════════════╝
-
-                     Version 6.0-placeholder
-                          Coming Soon
-
-    This version is currently under development.
-
-    Check back later for:
-    - Next-generation rendering
-    - Advanced AI systems
-    - New gameplay mechanics
-    - Enhanced world simulation
-
-
-    For now, try:
-    - V1: Original retro experience (Program 387)
-    - V2: Immersive sim architecture (Program 388)
-    - V3: Full graphical engine (Program 389)
-    - V4: Cloud-driven world (Program 390)
-    - V5: CRD reconstruction (direct launch)
-
-
-Press ENTER to return to launcher...
-"""
-
-    print(banner)
-    input()
-
+    try:
+        app = VisualRuntime()
+        app.run()
+    except Exception as e:
+        print(f"RUNTIME ERROR: {e}")
+        import traceback
+        traceback.print_exc()
 
 if __name__ == "__main__":
     main()

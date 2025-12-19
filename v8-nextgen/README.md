@@ -1,19 +1,23 @@
-# GLITCHDEX MALL V7 - INTEGRATION BUILD
+# GLITCHDEX MALL V8 - LAB BUILD (ACTIVE DEV)
 
-**Version:** 7.0.0-alpha
-**Status:** Integration Complete - Ready for Voxel Construction
-**Philosophy:** v5 Evidence + v6 Systems = v7 Mall Dungeon Doom-Alike
+**Version:** 8.0.0-lab
+**Status:** ACTIVE INTEGRATION - Integrating Visual Runtime & Game Loop
+**Philosophy:** v7 Canon + Visual Runtime + Ninja Mechanics = v8 Playable Game
 
 ---
 
-## 🎯 WHAT IS V7?
+## 🎯 WHAT IS V8?
 
-**V7 is the integration of two parallel development paths:**
+**V8 is the "Playable Game" integration phase.**
 
-- **v5-eastland**: Evidence-based CRD reconstruction (measurements, architectural archaeology)
-- **v6-nextgen**: QBIT simulation systems (cloud, NPCs, UE5 bridge)
+While **v7-nextgen** established the canonical systems (Cloud, QBIT, CRD), V8 introduces the actual runtime layer:
 
-**Result:** Everything but visuals ready for voxel-style build with **3 credit cards as weapons** in a **giant mall dungeon doom-alike**.
+- **Visual Runtime**: Pygame-based rendering (Grid, Walls, HUD).
+- **Ninja Game Loop**: Player control, item usage, resource management.
+- **Cutscene System**: Triggered narrative events (Sora prompts).
+- **Consensus Engine**: Mechanics for trap/object placement validation.
+
+**Goal:** Turn the v7 simulation backend into a playable experience.
 
 ---
 

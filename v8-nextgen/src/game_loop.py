@@ -13,12 +13,29 @@ import random
 from pathlib import Path
 
 # Add src root
-sys.path.append(str(Path(__file__).parents[2]))
+sys.path.append(str(Path(__file__).parent))
 
 from cloud import Cloud
 from ninja_grid import NinjaGrid
 from ninja_npc import ShadowJanitorMachine
 from npc_state_machine import NPCSpine
+# These modules were expected to be in a 'ninja' package but are now in src root?
+# No, let's check where they are.
+# It seems 'ninja.pfdl' implies a folder 'ninja' with 'pfdl.py'.
+# The previous `ls v8-nextgen/ninja` showed pfdl.py exists there.
+# But `sys.path.append(str(Path(__file__).parents[2]))` was pointing to repo root (v8-nextgen).
+# Now `game_loop.py` is in `src/`. `ninja` folder is in `v8-nextgen/ninja`.
+# So we need to add `v8-nextgen` to sys.path to import `ninja.pfdl`.
+
+# Let's fix the sys.path to point to v8-nextgen root
+sys.path.append(str(Path(__file__).parents[1]))
+
+from src.cloud import Cloud
+from src.ninja_grid import NinjaGrid
+from src.ninja_npc import ShadowJanitorMachine
+from src.npc_state_machine import NPCSpine
+
+# These are in v8-nextgen/ninja/
 from ninja.pfdl import PFDLKernel
 from ninja.voxel_bridge import VoxelBridge
 from ninja.ninja_assets import seed_ninja_assets
@@ -28,7 +45,7 @@ from ninja.cloud_flocking import CloudFlock
 from ninja.consensus_engine import ConsensusEngine
 
 try:
-    from voxel_object_loader import VoxelObjectLoader
+    from src.voxel_object_loader import VoxelObjectLoader
     VOXEL_SYS_READY = True
 except ImportError:
     VOXEL_SYS_READY = False
